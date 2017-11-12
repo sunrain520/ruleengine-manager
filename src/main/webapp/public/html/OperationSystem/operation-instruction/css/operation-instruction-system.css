@@ -1,0 +1,49 @@
+#wrapper #page-navbar-left{
+    top: 0px;
+}
+#wrapper #page-content{
+    padding-top: 0px;
+}
+#wrapper .container-main{
+    margin: 0px 0px 50px 250px;
+}
+.container-wrapper .d1{
+    width: 1200px;
+    display: none;
+    font-size: 16px;
+}
+.container-wrapper .d1 ul{
+    margin-top: 10px;
+    background-color: #FFFFFF;
+}
+.container-wrapper .d1 .info-title{
+    padding:10px 0px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #666666;
+    text-indent: 5px;
+}
+.container-wrapper .d1 img{
+    width: 900px;
+}
+.container-wrapper .active{
+    display: block;
+    background-color: #f3f3f5;
+}
+.container-main .container-wrapper .d1 ul li{
+    margin: 40px 0px;
+}
+.container-main .container-wrapper .id-explain ul li{
+    font-size: 16px;
+    margin: 25px 0px;
+}
+.container-main .container-wrapper .d1 .remark{
+    font-size: 16px;
+    padding: 20px 40px;
+    margin: 20px 0px;
+}
+#wrapper #page-navbar-left .nav-list .nav-item:hover{
+    background-color: #f3f3f5;
+}
+#wrapper #page-navbar-left .nav-list .nav-item.active {
+    background-color: #f3f3f5;
+}

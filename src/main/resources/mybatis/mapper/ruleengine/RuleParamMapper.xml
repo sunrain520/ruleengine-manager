@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.RuleParamMapper">
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.RuleParam">
+    <id column="f_auto_id" jdbcType="INTEGER" property="fAutoId" />
+    <result column="f_rule_item_id" jdbcType="INTEGER" property="fRuleItemId" />
+    <result column="f_param_name" jdbcType="VARCHAR" property="fParamName" />
+    <result column="f_param_type" jdbcType="VARCHAR" property="fParamType" />
+    <result column="f_param_value" jdbcType="VARCHAR" property="fParamValue" />
+    <result column="f_remark" jdbcType="VARCHAR" property="fRemark" />
+    <result column="f_create_time" jdbcType="TIMESTAMP" property="fCreateTime" />
+    <result column="f_create_user" jdbcType="VARCHAR" property="fCreateUser" />
+    <result column="f_update_time" jdbcType="TIMESTAMP" property="fUpdateTime" />
+    <result column="f_update_user" jdbcType="VARCHAR" property="fUpdateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    f_auto_id, f_rule_item_id, f_param_name, f_param_type, f_param_value, f_remark, f_create_time, 
+    f_create_user, f_update_time, f_update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_rule_param
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_rule_param
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleParam">
+    insert into t_rule_param (f_auto_id, f_rule_item_id, f_param_name, 
+      f_param_type, f_param_value, f_remark, 
+      f_create_time, f_create_user, f_update_time, 
+      f_update_user)
+    values (#{fAutoId,jdbcType=INTEGER}, #{fRuleItemId,jdbcType=INTEGER}, #{fParamName,jdbcType=VARCHAR}, 
+      #{fParamType,jdbcType=VARCHAR}, #{fParamValue,jdbcType=VARCHAR}, #{fRemark,jdbcType=VARCHAR}, 
+      #{fCreateTime,jdbcType=TIMESTAMP}, #{fCreateUser,jdbcType=VARCHAR}, #{fUpdateTime,jdbcType=TIMESTAMP}, 
+      #{fUpdateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleParam">
+    insert into t_rule_param
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fAutoId != null">
+        f_auto_id,
+      </if>
+      <if test="fRuleItemId != null">
+        f_rule_item_id,
+      </if>
+      <if test="fParamName != null">
+        f_param_name,
+      </if>
+      <if test="fParamType != null">
+        f_param_type,
+      </if>
+      <if test="fParamValue != null">
+        f_param_value,
+      </if>
+      <if test="fRemark != null">
+        f_remark,
+      </if>
+      <if test="fCreateTime != null">
+        f_create_time,
+      </if>
+      <if test="fCreateUser != null">
+        f_create_user,
+      </if>
+      <if test="fUpdateTime != null">
+        f_update_time,
+      </if>
+      <if test="fUpdateUser != null">
+        f_update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fAutoId != null">
+        #{fAutoId,jdbcType=INTEGER},
+      </if>
+      <if test="fRuleItemId != null">
+        #{fRuleItemId,jdbcType=INTEGER},
+      </if>
+      <if test="fParamName != null">
+        #{fParamName,jdbcType=VARCHAR},
+      </if>
+      <if test="fParamType != null">
+        #{fParamType,jdbcType=VARCHAR},
+      </if>
+      <if test="fParamValue != null">
+        #{fParamValue,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null">
+        #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateTime != null">
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null">
+        #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null">
+        #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null">
+        #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleParam">
+    update t_rule_param
+    <set>
+      <if test="fRuleItemId != null">
+        f_rule_item_id = #{fRuleItemId,jdbcType=INTEGER},
+      </if>
+      <if test="fParamName != null">
+        f_param_name = #{fParamName,jdbcType=VARCHAR},
+      </if>
+      <if test="fParamType != null">
+        f_param_type = #{fParamType,jdbcType=VARCHAR},
+      </if>
+      <if test="fParamValue != null">
+        f_param_value = #{fParamValue,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null">
+        f_remark = #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateTime != null">
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null">
+        f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null">
+        f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null">
+        f_update_user = #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleParam">
+    update t_rule_param
+    set f_rule_item_id = #{fRuleItemId,jdbcType=INTEGER},
+      f_param_name = #{fParamName,jdbcType=VARCHAR},
+      f_param_type = #{fParamType,jdbcType=VARCHAR},
+      f_param_value = #{fParamValue,jdbcType=VARCHAR},
+      f_remark = #{fRemark,jdbcType=VARCHAR},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      f_update_user = #{fUpdateUser,jdbcType=VARCHAR}
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+</mapper>

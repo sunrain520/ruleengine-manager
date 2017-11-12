@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+@import "variables";
+
+/*common-tree 默认主题 START*/
+.common-tree-wrap{
+	min-height: 200px;
+	background: white;
+	border: 1px solid #eee;
+	min-width: 200px;
+	width: 200px;
+	position: absolute;
+	left: 0;
+	top: 37px;
+	z-index: 5;
+	max-height: 600px;
+	overflow-y: auto;
+	width: 100%;
+	overflow-x: auto;
+
+	.common-tree-title{
+		text-indent: 9px;
+		height: 35px;
+		line-height: 35px;
+		color: #565656;
+		border-bottom:1px solid #e6e3e3;
+		background-color: #efefef;
+	}
+
+	.common-tree-node{
+		margin-bottom: 3px;
+
+		.common-tree-node{
+			margin-left: 20px;
+		}
+
+		.common-tree-node-title{
+			background-color: #eceac7;
+			padding: 6px;
+			cursor: pointer;
+			position: relative;
+
+			input{
+				position: absolute;right: 10px;
+			}
+		}
+
+		/*
+		.common-tree-node-title:hover{
+			background-color: #d4d2af;
+		}
+		*/
+	}
+
+	.common-tree-item{
+		margin-left: 20px;
+		background-color: #fffdec;
+		padding: 6px;
+		position: relative;
+		cursor: pointer;
+
+		input{
+			position: absolute;right: 10px;
+		}
+	}
+
+	/*.common-tree-item:hover{
+		background-color: #696969;color:white;
+	}*/
+
+	/*.common-tree-wrap .selected{
+		background-color: #696969;color:white;
+	}*/
+
+	.common-tree-children-wrap{display: none;}
+
+}
+/*common-tree 默认主题 END*/
+
+/*common-tree 主题1 START*/
+.common-tree-wrap{
+	background: #fafafa;height: 280px;
+
+	.common-tree-node{
+		background-color: #fafafa;
+		.common-tree-node-title{
+			background-color: #fafafa;
+		}
+	}
+
+	.common-tree-item{
+		background-color: #fafafa;
+	}
+
+	.common-tree-select-option:hover{
+		background-color: #eee;color: #666
+	}
+
+	/*.selected{
+		background-color: #ccc;color: #666
+	}*/
+
+}
+/*common-tree 主题1 END*/

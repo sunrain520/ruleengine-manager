@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>排期日历</title>
+    <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../dist/css/content.css">
+    <link rel="stylesheet" href="../../dist/css/main.css">
+    <link rel="stylesheet" href="../../dist/css/date.css">
+</head>
+
+<body>
+    <div class="container-main">
+        <!-- 日历 -->
+        <div class="container-wrapper">
+            <!-- 头部 -->
+            <div class="container-header js-container-header" style="background-color: rgb(255, 255, 255); border-bottom-color: rgb(248, 172, 89);">
+                <h5 class="date-h5">演出日历 
+                <select class="form-control" >
+                    <option value="0">1212</option>
+                    <option value="2">2121</option>
+                </select>
+                </h5>
+                <div class="right-btn">
+                    <div class="right-btn">
+                        <ul class="head-time js-time">
+                            <li class="active">周</li>
+                            <li class="two-line">月</li>
+                            <li>年</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 头部 END -->
+            <!-- 新增部分 -->
+            <div class="module-wrapper row">
+                <!-- 添加date-month显示月份内容，添加date-weekend显示周内容，添加date-year显示年份内容 -->
+                <div class="module row-box date-weekend">
+                    <div class="module-title">
+                        <!-- 选择时间 ， 品类 -->
+                        <div class="date-top js-select">
+                            <select class="form-control blur-wrap select-date" id="se_year"></select>
+                            <select class="form-control blur-wrap select-date" id="se_month"></select>
+                            <select class="form-control blur-wrap select-date" id="se_week">
+                            </select>
+                            <div class="fr act-input">
+                                <ul class="category">
+                                    <li class="first active"><a href="javascript:;">事业部</a></li>
+                                    <li><a href="javascript:;">品类</a></li>
+                                    <li><a href="javascript:;">城市</a></li>
+                                    <li><a href="javascript:;">自营场馆</a></li>
+                                </ul>
+                                <select class="form-control blur-panel blur-wrap not-dis">
+                                    <option value="">全部事业部/子公司</option>
+                                    <option value="">全部事业部/子公司</option>
+                                    <option value="">全部事业部/子公司</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- 选择时间 ， 品类 -->
+                    </div>
+                    <!-- 月 -->
+                    <div class="date-time  js-month">
+                        <table class="month-table">
+                            <tr class="first">
+                                <th>周一</th>
+                                <th>周二</th>
+                                <th>周三</th>
+                                <th>周四</th>
+                                <th>周五</th>
+                                <th>周六</th>
+                                <th>周日</th>
+                            </tr>
+                        </table>
+                        <table class="month-table" id="month-table" style="table-layout:fixed;">
+                            <tr></tr>
+                        </table>
+                    </div>
+                    <!-- 月 -->
+                    <!-- 周 -->
+                    <div class="date-time js-week">
+                        <table class="week-table">
+                            <tr class="first">
+                                <th>
+                                    <p class="w">周一</p>
+                                    <p class="m"></p>
+                                    <span class="icon icon-step-forward"></span>
+                                </th>
+                                <th>
+                                    <p class="w">周二</p>
+                                    <p class="m"></p>
+                                    <span class="icon icon-step-forward"></span>
+                                </th>
+                                <th>
+                                    <p class="w">周三</p>
+                                    <p class="m"></p>
+                                    <span class="icon icon-step-forward"></span>
+                                </th>
+                                <th>
+                                    <p class="w">周四</p>
+                                    <p class="m"></p>
+                                    <span class="icon icon-step-forward"></span>
+                                </th>
+                                <th>
+                                    <p class="w">周五</p>
+                                    <p class="m"></p>
+                                    <span class="icon icon-step-forward"></span>
+                                </th>
+                                <th>
+                                    <p class="w">周六</p>
+                                    <p class="m"></p>
+                                    <span class="icon icon-step-forward"></span>
+                                </th>
+                                <th>
+                                    <p class="w">周日</p>
+                                    <p class="m"></p>
+                                    <span class="icon icon-step-forward"></span>
+                                </th>
+                            </tr>
+                            <tr id="week-tr">
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- 周 -->
+                    <!-- 年 -->
+                    <div class="date-time js-year">
+                        <table class="year-table">
+                            <tr class="first">
+                                <th>一月<span class="icon icon-step-forward">|</span></th>
+                                <th>二月<span class="icon icon-step-forward">|</span></th>
+                                <th>三月<span class="icon icon-step-forward">|</span></th>
+                            </tr>
+                            <tr>
+                                <td date-month='1'>
+                                </td>
+                                <td date-month='2'></td>
+                                <td date-month='3'></td>
+                            </tr>
+                            <tr class="first">
+                                <th>四月<span class="icon icon-step-forward">|</span></th>
+                                <th>五月<span class="icon icon-step-forward">|</span></th>
+                                <th>六月<span class="icon icon-step-forward">|</span></th>
+                            </tr>
+                            <tr>
+                                <td date-month='4'>
+                                </td>
+                                <td date-month='5'></td>
+                                <td date-month='6'></td>
+                            </tr>
+                            <tr class="first">
+                                <th>七月<span class="icon icon-step-forward">|</span></th>
+                                <th>八月<span class="icon icon-step-forward">|</span></th>
+                                <th>九月<span class="icon icon-step-forward">|</span></th>
+                            </tr>
+                            <tr>
+                                <td date-month='7'>
+                                    <div class="content">
+                                        <p class="list"><span>微剧场</span>：<a href="">5</a></p>
+                                        <p class="list"><span>小流行</span>：<a href="">5</a></p>
+                                        <p class="list"><span>大流行</span>：<a href="">5</a></p>
+                                        <p class="list">.......</p>
+                                    </div>
+                                </td>
+                                <td date-month='8'></td>
+                                <td date-month='9'></td>
+                            </tr>
+                            <tr class="first">
+                                <th>十月<span class="icon icon-step-forward">|</span></th>
+                                <th>十一月<span class="icon icon-step-forward">|</span></th>
+                                <th>十二月<span class="icon icon-step-forward">|</span></th>
+                            </tr>
+                            <tr>
+                                <td date-month='10'>
+                                    <div class="content">
+                                        <p class="list"><span>微剧场</span>：<a href="">5</a></p>
+                                        <p class="list"><span>小流行</span>：<a href="">5</a></p>
+                                        <p class="list"><span>大流行</span>：<a href="">5</a></p>
+                                        <p class="list">.......</p>
+                                    </div>
+                                    <span class="icon icon-unfold js-unfold"></span>
+                                    <div class="popup" style="display: block;">
+                                    <span class="icon icon-packUp js-packup"></span><div class="popup-box"><p>fc排期2-0<a href="javascript:;">10</a></p><p>fc排期2-1<a href="javascript:;">14</a></p><p>fc排期2-3<a href="javascript:;">13</a></p><p>fc排期2-4<a href="javascript:;">30</a></p><p>fc排期2-5<a href="javascript:;">330</a></p><p>fc排期2-6<a href="javascript:;">39</a></p></div></div>
+                                </td>
+                                <td date-month='11'></td>
+                                <td date-month='12'></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- 年 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../dist/js/jquery.min.js"></script>
+<script src="../../dist/js/common.js"></script>
+<script>
+(function() {
+    // 场馆展开
+    $(document).on('click', '.js-unfold', function() {
+        $('.popup').slideUp();
+        $(this).parent().find('.popup').slideDown();
+    })
+
+    // 场馆收起
+    $(document).on('click', '.js-packup', function() {
+        $(this).parent().slideUp();
+    })
+
+    // 年月周TAB切换
+    $('.js-time li').on('click', function() {
+        var _this = $(this).index();
+        $('.js-time li').removeClass('active');
+        $(this).addClass('active');
+        $('.js-select').find('select').css('display', 'none');
+        if (_this == 0) {
+            $('.module').removeClass('date-month date-year');
+            $('.module').addClass('date-weekend');
+            $('.js-select').find('select').css('display', 'inline-block');
+        }
+        if (_this == 1) {
+            $('.module').removeClass('date-year date-weekend');
+            $('.module').addClass('date-month');
+            $('.js-select').find('select:eq(0)').css('display', 'inline-block');
+            $('.js-select').find('select:eq(1)').css('display', 'inline-block');
+        }
+        if (_this == 2) {
+            $('.module').removeClass('date-month date-weekend');
+            $('.module').addClass('date-year');
+            $('.js-select').find('select:eq(0)').css('display', 'inline-block');
+        }
+    })
+
+
+
+    function calendar(year, month, shows) {
+        var nowDate = new Date();
+        year = year ? year : nowDate.getFullYear();
+        month = month ? month : nowDate.getMonth();
+
+        var date = new Date(year, month - 1, 1), //月份需要减1
+            firstDayWeek = date.getDay(), //当月第一天是星期几
+            days = new Date(year, month, 0).getDate(), //当月天数是多少天，这里月份又不需要减1，搞不懂。。。
+            lastDayWeek = new Date(year, month - 1, days).getDay(), //当月最后一天是星期几，这里月份还是要减1
+            calendarDays = [];
+
+        if (firstDayWeek === 0) {
+            firstDayWeek = 7;
+        }
+
+        if (lastDayWeek === 0) {
+            lastDayWeek = 7;
+        }
+
+        for (var i = 1; i <= days; i++) {
+            calendarDays.push(i);
+        }
+        var prevNum = 0;
+
+        //如果第一天不是星期天 则需要在日历前加上上一个月的日历
+        var startWeekDay = 1; //日历视图，起始星期
+        if (firstDayWeek != startWeekDay) {
+            var prevMonth = prevYear = 0;
+            if (month == 1) {
+                prevMonth = 12;
+                prevYear = year - 1;
+            } else {
+                prevMonth = month - 1;
+                prevYear = year;
+            }
+
+            var prevDays = new Date(prevYear, prevMonth, 0).getDate(); //前一个月天数是多少天
+            var prevCalenderDays = [];
+            for (var i = (prevDays - firstDayWeek) + startWeekDay + 1; i <= prevDays; i++) {
+                prevCalenderDays.push(i);
+            }
+            prevNum = prevDays - (prevDays - firstDayWeek + startWeekDay);
+            calendarDays = prevCalenderDays.concat(calendarDays);
+        }
+
+
+
+        //如果最后一天不是星期六 则需要在日历后加上下一个月的日历
+        var lastNum = 6 + startWeekDay - lastDayWeek;
+        if (lastNum > 0) {
+            var nextCalenderDays = [];
+            for (var i = 1; i <= lastNum; i++) {
+                nextCalenderDays.push(i);
+            }
+
+            calendarDays = calendarDays.concat(nextCalenderDays);
+        }
+
+
+
+        var html = '';
+        var calendarData = [];
+        var aday = [];
+
+        for (var k = 1; k <= calendarDays.length; k++) {
+
+            var temp = {
+                'isCurrentDay': '',
+                'count': 0,
+                'shows': [],
+                'isCurrentMonth': ''
+            };
+            temp.day = calendarDays[k - 1];
+            var name = '',
+                nameyear = '',
+                namemonth = '',
+                nameday = '';
+            if (k <= prevNum) {
+                name = prevYear + '-' + prevMonth + '-' + calendarDays[k - 1];
+                nameyear = prevYear;
+                namemonth = prevMonth;
+                nameday = calendarDays[k - 1];
+            } else if (k > (prevNum + days)) {
+                if (month == 12) {
+                    nextMonth = 1;
+                    netxtYear = year + 1;
+                } else {
+                    nextMonth = parseInt(month) + 1;
+                    netxtYear = year;
+                }
+                name = netxtYear + '-' + nextMonth + '-' + calendarDays[k - 1];
+                nameyear = netxtYear;
+                namemonth = nextMonth;
+                nameday = calendarDays[k - 1];
+
+            } else {
+                name = year + '-' + month + '-' + calendarDays[k - 1];
+                nameyear = year;
+                namemonth = month;
+                nameday = calendarDays[k - 1];
+            }
+            if (k > prevNum && k <= (prevNum + days)) {
+                //本月中的号数
+                temp['isCurrentMonth'] = 'yes';
+                //当天当前号数
+                var currentClass = '';
+                if (year == nowDate.getFullYear() && month == nowDate.getMonth() && (k - prevNum) == parseInt(nowDate.getDate())) {
+                    currentClass = 'on';
+                    temp['isCurrentDay'] = 'yes';
+                }
+
+                //当天无演出的样式class
+                html += '<td nameyear="' + nameyear + '" namemonth="' + namemonth + '" nameday="' + nameday + '" name="' + name + '">' +
+                    '<a class="date-day" href="javascript:;">' + calendarDays[k - 1] + '</a>' +
+                    '</td>';
+
+            } else {
+                //非本月中的号数
+                html += '<td class="pastdate" nameyear="' + nameyear + '" namemonth="' + namemonth + '" nameday="' + nameday + '" name="' + name + '">' +
+                    '<a class="date-day" href="javascript:;">' + calendarDays[k - 1] + '</a>' +
+                    '</td>';
+            }
+
+            calendarData.push(temp);
+            aday.push(calendarDays[k - 1])
+            $('#month-table tr:eq(0)').html('')
+            $('#month-table tr:eq(0)').append(html)
+        }
+        weekdate()
+
+
+    }
+    var nowDate = new Date(),
+        yearDate = nowDate.getFullYear(),
+        MonthDate = nowDate.getMonth() + 1,
+        dayDate = nowDate.getDate(),
+        oyear = "",
+        omonth = "",
+        week = "";
+
+    for (i = 2005; i <= 2035; i++) {
+        oyear += '<option value="' + i + '">' + i + '年</option>';
+    }
+    $('#se_year').append(oyear);
+    $("#se_year").val(yearDate)
+        // 添加月份  
+    for (i = 1; i <= 12; i++) {
+        omonth += '<option value="' + i + '">' + i + '月</option>';
+    }
+    $('#se_month').append(omonth);
+    $('#se_month').val(MonthDate);
+
+    // 默认调用
+    year_month();
+    weekdate();
+
+    $('#se_year').change(function() { //年份监听
+        yearDate = $('#se_year').val();
+        year_month();
+        weekdate();
+        ajaxocent();
+        se_week();
+    })
+
+    $('#se_month').change(function() { //月份监听
+        MonthDate = $('#se_month').val();
+        year_month();
+        weekdate();
+        ajaxocent();
+        se_week();
+    })
+    $('#se_week').change(function() { //每周监听
+        weekdate();
+        ajaxocent();
+        se_week();
+    })
+
+
+    function year_month() {
+        html = calendar(yearDate, MonthDate);
+        var weekSelect = Math.ceil($('#month-table').find('td').length / 7);
+        var week = '';
+
+        for (var i = 1; i <= weekSelect; i++) {
+            week += '<option value="' + i + '">第' + i + '周</option>';
+        }
+        $('#se_week').html(week);
+
+    }
+
+
+    // 每月每周的函数
+    function weekdate() {
+        var weekval = $('#se_week').val(),
+            otd = $('#month-table td'),
+            day_date = [];
+
+        for (var i = 0; i < otd.length; i++) { //调用月份里每天的数据
+
+            if (Math.floor(i / 7) + 1 == weekval) {
+                var onameday = $('#month-table td:eq(' + i + ')').attr('nameday'),
+                    namemonth = $('#month-table td:eq(' + i + ')').attr('namemonth'),
+                    ate = namemonth + '-' + onameday;
+                day_date.push(ate);
+            }
+        }
+
+        var om = $('.js-week').find('.m');
+        for (var j = 0; j < om.length; j++) {
+
+            $('.js-week').find('.m:eq(' + j + ')').html(day_date[j]);
+
+        }
+
+
+        var otd = $('.js-week').find('th');
+        var otdcontent = '';
+        for (var i = 0; i < otd.length; i++) { //创建空的td
+            otdcontent += '<td>';
+            otdcontent += '</td>';
+        }
+        $('#week-tr').html(otdcontent)
+    }
+
+
+    $('.category').find('li').on('click', function() {
+        $(this).addClass('active').siblings().removeClass('active');
+    })
+
+
+    ajaxocent();
+
+    function ajaxocent() {
+        var ocent = '';
+        $.ajax({
+
+            url: "http://www.juooo8.com/Saleview/test/ajax",
+            dataType: "json",
+            type: "get",
+            success: function(result) {
+                var olist = '';
+                var olists = [];
+                var oname = [];
+                var ocent = '';
+                var Ntdo = $('#month-table').find('td');
+
+                var i = '';
+                for (i = 0; i < Ntdo.length; i++) {
+                    oname.push($('#month-table').find('td:eq(' + i + ')').attr('name'));
+                }
+
+
+                for (var k in result) {
+                    var list_length = '',
+                        lists = [], //排期
+                        amount = [], //id
+                        logo = [], //品类
+                        namea = [], //场馆地址2
+                        time = [], //时间小时分钟
+                        adress = [], //城市
+                        href = [], //链接
+                        schedule_id = [], //schedule_id 
+                        venue_name = [], //场馆地址
+                        city_id = [], //城市ID
+                        department_id = [], //数量
+                        os_project_type_name = [], //标题
+                        venue_id = []; //编号
+
+                    if (result[k] != '') //判断已有数据
+                    {
+                        for (var k2 in result[k]) {
+                            var list = result[k][k2].list;
+                            list_length = list.length;
+                            for (var i = 0; i < list.length; i++) { //循环数据
+                                l_i = list[i].schedule_id; //schedule_id 
+                                h = list[i].project_id; //链接
+                                s = list[i].schedule_name; //排期
+                                d = list[i].os_project_type_id; //id
+                                l = list[i].department_name; //品类
+                                vn = list[i].venue_name; //场馆地址
+                                n = list[i].venue_name_name; //场馆地址2
+                                t = list[i].show_time; //时间小时分钟
+                                ci = list[i].city_id; //城市ID
+                                a = list[i].city_name; //城市
+                                d_i = list[i].department_id; //数量
+                                is = list[i].os_project_type_name; //标题
+                                vi = list[i].venue_id; //编号
+
+                                lists.push(s);
+                                amount.push(d);
+                                logo.push(l);
+                                namea.push(n);
+                                time.push(t);
+                                adress.push(a);
+                                href.push(h);
+                                schedule_id.push(l_i);
+                                venue_name.push(vn);
+                                city_id.push(ci);
+                                department_id.push(d_i);
+                                os_project_type_name.push(is);
+                                venue_id.push(vi);
+                            }
+                        }
+                    }
+
+                    //lists数据库数据，k数据库时间，list_length每天的演出种类， amount每天每场演出的票数
+                    content(lists, k, list_length, amount);
+                    se_week(k, logo, href, namea, time, adress, list_length);
+                    // se_week(week,logo,little,time,adress)
+                }
+
+            }
+        });
+    }
+
+    // 日历月份调用数据函数
+    function content(list, a, num, amount) {
+        var ocent = '';
+        if (num > 0) { //有数据内容的时候
+            ocent += '<span class="icon icon-unfold js-unfold"></span>';
+            ocent += '<div class="content">';
+            if (num > 3) { //每天数据大于三条时，展现显示前三条加省略号
+                ocent += '<p class="list"><span>' + list[0] + '</span><a href="javascript:;">' + amount[0] + '</a></p>';
+                ocent += '<p class="list"><span>' + list[1] + '</span><a href="javascript:;">' + amount[1] + '</a></p>';
+                ocent += '<p class="list"><span>' + list[2] + '</span><a href="javascript:;">' + amount[2] + '</a></p>';
+                ocent += '<p class="list">........</p>';
+            } else { //每天数据小于三条，一次性展现
+                for (var g = 0; g < num; g++) {
+                    ocent += '<p class="list"><span>' + list[g] + '</span><a href="javascript:;">' + amount[g] + '</a></p>';
+                }
+            }
+            ocent += '</div><div class="popup">';
+            ocent += '<span class="icon icon-packUp js-packup"></span>';
+            ocent += '<div class="popup-box">';
+            for (var g = 0; g < num; g++) { //弹窗显示所有的数据内容
+                ocent += '<p>' + list[g] + '<a href="javascript:;">' + amount[g] + '</a></p>';
+            }
+            ocent += '</div>';
+
+            $('#month-table').find('[name="' + $.trim(a) + '"]').append(ocent);
+        }
+    };
+
+    // 日历每周调用数据函数
+    function se_week(week, logo, href, little, time, adress, list_length) {
+        if (list_length > 0) {
+            var ohtml = '';
+                ohtml += '<div style="height:500px;">';
+            for (var i = 0; i < list_length; i++) {
+
+
+                ohtml += '<div class="item">';
+                ohtml += '<span class="logo">' + logo[i] + '</span>';
+                ohtml += '<a class="little" href="' + href[i] + '">' + little[i] + '</a>';
+                ohtml += '<p class="txt">';
+                ohtml += '<span class="time">' + time[i] + '</span>';
+                ohtml += '<span class="city">' + adress[i] + '</span>';
+                ohtml += '<span class="adress"></span>';
+                ohtml += '</p>';
+                ohtml += '</div>';
+
+            }
+                ohtml += '</div>';
+        }
+        $('#week-tr').find('[name="' + $.trim(week) + '"]').append(ohtml);
+
+        function year_Date() {
+            var ouyear = $('#se_year').val();
+            var outh = $('.js-week').find('.m');
+            var ouweek = [];
+
+            for (var i = 0; i < outh.length; i++) {
+                ouweek.push(ouyear + '-' + outh[i].innerHTML)
+            }
+            var j = '';
+            var weektd = $('#week-tr').find('td');
+            for (j = 0; j < weektd.length; j++) {
+                $('#week-tr').find('td:eq(' + j + ')').attr('name', ouweek[j])
+            }
+        }
+        year_Date();
+    }
+
+})()
+</script>
+
+</html>

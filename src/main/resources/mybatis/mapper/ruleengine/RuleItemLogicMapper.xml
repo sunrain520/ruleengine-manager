@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.RuleItemLogicMapper">
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.RuleItemLogic">
+    <id column="f_auto_id" jdbcType="INTEGER" property="fAutoId" />
+    <result column="f_rule_expression" jdbcType="VARCHAR" property="fRuleExpression" />
+    <result column="f_rule_variable_list" jdbcType="VARCHAR" property="fRuleVariableList" />
+    <result column="f_rule_param_list" jdbcType="VARCHAR" property="fRuleParamList" />
+    <result column="f_remark" jdbcType="VARCHAR" property="fRemark" />
+    <result column="f_blacklist_type" jdbcType="TINYINT" property="fBlacklistType" />
+    <result column="f_create_time" jdbcType="TIMESTAMP" property="fCreateTime" />
+    <result column="f_create_user" jdbcType="VARCHAR" property="fCreateUser" />
+    <result column="f_update_time" jdbcType="TIMESTAMP" property="fUpdateTime" />
+    <result column="f_update_user" jdbcType="VARCHAR" property="fUpdateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    f_auto_id, f_rule_expression, f_rule_variable_list, f_rule_param_list, f_remark, 
+    f_blacklist_type, f_create_time, f_create_user, f_update_time, f_update_user
+  </sql>
+  <select id="queryRuleItemLogicsByPage" resultMap="BaseResultMap" parameterType="map">
+        select 
+        <include refid="Base_Column_List" />
+        from t_rule_item_logic
+        where 1=1
+        <if test="id != null and id != ''">
+            and instr(f_auto_id,#{id}) > 0
+        </if>
+        <if test="ruleExpression != null and ruleExpression != ''">
+            and instr(f_rule_expression,#{ruleExpression}) > 0
+        </if>
+        <if test="remark != null and remark != ''">
+            and instr(f_remark,#{remark}) > 0
+        </if>
+        limit #{pageNum},#{pageSize}
+     </select>
+
+    <select id="queryRuleItemLogicCount" resultType="Integer" parameterType="map">
+        select count(*) from t_rule_item_logic
+        where 1=1
+        <if test="id != null and id != ''">
+            and instr(f_auto_id,#{id}) > 0
+        </if>
+        <if test="ruleExpression != null and ruleExpression != ''">
+            and instr(f_rule_expression,#{ruleExpression}) > 0
+        </if>
+        <if test="remark != null and remark != ''">
+            and instr(f_remark,#{remark}) > 0
+        </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_rule_item_logic
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_rule_item_logic
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleItemLogic">
+    insert into t_rule_item_logic (f_auto_id, f_rule_expression, f_rule_variable_list, 
+      f_rule_param_list, f_remark, f_blacklist_type, 
+      f_create_time, f_create_user, f_update_time, 
+      f_update_user)
+    values (#{fAutoId,jdbcType=INTEGER}, #{fRuleExpression,jdbcType=VARCHAR}, #{fRuleVariableList,jdbcType=VARCHAR}, 
+      #{fRuleParamList,jdbcType=VARCHAR}, #{fRemark,jdbcType=VARCHAR}, #{fBlacklistType,jdbcType=TINYINT}, 
+      #{fCreateTime,jdbcType=TIMESTAMP}, #{fCreateUser,jdbcType=VARCHAR}, #{fUpdateTime,jdbcType=TIMESTAMP}, 
+      #{fUpdateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleItemLogic">
+    insert into t_rule_item_logic
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fAutoId != null">
+        f_auto_id,
+      </if>
+      <if test="fRuleExpression != null">
+        f_rule_expression,
+      </if>
+      <if test="fRuleVariableList != null">
+        f_rule_variable_list,
+      </if>
+      <if test="fRuleParamList != null">
+        f_rule_param_list,
+      </if>
+      <if test="fRemark != null">
+        f_remark,
+      </if>
+      <if test="fBlacklistType != null">
+        f_blacklist_type,
+      </if>
+      <if test="fCreateTime != null">
+        f_create_time,
+      </if>
+      <if test="fCreateUser != null">
+        f_create_user,
+      </if>
+      <if test="fUpdateTime != null">
+        f_update_time,
+      </if>
+      <if test="fUpdateUser != null">
+        f_update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fAutoId != null">
+        #{fAutoId,jdbcType=INTEGER},
+      </if>
+      <if test="fRuleExpression != null">
+        #{fRuleExpression,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleVariableList != null">
+        #{fRuleVariableList,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleParamList != null">
+        #{fRuleParamList,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null">
+        #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fBlacklistType != null">
+        #{fBlacklistType,jdbcType=TINYINT},
+      </if>
+      <if test="fCreateTime != null">
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null">
+        #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null">
+        #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null">
+        #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleItemLogic">
+    update t_rule_item_logic
+    <set>
+      <if test="fRuleExpression != null">
+        f_rule_expression = #{fRuleExpression,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleVariableList != null">
+        f_rule_variable_list = #{fRuleVariableList,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleParamList != null">
+        f_rule_param_list = #{fRuleParamList,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null">
+        f_remark = #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fBlacklistType != null">
+        f_blacklist_type = #{fBlacklistType,jdbcType=TINYINT},
+      </if>
+      <if test="fCreateTime != null">
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null">
+        f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null">
+        f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null">
+        f_update_user = #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleItemLogic">
+    update t_rule_item_logic
+    set f_rule_expression = #{fRuleExpression,jdbcType=VARCHAR},
+      f_rule_variable_list = #{fRuleVariableList,jdbcType=VARCHAR},
+      f_rule_param_list = #{fRuleParamList,jdbcType=VARCHAR},
+      f_remark = #{fRemark,jdbcType=VARCHAR},
+      f_blacklist_type = #{fBlacklistType,jdbcType=TINYINT},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      f_update_user = #{fUpdateUser,jdbcType=VARCHAR}
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+</mapper>

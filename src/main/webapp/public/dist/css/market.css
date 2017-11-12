@@ -1,0 +1,81 @@
+
+/*区域销售明细*/
+
+.arrow-top {
+    display: inline-block;
+    overflow: hidden;
+
+    width: 20px;
+    height: 20px;
+}
+
+.table .arrow-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.arrow-top span {
+    display: block;
+
+    margin: -14px;
+    width: 20px;
+    height: 20px;
+
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+.arrow-top .c-red {
+    background: #ed5565;
+}
+
+.arrow-top .c-yellow {
+    background: #feb648;
+}
+
+.arrow-top .c-green {
+    background: #28b779;
+}
+
+.arrow-top .c-blur {
+    background: #27a9e3;
+}
+
+.table-top-tips {
+    margin-top: -10px;
+
+    line-height: 40px;
+}
+
+.table-top-tips .arrow-top {
+    margin-left: 20px;
+
+    vertical-align: middle;
+}
+
+.table-top-tips .arrow-top:first-child {
+    margin-left: 0;
+}
+
+.table-top-tips .btn {
+    float: right;
+}
+
+/*区域销售明细*/
+
+.operation-btns .num{
+	color: #ed5565;
+}
+
+.operation-btns .arrow-top{
+	vertical-align: middle;
+	margin-left: 20px;
+}
+
+.operation-btns .tips{
+	margin-left: 20px;
+	display: inline-block;
+}
+

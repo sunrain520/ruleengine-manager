@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.RuleItemMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.RuleItem" >
+    <id column="f_auto_id" property="fAutoId" jdbcType="INTEGER" />
+    <result column="f_app_id" property="fAppId" jdbcType="VARCHAR" />
+    <result column="f_rule_id" property="fRuleId" jdbcType="VARCHAR" />
+    <result column="f_rule_item_id" property="fRuleItemId" jdbcType="INTEGER" />
+    <result column="f_rule_expression" property="fRuleExpression" jdbcType="VARCHAR" />
+    <result column="f_rule_variable_list" property="fRuleVariableList" jdbcType="VARCHAR" />
+    <result column="f_rule_param_list" property="fRuleParamList" jdbcType="VARCHAR" />
+    <result column="f_rule_pass_score" property="fRulePassScore" jdbcType="DOUBLE" />
+    <result column="f_rule_reject_score" property="fRuleRejectScore" jdbcType="DOUBLE" />
+    <result column="f_rule_nodata_score" property="fRuleNodataScore" jdbcType="DOUBLE" />
+    <result column="f_state" property="fState" jdbcType="TINYINT" />
+    <result column="f_remark" property="fRemark" jdbcType="VARCHAR" />
+    <result column="f_is_exclusive" property="fIsExclusive" jdbcType="TINYINT" />
+    <result column="f_pass_condition" property="fPassCondition" jdbcType="TINYINT" />
+    <result column="f_post_handle" property="fPostHandle" jdbcType="TINYINT" />
+    <result column="f_post_handle_expire_day" property="fPostHandleExpireDay" jdbcType="INTEGER" />
+    <result column="f_post_handle_reason" property="fPostHandleReason" jdbcType="VARCHAR" />
+    <result column="f_blacklist_type" property="fBlacklistType" jdbcType="TINYINT" />
+    <result column="f_frequency" property="fFrequency" jdbcType="INTEGER" />
+    <result column="f_check_variable_null" property="fCheckVariableNull" jdbcType="TINYINT" />
+    <result column="f_nodata_handle" property="fNodataHandle" jdbcType="TINYINT" />
+    <result column="f_create_time" property="fCreateTime" jdbcType="TIMESTAMP" />
+    <result column="f_create_user" property="fCreateUser" jdbcType="VARCHAR" />
+    <result column="f_update_time" property="fUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="f_update_user" property="fUpdateUser" jdbcType="VARCHAR" />
+    <result column="f_encrypt" property="fEncrypt" jdbcType="TINYINT" />
+    <result column="f_version" property="fVersion" jdbcType="INTEGER" />
+    <result column="f_frequency_mode" property="fFrequencyMode" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    f_auto_id, f_app_id, f_rule_id, f_rule_item_id, f_rule_expression, f_rule_variable_list, 
+    f_rule_param_list, f_rule_pass_score, f_rule_reject_score, f_rule_nodata_score, f_state, 
+    f_remark, f_is_exclusive, f_pass_condition, f_post_handle, f_post_handle_expire_day, 
+    f_post_handle_reason, f_blacklist_type, f_frequency, f_check_variable_null, f_nodata_handle, 
+    f_create_time, f_create_user, f_update_time, f_update_user, f_encrypt, f_version,f_frequency_mode
+  </sql>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from t_rule_item
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </select>
+
+
+  <select id="queryRuleItemsByPage" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_rule_item
+    where 1=1
+    <if test="itemId != null and itemId != 0">
+      and  instr(f_rule_item_id,#{itemId}) > 0
+    </if>
+    <if test="express != null and express != ''">
+      and  instr(f_rule_expression,#{express}) > 0
+    </if>
+    <if test="remark != null and remark != ''">
+      and  instr(f_remark,#{remark}) > 0
+    </if>
+    <if test="paramList != null and paramList != ''">
+      and  instr(f_rule_param_list,#{paramList}) > 0
+    </if>
+    and f_app_id =#{appId} and f_rule_id=#{ruleId}
+    order by f_rule_item_id
+    limit #{pageNum},#{pageSize}
+  </select>
+
+  <select id="queryRuleItemsCount" parameterType="map" resultType="Integer">
+    select count(*)
+    from t_rule_item
+    where 1=1
+    <if test="itemId != null and itemId != 0">
+      and  instr(f_rule_item_id,#{itemId}) > 0
+    </if>
+    <if test="express != null and express != ''">
+      and  instr(f_rule_expression,#{express}) > 0
+    </if>
+    <if test="remark != null and remark != ''">
+      and  instr(f_remark,#{remark}) > 0
+    </if>
+    <if test="paramList != null and paramList != ''">
+      and  instr(f_rule_param_list,#{paramList}) > 0
+    </if>
+    and f_app_id =#{appId} and f_rule_id=#{ruleId}
+  </select>
+
+  <select id="queryItemIdExist" resultType="int">
+    select
+    count(*)
+    from t_rule_item
+    where f_app_id =#{appId} and f_rule_id=#{ruleId} and f_rule_item_id =#{itemId}
+  </select>
+
+
+  <select id="queryRuleItem" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_rule_item
+    where f_app_id =#{appId} and f_rule_id=#{ruleId} and f_rule_item_id =#{itemId}
+  </select>
+
+  <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleItem" >
+    insert into t_rule_item (f_auto_id, f_app_id, f_rule_id, 
+      f_rule_item_id, f_rule_expression, f_rule_variable_list, 
+      f_rule_param_list, f_rule_pass_score, f_rule_reject_score, 
+      f_rule_nodata_score, f_state, f_remark, 
+      f_is_exclusive, f_pass_condition, f_post_handle, 
+      f_post_handle_expire_day, f_post_handle_reason, 
+      f_blacklist_type, f_frequency, f_check_variable_null, 
+      f_nodata_handle, f_create_time, f_create_user, 
+      f_update_time, f_update_user, f_encrypt, 
+      f_version)
+    values (#{fAutoId,jdbcType=INTEGER}, #{fAppId,jdbcType=VARCHAR}, #{fRuleId,jdbcType=VARCHAR}, 
+      #{fRuleItemId,jdbcType=INTEGER}, #{fRuleExpression,jdbcType=VARCHAR}, #{fRuleVariableList,jdbcType=VARCHAR}, 
+      #{fRuleParamList,jdbcType=VARCHAR}, #{fRulePassScore,jdbcType=DOUBLE}, #{fRuleRejectScore,jdbcType=DOUBLE}, 
+      #{fRuleNodataScore,jdbcType=DOUBLE}, #{fState,jdbcType=TINYINT}, #{fRemark,jdbcType=VARCHAR}, 
+      #{fIsExclusive,jdbcType=TINYINT}, #{fPassCondition,jdbcType=TINYINT}, #{fPostHandle,jdbcType=TINYINT}, 
+      #{fPostHandleExpireDay,jdbcType=INTEGER}, #{fPostHandleReason,jdbcType=VARCHAR}, 
+      #{fBlacklistType,jdbcType=TINYINT}, #{fFrequency,jdbcType=INTEGER}, #{fCheckVariableNull,jdbcType=TINYINT}, 
+      #{fNodataHandle,jdbcType=TINYINT}, #{fCreateTime,jdbcType=TIMESTAMP}, #{fCreateUser,jdbcType=VARCHAR}, 
+      #{fUpdateTime,jdbcType=TIMESTAMP}, #{fUpdateUser,jdbcType=VARCHAR}, #{fEncrypt,jdbcType=TINYINT}, 
+      #{fVersion,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyProperty="fAutoId" useGeneratedKeys="true" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleItem" >
+    insert into t_rule_item
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fAutoId != null" >
+        f_auto_id,
+      </if>
+      <if test="fAppId != null" >
+        f_app_id,
+      </if>
+      <if test="fRuleId != null" >
+        f_rule_id,
+      </if>
+      <if test="fRuleItemId != null" >
+        f_rule_item_id,
+      </if>
+      <if test="fRuleExpression != null" >
+        f_rule_expression,
+      </if>
+      <if test="fRuleVariableList != null" >
+        f_rule_variable_list,
+      </if>
+      <if test="fRuleParamList != null" >
+        f_rule_param_list,
+      </if>
+      <if test="fRulePassScore != null" >
+        f_rule_pass_score,
+      </if>
+      <if test="fRuleRejectScore != null" >
+        f_rule_reject_score,
+      </if>
+      <if test="fRuleNodataScore != null" >
+        f_rule_nodata_score,
+      </if>
+      <if test="fState != null" >
+        f_state,
+      </if>
+      <if test="fRemark != null" >
+        f_remark,
+      </if>
+      <if test="fIsExclusive != null" >
+        f_is_exclusive,
+      </if>
+      <if test="fPassCondition != null" >
+        f_pass_condition,
+      </if>
+      <if test="fPostHandle != null" >
+        f_post_handle,
+      </if>
+      <if test="fPostHandleExpireDay != null" >
+        f_post_handle_expire_day,
+      </if>
+      <if test="fPostHandleReason != null" >
+        f_post_handle_reason,
+      </if>
+      <if test="fBlacklistType != null" >
+        f_blacklist_type,
+      </if>
+      <if test="fFrequency != null" >
+        f_frequency,
+      </if>
+      <if test="fCheckVariableNull != null" >
+        f_check_variable_null,
+      </if>
+      <if test="fNodataHandle != null" >
+        f_nodata_handle,
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time,
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user,
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time,
+      </if>
+      <if test="fUpdateUser != null" >
+        f_update_user,
+      </if>
+      <if test="fEncrypt != null" >
+        f_encrypt,
+      </if>
+      <if test="fVersion != null" >
+        f_version,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fAutoId != null" >
+        #{fAutoId,jdbcType=INTEGER},
+      </if>
+      <if test="fAppId != null" >
+        #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleId != null" >
+        #{fRuleId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleItemId != null" >
+        #{fRuleItemId,jdbcType=INTEGER},
+      </if>
+      <if test="fRuleExpression != null" >
+        #{fRuleExpression,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleVariableList != null" >
+        #{fRuleVariableList,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleParamList != null" >
+        #{fRuleParamList,jdbcType=VARCHAR},
+      </if>
+      <if test="fRulePassScore != null" >
+        #{fRulePassScore,jdbcType=DOUBLE},
+      </if>
+      <if test="fRuleRejectScore != null" >
+        #{fRuleRejectScore,jdbcType=DOUBLE},
+      </if>
+      <if test="fRuleNodataScore != null" >
+        #{fRuleNodataScore,jdbcType=DOUBLE},
+      </if>
+      <if test="fState != null" >
+        #{fState,jdbcType=TINYINT},
+      </if>
+      <if test="fRemark != null" >
+        #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fIsExclusive != null" >
+        #{fIsExclusive,jdbcType=TINYINT},
+      </if>
+      <if test="fPassCondition != null" >
+        #{fPassCondition,jdbcType=TINYINT},
+      </if>
+      <if test="fPostHandle != null" >
+        #{fPostHandle,jdbcType=TINYINT},
+      </if>
+      <if test="fPostHandleExpireDay != null" >
+        #{fPostHandleExpireDay,jdbcType=INTEGER},
+      </if>
+      <if test="fPostHandleReason != null" >
+        #{fPostHandleReason,jdbcType=VARCHAR},
+      </if>
+      <if test="fBlacklistType != null" >
+        #{fBlacklistType,jdbcType=TINYINT},
+      </if>
+      <if test="fFrequency != null" >
+        #{fFrequency,jdbcType=INTEGER},
+      </if>
+      <if test="fCheckVariableNull != null" >
+        #{fCheckVariableNull,jdbcType=TINYINT},
+      </if>
+      <if test="fNodataHandle != null" >
+        #{fNodataHandle,jdbcType=TINYINT},
+      </if>
+      <if test="fCreateTime != null" >
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null" >
+        #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null" >
+        #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null" >
+        #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fEncrypt != null" >
+        #{fEncrypt,jdbcType=TINYINT},
+      </if>
+      <if test="fVersion != null" >
+        #{fVersion,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateRuleItem" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleItem" >
+    update t_rule_item
+    <set >
+      <if test="fAppId != null" >
+        f_app_id = #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleId != null" >
+        f_rule_id = #{fRuleId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleItemId != null" >
+        f_rule_item_id = #{fRuleItemId,jdbcType=INTEGER},
+      </if>
+      <if test="fRuleExpression != null" >
+        f_rule_expression = #{fRuleExpression,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleVariableList != null" >
+        f_rule_variable_list = #{fRuleVariableList,jdbcType=VARCHAR},
+      </if>
+        f_rule_param_list = #{fRuleParamList,jdbcType=VARCHAR},
+      <if test="fRulePassScore != null" >
+        f_rule_pass_score = #{fRulePassScore,jdbcType=DOUBLE},
+      </if>
+      <if test="fRuleRejectScore != null" >
+        f_rule_reject_score = #{fRuleRejectScore,jdbcType=DOUBLE},
+      </if>
+      <if test="fRuleNodataScore != null" >
+        f_rule_nodata_score = #{fRuleNodataScore,jdbcType=DOUBLE},
+      </if>
+      <if test="fState != null" >
+        f_state = #{fState,jdbcType=TINYINT},
+      </if>
+      <if test="fRemark != null" >
+        f_remark = #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fIsExclusive != null" >
+        f_is_exclusive = #{fIsExclusive,jdbcType=TINYINT},
+      </if>
+      <if test="fPassCondition != null" >
+        f_pass_condition = #{fPassCondition,jdbcType=TINYINT},
+      </if>
+      <if test="fPostHandle != null" >
+        f_post_handle = #{fPostHandle,jdbcType=TINYINT},
+      </if>
+      <if test="fPostHandleExpireDay != null" >
+        f_post_handle_expire_day = #{fPostHandleExpireDay,jdbcType=INTEGER},
+      </if>
+      <if test="fPostHandleReason != null" >
+        f_post_handle_reason = #{fPostHandleReason,jdbcType=VARCHAR},
+      </if>
+      <if test="fBlacklistType != null" >
+        f_blacklist_type = #{fBlacklistType,jdbcType=TINYINT},
+      </if>
+      <if test="fFrequency != null" >
+        f_frequency = #{fFrequency,jdbcType=INTEGER},
+      </if>
+      <if test="fCheckVariableNull != null" >
+        f_check_variable_null = #{fCheckVariableNull,jdbcType=TINYINT},
+      </if>
+      <if test="fNodataHandle != null" >
+        f_nodata_handle = #{fNodataHandle,jdbcType=TINYINT},
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null" >
+        f_update_user = #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fEncrypt != null" >
+        f_encrypt = #{fEncrypt,jdbcType=TINYINT},
+      </if>
+      <if test="fVersion != null" >
+        f_version = #{fVersion,jdbcType=INTEGER},
+      </if>
+    </set>
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleItem" >
+    update t_rule_item
+    set f_app_id = #{fAppId,jdbcType=VARCHAR},
+      f_rule_id = #{fRuleId,jdbcType=VARCHAR},
+      f_rule_item_id = #{fRuleItemId,jdbcType=INTEGER},
+      f_rule_expression = #{fRuleExpression,jdbcType=VARCHAR},
+      f_rule_variable_list = #{fRuleVariableList,jdbcType=VARCHAR},
+      f_rule_param_list = #{fRuleParamList,jdbcType=VARCHAR},
+      f_rule_pass_score = #{fRulePassScore,jdbcType=DOUBLE},
+      f_rule_reject_score = #{fRuleRejectScore,jdbcType=DOUBLE},
+      f_rule_nodata_score = #{fRuleNodataScore,jdbcType=DOUBLE},
+      f_state = #{fState,jdbcType=TINYINT},
+      f_remark = #{fRemark,jdbcType=VARCHAR},
+      f_is_exclusive = #{fIsExclusive,jdbcType=TINYINT},
+      f_pass_condition = #{fPassCondition,jdbcType=TINYINT},
+      f_post_handle = #{fPostHandle,jdbcType=TINYINT},
+      f_post_handle_expire_day = #{fPostHandleExpireDay,jdbcType=INTEGER},
+      f_post_handle_reason = #{fPostHandleReason,jdbcType=VARCHAR},
+      f_blacklist_type = #{fBlacklistType,jdbcType=TINYINT},
+      f_frequency = #{fFrequency,jdbcType=INTEGER},
+      f_check_variable_null = #{fCheckVariableNull,jdbcType=TINYINT},
+      f_nodata_handle = #{fNodataHandle,jdbcType=TINYINT},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      f_update_user = #{fUpdateUser,jdbcType=VARCHAR},
+      f_encrypt = #{fEncrypt,jdbcType=TINYINT},
+      f_version = #{fVersion,jdbcType=INTEGER}
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,300 @@
+@charset "utf-8";
+
+@import "variables";
+
+.tree-panel {
+	position: absolute;
+	z-index: 3;
+
+	top: 0;
+	left: 0;
+
+	width: 550px;
+	max-height: 450px;
+
+	border: 1px solid $btnDefaultBorderColor;
+
+	color: #666;
+
+	.tree-header {
+		height: 44px;
+
+		padding-left: $marginLeft;
+		padding-right: $marginLeft;
+
+		border-bottom: 1px solid $borderColor;
+
+		background-color: $baseBg;
+
+		.title {
+			margin: 0;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 44px;
+
+			color: #666;
+
+			.title-after {
+				float: right;
+
+				height: 44px;
+			}
+		}
+	}
+
+	.tree-content {
+		height: 402px;
+
+		:after {
+			display: block;
+			clear: both;
+
+			content: '';
+		}
+
+		.left,
+		.right {
+
+			.title {
+				height: 34px;
+				line-height: 34px;
+
+				.title-after {
+					float: right;
+				}
+			}
+		}
+
+		.left {
+			float: left;
+			overflow-y: auto;
+
+			width: 50%;
+			height: 100%;
+
+			padding: 10px $marginLeft;
+
+			background-color: #fafafa;
+
+			&.full-width {
+				float: none;
+
+				width: 100%;
+			}
+
+			.content {
+				position: relative;
+				overflow: auto;
+
+				min-height: 348px;
+			}
+
+			.search-result-panel {
+				display: none;
+				position: absolute;
+				z-index: 3;
+
+				top: 5px;
+				right: 0;
+				bottom: 0;
+				left: 0;
+
+				background-color: #fafafa;
+
+				&.active {
+					display: block;
+				}
+			}
+
+			.tree-list {
+				list-style: none;
+
+				padding-left: 0;
+				padding-top: 10px;
+
+				.tree-list {
+					padding-top: 0;
+					padding-left: 20px;
+				}
+
+				.icon-left,
+				.text {
+					display: inline-block;
+					vertical-align: middle;
+				}
+
+				.item-right {
+					float: right;
+
+					height: 26px;
+				}
+
+				.list-item {
+					.item-content {
+						// height: 26px;
+						line-height: 26px;
+
+					}
+				}
+			}
+		}
+
+		.right {
+			float: left;
+			overflow-y: auto;
+
+			width: 50%;
+			height: 100%;
+			padding: 10px $marginLeft;
+
+			background-color: #fff;
+
+			.title {
+				color: #999;
+
+				.title-after {
+					cursor: pointer;
+				}
+			}
+
+			.content {
+				.selected-list {
+					list-style: none;
+					padding-left: 0;
+					padding-top: 10px;
+
+					.list-item {
+						.item-content {
+							border-bottom: 1px solid $borderColor;
+
+							height: 30px;
+							line-height: 30px;
+
+							.text {
+								display: inline-block;
+							}
+
+							.item-right {
+								float: right;
+
+								.icon-delcontact {
+									font-size: 16px;
+
+									color: #ccc;
+
+									cursor: pointer;
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		.input-group {
+
+			border: 1px solid $borderColor;
+
+			width: 100%;
+			padding-right: 10px;
+
+			background-color: #fff;
+
+			.input-group-add {
+				background-color: #fff;
+			}
+
+			.form-control,
+			.input-group-add {
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			.form-control,
+			.form-control:focus,
+			.form-control:hover {
+				border: none;
+				box-shadow: none;
+				outline: none;
+			}
+
+			.icon-search {
+				color: #ccc;
+			}
+
+		}
+	}
+
+	.checkbox-wrap {
+		display: inline-block;
+		position: relative;
+		vertical-align: middle;
+
+		width: 15px;
+		height: 15px;
+		line-height: 1.2;
+
+		& + .text {
+			display: inline-block;
+			vertical-align: middle;
+
+			margin-left: 5px;
+		}
+
+		& + .checkbox-wrap {
+			margin-left: 10px;
+		}
+
+		input[type="checkbox"] {
+			position: absolute;
+			display: block;
+			z-index: 2;
+
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			margin: 0;
+			opacity: 0;
+			cursor: pointer;
+
+			&[checked="checked"] + .checkbox {
+				.glyphicon-ok {
+					display: inline-block;
+				}
+			}
+
+			& + .checkbox {
+				position: absolute;
+				display: block;
+				z-index: 1;
+
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+
+				border: 1px solid $borderColor;
+
+				height: 100%;
+				min-height: 100%;
+				margin-top: 0;
+				margin-bottom: 0;
+				padding: 0;
+				text-align: center;
+				font-size: 0;
+
+				background-color: #fff;
+				cursor: pointer;
+
+				.glyphicon-ok {
+					display: none;
+
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>树形结构</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/tree.css">
+</head>
+<body>
+    <div>
+        <button class="btn btn-success" id="js-add" type="button">添加</button>
+    </div>
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script src="../../../dist/js/tree.js"></script>
+    <script>
+        $('#js-add').on('click', function () {
+            var $this = $(this);
+
+            $.ajax({
+                type: "POST",
+                url:'tree.json',
+                dataType: 'json',
+                success: function (data) {
+
+                    $this.TreePanel({
+//                        isNoTree: true,
+                        position: 'center',
+                        isGroup: true,
+//                        originalData: [{id: '111',name:'jj'},{id: '111',name:'jj'}], // 编辑时候如果有数据需要初始化
+                        data: data,
+                        submitFun: function (selectedList) {
+                            console.log('hello')
+                        }
+
+                    })
+                }
+            })
+        })
+    </script>
+</body>
+</html>

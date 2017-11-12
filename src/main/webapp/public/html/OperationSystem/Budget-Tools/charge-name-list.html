@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>费用名称列表</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/table.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+</head>
+<body>
+<div class="container-main">
+    <div class="content">
+        <!--按钮操作-->
+        <div class="operation-btns">
+            <button class="btn btn-success js-update-schedule" name="activate" type="button">
+                <span class="icon icon-add icon-left"></span>新增
+            </button>
+            <button class="btn btn-success js-update-schedule" name="activate" type="button">
+                <span class="icon icon-add icon-left"></span>新增子类
+            </button>
+            <button class="btn btn-info js-update-schedule" name="activate" type="button">
+                <span class="icon icon-edit icon-left"></span>编辑
+            </button>
+            <button class="btn btn-info js-update-schedule" name="activate" type="button">
+                <span class="icon icon-log icon-left"></span>操作日志
+            </button>
+        </div>
+        <!--按钮操作 END-->
+
+        <!-- 搜索部分 -->
+        <div class="search-box clear js-search-box">
+            <div class="js-form-wrap form-wrap">
+                <form class="form-horizontal js-form clear" style="display: block;">
+                    <div class="form-group" data-rule="schedule_id_rule">
+                        <label class="control-label">费用名称：</label>
+                        <input type="text" class="form-control form-list" placeholder="输入关键字" name="schedule_id" value="">
+                    </div>
+                    <div class="form-group" data-rule="schedule_progress_rule">
+                        <label class="control-label">费用类型：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="请选择">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" data-rule="schedule_progress_rule">
+                        <label class="control-label">状态：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="请选择">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="fr btn-wrap">
+                        <button class="btn btn-info">搜索</button>
+                        <button class="btn btn-default ceee">清空</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- 搜索部分 END -->
+
+
+        <!--表格明细-->
+        <div class="table-panel panel-white box table-panel-full row-box">
+            <div class="table-wrap box-content">
+                <div class="table-header-wrap js-table-header-wrap">
+                    <table class="table tableScroll-copy table-border table-full table-fix-height table-header table-fixed-sm js-table-header">
+                        <colgroup>
+                            <col width="42px">
+                            <col width="16.5%">
+                            <col width="16.5%">
+                            <col width="16.5%">
+                            <col width="16.5%">
+                            <col width="16.5%">
+                            <col width="16.5%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th class="txtIndent">
+                                <div class="checkbox-wrap js-select-all">
+                                    <input type="checkbox">
+                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                </div>
+                            </th>
+                            <th>费用名称</th>
+                            <th>费用类型</th>
+                            <th>必填项</th>
+                            <th>费用明细</th>
+                            <th>类型中排序</th>
+                            <th>状态</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="table-body-wrap js-table-body-wrap">
+                    <table class="table tableScroll-copy table-border table-full js-table table-fix-height">
+                        <colgroup>
+                            <col width="42px">
+                            <col width="16.5%">
+                            <col width="16.5%">
+                            <col width="16.5%">
+                            <col width="16.5%">
+                            <col width="16.5%">
+                            <col width="16.5%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="txtIndent">
+                                    <div class="checkbox-wrap js-checkbox">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                </td>
+                                <td class="max-td">
+                                    <span class="text-of retract1">演出费</span>
+                                </td>
+                                <td class="max-td">
+                                    项目均摊预算
+                                </td>
+                                <td>是</td>
+                                <td><a href="javascript:" class="link">12</a></td>
+                                <td>A01</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="txtIndent">
+                                    <div class="checkbox-wrap js-checkbox">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                </td>
+                                <td class="max-td">
+                                    <span class="text-of retract1">演出费</span>
+                                </td>
+                                <td class="max-td">
+                                    项目均摊预算
+                                </td>
+                                <td>是</td>
+                                <td><a href="javascript:" class="link">12</a></td>
+                                <td>A01</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="txtIndent">
+                                    <div class="checkbox-wrap js-checkbox">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                </td>
+                                <td class="max-td">
+                                    <span class="text-of retract1">演出费</span>
+                                </td>
+                                <td class="max-td">
+                                    项目均摊预算
+                                </td>
+                                <td>是</td>
+                                <td><a href="javascript:" class="link">12</a></td>
+                                <td>A01</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="txtIndent">
+                                    <div class="checkbox-wrap js-checkbox">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                </td>
+                                <td class="max-td">
+                                    <span class="text-of retract1">演出费</span>
+                                </td>
+                                <td class="max-td">
+                                    项目均摊预算
+                                </td>
+                                <td>是</td>
+                                <td><a href="javascript:" class="link">12</a></td>
+                                <td>A01</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--表格明细 END-->
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* 全局变量 */
+/* 全局变量 END */
+/* 字体样式变量 */
+/* 字体样式变量 END */
+/* 框架头部变量 */
+/* 框架头部变量 END */
+/* 框架侧边导航变量 */
+/* 框架侧边导航变量 END */
+/* 头部导航变量 */
+/* 头部导航变量 END */
+/* iframe 内部变量 */
+/* iframe 内部变量 END */
+/* 表格变量 */
+/* 表格变量 END */
+/* 按钮公共变量 */
+/* 按钮公共变量 END */
+/* 表单样式 */
+/* 模糊查询样式变量 */
+/* 模糊查询样式变量 END */
+/* 表单样式 END */
+/* 正常隐藏状态图标样式 */
+/* 正常隐藏状态图标样式 END */
+/* 危险操作颜色 */
+/* 危险操作颜色 END */
+/* module分块背景色 */
+/* module分块背景色 END */
+/* 搜索表单变量 */
+/* 搜索表单变量 END */
+/*common-tree 默认主题 START*/
+.common-tree-wrap {
+  min-height: 200px;
+  background: white;
+  border: 1px solid #eee;
+  min-width: 200px;
+  width: 200px;
+  position: absolute;
+  left: 0;
+  top: 37px;
+  z-index: 5;
+  max-height: 600px;
+  overflow-y: auto;
+  width: 100%;
+  overflow-x: auto;
+  /*.common-tree-item:hover{
+  	background-color: #696969;color:white;
+  }*/
+  /*.common-tree-wrap .selected{
+  	background-color: #696969;color:white;
+  }*/ }
+  .common-tree-wrap .common-tree-title {
+    text-indent: 9px;
+    height: 35px;
+    line-height: 35px;
+    color: #565656;
+    border-bottom: 1px solid #e6e3e3;
+    background-color: #efefef; }
+  .common-tree-wrap .common-tree-node {
+    margin-bottom: 3px;
+    /*
+    .common-tree-node-title:hover{
+    	background-color: #d4d2af;
+    }
+    */ }
+    .common-tree-wrap .common-tree-node .common-tree-node {
+      margin-left: 20px; }
+    .common-tree-wrap .common-tree-node .common-tree-node-title {
+      background-color: #eceac7;
+      padding: 6px;
+      cursor: pointer;
+      position: relative; }
+      .common-tree-wrap .common-tree-node .common-tree-node-title input {
+        position: absolute;
+        right: 10px; }
+  .common-tree-wrap .common-tree-item {
+    margin-left: 20px;
+    background-color: #fffdec;
+    padding: 6px;
+    position: relative;
+    cursor: pointer; }
+    .common-tree-wrap .common-tree-item input {
+      position: absolute;
+      right: 10px; }
+  .common-tree-wrap .common-tree-children-wrap {
+    display: none; }
+
+/*common-tree 默认主题 END*/
+/*common-tree 主题1 START*/
+.common-tree-wrap {
+  background: #fafafa;
+  height: 280px;
+  /*.selected{
+  	background-color: #ccc;color: #666
+  }*/ }
+  .common-tree-wrap .common-tree-node {
+    background-color: #fafafa; }
+    .common-tree-wrap .common-tree-node .common-tree-node-title {
+      background-color: #fafafa; }
+  .common-tree-wrap .common-tree-item {
+    background-color: #fafafa; }
+  .common-tree-wrap .common-tree-select-option:hover {
+    background-color: #eee;
+    color: #666; }
+
+/*common-tree 主题1 END*/
+
+/*# sourceMappingURL=common-tree-wrap.css.map */

@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+@import "variables";
+
+.btn-wrap {
+	&:after {
+		display: block;
+		clear: both;
+		content: '';
+	}
+}
+
+.btn {
+	//padding: 6px 12px;
+	// padding: 6px 0;
+	&.btn-lg {
+		padding: 8px 12px;
+		font-size: $baseFontSize;
+	}
+
+	&.btn-default {
+		color: inherit;
+	}
+
+	&.btn-default {
+		border-color: $btnDefaultBorderColor;
+		background-color: $btnDefaultColor;
+
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			color: $btnDefaultActiveFontColor;
+			border-color: $btnDefaultActiveBorderColor;
+		}
+	}
+
+	&.btn-border-success {
+		border-color: $btnBorderSuccessColor;
+		background-color: $btnDefaultColor;
+		color: $btnBorderSuccessFontColor;
+
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			color: $btnBorderSuccessFontColorActive;
+			border-color: $btnBorderSuccessColorActive;
+		}
+	}
+
+	&.btn-primary {
+		border-color: $btnPrimaryColor;
+		background-color: $btnPrimaryColor;
+
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			color: $btnFontColorActive;
+			border-color: $btnPrimaryColorActive;
+			background-color: $btnPrimaryColorActive;
+		}
+	}
+
+	&.btn-success {
+		border-color: $btnSuccessColor;
+		background-color: $btnSuccessColor;
+
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			color: $btnFontColorActive;
+			border-color: $btnSuccessColorActive;
+			background-color: $btnSuccessColorActive;
+		}
+	}
+
+	&.btn-info {
+		border-color: $btnInfoColor;
+		background-color: $btnInfoColor;
+
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			color: $btnFontColorActive;
+			border-color: $btnInfoColorActive;
+			background-color: $btnInfoColorActive;
+		}
+	}
+
+	&.btn-warning {
+		border-color: $btnWarnColor;
+		background-color: $btnWarnColor;
+
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			color: $btnFontColorActive;
+			border-color: $btnWarnColorActive;
+			background-color: $btnWarnColorActive;
+		}
+	}
+
+	&.btn-newsubmit {
+		height: 34px;
+		color: #fff;
+		padding: 0 23px;
+		border-color: #28b779;
+		background-color: #28b779;
+
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			//color: $btnFontColorActive;
+			//border-color: $btnSuccessColorActive;
+			//background-color: $btnSuccessColorActive;
+		}
+	}
+
+	.icon {
+		&.icon-left {
+			margin-right: 4px;
+		}
+	}
+
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批文管理</title>
+    <link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/table.scss">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+</head>
+<body>
+<div class="container-main">
+    <div style="width: 100%;" class="content">
+        <!--按钮操作-->
+        <div class="operation-btns">
+            <button class="btn btn-info js-update-schedule" name="activate" type="button">
+                <span class="icon icon-log icon-left"></span>操作日志
+            </button>
+        </div>
+        <!--按钮操作 END-->
+
+        <!-- 搜索部分 -->
+        <div class="search-box clear js-search-box">
+            <div class="js-form-wrap form-wrap">
+                <form class="form-horizontal js-form clear" style="display: block;">
+                    <div class="form-group" data-rule="schedule_id_rule">
+                        <label class="control-label">批文号：</label>
+                        <input type="text" class="form-control form-list" placeholder="请输入批文号" name="schedule_id" value="">
+                    </div>
+                    <div class="form-group" data-rule="schedule_progress_rule">
+                        <label class="control-label">类型：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="请选择">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" data-rule="schedule_sn_rule">
+                        <label class="control-label">排期名称：</label>
+                        <input type="text" class="form-control form-list" placeholder="输入关键字" name="schedule_sn" value="">
+                    </div>
+                    <div class="form-group" data-rule="schedule_sn_rule">
+                        <label class="control-label">排期编码：</label>
+                        <input type="text" class="form-control form-list" placeholder="输入排期编码" name="schedule_sn" value="">
+                    </div>
+                    <div class="form-group" data-rule="schedule_progress_rule">
+                        <label class="control-label">城市：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="选择城市">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" data-rule="schedule_progress_rule">
+                        <label class="control-label">是否涉外：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="请选择">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="form-group form-lg" data-rule="show_time_rule">
+                        <label class="control-label">归档时间：</label>
+                        <input type="text" class="form-control form-list" name="show_time" value="" placeholder="YYYY-MM-DD" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})">
+                        <span class="c-999">至</span>
+                        <input type="text" class="form-control form-list" name="show_time_end" value="" placeholder="YYYY-MM-DD" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})">
+                    </div>
+                    <div class="form-group" data-rule="schedule_progress_rule">
+                        <label class="control-label">报批负责人：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="请选择">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" data-rule="schedule_progress_rule">
+                        <label class="control-label">借阅状态：</label>
+                        <div class="blur-panel js-blur-panel progress-list">
+                            <input type="text" class="form-control form-list js-blur-input progess-list" placeholder="请选择">
+                            <span class="icon icon-menu-block-down"></span>
+                            <div class="blur-wrap js-blur-wrap"><ul class="list-block"></ul></div></div>
+                    </div>
+                    <div class="fr btn-wrap">
+                        <button class="btn btn-info">搜索</button>
+                        <button class="btn btn-default ceee">清空</button>
+                    </div>
+                </form>
+            </div>
+            <!--展开和收起图标-->
+            <div class="folder-wrap" style="margin-top: -10px;">
+                <div class="text-wrap">
+                    <div class="text js-search-folder">
+                        <span class="js-text-info"></span>
+                        <div class="folder">
+                            <div class="triangle left"></div>
+                            <div class="rect"><span class="icon icon-menu-block-down icon-up js-icon icon-up"></span></div>
+                            <div class="triangle right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 搜索部分 END -->
+
+        <!--表格明细-->
+        <div class="table-panel panel-white box table-panel-full row-box" style="text-align: center">
+            <div class="table-wrap box-content">
+                <div class="table-header-wrap js-table-header-wrap">
+                    <table class="table tableScroll table-border table-full table-fix-height table-header js-table-header">
+                        <colgroup>
+                            <col width="42px">
+                            <col width="12%">
+                            <col width="12%">
+                            <col width="16%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="16%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;text-indent: 0px;">
+                                    <div class="checkbox-wrap js-select-all">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                </th>
+                                <th>批文号</th>
+                                <th>类型</th>
+                                <th>排期名称</th>
+                                <th>城市</th>
+                                <th>是否涉外</th>
+                                <th>报批负责人</th>
+                                <th>附件</th>
+                                <th>归档时间</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="table-body-wrap js-table-body-wrap">
+                    <table class="table tableScroll table-border table-full js-table table-fix-height">
+                        <colgroup>
+                            <col width="42px">
+                            <col width="12%">
+                            <col width="12%">
+                            <col width="16%">
+                            <col width="10%">
+                            <col width="10%">
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="16%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="checkbox-wrap js-checkbox">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                </td>
+                                <td class="max-td">
+                                    小橙堡儿童剧团
+                                </td>
+                                <td class="max-td">
+                                    小橙堡儿童剧团
+                                </td>
+                                <td>中国</td>
+                                <td>深圳</td>
+                                <td>1886666666</td>
+                                <td>玲玲</td>
+                                <td><span class="icon icon-download"style="text-indent: 0px;"></span></td>
+                                <td>2017.09.28 09:30</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox-wrap js-checkbox">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                </td>
+                                <td class="max-td">
+                                    小橙堡儿童剧团
+                                </td>
+                                <td class="max-td">
+                                    小橙堡儿童剧团
+                                </td>
+                                <td>中国</td>
+                                <td>深圳</td>
+                                <td>1886666666</td>
+                                <td>玲玲</td>
+                                <td>
+                                    <span class="icon icon-download" style="text-indent: 0px;"></span>
+                                </td>
+                                <td>2017.09.28 09:30</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox-wrap js-checkbox">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                </td>
+                                <td class="max-td">
+                                    小橙堡儿童剧团
+                                </td>
+                                <td class="max-td">
+                                    小橙堡儿童剧团
+                                </td>
+                                <td>中国</td>
+                                <td>深圳</td>
+                                <td>1886666666</td>
+                                <td>玲玲</td>
+                                <td>
+                                    <span class="icon icon-download" style="text-indent: 0px;"></span>
+                                </td>
+                                <td>2017.09.28 09:30</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox-wrap js-checkbox">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                </td>
+                                <td class="max-td">
+                                    小橙堡儿童剧团
+                                </td>
+                                <td class="max-td">
+                                    小橙堡儿童剧团
+                                </td>
+                                <td>中国</td>
+                                <td>深圳</td>
+                                <td>1886666666</td>
+                                <td>玲玲</td>
+                                <td><span class="icon icon-download" style="text-indent: 0px;"></span></td>
+                                <td>2017.09.28 09:30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 分页 -->
+                <div class="pagination-panel js-pagination-panel">
+                    <div class="pages-wrap">
+                        <div class="options-panel js-options-panel none">
+                            <div class="checkbox-item">
+                                <div class="checkbox-wrap js-select-all">
+                                    <input type="checkbox">
+                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                </div>
+                                <span class="text">选择</span>
+                            </div>
+
+                            <div class="options-wrap">
+                                <a class="option-item ">编辑</a> |
+                                <a class="option-item gray">删除</a>
+                            </div>
+                        </div>
+                        <div class="total-wrap">
+                            共<span class="total">114</span>条，
+                            每页
+                            <select class="pages-select form-control">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                            </select>
+                            <span class="current-page">12</span>/
+                            <span class="total-pages">15</span>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default disabled">
+                                    <span class="icon icon-fast-backward"></span>
+                                </button>
+                                <button type="button" class="btn btn-default">
+                                    <span class="icon icon-step-backward"></span>
+                                </button>
+                                <button type="button" class="btn btn-default">
+                                    <span class="icon icon-step-forward"></span>
+                                </button>
+                                <button type="button" class="btn btn-default">
+                                    <span class="icon icon-fast-forward"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 分页 END -->
+
+            </div>
+        </div>
+        <!--表格明细 END-->
+    </div>
+</div>
+</body>
+</html>

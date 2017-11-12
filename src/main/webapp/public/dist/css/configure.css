@@ -1,0 +1,275 @@
+@font-face {
+  font-family: 'iconfont';
+  /* project id 233162 */
+  src: url("http://at.alicdn.com/t/font_5pe6uu936r24vx6r.eot");
+  src: url("http://at.alicdn.com/t/font_5pe6uu936r24vx6r.eot?#iefix") format("embedded-opentype"), url("http://at.alicdn.com/t/font_5pe6uu936r24vx6r.woff") format("woff"), url("http://at.alicdn.com/t/font_5pe6uu936r24vx6r.ttf") format("truetype"), url("http://at.alicdn.com/t/font_5pe6uu936r24vx6r.svg#iconfont") format("svg"); }
+.module .mission {
+  width: 535px;
+  margin: 20px 0 20px 130px;
+  color: #333; }
+
+.module .mission tr {
+  height: 33px;
+  display: block;
+  margin-bottom: 15px; }
+
+.container-main .module-wrapper .module .mission tr td {
+  float: left;
+  border: none; }
+
+.module .mission .serial {
+  width: 32px;
+  height: 33px;
+  text-align: center;
+  line-height: 33px;
+  background: #fafafa;
+  border-left: 1px solid #e7e7e7;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7; }
+
+.module .mission_name input, .module .mission select {
+  width: 198px;
+  height: 33px;
+  line-height: 33px;
+  border: 1px solid #e7e7e7;
+  text-indent: 10px; }
+
+.mission .executor {
+  width: 69px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  background: #fafafa;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7; }
+
+.container-main .module-wrapper .row-box .mission .role select {
+  width: 198px; }
+
+.module .mission .delete {
+  width: 33px;
+  line-height: 33px;
+  text-align: center;
+  border: none; }
+
+.module .mission .delete span {
+  font-size: 16px;
+  line-height: 33px; }
+.module .mission .delete span:hover{
+  cursor: pointer;
+}
+.mask1, .mask2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.3); }
+  .mask1.hide, .mask2.hide {
+    z-index: -999;
+    opacity: 0;
+    filter: alpha(opacity=0); }
+
+.mask1 .mask_add {
+  width: 430px;
+  border: 2px solid #e5e6e7;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -135px;
+  margin-left: -215px; }
+  .mask1 .mask_add .add_title {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    background: #eaebf0;
+    color: #666; }
+    .mask1 .mask_add .add_title .icon {
+      margin-top: 15px; }
+  .mask1 .mask_add .add_content {
+    padding: 35px 0; }
+    .mask1 .mask_add .add_content .w-label {
+      width: 130px;
+      text-align: right; }
+    .mask1 .mask_add .add_content .star {
+      color: #ed5565; }
+    .mask1 .mask_add .add_content select {
+      width: 100px;
+      height: 30px; }
+    .mask1 .mask_add .add_content .staff {
+      border-left: none;
+      margin-left: -3px; }
+    .mask1 .mask_add .add_content .category {
+      width: 200px; }
+  .mask1 .mask_add .confirm {
+    margin-bottom: 30px;
+    text-align: center; }
+    .mask1 .mask_add .confirm .sure, .mask1 .mask_add .confirm .cancel {
+      display: inline-block;
+      width: 73px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 3px;
+      cursor: pointer; }
+    .mask1 .mask_add .confirm .sure {
+      border: 1px solid #81b67b;
+      background: #81b67b;
+      margin-right: 30px; }
+    .mask1 .mask_add .confirm .cancel {
+      border: 1px solid #ccc; }
+
+.mask2 .mask_minus {
+  width: 430px;
+  border: 2px solid #e5e6e7;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -215px;
+  margin-top: -90px; }
+  .mask2 .mask_minus .minus_title {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    background: #eaebf0;
+    color: #666; }
+    .mask2 .mask_minus .minus_title .icon {
+      margin-top: 15px; }
+  .mask2 .mask_minus .confirm {
+    margin-bottom: 30px;
+    text-align: center; }
+    .mask2 .mask_minus .confirm .sure, .mask2 .mask_minus .confirm .cancel {
+      display: inline-block;
+      width: 73px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 3px;
+      cursor: pointer; }
+    .mask2 .mask_minus .confirm .sure {
+      border: 1px solid #81b67b;
+      background: #81b67b;
+      margin: 30px 30px 30px 0; }
+    .mask2 .mask_minus .confirm .cancel {
+      border: 1px solid #ccc; }
+
+.container-main .module-wrapper .module .configure-table {
+  padding: 22px 0 40px 20px; }
+.container-main .module-wrapper .module table {
+  border-collapse: collapse; }
+.container-main .module-wrapper .module tr {
+  height: 30px;
+  line-height: 30px; }
+  .container-main .module-wrapper .module tr th, .container-main .module-wrapper .module tr td {
+    text-align: center;
+    border: 1px solid #e5e6e7; }
+  .container-main .module-wrapper .module tr th {
+    height: 31px;
+    background: #f5f6f7; }
+  .container-main .module-wrapper .module tr .w-checkbox {
+    width: 70px; }
+  .container-main .module-wrapper .module tr .director, .container-main .module-wrapper .module tr .category {
+    width: 475px; }
+.container-main .module-wrapper .materials {
+  position: relative;
+  padding-left: 100px; }
+  .container-main .module-wrapper .materials .pos-left {
+    position: absolute;
+    left: 20px;
+    top: 0; }
+    .container-main .module-wrapper .materials .pos-left .star {
+      color: #62a7c4; }
+.container-main .module-wrapper .pos-left, .container-main .module-wrapper .mould {
+  font-weight: bold;
+  color: #333; }
+.container-main .module-wrapper .upload {
+  padding: 20px 0 20px 54px; }
+  .container-main .module-wrapper .upload .button .btn-upload {
+    background: #62a7c4;
+    color: #fff; }
+    .container-main .module-wrapper .upload .button .btn-upload:hover {
+      background: #518faa; }
+  .container-main .module-wrapper .upload .button .icon-data-upload {
+    color: #fff;
+    margin-right: 5px; }
+.container-main .module-wrapper .row-box select {
+  width: 88px; }
+.container-main .module-wrapper .row-box .choose-city {
+  margin-right: -5px; }
+.container-main .module-wrapper .row-box .foreign {
+  margin-left: 35px; }
+.container-main .module-wrapper .process-tip .btn-search {
+  border-color: #8990a7;
+  background-color: #8990a7;
+  color: #fff; }
+.container-main .module-wrapper .process-module {
+  padding-top: 20px; }
+  .container-main .module-wrapper .process-module table th {
+    width: 200px; }
+  .container-main .module-wrapper .process-module table .check {
+    color: #666;
+    text-decoration: underline; }
+.container-main .module-wrapper .list-detail a {
+  color: #666; }
+.container-main .module-wrapper .detail {
+  border: 1px solid #e5e6e7;
+  margin-left: -8px; }
+  .container-main .module-wrapper .detail textarea {
+    margin: 5px 0 2px;
+    border: none;
+    outline: none;
+    text-indent: 5px;
+    height: 58px;
+    width: 595px; }
+.container-main .module-wrapper .form-group #distpicker {
+  border: 1px solid #e5e6e7;
+  width: 410px;
+  margin-left: -8px;
+  margin-top: -7px; }
+  .container-main .module-wrapper .form-group #distpicker select {
+    font-size: 14px;
+    border: none;
+    height: 30px;
+    width: 135px;
+    float: left; }
+    .container-main .module-wrapper .form-group #distpicker select:nth-child(2) {
+      border-left: 1px solid #e5e6e7;
+      border-right: 1px solid #e5e6e7; }
+.container-main .module-wrapper .form-group.consuming {
+  margin-top: -10px; }
+.container-main .module-wrapper .form-group input {
+  height: 30px;
+  text-indent: 5px;
+  width: 295px;
+  border: 1px solid #e5e6e7; }
+.container-main .module-wrapper .form-group .days {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  border: 1px solid #e5e6e7;
+  position: relative;
+  margin-right: 3px; }
+  .container-main .module-wrapper .form-group .days input {
+    border: none;
+    outline: none;
+    width: 55px;
+    height: 28px; }
+  .container-main .module-wrapper .form-group .days .icon {
+    display: block;
+    height: 10px;
+    width: 13px;
+    border: 1px solid #e5e6e7;
+    position: absolute;
+    font-size: 10px; }
+  .container-main .module-wrapper .form-group .days .add {
+    top: 1px;
+    right: 1px;
+    cursor: pointer; }
+  .container-main .module-wrapper .form-group .days .minus {
+    right: 1px;
+    bottom: 1px;
+    cursor: pointer; }
+/*# sourceMappingURL=configure.css.map */

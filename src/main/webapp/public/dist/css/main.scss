@@ -1,0 +1,684 @@
+@charset "utf-8";
+@import "variables";
+
+/* 按钮补充样式 */
+
+.btn {
+    &.ceee {
+        border-color: $btnNegativeColor;
+
+        background-color: $btnNegativeColor;
+    }
+}
+
+
+/* select 样式*/
+
+select.form-control {
+    padding: 6px 6px !important;
+}
+
+
+/* 供应商管理 */
+
+//操作按钮样式
+.operation-btns {
+    margin-bottom: 15px;
+    min-width: $minWidth;
+
+    .dropdown {
+        display: inline-block;
+
+        .dropdown-menu {
+            top: 94%;
+
+            min-width: 100px;
+        }
+
+        .dropdown-toggle {
+            &:hover {
+                & + .dropdown-menu {
+                    display: block;
+                }
+            }
+        }
+
+        .dropdown-menu:hover {
+            display: block;
+        }
+    }
+}
+
+//搜索查询样式
+.search-box {
+    margin-bottom: 10px;
+    min-width: $minWidth;
+
+    //background-color: $advanceBg;
+
+    .form-wrap {
+    }
+
+    .form-horizontal {
+        padding: 15px 20px 0 20px;
+
+        background-color: $advanceBg;
+    }
+
+    .form-group {
+        display: inline-block;
+
+        margin-left: 0;
+        margin-right: 10px;
+
+        .form-control {
+            display: inline-block;
+
+            width: $searchInputWidth;
+
+            &.form-list {
+            }
+        }
+
+        .blur-panel.full-width {
+            width: auto;
+        }
+    }
+
+    .fr {
+        margin-bottom: 10px;
+    }
+
+    .folder-wrap {
+        height: 44px;
+        .text-wrap {
+            padding-top: 5px;
+            text-align: center;
+
+            background-color: #fff;
+
+            .text {
+                position: relative;
+                display: block;
+
+                width: 79px;
+                height: 20px;
+
+                margin-left: auto;
+                margin-right: auto;
+
+                &:hover {
+                    color: $searchFolderHoverColor;
+                }
+            }
+        }
+
+        .folder {
+            position: absolute;
+            display: block;
+
+            top: 20px;
+            left: 0;
+
+            width: 79px;
+            height: 10px;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            cursor: pointer;
+
+            &:hover {
+                color: $searchFolderHoverColor;
+            }
+
+            &:after {
+                display: block;
+                clear: both;
+
+                content: '';
+            }
+
+            .triangle {
+                position: absolute;
+
+                top: -3px;
+
+                width: 14px;
+                height: 10px;
+
+                background-color: #fff;
+
+                &.left {
+                    left: 0;
+
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                }
+
+                &.right {
+                    right: 0;
+
+                    transform: rotate(-45deg);
+                    -webkit-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    -ms-transform: rotate(-45deg);
+                }
+            }
+
+            .rect {
+                display: block;
+
+                width: 60px;
+                height: 10px;
+
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+
+                background-color: #fff;
+
+                .icon-menu-block-down {
+                    top: -6px;
+
+                    &.icon-up {
+                        transform: rotate(180deg);
+                        -webkit-transform: rotate(180deg);
+                        -moz-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
+                    }
+                }
+            }
+
+
+        }
+    }
+
+
+}
+
+.search-input-group {
+    .form-control {
+        display: inline-block;
+        vertical-align: middle;
+
+        width: $searchInputWidth;
+    }
+
+    .btn {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+/* 供应商新增编辑 */
+
+.container-wrapper {
+    width: $moduleWidth;
+    //容器头部
+    .container-header {
+        overflow: hidden;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+
+        border-bottom: 1px solid transparent;
+        padding-left: 20px;
+        width: 100%;
+        height: 60px;
+
+        line-height: 60px;
+
+        h5 {
+            display: inline-block;
+            float: left;
+
+            padding-top: 11px;
+
+            font-size: 18px;
+            font-weight: 600;
+            text-overflow: ellipsis;
+        }
+
+        .right-btn {
+            position: absolute;
+
+            width: $moduleWidth;
+
+            text-align: right;
+            .btn {
+                margin-left: 15px;
+                padding: 6px 15px;
+            }
+        }
+    }
+
+
+    .module-wrapper {
+        margin-top: 60px;
+        .module {
+            position: relative;
+
+            margin-bottom: 10px;
+
+            background: $advanceBg;
+            .module-title {
+                border-bottom: 1px solid #e6eaed;
+                padding-left: 16px;
+                height: 45px;
+
+                font-family: "微软雅黑";
+                font-size: 16px;
+                font-weight: 400;
+                font-style: normal;
+                line-height: 45px;
+
+                .title-after {
+                    float: right;
+
+                    height: 45px;
+                    padding-right: $marginLeft;
+
+                    .link {
+                        display: inline-block;
+
+                        height: 45px;
+                        font-size: 12px;
+                        line-height: 45px;
+                    }
+                }
+
+                .help {
+                    margin-left: 15px;
+                }
+            }
+
+            .module-content {
+                overflow-x: hidden;
+                padding: 20px $marginLeft 15px;
+
+                //全背景
+                .full-bg {
+                    position: relative;
+
+                    margin-bottom: 20px;
+                    border: 1px dashed #e6eaed;
+                    border-radius: 8px;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+
+                    background-color: #f5f5f5;
+                    .del-contact {
+                        display: inline-block;
+
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+
+                        font-size: 24px;
+
+                        color: #f00;
+
+                        cursor: pointer;
+                    }
+                }
+
+                //一行两列背景
+                .half-bg {
+                    display: inline-block;
+                    float: left;
+
+                    position: relative;
+
+                    margin-bottom: 20px;
+                    border: 1px dashed #e6eaed;
+                    border-radius: 8px;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    width: 520px;
+
+                    background-color: $moduleItemBg;
+                    &:nth-child(2n) {
+                        margin-left: 20px;
+                    }
+                }
+            }
+
+
+            .form-group {
+                margin-right: 0;
+                margin-left: 0;
+                .control-label {
+                    float: left;
+
+                    padding-right: 0;
+                    padding-left: 0;
+
+                    &.bold-text {
+                        font-weight: 600; 
+                    }
+
+                }
+
+                .blur-panel {
+                    width: 100%;
+
+                    .form-control {
+                        width: 93%;
+                    }
+                }
+
+                //报错提示样式
+                .checked-tip {
+                    display: inline-block;
+
+                    padding-top: 7px;
+                    padding-left: 20px;
+
+                    color: $errorFontColor;
+                }
+            }
+
+            //input新增样式
+            .add-btn {
+                float: right;
+
+                margin-right: 20px;
+                border: 1px solid $btnPrimaryColor;
+
+                color: $btnPrimaryColor;
+                background-color: transparent;
+            }
+
+            //item新增按钮样式
+            .new-btn {
+                margin-left: 12px;
+
+                line-height: 34px;
+
+                color: $btnPrimaryColor;
+
+                cursor: pointer;
+            }
+
+            //详细地址
+            .address-detail {
+                .col-xs-4 {
+                    padding-right: 0;
+                    padding-left: 0;
+                }
+            }
+
+            //资质上传样式
+            .progress-cancel {
+                padding-top: 10px;
+                padding-left: 10px;
+
+                cursor: pointer;
+            }
+            .del-uploadfile {
+                margin-left: 10px;
+
+                color: $warningColor;
+
+                cursor: pointer;
+            }
+            .aptitude {
+                padding: 0 $labelWidth;
+            }
+            //其他样式
+            &.other {
+                padding-top: 30px;
+                .radio-label {
+                    margin-top: 7px;
+                    margin-bottom: 0;
+                    margin-left: 18px;
+                }
+            }
+            //备注样式
+            .comment {
+                width: 600px;
+
+                background: $advanceBg;
+            }
+        }
+    }
+}
+
+
+
+
+
+/* 详情页面补充样式 */
+
+.list-detail {
+    display: inline-block;
+
+    margin-top: 7px;
+    margin-left: 8px;
+    max-width: 848px;
+}
+
+
+/* 场馆管理 */
+
+.operation-btns {
+    //场馆管理提示
+    .operation-tips {
+        display: inline-block;
+
+        margin-left: 10px;
+        padding-top: 5px;
+        padding-left: 16px;
+        width: 233px;
+        height: 28px;
+
+        font-size: 12px;
+
+        background: url("../../images/operation-tips-bg.png")center center no-repeat;
+    }
+}
+
+
+/* 编辑场馆 */
+
+.pays-info {
+    .module-content {
+        //编辑场馆费用样式
+        .select-pays {
+            .control-label {
+                padding-top: 0;
+                select.form-control {
+                    float: right;
+
+                    //width: 85%;
+                }
+            }
+            .remove-item {
+                margin-left: 4px;
+                padding-top: 4px;
+
+                font-size: 24px;
+
+                color: $warningColor;
+
+                cursor: pointer;
+            }
+        }
+        
+        .w-info {
+            position: relative;
+            &::after {
+                position: absolute;
+                top: 6px;
+                right: 10px;
+
+                content: "元";
+            }
+            .form-control {
+                padding-right: 30px;
+            }
+        }
+    }
+}
+
+
+
+/* 复选框补充样式 */
+
+.form-horizontal {
+    .checkbox-item {
+        display: inline-block;
+
+        min-width: 145px;
+
+        .checkbox-wrap {
+            display: inline-block;
+            margin-left: 5px;
+            .checkbox {
+                padding-top: 0;
+                min-height: inherit;
+            }
+        }
+    }
+}
+
+/* 票图 --- 编辑 */
+.w-info {
+    .list-block {
+        list-style: none;
+        padding-left: 0;
+
+        .list-item {
+
+            border: 1px dashed $btnDefaultBorderColor;
+            margin-bottom: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 20px;
+
+            &.list-bg {
+                background-color: $baseBg;
+            }
+
+            &:after {
+                display: block;
+                clear: both;
+
+                content: '';
+            }
+
+            .form-group {
+                &.inline {
+                    float: left;
+
+                    margin-left: 20px;
+                    margin-bottom: 0;
+
+                    .blur-panel-sm {
+                        width: $searchInputWidth;
+
+                        background-color: $advanceBg;
+
+                        .form-control {
+                            width: 80%;
+                        }
+                    }
+
+                    .form-control {
+                        display: inline-block;
+                    }
+
+                    > .icon-delcontact {
+                        margin-top: 9px;
+                        font-size: 16px;
+
+                        cursor: pointer;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+/* 票图 -- 查看 */
+.list-block {
+    list-style: none;
+    padding-left: 0;
+
+    &.price-list {
+        border: 1px dashed $btnDefaultBorderColor;
+
+        background-color: $baseBg;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .list-item {
+            border-bottom: 1px solid $btnDefaultBorderColor;
+
+            padding-top: 5px;
+            padding-bottom: 10px;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:after {
+                display: block;
+                clear: both;
+
+                content: '';
+            }
+
+            .form-group {
+                &.inline {
+                    float: left;
+
+                    width: 150px;
+
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
+    }
+}
+
+.icon-project {
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 16px;
+    height: 16px;
+
+    background: url(../images/icon-project.png) no-repeat;
+    background-size: 100%;
+}
+
+
+.icon-fixed-rt {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+.layui-layer {
+    box-shadow: 1px 1px 36px rgba(0,0,0,.2);
+}
+
+.layui-layer-shade {
+    background-color: #f8f8f8;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}

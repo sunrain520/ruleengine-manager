@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+@import "variables";
+
+input[type="file"] {
+	opacity: 0;
+}
+
+/* 上传控件样式 */
+.progress-bg {
+	position: relative;
+
+	width: 365px;
+	height: 34px;
+
+	background-color: $baseBg;
+
+	.stripes {
+		position: absolute;
+		z-index: 1;
+
+		width: 365px;
+		height: 34px;
+
+		-webkit-background-size: 10px 10px;
+		-moz-background-size: 10px 10px;
+		background-size: 10px 10px;
+	}
+
+	.upload-title {
+		position: absolute;
+		z-index: 2;
+
+		padding-left: 5px;
+		height: 34px;
+
+		line-height: 34px;
+		max-width: 365px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.angled-135 {
+		background-color: #ffe5c8;
+		background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent));
+		background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+		background-image:   -o-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+		background-image:      linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	}
+}
+
+/* 表格上传样式 */
+.table-upload-wrap {
+	text-indent: 0;
+	text-align: left;
+	position: relative;
+	width: 230px;
+	height: 34px;
+	margin-bottom: 0;
+	.upload-title {
+		padding-left: 20px;
+		height: 34px;
+		line-height: 34px;
+		width: 150px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		display: inline-block;
+		float: left;
+	}
+	.progress-num {
+		color: #666;
+		padding-left: 10px;
+	}
+	.del-uploadfile-txt {
+		color: #999;
+		cursor: pointer;
+		padding:0 10px;
+	    line-height: 34px;
+	}
+	.upload-warning {
+		color: #df5462;
+		font-size: 18px;
+		top: 3px;
+	}
+}
+
+.table-upload-picker {
+	display: inline-block;
+	text-indent: 0;
+	padding-left: 20px;
+	cursor: pointer;
+}

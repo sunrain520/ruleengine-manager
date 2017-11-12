@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建任务</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-wrapper">
+            <div class="module-wrapper row">
+                <!--创建报批任务头部-->
+                <div class="container-header js-container-header">
+                    <h5>创建报批任务</h5>
+                    <div class="right-btn">
+                        <button class="btn btn-success">
+                            <span class="icon icon-save icon-left"></span>
+                            保存
+                        </button>
+                        <button class="btn btn-default">
+                            <span class="icon icon-delete icon-left"></span>
+                            取消
+                        </button>
+                    </div>
+                </div>
+                <!--创建任务头部 END-->
+
+                <!--排期信息-->
+                <div class="module row-box">
+                    <div class="module-title">排期信息</div>
+                    <div class="module-content">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="w-label control-label">排期名称：</label>
+                                <div class="list-detail">屈臣氏三生花-我和小鸟和铃铛-深圳</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">批文类型：</label>
+                                <div class="list-detail">文化批文</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">城市：</label>
+                                <div class="list-detail">深圳</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">
+                                    <span class="must">*</span>
+                                    区：</label>
+                                <div class="w-info">
+                                    <select class="form-control" style="width: 50%;">
+                                        <option value="">全部</option>
+                                        <option value="">==</option>
+                                        <option value="">==</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">
+                                    <span class="must">*</span>
+                                    是否涉外：</label>
+                                <div class="w-info">
+                                    <label class="radio-label">
+                                        <input type="radio" value="1" name="foreign" checked>是
+                                    </label><label class="radio-label">
+                                    <input type="radio" value="0" name="foreign">否
+                                </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">
+                                    演出时间：</label>
+                                <div class="list-detail">
+                                    <span class="mr5">2016.09.08 09:00</span>
+                                    <span class="mr5">至</span>
+                                    <span>2016.09.08 11:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--排期信息 END-->
+
+                <!--报批清单-->
+                <div class="module row-box">
+                    <div class="module-title">
+                        报批清单
+                        <div class="title-after">
+                            <a href="javascript:" class="">使用默认清单</a>
+                        </div>
+                    </div>
+                    <!--基础资料-->
+                    <div class="module-content">
+                        <div class="data-wrapper">
+                            <div class="data-title">基础资料：</div>
+                            <div class="data-box">
+                                <table>
+                                    <tbody class="divide-table">
+                                    <tr class="divide-tr">
+                                        <td class="sign-td td-one">1</td>
+                                        <td class="td-two">
+                                            <input type="text" placeholder="请输入资料名称" value="请示（抬头：锦江区文化局）--2份">
+                                        </td>
+                                        <td class="sign-td td-three">模板</td>
+                                        <td class="td-four">
+                                            <div class="line-content">
+                                                <div class="text-doc-wrap c-available">
+                                                    <span class="text-of file-name textIndent20">xxxxxxxxxxxxxxxxxxxxxxxxxxx.</span>
+                                                    <span>.word</span>
+                                                    <!--下划线-->
+                                                    <p></p>
+                                                </div>
+                                                <span class="ml10 remove">删除</span>
+                                                <span class="icon icon-data-upload ml30"></span>
+                                            </div>
+                                            <div class="line-content"  style="text-indent: 20px;">
+                                                <a href="javascript:" class="link">上传</a>
+                                            </div>
+                                        </td>
+                                        <td class="td-five opera-btn">
+                                            <span class="icon icon-delcontact"></span>
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-tr">
+                                        <td class="sign-td td-one">2</td>
+                                        <td class="td-two">
+                                            <input type="text" placeholder="请输入资料名称" value="请示（抬头：锦江区文化局）--2份">
+                                        </td>
+                                        <td class="sign-td td-three">模板</td>
+                                        <td class="td-four">
+                                            <div class="line-content">
+                                                <div class="text-doc-wrap c-available">
+                                                    <span class="text-of file-name textIndent20">xxxxxxxxxxxxxxxxxxxxxxxxxxx.</span>
+                                                    <span>word</span>
+                                                    <!--下划线-->
+                                                    <p></p>
+                                                </div>
+                                                <span class="remove ml10">删除</span>
+                                                <span class="icon icon-data-upload ml30"></span>
+                                            </div>
+                                        </td>
+                                        <td class="td-five opera-btn">
+                                            <span class="icon icon-delcontact"></span>
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-tr">
+                                        <td class="sign-td td-one">2</td>
+                                        <td class="td-two">
+                                            <input type="text" placeholder="请输入资料名称" value="请示（抬头：锦江区文化局）--2份">
+                                        </td>
+                                        <td class="sign-td td-three">模板</td>
+                                        <td class="td-four">
+                                            <div class="line-content">
+                                                <div class="text-doc-wrap c-available">
+                                                    <span class="text-of file-name textIndent20">xxxxxxxxxxxxxxxxxxxxxxxxxxx.</span>
+                                                    <span>word</span>
+                                                    <!--下划线-->
+                                                    <p></p>
+                                                </div>
+                                                <span class="remove ml10">删除</span>
+                                                <span class="icon icon-data-upload ml30"></span>
+                                            </div>
+                                        </td>
+                                        <td class="td-five opera-btn">
+                                            <span class="icon icon-delcontact"></span>
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-tr">
+                                        <td class="sign-td td-one">4</td>
+                                        <td class="td-two">
+                                            <input type="text" placeholder="请输入资料名称" value="请示（抬头：锦江区文化局）--2份">
+                                        </td>
+                                        <td class="sign-td td-three">模板</td>
+                                        <td class="td-four textIndent20">
+                                            <a href="javascript:">上传</a>
+                                        </td>
+                                        <td class="td-five opera-btn">
+                                            <span class="icon icon-delcontact"></span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="data-button">
+                                <button class="btn btn-default new-plus">
+                                    新增
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--基础资料 END-->
+
+                    <!--区域资料-->
+                    <div class="module-content">
+                        <div class="data-wrapper">
+                            <div class="data-title">区域资料：</div>
+                            <div class="data-box">
+                                <table>
+                                    <tbody class="divide-table">
+                                    <tr class="divide-tr">
+                                        <td class="sign-td td-one">1</td>
+                                        <td class="td-two">
+                                            <input type="text" placeholder="请输入资料名称" value="请示（抬头：锦江区文化局）--2份">
+                                        </td>
+                                        <td class="sign-td td-three">模板</td>
+                                        <td class="td-four">
+                                            <div class="line-content">
+                                                <div class="text-doc-wrap c-available">
+                                                    <span class="text-of file-name textIndent20">xxxxxxxxxxxxxxxxxxxxxxxxxxx.</span>
+                                                    <span>.word</span>
+                                                    <!--下划线-->
+                                                    <p></p>
+                                                </div>
+                                                <span class=" remove ml10">删除</span>
+                                                <span class="icon icon-data-upload ml30"></span>
+                                            </div>
+                                            <div class="line-content"  style="text-indent: 20px;">
+                                                <a href="javascript:" class="link">上传</a>
+                                            </div>
+                                        </td>
+                                        <td class="td-five opera-btn">
+                                            <span class="icon icon-delcontact"></span>
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-tr">
+                                        <td class="sign-td td-one">2</td>
+                                        <td class="td-two">
+                                            <input type="text" placeholder="请输入资料名称" value="请示（抬头：锦江区文化局）--2份">
+                                        </td>
+                                        <td class="sign-td td-three">模板</td>
+                                        <td class="td-four">
+                                            <div class="line-content">
+                                                <div class="text-doc-wrap c-available">
+                                                    <span class="text-of file-name textIndent20">xxxxxxxxxxxxxxxxxxxxxxxxxxx.</span>
+                                                    <span>word</span>
+                                                    <!--下划线-->
+                                                    <p></p>
+                                                </div>
+                                                <span class="remove ml10">删除</span>
+                                                <span class="icon icon-data-upload ml30"></span>
+                                            </div>
+                                        </td>
+                                        <td class="td-five opera-btn">
+                                            <span class="icon icon-delcontact"></span>
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-tr">
+                                        <td class="sign-td td-one">2</td>
+                                        <td class="td-two">
+                                            <input type="text" placeholder="请输入资料名称" value="请示（抬头：锦江区文化局）--2份">
+                                        </td>
+                                        <td class="sign-td td-three">模板</td>
+                                        <td class="td-four">
+                                            <div class="line-content">
+                                                <div class="text-doc-wrap c-available">
+                                                    <span class="text-of file-name textIndent20">xxxxxxxxxxxxxxxxxxxxxxxxxxx.</span>
+                                                    <span>word</span>
+                                                    <!--下划线-->
+                                                    <p></p>
+                                                </div>
+                                                <span class="remove ml10">删除</span>
+                                                <span class="icon icon-data-upload ml30"></span>
+                                            </div>
+                                        </td>
+                                        <td class="td-five opera-btn">
+                                            <span class="icon icon-delcontact"></span>
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-tr">
+                                        <td class="sign-td td-one">4</td>
+                                        <td class="td-two">
+                                            <input type="text" placeholder="请输入资料名称" value="请示（抬头：锦江区文化局）--2份">
+                                        </td>
+                                        <td class="sign-td td-three">模板</td>
+                                        <td class="td-four textIndent20">
+                                            <a href="javascript:">上传</a>
+                                        </td>
+                                        <td class="td-five opera-btn">
+                                            <span class="icon icon-delcontact"></span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="data-button">
+                                <button class="btn btn-default new-plus">
+                                    新增
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--区域资料 END-->
+                </div>
+                <!--报批清单 END-->
+
+                <!--报批流程-->
+                <div class="module row-box">
+                    <div class="module-title">
+                        报批流程
+                    </div>
+                    <div class="module-content">
+                        <div class="data-wrapper" style="margin-left: 40px;">
+                            <div class="data-box">
+                                <div class="data-content">
+                                    <ul class="data-list sm-list">
+                                        <li>1</li>
+                                        <li>创建报批任务</li>
+                                        <li>执行者：</li>
+                                        <li>采购支持-玲玲</li>
+                                    </ul>
+                                </div>
+                                <div class="data-content">
+                                    <ul class="data-list sm-list">
+                                        <li>1</li>
+                                        <li>创建报批任务</li>
+                                        <li>执行者：</li>
+                                        <li>采购支持-玲玲</li>
+                                    </ul>
+                                </div>
+                                <div class="data-content">
+                                    <ul class="data-list sm-list">
+                                        <li>1</li>
+                                        <li>创建报批任务</li>
+                                        <li>执行者：</li>
+                                        <li>采购支持-玲玲</li>
+                                        <li>截至日期：</li>
+                                        <li>
+                                            <input type="text" placeholder="选择截止日期" class="chooseDate">
+                                            <span class="icon icon-menu-block-down posi"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--报批流程 END-->
+            </div>
+        </div>
+    </div>
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/approval-tools.js"></script>
+</body>
+</html>

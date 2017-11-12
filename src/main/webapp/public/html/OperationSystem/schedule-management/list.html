@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排期列表</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/js/layer/skin/default/layer.css">
+</head>
+<body>
+
+    <div class="container-main">
+        <div class="content">
+            <!-- 操作部分 -->
+            <div class="operation-btns">
+                <button class="btn btn-info js-nav-item" data-target="schedule-management/add.html" type="button">
+                    <span class="icon icon-edit icon-left"></span>编辑
+                </button>
+                <button class="btn btn-info js-nav-item" data-target="schedule-management/detail.html" type="button">
+                    <span class="icon icon-copy icon-left"></span>复制
+                </button>
+                <button class="btn btn-info js-reviewed" type="button">
+                    <span class="icon icon-examine icon-left"></span>审核
+                </button>
+                <button class="btn btn-info" type="button">
+                    <span class="icon icon-active icon-left"></span>激活
+                </button>
+                <button class="btn btn-info" type="button">
+                    演出取消
+                </button>
+                <button class="btn btn-info" type="button">
+                    <span class="icon icon-eye icon-left"></span>查看进展
+                </button>
+                <button class="btn btn-info" type="button">
+                    <span class="icon icon-add icon-left"></span>添加销售计划
+                </button>
+                <button class="btn btn-info" type="button">
+                    <span class="icon icon-eye icon-left"></span>销售报表
+                </button>
+                <button class="btn btn-warning" type="button">
+                    <span class="icon icon-remove icon-left"></span>删除
+                </button>
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                        导出
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">导出数据</a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" tabindex="-1" href="#">导出模板</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 操作部分END -->
+
+            <div class="">
+                <label class="control-label mr20">待审核：<a class="" href="javascript:;">8</a></label>
+                <label class="control-label">下排期：<a class="must" href="javascript:;">8</a></label>
+            </div>
+
+            <!-- 搜索部分 -->
+            <div class="search-box clear">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label">排期编码：</label>
+                        <input type="text" class="form-control form-list" placeholder="排期编码">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">项目编码：</label>
+                        <input type="text" class="form-control form-list" placeholder="项目编码">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">排期名称：</label>
+                        <input type="text" class="form-control form-list" placeholder="输入关键字">
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">品类：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="选择事业部/子公司">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="大流行">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">城市和场馆：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="选择城市">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="选择场馆">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">演出开始时间：</label>
+                        <input type="text" class="form-control form-list js-blur-input" placeholder="YY-MM-DD">
+                        <span class="c-999">至</span>
+                        <input type="text" class="form-control form-list js-blur-input" placeholder="YY-MM-DD">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">距离演出时间：</label>
+                        <!--<input type="text" class="form-control form-list js-blur-input" placeholder="">-->
+                        <div class="blur-panel inset">
+                            <span>≤</span>
+                            <input type="text" class="form-control form-list" placeholder="">
+                            <span class="">天</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">排期进展：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="选择场馆">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">开票日期：</label>
+                        <input type="text" class="form-control form-list js-blur-input" placeholder="YY-MM-DD">
+                        <span class="c-999">至</span>
+                        <input type="text" class="form-control form-list js-blur-input" placeholder="YY-MM-DD">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">排期状态：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="选择场馆">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="fr btn-wrap">
+                        <button class="btn btn-info">搜索</button>
+                        <button class="btn btn-default ceee">清空</button>
+                    </div>
+                </form>
+            </div>
+            <!-- 搜索部分 END -->
+
+            <!-- 表格明细 -->
+            <div class="table-panel panel-white box table-panel-full row-box">
+                <div class="table-wrap box-content">
+                    <div class="table-scroll">
+                        <div class="table-header-wrap js-table-header-wrap">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th class="w-checkbox" style="position: absolute;z-index: 99;left: 0;">
+                                        <div class="checkbox-wrap js-select-all">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </th>
+                                    <th class="w-id" style="position: absolute;z-index: 99;">ID</th>
+                                    <th class="js-sort-item w-name" style="position:absolute; z-index: 99;">排期编码
+                                        <div class="options-wrap fr">
+                                            <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                            <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                        </div>
+                                    </th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">排期名称</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">事业部/子公司</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">品类</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">城市</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">演出场馆</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">演出开始时间</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">距离演出时间</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">开票时间</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">预算</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">合同</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">报批</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">宣传</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">票图</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">执行</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;" class="js-sort-item">
+                                        排期进展
+                                        <div class="options-wrap fr">
+                                            <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                            <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                        </div>
+                                    </th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">成本</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">销售计划</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">销售额</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">完成率</th>
+                                    <th class="js-sort-item" style="width: 200px; min-width: 200px; max-width: 200px;">排期状态
+                                        <div class="options-wrap fr">
+                                            <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                            <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                        </div>
+                                    </th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">备注</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap" style="padding-left: 171px;">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+
+                                <tbody>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute;z-index: 1;left: 0;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-id" style="position: absolute;z-index: 1;left: 41px;">
+                                        000001
+                                    </td>
+                                    <td class="w-name" style="position:absolute; z-index: 1; left: 121px;">
+                                        0001
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;" class="js-copy-name">
+                                        <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">万有天橙</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">小流行</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">背景</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">乐视生态体育</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-5-10 09：00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">120</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-- </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">10</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        <p><span class="icon icon-normal"></span>项目预算</p>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        <p><span class="icon icon-normal"></span>演出合同</p>
+                                        <p><span class="icon icon-normal"></span>场地合同</p>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        <p><span class="icon icon-normal"></span>演出批文</p>
+                                        <p><span class="icon icon-normal"></span>文化批文</p>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        <p><span class="icon icon-delcontact"></span>原始宣传资料</p>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        <p><span class="icon icon-delcontact"></span>票图</p>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        <p><span class="icon icon-delcontact"></span>执行单</p>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        <span class="c-available"></span>可开票
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">1000.00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">1000.00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">80%</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">正常</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">审核通过</td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 分页 -->
+                        <div class="pagination-panel js-pagination-panel">
+
+                            <!-- 水平滚动条 -->
+                            <div class="table-scroll-horizontal js-table-scroll-horizontal" style="margin-left: 675px;">
+                                <div class="scroll js-scroll" style="">
+                                </div>
+                            </div>
+                            <!-- 水平滚动条 END -->
+
+                            <div class="pages-wrap">
+                                <div class="options-panel js-options-panel none">
+                                    <div class="checkbox-item">
+                                        <div class="checkbox-wrap js-select-all">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span class="text">选择</span>
+                                    </div>
+
+                                    <div class="options-wrap">
+                                        <a class="option-item ">编辑</a> |
+                                        <a class="option-item gray">删除</a>
+                                    </div>
+                                </div>
+                                <div class="total-wrap">
+                                    共<span class="total">114</span>条，
+                                    每页
+                                    <select class="pages-select form-control">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        <option value="500">500</option>
+                                        <option value="1000">1000</option>
+                                    </select>
+                                    <span class="current-page">12</span>/
+                                    <span class="total-pages">15</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default disabled">
+                                            <span class="icon icon-fast-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-forward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-fast-forward"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 分页 END -->
+                    </div>
+
+                </div>
+            </div>
+            <!-- 表格明细 END -->
+
+        </div>
+    </div>
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script src="../../../dist/js/layer/layer.js"></script>
+
+    <script>
+
+        /*
+         * 审核弹框
+         */
+        $('.js-reviewed').on('click', function () {
+            var html = '<div class="form-horizontal">';
+
+            html += '<div class="form-group ml0 js-form-group">';
+            html += '<div class="radio">';
+            html += '<label>';
+            html += '<input type="radio" name="optionsRadios" class="js-pass" value="option1" checked>通过';
+            html += '</label>';
+            html += '</div>';
+            html += '</div>';
+
+            html += '<div class="form-group ml0 js-form-group">';
+            html += '<div class="radio">';
+            html += '<label>';
+            html += '<input type="radio" name="optionsRadios" class="js-fail-pass" value="option1" >不通过';
+            html += '</label>';
+            html += '</div>';
+            html += '</div>';
+
+            html += '<div class="form-group ml0 js-textarea-wrap none">';
+            html += '<textarea class="form-control" rows="3" style="width: 300px;" maxlength="50" placeholder="请输入理由，不超过50个字"></textarea>';
+            html += '</div>';
+
+            html += '</div>';
+
+            layer.open({
+                title: '审核',
+                content: html,
+                area: ['360px', '300px'],
+                btn: ['确定', '取消'],
+                yes: function () {
+                    console.log('yes')
+                }
+            });
+        });
+
+        // 列表页审核未通过
+        $('body').on('click', '.js-fail-pass', function () {
+            var $this = $(this);
+
+            if($this.prop('checked')) {
+                $this.closest('.js-form-group').nextAll('.js-textarea-wrap').slideDown();
+            }
+        }).on('click', '.js-pass', function () {
+            var $this = $(this);
+
+            if($this.prop('checked')) {
+                $this.closest('.js-form-group').nextAll('.js-textarea-wrap').hide();
+            }
+        });
+
+
+        /*
+         * 导出
+         */
+        function exportLayer () {
+            var html = '<div class="form-horizontal">';
+
+            html += '<div class="form-group">';
+            html += '<label class="w-label w-label-layer control-label"><span class="must">*</span>文件名：</label>';
+            html += '<div class="w-info w-info-layer">';
+            html += '<input class="form-control" value="" placeholder="输入文件名">';
+            html += '</div>';
+            html += '</div>';
+
+            html += '<div class="form-group">';
+            html += '<label class="w-label w-label-layer control-label"><span class="must">*</span>导出内容：</label>';
+            html += '<div class="w-info w-info-layer">';
+            html += '<select class="form-control">';
+            html += '<option value="">全部数据</option>';
+            html += '<option value="">选中数据</option>';
+            html += '</select>';
+            html += '</div>';
+            html += '</div>';
+
+            html += '<div class="form-group">';
+            html += '<label class="w-label w-label-layer control-label text-top"><span class="must">*</span>导出字段：</label>';
+            html += '<div class="w-info auto-width" style="width: 580px;">';
+
+            html += '<div class="checkbox-item">';
+            html += '<div class="checkbox-wrap js-checkbox">';
+            html += '<input type="checkbox">';
+            html += '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>';
+            html += '</div>';
+            html += '儿童亲子';
+            html += '</div>';
+
+            html += '<div class="checkbox-item">';
+            html += '<div class="checkbox-wrap js-checkbox">';
+            html += '<input type="checkbox">';
+            html += '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>';
+            html += '</div>';
+            html += '儿童亲子';
+            html += '</div>';
+
+            html += '<div class="checkbox-item">';
+            html += '<div class="checkbox-wrap js-checkbox">';
+            html += '<input type="checkbox">';
+            html += '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>';
+            html += '</div>';
+            html += '儿童亲子';
+            html += '</div>';
+
+            html += '<div class="checkbox-item">';
+            html += '<div class="checkbox-wrap js-checkbox">';
+            html += '<input type="checkbox">';
+            html += '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>';
+            html += '</div>';
+            html += '儿童亲子';
+            html += '</div>';
+
+            html += '<div class="checkbox-item">';
+            html += '<div class="checkbox-wrap js-checkbox">';
+            html += '<input type="checkbox">';
+            html += '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>';
+            html += '</div>';
+            html += '儿童亲子';
+            html += '</div>';
+
+            html += '</div>';
+            html += '</div>';
+
+            html += '</div>';
+
+
+            layer.open({
+                title: '数据导出',
+                content: html,
+                area: ['766px', '350px'],
+                btn: ['确定', '取消'],
+                yes: function () {
+                    console.log('yes')
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

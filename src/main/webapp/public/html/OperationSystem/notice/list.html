@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表页</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+</head>
+<body>
+    <div class="container-main">
+        <div class="content">
+            <!-- 操作部分 -->
+            <div class="operation-btns">
+                <button class="btn btn-success js-nav-item" data-target="notice/add.html" type="button">
+                    <span class="icon icon-add icon-left"></span>新增
+                </button>
+                <button class="btn btn-info js-nav-item" data-target="notice/edit.html" type="button">
+                    <span class="icon icon-edit icon-left"></span>编辑
+                </button>
+                <button class="btn btn-warning js-nav-item" type="button"  data-target="notice/detail.html" >
+                    <span class="icon icon-remove icon-left"></span>删除
+                </button>
+
+                <div class="fr search-input-group">
+                    <input class="form-control" value="">
+                    <button class="btn btn-info" type="button">搜索</button>
+                </div>
+            </div>
+            <!-- 操作部分END -->
+
+            <!-- 表格明细 -->
+            <div class="table-panel panel-white box table-panel-full row-box">
+                <div class="table-wrap box-content">
+                    <div class="table-scroll">
+                        <div class="table-header-wrap js-table-header-wrap">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header">
+                                <col width="41px">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="15%">
+                                <col width="">
+                                <col width="13%">
+                                <col width="15%">
+                                <col width="10%">
+                                <thead>
+                                <tr>
+                                    <th class="w-checkbox">
+                                        <div class="checkbox-wrap js-select-all">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>预警事项</th>
+                                    <th>节点</th>
+                                    <th>提醒时间</th>
+                                    <th>提醒人员</th>
+                                    <th>提醒方式</th>
+                                    <th>状态</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap" style="padding-left: 171px;">
+                            <table class="table table-border table-full js-table table-fix-height ">
+                                <col width="41px">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="15%">
+                                <col width="">
+                                <col width="13%">
+                                <col width="15%">
+                                <col width="10%">
+                                <tbody>
+                                <tr>
+                                    <td class="w-checkbox">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td>0001</td>
+                                    <td>报批提醒</td>
+                                    <td class="">演出时间</td>
+                                    <td>节点日期前140天</td>
+                                    <td>
+                                        180
+                                        <a class="ml10" href="javascript:;">查看</a>
+                                    </td>
+                                    <td>邮件</td>
+                                    <td>
+                                        <span class="icon icon-delcontact"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td>0001</td>
+                                    <td>报批提醒</td>
+                                    <td class="">演出时间</td>
+                                    <td>节点日期前140天</td>
+                                    <td>
+                                        180
+                                        <a class="ml10" href="javascript:;">查看</a>
+                                    </td>
+                                    <td>邮件</td>
+                                    <td>
+                                        <span class="icon icon-normal"></span>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 分页 -->
+                        <div class="pagination-panel js-pagination-panel">
+
+                            <!-- 水平滚动条 -->
+                            <div class="table-scroll-horizontal js-table-scroll-horizontal" style="margin-left: 675px;">
+                                <div class="scroll js-scroll" style="">
+                                </div>
+                            </div>
+                            <!-- 水平滚动条 END -->
+
+                            <div class="pages-wrap">
+                                <div class="options-panel js-options-panel none">
+                                    <div class="checkbox-item">
+                                        <div class="checkbox-wrap js-select-all">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span class="text">选择</span>
+                                    </div>
+
+                                    <div class="options-wrap">
+                                        <a class="option-item ">编辑</a> |
+                                        <a class="option-item gray">删除</a>
+                                    </div>
+                                </div>
+                                <div class="total-wrap">
+                                    共<span class="total">114</span>条，
+                                    每页
+                                    <select class="pages-select form-control">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        <option value="500">500</option>
+                                        <option value="1000">1000</option>
+                                    </select>
+                                    <span class="current-page">12</span>/
+                                    <span class="total-pages">15</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default disabled">
+                                            <span class="icon icon-fast-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-forward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-fast-forward"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 分页 END -->
+                    </div>
+
+                </div>
+            </div>
+            <!-- 表格明细 END -->
+
+        </div>
+    </div>
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+</body>
+</html>

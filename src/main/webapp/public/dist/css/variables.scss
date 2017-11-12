@@ -1,0 +1,179 @@
+@charset "utf-8";
+
+/* 全局变量 */
+$baseBg: #f3f3f5;       // 背景颜色
+$advanceBg: #fff;       // 前景色
+$baseColor: #666;       // 默认字体颜色
+$baseFontSize: 14px;    // 默认字体大小
+$marginLeft: 20px;      // 默认缩进
+$standerColor: #ff7919; // 橙色
+/* 全局变量 END */
+
+/* 字体样式变量 */
+$titleFontSize: 14px;      // 标题字体大小 面板标题、表格标题
+$labelFontColor: #666;     // 输入框前label字体颜色
+$tipsFontColor: #999;      // 输入框placeholder字体颜色
+$linkFontColor: #337ab7;   // 可操作性文字颜色
+$errorFontColor: #ed5565;  // 报错文字颜色
+$dialogMsgFontSize: 18px;  // msg字体大小
+$dialogMsgFontColor: #fff; // msg字体颜色
+$aHoverColor: #2a6496;
+/* 字体样式变量 END */
+
+/* 框架头部变量 */
+$topNavBg: #9ca3bd;
+$topNavItemActiveBg: #7e859b;
+$topNavItemBorderColor: #ccc;
+$topNavFontColor: #fff;
+$logoFontSize: 18px;
+
+/* 框架头部变量 END */
+
+/* 框架侧边导航变量 */
+$baseNavColor: #fff;               // 导航基本颜色
+$activeNavColor: #fcfcfc;          // 导航激活状态颜色
+$navBorderColor: #435363;          // 导航列表底部边框颜色
+$navBarFontColor: #666;            // 导航默认字体颜色
+$subnavBarFontColor: #8990a7;      // 导航默认字体颜色
+$subnavBarActiveFontColor: #666;   // 导航默认字体颜色
+$subnavBarActiveBgColor: #f3f3f4;  // 导航默认字体颜色
+$firstTitleColor: #f2f2f2;         // 导航默认字体颜色
+$secondTitleColor: #a7b1c2;        // 信息面板字体颜色
+$iconFontColor: #a7b1c2;           // 小图标颜色
+/* 框架侧边导航变量 END */
+
+/* 头部导航变量 */
+$themeTitleColor: #2f4050;         // 头部标题颜色
+$tabBorderColor: #e7eaec;          // tab边框颜色
+$tabBgColor: #fff;                 // tab
+$tabActiveColor: #f3f3f4;          // tab item hover颜色
+$tabFontColor: #999;
+$tabActiveFontColor: #666;
+/* 头部导航变量 END */
+
+/* iframe 内部变量 */
+$borderColor: #e7e7e7;    // 边框颜色
+$emptyFontColor: #ffb0b9; // 缺省状态字体颜色
+$minWidth: 1187px;        // 适配最小屏幕宽度
+$minTableWidth: 1147px;   // table适配最小屏幕宽度
+$moduleWidth: 1106px;	  //详情页和编辑页模块宽度
+$marginTop: 26px;         // 页面距离头部导航的距离
+/* iframe 内部变量 END */
+
+/* 表格变量 */
+$tableHoverBg: #f5f5f7;        // 表格样式触及效果
+$tableSelectBg: #f5f5f7;        // 表格样式触及效果
+$tablePanelHeight: 500px;
+
+$tableFixHeight: 34px;
+$tableFixHeightDiv: 20px;
+/* 表格变量 END */
+
+/* 按钮公共变量 */
+$btnFontColor: #fff;
+$btnFontColorActive: #fff;
+
+$btnPrimaryColor: #64afce;
+$btnPrimaryColorActive: #59a7c7;
+
+$btnInfoColor: #8990a7;
+$btnInfoColorActive: #7e859b;
+
+$btnDefaultColor: #fff;
+$btnDefaultBorderColor: #ddd;
+$btnDefaultActiveFontColor: #333;
+$btnDefaultActiveBorderColor: #999;
+
+$btnWarnColor: #feb648;
+$btnWarnColorActive: #f8ac59;
+
+$btnSuccessColor: #84bd7f;
+$btnSuccessColorActive: #78b473;
+
+$btnBorderSuccessColor: #84bd7f;
+$btnBorderSuccessFontColor: #84bd7f;
+$btnBorderSuccessColorActive: #78b473;
+$btnBorderSuccessFontColorActive: #78b473;
+
+$btnNegativeColor: #eeeeee;
+$btnNegativeFontColor: #999;
+$btnNegativeFontColorActive: #666;
+/* 按钮公共变量 END */
+
+/* 表单样式 */
+$inputErrorBorderColor: #ed5565;   // 输入框报错边框颜色
+$inputHoverBorderColor: #f8ac59;   // 输入框hover样式
+$checkboxSelectColor: #ff8e04;     // 复选框被选中边框样式
+
+/* 模糊查询样式变量 */
+$blurPanelSelectedListBg: #e8e8e8;
+$blurDeleteIconColor: #999;
+/* 模糊查询样式变量 END */
+
+$labelWidth: 210px;
+$inputWidth: 298px;
+
+$statusInFontColor: #28b779;
+$statusPrepareFontColor: #f8ac59;
+$statusEndFontColor: #999;
+$statusAvailableFontColor: #1c84c6;
+/* 表单样式 END */
+
+/* 正常隐藏状态图标样式 */
+$normalColor: #84bd7f;		//正常状态样式
+$normalColorActive: #78b473;
+$hiddenColor: #f67f79;		//隐藏状态样式
+$hiddenColorActive: #ed5565;
+/* 正常隐藏状态图标样式 END */
+
+/* 危险操作颜色 */
+$warningColor: #f67f79;
+/* 危险操作颜色 END */
+
+/* module分块背景色 */
+$moduleItemBg: #f5f5f5;
+/* module分块背景色 END */
+
+$checkboxBorderColor: #ccc;
+
+/* 搜索表单变量 */
+$searchGroupWidth: 230px;
+$searchDGroupWidth: 480px;
+$searchLabelWidth: 114px;
+$searchInputWidth: 111px;
+$searchBlurPanelWidth: 178px;
+$searchFBlurPanelWidth: 360px;
+$searchCFormWidth: 168px;
+
+$searchInputWidth: 156px;
+$searchInputWidthLg: 226px;
+$searchFolderHoverColor: #84bd7f;
+/* 搜索表单变量 END */
+
+@mixin defaultUserLogo() {
+	background: url(../../images/common/icon-user.png) center center no-repeat;
+}
+
+@mixin navLefUnfolder {
+	-webkit-transform: translate3d(0px, 0, 0);
+	-moz-transform: translate3d(0px, 0, 0);
+	-ms-transform: translate3d(0px, 0, 0);
+	transform: translate3d(0px, 0, 0);
+
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+@mixin navLeftFolder {
+	-webkit-transform: translate3d(-186px, 0, 0);
+	-moz-transform: translate3d(-186px, 0, 0);
+	-ms-transform: translate3d(-186px, 0, 0);
+	transform: translate3d(-186px, 0, 0);
+
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+

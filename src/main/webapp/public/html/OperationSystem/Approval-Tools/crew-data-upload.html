@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>剧组资料上传</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/table.scss">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+    <style>
+        .delete{
+            color: #737373;
+            margin-left: 5px;
+        }
+        .delete:hover{
+            color: #b6b6b6;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container-main">
+    <div class="container-wrapper">
+        <div class="module-wrapper row">
+            <!--报批清单头部-->
+            <div class="container-header js-container-header">
+                <h5>剧组资料（参考）</h5>
+                <div class="right-btn">
+                    <button class="btn btn-success">
+                        <span class="icon icon-hold icon-left"></span>
+                        保存
+                    </button>
+                    <button class="btn btn-success">
+                        <span class="icon icon-hold icon-left"></span>
+                        保存并通过
+                    </button>
+                    <button class="btn btn-default">
+                        <span class="icon icon-delete icon-left"></span>
+                        取消
+                    </button>
+                </div>
+            </div>
+            <!--报批清单头部 END-->
+
+            <!--项目信息-->
+            <div class="module row-box">
+                <div class="module-title">项目信息</div>
+                <div class="module-content">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="w-label control-label">项目名称：</label>
+                            <span class="list-detail">屈臣氏三生花-我和小鸟和铃铛-深圳</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="w-label control-label">事业部/子公司：</label>
+                            <div class="list-detail">小橙堡</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="w-label control-label">品类：</label>
+                            <div class="list-detail">儿童剧场</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--项目信息 END-->
+
+            <!--资料详情-->
+            <div class="module row-box">
+                <div class="module-title">
+                    资料详情（<span class="c-available">请于2017年9月23日前完成资料准备</span>）
+                </div>
+                <div class="module-content">
+                    <div class="data-wrapper">
+                        <div class="data-box">
+                            <div class="data-content" style="margin-left: -10px;">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="w-label control-label">资料清单：</label>
+                                        <ul class="list-detail" style="list-style: none">
+                                            <li>演员身份证</li>
+                                            <li>演员短工证</li>
+                                            <li>曲目单</li>
+                                        </ul>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="w-label control-label">模板：</label>
+                                        <a href="javascript:" class="list-detail">模板.rar</a>
+                                        <span class="icon icon-download ml10"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="w-label control-label">附件：</label>
+                                        <a href="javascript:" class="list-detail">剧组资料.rar</a>
+                                        <span class="icon icon-download ml10"></span>
+                                        <span class="delete">删除</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="w-label control-label"></label>
+                                        <span class="list-detail">
+                                            <button class="btn btn-primary btn-sm">
+                                                <span class="icon icon-data-upload icon-left" style="color: #FFFFFF"></span>
+                                                上传
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="w-label control-label">备注：</label>
+                                        <textarea class="list-detail" name="" cols="50" rows="5" id="" placeholder="超大文件，请上传网盘后，把网盘地址放在这里"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tfoot" style="margin-left: 192px">
+                                <span>！审核未通过。未通过原因：XXXXXXXXXXXXXXXXXXXXX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--资料详情 END-->
+        </div>
+    </div>
+</div>
+<script src="../../../dist/js/jquery.min.js"></script>
+<script src="../../../dist/js/approval-tools.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.WhiteListMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.WhiteList" >
+    <id column="f_id_num" property="fIdNum" jdbcType="VARCHAR" />
+    <id column="f_id_index" property="fIdIndex" jdbcType="BIGINT" />
+    <id column="f_app_id" property="fAppId" jdbcType="VARCHAR" />
+    <result column="f_name" property="fName" jdbcType="VARCHAR" />
+    <result column="f_mobile" property="fMobile" jdbcType="VARCHAR" />
+    <result column="f_company" property="fCompany" jdbcType="VARCHAR" />
+    <result column="f_position" property="fPosition" jdbcType="VARCHAR" />
+    <result column="f_type" property="fType" jdbcType="TINYINT" />
+    <result column="f_state" property="fState" jdbcType="TINYINT" />
+    <result column="f_create_time" property="fCreateTime" jdbcType="TIMESTAMP" />
+    <result column="f_create_user" property="fCreateUser" jdbcType="VARCHAR" />
+    <result column="f_update_time" property="fUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="f_update_user" property="fUpdateUser" jdbcType="VARCHAR" />
+    <result column="f_remark" property="fRemark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    f_id_num, f_id_index, f_app_id, f_name, f_mobile, f_company, f_position, f_type, 
+    f_state, f_create_time, f_create_user, f_update_time, f_update_user
+  </sql>
+
+  <select id="queryWhiteListByPage" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from ${tableName}
+    where 1=1
+    <if test="idNum != null and idNum != ''">
+      and  f_id_num =#{idNum}
+    </if>
+    <if test="name != null and name != ''">
+      and instr(f_name,#{name}) > 0
+    </if>
+    <if test="mobile != null and mobile != ''">
+      and instr(f_mobile,#{mobile}) > 0
+    </if>
+    and f_app_id =#{appId}
+    limit #{pageNum},#{pageSize}
+  </select>
+
+  <select id="queryWhiteListCount" parameterType="map" resultType="Integer">
+    select
+    count(*)
+    from ${tableName}
+    where 1=1
+    <if test="idNum != null and idNum != ''">
+      and  f_id_num =#{idNum}
+    </if>
+    <if test="name != null and name != ''">
+      and instr(f_name,#{name}) > 0
+    </if>
+    <if test="mobile != null and mobile != ''">
+      and instr(f_mobile,#{mobile}) > 0
+    </if>
+    and f_app_id =#{appId}
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.WhiteListKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from ${tableName}
+    where f_id_num = #{fIdNum,jdbcType=VARCHAR} and f_app_id = #{fAppId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.WhiteListKey" >
+    delete from ${tableName}
+    where f_id_num = #{fIdNum,jdbcType=VARCHAR}
+      and f_id_index = #{fIdIndex,jdbcType=BIGINT}
+      and f_app_id = #{fAppId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.WhiteList" >
+    insert into ${tableName} (f_id_num, f_id_index, f_app_id,
+      f_name, f_mobile, f_company, 
+      f_position, f_type, f_state, 
+      f_create_time, f_create_user, f_update_time, 
+      f_update_user)
+    values (#{fIdNum,jdbcType=VARCHAR}, #{fIdIndex,jdbcType=BIGINT}, #{fAppId,jdbcType=VARCHAR}, 
+      #{fName,jdbcType=VARCHAR}, #{fMobile,jdbcType=VARCHAR}, #{fCompany,jdbcType=VARCHAR}, 
+      #{fPosition,jdbcType=VARCHAR}, #{fType,jdbcType=TINYINT}, #{fState,jdbcType=TINYINT}, 
+      #{fCreateTime,jdbcType=TIMESTAMP}, #{fCreateUser,jdbcType=VARCHAR}, #{fUpdateTime,jdbcType=TIMESTAMP}, 
+      #{fUpdateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.WhiteList" >
+    insert into ${tableName}
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fIdNum != null" >
+        f_id_num,
+      </if>
+      <if test="fIdIndex != null" >
+        f_id_index,
+      </if>
+      <if test="fAppId != null" >
+        f_app_id,
+      </if>
+      <if test="fName != null" >
+        f_name,
+      </if>
+      <if test="fMobile != null" >
+        f_mobile,
+      </if>
+      <if test="fCompany != null" >
+        f_company,
+      </if>
+      <if test="fPosition != null" >
+        f_position,
+      </if>
+      <if test="fType != null" >
+        f_type,
+      </if>
+      <if test="fState != null" >
+        f_state,
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time,
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user,
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time,
+      </if>
+      <if test="fUpdateUser != null" >
+        f_update_user,
+      </if>
+      <if test="fRemark != null" >
+        f_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fIdNum != null" >
+        #{fIdNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fIdIndex != null" >
+        #{fIdIndex,jdbcType=BIGINT},
+      </if>
+      <if test="fAppId != null" >
+        #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fName != null" >
+        #{fName,jdbcType=VARCHAR},
+      </if>
+      <if test="fMobile != null" >
+        #{fMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="fCompany != null" >
+        #{fCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="fPosition != null" >
+        #{fPosition,jdbcType=VARCHAR},
+      </if>
+      <if test="fType != null" >
+        #{fType,jdbcType=TINYINT},
+      </if>
+      <if test="fState != null" >
+        #{fState,jdbcType=TINYINT},
+      </if>
+      <if test="fCreateTime != null" >
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null" >
+        #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null" >
+        #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null" >
+        #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null" >
+        #{fRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.WhiteList" >
+    update ${tableName}
+    <set >
+      <if test="fName != null" >
+        f_name = #{fName,jdbcType=VARCHAR},
+      </if>
+      <if test="fMobile != null" >
+        f_mobile = #{fMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="fCompany != null" >
+        f_company = #{fCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="fPosition != null" >
+        f_position = #{fPosition,jdbcType=VARCHAR},
+      </if>
+      <if test="fType != null" >
+        f_type = #{fType,jdbcType=TINYINT},
+      </if>
+      <if test="fState != null" >
+        f_state = #{fState,jdbcType=TINYINT},
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null" >
+        f_update_user = #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null" >
+        f_remark = #{fRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where f_id_num = #{fIdNum,jdbcType=VARCHAR}
+      and f_id_index = #{fIdIndex,jdbcType=BIGINT}
+      and f_app_id = #{fAppId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.WhiteList" >
+    update ${tableName}
+    set f_name = #{fName,jdbcType=VARCHAR},
+      f_mobile = #{fMobile,jdbcType=VARCHAR},
+      f_company = #{fCompany,jdbcType=VARCHAR},
+      f_position = #{fPosition,jdbcType=VARCHAR},
+      f_type = #{fType,jdbcType=TINYINT},
+      f_state = #{fState,jdbcType=TINYINT},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      f_update_user = #{fUpdateUser,jdbcType=VARCHAR}
+    where f_id_num = #{fIdNum,jdbcType=VARCHAR}
+      and f_id_index = #{fIdIndex,jdbcType=BIGINT}
+      and f_app_id = #{fAppId,jdbcType=VARCHAR}
+  </update>
+</mapper>

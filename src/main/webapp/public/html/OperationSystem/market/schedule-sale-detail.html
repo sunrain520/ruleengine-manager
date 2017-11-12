@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>排期销售明细</title>
+	<link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <style type="text/css">
+        /*.bg-white{background: white;margin-bottom: 15px;padding: 15px;}*/
+        .chart-wrap{width: 100%;height: 600px;}
+        .chart-block{position: relative;}
+    </style>
+</head>
+<body>
+	<div class="container-main">
+        <div class="container-wrapper">
+
+            <!-- 头部 -->
+            <div class="container-header js-container-header">
+                <h5>排期销售明细</h5>
+                <div class="right-btn">
+                    <button class="btn btn-info" type="submit">导出报表</button>
+                </div>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 详情部分 -->
+            <div class="module-wrapper">            
+                
+                <!-- 基本信息 -->
+                <div class="module row-box">
+                    <div class="module-title">
+                        基本信息
+                    </div>
+                    <div class="module-content">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="w-label control-label">所属项目：</label>
+                                <div class="list-detail">
+                                    程璧-我和小鸟和铃
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">排期名称：</label>
+                                <div class="list-detail">
+                                    屈臣氏三生花-我和小鸟和铃铛-深圳
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">城市场馆：</label>
+                                <div class="list-detail">
+                                    深圳 南山文体中心聚橙剧院大剧院
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">开票时间：</label>
+                                <div class="list-detail">
+                                    2016.09.20 20:00
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">演出时间：</label>
+                                <div class="list-detail">
+                                    2016.09.20 20:00
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">排期编号：</label>
+                                <div class="list-detail">
+                                    01.01.01.0001.16
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">票务系统：</label>
+                                <div class="list-detail">
+                                    聚橙票务
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">品类：</label>
+                                <div class="list-detail">
+                                    万有音乐>小流行
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">总票量：</label>
+                                <div class="list-detail">
+                                    5000
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">总票房：</label>
+                                <div class="list-detail">
+                                    650000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 基本信息 END -->
+
+
+                <!-- 销售数据 -->
+                <div class="module row-box">
+                    <div class="module-title">
+                        销售数据
+                        <div class="title-after">
+                            <a class="link" >查看销售数据</a>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="list-inline list-data">
+                            <li class="list-item">
+                                <div class="item-content total">
+                                    <p class="text">
+                                        成本<br>
+                                        <span class="number">9800</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content plane">
+                                    <p class="text">
+                                        销售计划<br>
+                                        <span class="number">9800</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content column">
+                                    <p class="text">
+                                        销售额<br>
+                                        <span class="number">9800</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content pie">
+                                    <p class="text">
+                                        完成率<br>
+                                        <span class="number">9800</span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 销售数据 END -->
+
+                <!-- 图表 START -->
+
+                <div class="module row-box">
+                    <div class="module-title">
+                        图表
+                        <div class="title-after">
+                            <a class="link" ></a>
+                        </div>
+                    </div>
+                    <div class="module-content">
+
+                        <div class="bg-white chart-block">
+
+                            <ul class="nav nav-pills chart-nav" role="tablist">
+                              <li role="presentation" class="active"><a href="javascript:void(0)">每日销售</a></li>
+                              <li role="presentation" onclick=""><a href="javascript:void(0)">累计销售</a></li>
+                            </ul>
+
+                            <div class="daily-sale-chart-wrap chart-wrap">
+                                
+                            </div>
+
+                            <div class="total-sale-chart-wrap chart-wrap" style="visibility:hidden;position:absolute;">
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- 图表 END -->
+
+                <!-- 排期列表 -->
+                <div class="module row-box">
+                    <div class="module-title">
+                        每日销售明细（2016.3.25 至 2016.11.30）
+                    </div>
+                    <div class="module-content">
+                        <div class="table-wrap box-content">
+                            <div class="table-scroll">
+                                <div class="table-header-wrap js-table-header-wrap js-ignore">
+                                    <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                        <thead>
+                                        <tr>
+                                            <th class="w-name" style="position: absolute;z-index: 1;left: 0;">排期编码</th>
+                                            <th class="w-name" style="position:absolute; z-index: 1;">排期名称</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">城市</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">演出场馆</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">演出时间</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">排期进展</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">排期状态</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="table-body-wrap js-table-body-wrap js-ignore">
+                                    <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+
+                                        <tbody>
+                                        <tr>
+                                            <td class="max-td w-name" style="position: absolute;z-index: 1;left: 0;">
+                                                01.01.01.0001.16
+                                            </td>
+                                            <td class="w-name" style="position: absolute;z-index: 1;">
+                                                <a href="javascript:;" class="">小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">北京</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">乐视生态体育</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-5-10 09：00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                                <span class="c-available">可开票</span>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                                <p><span class="icon icon-delcontact"></span>正常</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="max-td w-name" style="position: absolute;z-index: 1;left: 0;">
+                                                01.01.01.0001.16
+                                            </td>
+                                            <td class="w-name" style="position: absolute;z-index: 1;">
+                                                <a href="javascript:;" class="">小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">北京</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">乐视生态体育</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-5-10 09：00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                                <span class="c-in">已开票</span>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                                <p><span class="icon icon-delcontact"></span>正常</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="max-td w-name" style="position: absolute;z-index: 1;left: 0;">
+                                                01.01.01.0001.16
+                                            </td>
+                                            <td class="w-name" style="position: absolute;z-index: 1;">
+                                                <a href="javascript:;" class="">小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">北京</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">乐视生态体育</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-5-10 09：00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                                <span class="c-prepare">准备中</span>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                                <p><span class="icon icon-delcontact"></span>正常</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="max-td w-name" style="position: absolute;z-index: 1;left: 0;">
+                                                01.01.01.0001.16
+                                            </td>
+                                            <td class="w-name" style="position: absolute;z-index: 1;">
+                                                <a href="javascript:;" class="">小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">北京</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">乐视生态体育</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-5-10 09：00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                                <span class="c-end">演出结束</span>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                                <p><span class="icon icon-delcontact"></span>正常</p>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- 分页 -->
+                                <div class="pagination-panel js-pagination-panel">
+
+                                    <!-- 水平滚动条 -->
+                                    <div class="table-scroll-horizontal js-table-scroll-horizontal" style="margin-left: 675px;">
+                                        <div class="scroll js-scroll" style="">
+                                        </div>
+                                    </div>
+                                    <!-- 水平滚动条 END -->
+
+                                    <div class="pages-wrap">
+                                        <div class="total-wrap">
+                                            共<span class="total">114</span>条，
+                                            每页
+                                            <select class="pages-select form-control">
+                                                <option value="10">10</option>
+                                                <option value="20">20</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                                <option value="500">500</option>
+                                                <option value="1000">1000</option>
+                                            </select>
+                                            <span class="current-page">12</span>/
+                                            <span class="total-pages">15</span>
+                                            <div class="btn-group fr">
+                                                <button type="button" class="btn btn-default disabled">
+                                                    <span class="icon icon-fast-backward"></span>
+                                                </button>
+                                                <button type="button" class="btn btn-default">
+                                                    <span class="icon icon-step-backward"></span>
+                                                </button>
+                                                <button type="button" class="btn btn-default">
+                                                    <span class="icon icon-step-forward"></span>
+                                                </button>
+                                                <button type="button" class="btn btn-default">
+                                                    <span class="icon icon-fast-forward"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 分页 END -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- 排期列表 END -->
+
+            </div>
+
+
+        </div>
+    </div>
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+
+    <script src="../../../dist/js/echarts3/echarts.min.js"></script>
+    <script src="../../../dist/js/echarts3/macarons.js"></script>
+    <script type="text/javascript">
+
+        //图标导航切换按钮
+        $('.chart-nav li').on('click',function(){
+                        $(this).siblings().removeClass('active');
+                        var index = $(this).addClass('active').index();
+                        $('.chart-wrap').hide().eq(index).show();
+                    })
+
+        // 每日销售 ------------------START
+        var dailyChartData = {
+            //title:'ECharts 示例',
+            legend:['销量','销售额'],
+            xAxis:["2015/10","2015/11","2015/12","2016/01","2016/02","2016/03"],
+            series:[],
+        }
+
+        var dailySaleChart = echarts.init($('.daily-sale-chart-wrap')[0],'macarons');
+
+        // 指定图表的配置项和数据
+        var dailyChartOption = {
+            title: {
+                text: dailyChartData.title
+            },
+            tooltip: {},
+            toolbox: {
+                feature: {
+                    saveAsImage: {iconStyle:{normal:{textPosition:'left'}}}
+                }
+            },
+            legend: {
+                data:dailyChartData.legend
+            },
+            xAxis: {
+                data: dailyChartData.xAxis
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20],
+                //barMaxWidth:15
+            },
+            {
+            name:'平均值',
+            type:'line',
+            data:[13],
+            markLine: {
+                data: [
+                    {type: 'average', name: '平均值'}
+                ]
+                }
+            },
+            {
+                name: '销售额',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20],
+                //barMaxWidth:15
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        dailySaleChart.setOption(dailyChartOption);
+
+        // 每日销售 ------------------END
+
+
+        // 累计销售 ------------------START
+        var totalChartData = {
+            //title:'ECharts 示例',
+            legend:['销量','销售额'],
+            xAxis:["2015/10","2015/11","2015/12","2016/01","2016/02","2016/03"],
+            series:[],
+        }
+        
+        var totalSaleChart = echarts.init($('.total-sale-chart-wrap')[0],'macarons');
+        //因为dom节点display为none的时候是没有宽高的这里需要通过样式处理来获取宽高
+        $('.total-sale-chart-wrap').css({display:'none',visibility:'visible',position:'relative'})
+
+        // 柱状图配置
+        var totalChartOption = {
+            title: {
+                text: totalChartData.title
+            },
+            tooltip: {},
+            legend: {
+                data:totalChartData.legend
+            },
+            xAxis: {
+                data: totalChartData.xAxis
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 70, 33, 12, 55, 20]
+            },{
+                name: '销售额',
+                type: 'bar',
+                data: [5, 100, 20, 10, 10, 50]
+            }]
+        };
+
+        //折线图配置
+        lineOption = {
+            title: {
+                text: totalChartData.title
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data:totalChartData.legend
+            },
+            /*grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },*/
+            toolbox: {
+                feature: {
+                    saveAsImage: {iconStyle:{normal:{textPosition:'left'}}}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: totalChartData.xAxis
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name:'销量',
+                    type:'line',
+                    stack: '总量',
+                    data:[5, 70, 33, 12, 55, 20]
+                },
+                {
+                    name:'销售额',
+                    type:'line',
+                    stack: '总量',
+                    data:[5, 100, 20, 10, 10, 50]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        //totalSaleChart.setOption(totalChartOption);//柱状图
+        totalSaleChart.setOption(lineOption);//折线图
+
+        // 累计销售 ------------------END
+
+
+
+
+    </script>
+</body>
+</html>

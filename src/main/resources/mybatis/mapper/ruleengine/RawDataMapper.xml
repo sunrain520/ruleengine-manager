@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.RawDataMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.RawData" >
+    <id column="f_auto_id" property="fAutoId" jdbcType="INTEGER" />
+    <result column="f_app_id" property="fAppId" jdbcType="VARCHAR" />
+    <result column="f_req_id" property="fReqId" jdbcType="VARCHAR" />
+    <result column="f_rule_id" property="fRuleId" jdbcType="VARCHAR" />
+    <result column="f_interface_name" property="fInterfaceName" jdbcType="VARCHAR" />
+    <result column="f_resp_retcode" property="fRespRetcode" jdbcType="INTEGER" />
+    <result column="f_cost_time" property="fCostTime" jdbcType="INTEGER" />
+    <result column="f_data_source" property="fDataSource" jdbcType="VARCHAR" />
+    <result column="f_remark" property="fRemark" jdbcType="VARCHAR" />
+    <result column="f_create_time" property="fCreateTime" jdbcType="TIMESTAMP" />
+    <result column="f_req_content" property="fReqContent" jdbcType="LONGVARCHAR" />
+    <result column="f_resp_content" property="fRespContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    f_auto_id, f_app_id, f_req_id, f_rule_id, f_interface_name,  f_req_content, f_resp_content,f_resp_retcode, f_cost_time,
+    f_data_source, f_remark, f_create_time
+  </sql>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_raw_data_2016_10
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </select>
+
+  <select id="queryRawDatasByPage" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from ${tableName}
+    where 1=1
+    <if test="reqId != null and reqId != ''">
+      and  f_req_id =#{reqId}
+    </if>
+    <if test="ruleId != null and ruleId != ''">
+      and  f_rule_id =#{ruleId}
+    </if>
+    <if test="interfaceName != null and interfaceName != ''">
+      and  f_interface_name =#{interfaceName}
+    </if>
+    and f_app_id =#{appId}
+    order by f_rule_id
+    limit #{pageNum},#{pageSize}
+  </select>
+
+  <select id="queryRawDatasCount" parameterType="map" resultType="Integer">
+    select
+    count(*)
+    from ${tableName}
+    where 1=1
+    <if test="reqId != null and reqId != ''">
+      and  f_req_id =#{reqId}
+    </if>
+    <if test="ruleId != null and ruleId != ''">
+      and  f_rule_id =#{ruleId}
+    </if>
+    <if test="interfaceName != null and interfaceName != ''">
+      and  f_interface_name =#{interfaceName}
+    </if>
+    and f_app_id =#{appId}
+  </select>
+
+
+</mapper>

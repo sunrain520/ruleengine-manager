@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.RulePreMapper">
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.RulePre">
+    <id column="f_rule_variable" jdbcType="VARCHAR" property="fRuleVariable" />
+    <result column="f_pre_class" jdbcType="VARCHAR" property="fPreClass" />
+    <result column="f_remark" jdbcType="VARCHAR" property="fRemark" />
+    <result column="f_create_time" jdbcType="TIMESTAMP" property="fCreateTime" />
+    <result column="f_create_user" jdbcType="VARCHAR" property="fCreateUser" />
+    <result column="f_update_time" jdbcType="TIMESTAMP" property="fUpdateTime" />
+    <result column="f_update_user" jdbcType="VARCHAR" property="fUpdateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    f_rule_variable, f_pre_class, f_remark, f_create_time, f_create_user, f_update_time, 
+    f_update_user
+  </sql>
+  <select id="queryRulePresByPage" resultMap="BaseResultMap" parameterType="map">
+        select 
+        <include refid="Base_Column_List" />
+        from t_rule_pre
+        where 1=1
+        <if test="ruleVariable != null and ruleVariable != ''">
+            and instr(f_rule_variable,#{ruleVariable}) > 0
+        </if>
+        <if test="preClass != null and preClass != ''">
+            and instr(f_pre_class,#{preClass}) > 0
+        </if>
+        <if test="bizClass != null and bizClass != ''">
+            and instr(f_biz_class,#{bizClass}) > 0
+        </if>
+        <if test="remark != null and remark != ''">
+            and instr(f_remark,#{remark}) > 0
+        </if>
+        limit #{pageNum},#{pageSize}
+     </select>
+
+    <select id="queryRulePreCount" resultType="Integer" parameterType="map">
+        select count(*) from t_rule_pre
+        where 1=1
+        <if test="ruleVariable != null and ruleVariable != ''">
+            and instr(f_rule_variable,#{ruleVariable}) > 0
+        </if>
+        <if test="preClass != null and preClass != ''">
+            and instr(f_pre_class,#{preClass}) > 0
+        </if>
+        <if test="bizClass != null and bizClass != ''">
+            and instr(f_biz_class,#{bizClass}) > 0
+        </if>
+        <if test="remark != null and remark != ''">
+            and instr(f_remark,#{remark}) > 0
+        </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_rule_pre
+    where f_rule_variable = #{fRuleVariable,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_rule_pre
+    where f_rule_variable = #{fRuleVariable,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RulePre">
+    insert into t_rule_pre (f_rule_variable, f_pre_class, f_remark, 
+      f_create_time, f_create_user, f_update_time, 
+      f_update_user)
+    values (#{fRuleVariable,jdbcType=VARCHAR}, #{fPreClass,jdbcType=VARCHAR}, #{fRemark,jdbcType=VARCHAR}, 
+      #{fCreateTime,jdbcType=TIMESTAMP}, #{fCreateUser,jdbcType=VARCHAR}, #{fUpdateTime,jdbcType=TIMESTAMP}, 
+      #{fUpdateUser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RulePre">
+    insert into t_rule_pre
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fRuleVariable != null">
+        f_rule_variable,
+      </if>
+      <if test="fPreClass != null">
+        f_pre_class,
+      </if>
+      <if test="fRemark != null">
+        f_remark,
+      </if>
+      <if test="fCreateTime != null">
+        f_create_time,
+      </if>
+      <if test="fCreateUser != null">
+        f_create_user,
+      </if>
+      <if test="fUpdateTime != null">
+        f_update_time,
+      </if>
+      <if test="fUpdateUser != null">
+        f_update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fRuleVariable != null">
+        #{fRuleVariable,jdbcType=VARCHAR},
+      </if>
+      <if test="fPreClass != null">
+        #{fPreClass,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null">
+        #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateTime != null">
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null">
+        #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null">
+        #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null">
+        #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RulePre">
+    update t_rule_pre
+    <set>
+      <if test="fPreClass != null">
+        f_pre_class = #{fPreClass,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null">
+        f_remark = #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateTime != null">
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null">
+        f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null">
+        f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null">
+        f_update_user = #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where f_rule_variable = #{fRuleVariable,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RulePre">
+    update t_rule_pre
+    set f_pre_class = #{fPreClass,jdbcType=VARCHAR},
+      f_remark = #{fRemark,jdbcType=VARCHAR},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      f_update_user = #{fUpdateUser,jdbcType=VARCHAR}
+    where f_rule_variable = #{fRuleVariable,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="<?php echo SUPPLIER_CSS;?>bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo SUPPLIER_CSS;?>content.css">
+    <link rel="stylesheet" href="<?php echo SUPPLIER_CSS;?>main.css">
+    <?php if(!empty($timeout)){?>
+    <meta http-equiv="refresh" content="<?php echo $timeout.';url='.$url; ?>"/>
+    <?php }?>
+</head>
+<body>
+
+<!-- 其他数据空状态 -->
+<div class="bg-white box row-box">
+    <div class="data-empty">
+        <div class="empty-content">
+            <span class="icon icon-unhappy"></span>
+            <div class="text">
+                <?php $title = empty($title) ? '抱歉，您没有权限访问该页面。':$title;?>
+                <p class="title"><?php echo $title; ?></p>
+                <?php $url = '/'; $msg = empty($message) ? '如果需要该权限，请【企业微信】联系管理员，点击<a class="link" href="'.$url.'" target="_blank">【返回】</a>可回到运营系统首页。':$message; ?>
+                <p class="info">
+                    <?php echo $msg; ?>
+                    <?php if(!empty($message)){?>
+                    <a class="link" href="<?php echo $url ?>" target="_blank">返回</a>
+                    <?php } ?>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 其他数据空状态 END -->
+</body>
+<script>
+</script>
+</html>

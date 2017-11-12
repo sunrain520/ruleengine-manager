@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>运营系统</title>
+    <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../dist/css/style.css">
+    <style>
+        .nav-list .nav-item-left{
+            display: none;
+        }
+        .nav-list .nav-item-left.actived{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<!-- 最外层 -->
+<div class="" id="wrapper">
+    <!-- 头部 -->
+    <div class="" id="page-header">
+        <div class="logo-wrap">
+            <span class="logo"></span>
+            <span class="title"></span>
+        </div>
+        <div class="center top-nav">
+            <ul class="top-nav-list">
+                <li class="nav-item active" data-Id="item1">
+                    <a class="item-content" href="javascript:;">供应商和场馆</a>
+                </li>
+                <li class="nav-item " data-Id="item2">
+                    <a class="item-content" href="javascript:;">项目管理</a>
+                </li>
+                <li class="nav-item " data-Id="item3">
+                    <a class="item-content" href="javascript:;">排期管理</a>
+                </li>
+                <li class="nav-item " data-Id="item4">
+                    <a class="item-content" href="javascript:;">资料管理</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="right">
+            <ul class="list-inline">
+                <li>
+                    <div class="item-content drop-wrap" href="javascript:;">
+                        <a class="link" href="javascript:;">HuangJiajia</a>
+                        <div class="drop-panel">
+                            <div class="drop-wrap">
+                                <ul class="list-block">
+                                    <li class="list-item">
+                                        <a class="item-content js-nav-item" href="javascript:;" data-target="edit-password.html">修改密码</a>
+                                    </li>
+                                    <li class="list-item">
+                                        <a class="item-content" href="javascript:;">退出</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a class="item-content" href="javascript:;">
+                        <span class="glyphicon glyphicon-log-out"></span>退出
+                    </a>
+                </li>
+
+                <li>
+                    <a class="item-content" href="javascript:;">
+                        消息
+                        <span class="circle-num">23</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="item-content" href="http://www.juooo.com" target="_blank">聚橙首页</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 头部 END -->
+
+    <!-- 侧边导航 -->
+    <nav class="" id="page-navbar-left">
+
+        <!-- 角色部分 -->
+        <!--<div class="user-panel">
+            <div class="img-wrap">
+                <img src="">
+            </div>
+            <div class="info-wrap">
+                <div class="name">Huangjiajia</div>
+                <div class="role-wrap">
+                    <span>超级管理员</span>
+                    <span class="icon icon-menu-block-down"></span>
+                </div>
+
+                <div class="drop-panel">
+                    <div class="drop-wrap">
+                        <ul class="list-block">
+                            <li class="list-item">
+                                <a class="item-content js-nav-item" href="javascript:;" data-target="edit-password.html">修改密码</a>
+                            </li>
+                            <li class="list-item">
+                                <a class="item-content" href="javascript:;">退出</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- 角色部分 END -->
+
+        <ul class="nav-list">
+            <li class="nav-item js-nav-item active actived nav-item-left" data-Id="item1">
+                <div class="item-content">
+                    <a class="link js-nav-content" href="javascript:;">
+                        <span class="icon icon-shop icon-left"></span>
+                        <span class="text">供应商和场馆</span>
+                        <span class="icon icon-menu-left icon-right"></span>
+                    </a>
+
+                    <div class="subnav js-subnav">
+                        <ul class="subnav-list">
+                            <li class="subnav-item js-nav-item" data-target="supplier-m.html" data-index="11">
+                                <a class="item-content" href="javascript:;">供应商管理</a>
+                            </li>
+                            <li class="subnav-item js-nav-item"  data-target="https://www.baidu.com" data-index="12">
+                                <a class="item-content" href="javascript:;">场馆管理</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item js-nav-item nav-item-left" data-Id="item2">
+                <div class="item-content">
+                    <a class="link js-nav-content" href="javascript:;">
+                        <span class="icon icon-statistics icon-left"></span>
+                        <span class="text">项目管理</span>
+                        <span class="icon icon-menu-left icon-right"></span>
+                    </a>
+                </div>
+                <div class="subnav js-subnav">
+                    <ul class="subnav-list">
+                        <li class="subnav-item js-nav-item" data-target="project-management/list.html">
+                            <a class="item-content" href="javascript:;">项目列表</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item js-nav-item nav-item-left" data-Id="item3">
+                <div class="item-content">
+                    <a class="link js-nav-content" href="javascript:;">
+                        <span class="icon icon-setting icon-left"></span>
+                        <span class="text">排期管理</span>
+                        <span class="icon icon-menu-left icon-right"></span>
+                    </a>
+                </div>
+                <div class="subnav js-subnav">
+                    <ul class="subnav-list">
+                        <li class="subnav-item js-nav-item" data-target="schedule-management/list.html">
+                            <a class="item-content" href="javascript:;">排期列表</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item js-nav-item nav-item-left" data-Id="item4">
+                <div class="item-content">
+                    <a class="link js-nav-content" href="javascript:;">
+                        <span class="icon icon-pc icon-left"></span>
+                        <span class="text">资料管理</span>
+                        <span class="icon icon-menu-left icon-right"></span>
+                    </a>
+                </div>
+                <div class="subnav js-subnav">
+                    <ul class="subnav-list">
+                        <li class="subnav-item js-nav-item" data-target="data-management/budget.html">
+                            <a class="item-content" href="javascript:;">预算</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="data-management/budget.html">
+                            <a class="item-content" href="javascript:;">合同</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item js-nav-item nav-item-left" data-Id="item4">
+                <div class="item-content">
+                    <a class="link js-nav-content" href="javascript:;">
+                        <span class="icon icon-statistics icon-left"></span>
+                        <span class="text">销售管理</span>
+                        <span class="icon icon-menu-left icon-right"></span>
+                    </a>
+                </div>
+                <div class="subnav js-subnav">
+                    <ul class="subnav-list">
+                        <li class="subnav-item js-nav-item" data-target="market/data.html">
+                            <a class="item-content" href="javascript:;">数据录入</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="market/region.html">
+                            <a class="item-content" href="javascript:;">区域销售</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="market/venue.html">
+                            <a class="item-content" href="javascript:;">剧院销售</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="project-report.html">
+                            <a class="item-content" href="javascript:;">项目报表</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="market/schedule-sale-detail.html">
+                            <a class="item-content" href="javascript:;">排期销售详情</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item js-nav-item" >
+                <a class="link js-nav-content" href="javascript:;">
+                    <span class="icon icon-rbac  icon-left"></span>
+                    <span class="text">角色&权限</span>
+                    <span class="icon icon-menu-left icon-right"></span>
+                </a>
+
+                <div class="subnav js-subnav">
+                    <ul class="subnav-list">
+                        <li class="subnav-item js-nav-item" data-target="reports.html" data-index="31">
+                            <a class="item-content" href="javascript:;">供应商管理</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="advanced-query.html" data-index="32">
+                            <a class="item-content" href="javascript:;">场馆管理</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="demo2.html" data-index="33">
+                            <a class="item-content" href="javascript:;">配置管理</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item js-nav-item" >
+                <a class="link js-nav-content" href="javascript:;">
+                    <span class="icon icon-key icon-left"></span>
+                    <span class="text">角色&权限</span>
+                    <span class="icon icon-menu-left icon-right"></span>
+                </a>
+
+                <div class="subnav js-subnav">
+                    <ul class="subnav-list">
+                        <li class="subnav-item js-nav-item" data-target="reports.html" data-index="31">
+                            <a class="item-content" href="javascript:;">供应商管理</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="advanced-query.html" data-index="32">
+                            <a class="item-content" href="javascript:;">场馆管理</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="demo2.html" data-index="33">
+                            <a class="item-content" href="javascript:;">配置管理</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item js-nav-item" >
+                <a class="link js-nav-content" href="javascript:;">
+                    <span class="icon icon-key icon-left"></span>
+                    <span class="text">角色&权限</span>
+                    <span class="icon icon-menu-left icon-right"></span>
+                </a>
+
+                <div class="subnav js-subnav">
+                    <ul class="subnav-list">
+                        <li class="subnav-item js-nav-item" data-target="reports.html" data-index="31">
+                            <a class="item-content" href="javascript:;">供应商管理</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="advanced-query.html" data-index="32">
+                            <a class="item-content" href="javascript:;">场馆管理</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="demo2.html" data-index="33">
+                            <a class="item-content" href="javascript:;">配置管理</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item js-nav-item" >
+                <a class="link js-nav-content" href="javascript:;">
+                    <span class="icon icon-key icon-left"></span>
+                    <span class="text">角色&权限</span>
+                    <span class="icon icon-menu-left icon-right"></span>
+                </a>
+
+                <div class="subnav js-subnav">
+                    <ul class="subnav-list">
+                        <li class="subnav-item js-nav-item" data-target="reports.html" data-index="31">
+                            <a class="item-content" href="javascript:;">供应商管理</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="advanced-query.html" data-index="32">
+                            <a class="item-content" href="javascript:;">场馆管理</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="demo2.html" data-index="33">
+                            <a class="item-content" href="javascript:;">配置管理</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item js-nav-item" >
+                <a class="link js-nav-content" href="javascript:;">
+                    <span class="icon icon-key icon-left"></span>
+                    <span class="text">消息&提醒</span>
+                    <span class="icon icon-menu-left icon-right"></span>
+                </a>
+
+                <div class="subnav js-subnav">
+                    <ul class="subnav-list">
+                        <li class="subnav-item js-nav-item" data-target="notice/list.html" data-index="31">
+                            <a class="item-content" href="javascript:;">列表页</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="advanced-query.html" data-index="32">
+                            <a class="item-content" href="javascript:;">场馆管理</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="demo2.html" data-index="33">
+                            <a class="item-content" href="javascript:;">配置管理</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item js-nav-item" >
+                <a class="link js-nav-content" href="javascript:;">
+                    <span class="icon icon-key icon-left"></span>
+                    <span class="text">角色管理qqq</span>
+                    <span class="icon icon-menu-left icon-right"></span>
+                </a>
+
+                <div class="subnav js-subnav">
+                    <ul class="subnav-list">
+                        <li class="subnav-item js-nav-item" data-target="rbac/role-list.html" data-index="31">
+                            <a class="item-content" href="javascript:;">角色管理</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="advanced-query.html" data-index="32">
+                            <a class="item-content" href="javascript:;">场馆管理</a>
+                        </li>
+                        <li class="subnav-item">
+                            <a class="link js-nav-content" href="javascript:;">
+                                <span class="text">角色管理</span>
+                                <span class="icon icon-menu-left icon-right"></span>
+                            </a>
+
+                            <div class="subnav js-subnav">
+                                <ul class="subnav-list">
+                                    <li class="subnav-item js-nav-item" data-target="rbac/role-list.html" data-index="31">
+                                        <a class="item-content" href="javascript:;">角色管理</a>
+                                    </li>
+                                    <li class="subnav-item js-nav-item" data-target="advanced-query.html" data-index="32">
+                                        <a class="item-content" href="javascript:;">场馆管理</a>
+                                    </li>
+                                    <li class="subnav-item js-nav-item" data-target="demo2.html" data-index="33">
+                                        <a class="item-content" href="javascript:;">配置管理</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item js-nav-item"  data-index="4">
+                <a class="link js-nav-content" href="javascript:;">
+                    <span class="icon icon-distribution icon-left"></span>
+                    <span class="text">配置管理</span>
+                    <span class="icon icon-menu-left icon-right"></span>
+                </a>
+
+                <div class="subnav js-subnav">
+                    <ul class="subnav-list">
+                        <li class="subnav-item js-nav-item" data-target="project-config.html" data-index="41">
+                            <a class="item-content" href="javascript:;">项目资料配置</a>
+                        </li>
+                        <li class="subnav-item js-nav-item"  data-target="partment-config.html" data-index="42">
+                            <a class="item-content" href="javascript:;">事业部/子公司配置</a>
+                        </li>
+                        <li class="subnav-item js-nav-item"  data-target="show-config.html" data-index="43">
+                            <a class="item-content" href="javascript:;">演出品类配置</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="coper-config.html" data-index="44">
+                            <a class="item-content" href="javascript:;">合作方式配置</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="ticket-config.html" data-index="45">
+                            <a class="item-content" href="javascript:;">票务系统配置</a>
+                        </li>
+                        <li class="subnav-item js-nav-item"  data-target="national-config.html" data-index="46">
+                            <a class="item-content" href="javascript:;">国家配置</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="money-config.html" data-index="47">
+                            <a class="item-content" href="javascript:;">币种配置</a>
+                        </li>
+                        <li class="subnav-item js-nav-item" data-target="venue-config.html" data-index="48">
+                            <a class="item-content" href="javascript:;">场馆费用配置</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <!-- 收起按钮 -->
+       <!-- <div class="menu-control" id="js-menu-control">
+            <span class="icon icon-menu"></span>
+        </div>-->
+        <!-- 收起按钮 END -->
+
+        <!-- 收起时样式 -->
+        <!--<div class="menu-folder">
+            <ul class="nav-list">
+                <li class="nav-item js-icon-menu">
+                    <div class="item-content">
+                        <span class="icon icon-shop icon-left"></span>
+                    </div>
+                </li>
+                <li class="nav-item js-icon-menu">
+                    <div class="item-content">
+                        <span class="icon icon-shop icon-left"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>-->
+        <!-- 收起时样式 END -->
+
+    </nav>
+    <!-- 侧边导航 END -->
+
+    <!-- 主内容区 -->
+    <div class="" id="page-content">
+        <!-- tabItem列表 -->
+        <nav class="tab-menu js-tab-menu">
+            <button class="tab-btn tab-left" id="js-tab-prev"><span class="glyphicon glyphicon-backward"></span></button>
+            <div class="tab-main">
+                <ul class="tab-list js-tab-list ">
+                    <li class="tab-item js-tab-item active" data-href="iframe0" data-name="iframe0">
+                        <a class="link">首页</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="right js-right">
+                <button class="tab-btn tab-right" id="js-tab-next"><span class="glyphicon glyphicon-forward"></span></button>
+                <button class="tab-btn tab-right btn-fix"><span class="glyphicon glyphicon-refresh js-refresh"></span>刷新</button>
+                <button class="tab-btn tab-right btn-fix btn-close-tab">
+                    关闭操作
+                    <span class="icon icon-menu-block-down"></span>
+
+                    <div class="drop-panel">
+                        <div class="drop-wrap">
+                            <ul class="list-block">
+                                <li class="list-item" id="js-fix-tab-item">
+                                    <a class="item-content" href="javascript:;">定位当前选项卡</a>
+                                </li>
+                                <li class="list-item" id="js-close-all-tab">
+                                    <a class="item-content" href="javascript:;">关闭全部选项卡</a>
+                                </li>
+                                <li class="list-item" id="js-close-other-tab">
+                                    <a class="item-content" href="javascript:;">关闭其他选项卡</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </button>
+                <button class="tab-btn tab-right btn-exit"><span class="glyphicon glyphicon-log-out"></span>退出</button>
+            </div>
+        </nav>
+        <!-- tabItem列表 END -->
+
+        <!-- 页面内容展示区 -->
+        <div class="" id="page-main">
+           
+            <iframe class="js-iframe" id="iframe0" name="iframe0" width="100%" height="100%" src="supplier-m.html" frameborder="0" data-href="supplier-m.html" seamless="" style=""></iframe>
+        </div>
+        <!-- 页面内容展示区 END -->
+
+        <!-- 收起按钮 -->
+       <!-- <div class="menu-control" id="js-menu-control1">
+            <span class="icon icon-menu"></span>
+        </div> -->
+        <div class="menu-control" id="js-menu-control">
+            <div class="triangle left"></div>
+            <div class="rect"><span class="icon icon-menu-block-down js-icon"></span></div>
+            <div class="triangle right"></div>
+        </div>
+        <!-- 收起按钮 END -->
+    </div>
+    <!-- 主内容区 END -->
+
+    <!-- 收起时样式 -->
+ <!--   <div class="menu-folder">
+        <ul class="nav-list">
+            <li class="nav-item js-icon-menu">
+                <div class="item-content">
+                    <span class="icon icon-shop icon-left"></span>
+                </div>
+            </li>
+            <li class="nav-item js-icon-menu">
+                <div class="item-content">
+                    <span class="icon icon-shop icon-left"></span>
+                </div>
+            </li>
+        </ul>
+    </div>-->
+    <!-- 收起时样式 END -->
+
+    <!-- 左边导航收起来时hover展现的样式 -->
+    <!--<div class="single-nav-wrap">
+        <ul class="subnav-list">
+            <li class="subnav-item js-nav-item" data-target="supplier-m.html" data-index="11">
+                <a class="item-content" href="javascript:;">供应商管理</a>
+            </li>
+            <li class="nav-item js-nav-item" data-target="supplier-m.html" data-index="11">
+                <a class="item-content" href="javascript:;">供应商管理</a>
+            </li>
+        </ul>
+    </div>-->
+    <!-- 左边导航收起来时hover展现的样式 END -->
+
+</div>
+<!-- 最外层 END -->
+
+<script src="../../dist/js/jquery.min.js"></script>
+<script src="../../dist/js/common.js"></script>
+<script>
+    (function(){
+        $('.top-nav-list li').on('click',function(){
+            var odata= $(this).attr('data-Id');
+            $('.top-nav-list li').removeClass('active');
+            $(this).addClass('active');
+            $('.nav-item-left').removeClass('actived');
+            $('.nav-item-left').addClass('active');
+            $('.nav-item-left').find('.js-subnav').css('display','block');
+                for(var i=0;i<$('.nav-item-left').length;i++){
+                    var adata= $('.nav-item-left:eq('+i+')').attr('data-Id')
+                    if(odata==adata){
+                      $('.nav-item-left:eq('+i+')').addClass('actived')
+                    }
+                }
+            
+        })
+    })()
+</script>
+
+</body>
+</html>

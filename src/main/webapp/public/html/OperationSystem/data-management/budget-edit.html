@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预算编辑</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <style>
+        .container-main {margin: 0;}
+        .w-label { width: 100px; }
+        .w-label.text-top { vertical-align: top;}
+        .w-info { width: auto; }
+        .container-wrapper .module-wrapper {width: auto;margin-top: 0;}
+        .container-wrapper {width: auto;}
+        .progress-bg { background-color: #fff; }
+        .w-info.auto-width .form-horizontal { position: relative; margin-bottom: 10px; padding: 10px 20px 5px 5px; background-color: #f3f3f5; }
+        .w-info.auto-width .form-horizontal .remove-wrap { position: absolute; top: 5px; right: 10px; font-size: 24px; cursor: pointer; }
+        .width-form {width: 700px; margin-left: auto; margin-right: auto;}
+        .radio-label {font-weight: normal;}
+    </style>
+</head>
+<body>
+    <div class="container-main bg-white">
+        <!-- 预算编辑 -->
+        <div class="container-wrapper">
+            <!-- 编辑部分 -->
+            <div class="module-wrapper row ">
+
+                <div class="module">
+                    <div class="module-content ">
+                        <form method="get" class="form-horizontal width-form">
+                            <div class="form-group">
+                                <label class="w-label control-label">项目名称：</label>
+                                <div class="w-info">
+                                    <label class="control-label">程璧我和小鸟和铃铛</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">城市：</label>
+                                <div class="w-info">
+                                    <label class="control-label">深圳</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">预算类型：</label>
+                                <div class="w-info">
+                                    <label class="control-label">项目预算</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">票图：</label>
+                                <div class="w-info auto-width js-add-list">
+                                    <div class="form-horizontal js-add-item">
+                                        <div class="remove-wrap">
+                                            <span class="icon icon-delcontact js-del-item"></span>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="w-label control-label">OA审批编号：</label>
+                                            <div class="w-info">
+                                                <input class="form-control" value="0124">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="w-label control-label text-top">附件：</label>
+                                            <div class="w-info">
+                                                <div class=""  id="uploader-wrap" >
+                                                    <div class="form-group">
+                                                        <div class="progress-bg fl">
+                                                            <div class="angled-135 stripes" style="width:100px;"></div>
+                                                            <div class="upload-title">
+                                                                helloworld.jpg
+                                                            </div>
+                                                        </div>
+                                                        <span class="progress-cancel fl">取消</span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <a href="javascript:;">helloworld.jpg</a><span class="del-uploadfile">删除</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group" >
+                                                    <button class="btn btn-success uploadBtn" id="picker" type="button" style="position: relative;"><span class="icon icon-upload"></span>上传</button>
+                                                    <span class="upload-tips">支持JPG、JPEG、PNG、WORD、EXCEL、PPT等格式</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="w-label control-label">备注：</label>
+                                            <div class="w-info">
+                                                <input class="form-control" value="87" maxlength="50">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-border-success js-price-add">新增</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="w-label control-label">状态：</label>
+                                <div class="w-info">
+                                    <label class="radio-label"><input type="radio" value="1" name="status" checked="">完成</label>
+                                    <label class="radio-label"><input type="radio" value="2" name="status">未完成</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- 编辑部分 END -->
+        </div>
+        <!-- 预算编辑 -->
+
+    </div>
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script>
+        $(function () {
+            // 票价和票量新增
+            $('.js-price-add').on('click', function () {
+                var $this = $(this),
+                    html  = '';
+
+                html += '<div class="form-horizontal js-add-item">';
+                html += '<div class="remove-wrap">';
+                html += '<span class="icon icon-delcontact js-del-item"></span>';
+                html += '</div>';
+                html += '<div class="form-group ">';
+                html += '<label class="w-label control-label">OA审批编号：</label>';
+                html += '<div class="w-info">';
+                html += '<input class="form-control" value="0124">';
+                html += '</div>';
+                html += '</div>';
+                html += '<div class="form-group">';
+                html += '<label class="w-label control-label">附件：</label>';
+                html += '<div class="w-info">';
+                html += '<div class=""  id="uploader-wrap" >';
+                html += '<div class="form-group">';
+                html += '<div class="progress-bg fl">';
+                html += '<div class="angled-135 stripes" style="width:100px;"></div>';
+                html += '<div class="upload-title">';
+                html += '<div class="upload-title">helloworld.jpg</div>';
+                html += '</div>';
+                html += '<span class="progress-cancel fl">取消</span>';
+                html += '</div>';
+                html += '<div class="form-group">';
+                html += '<a href="javascript:;">helloworld.jpg</a><span class="del-uploadfile">删除</span>';
+                html += '</div>';
+                html += '</div>';
+                html += '<div class="form-group" >';
+                html += '<button class="btn btn-success uploadBtn" id="picker" type="button" style="position: relative;"><span class="icon icon-upload"></span>上传</button>';
+                html += '<span class="upload-tips">支持JPG、JPEG、PNG、WORD、EXCEL、PPT等格式</span>';
+                html += '</div>';
+                html += '</div>';
+                html += '</div>';
+                html += '<div class="form-group ">';
+                html += '<label class="w-label control-label">备注：</label>';
+                html += '<div class="w-info">';
+                html += '<input class="form-control" value="87" maxlength="50">';
+                html += '</div>';
+                html += '</div>';
+                html += '</div>';
+
+                $this.before(html);
+            });
+
+            // 删除
+            $('.js-add-list').on('click', '.js-del-item', function () {
+                var $listItem = $(this).closest('.js-add-item');
+
+                $listItem.remove();
+            })
+        })
+    </script>
+</body>
+</html>

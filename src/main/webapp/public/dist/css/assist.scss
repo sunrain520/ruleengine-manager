@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+@import "variables";
+
+.fr {
+	float: right;
+}
+
+.fl {
+	float: left;
+}
+
+.clearfix {
+	overflow:hidden;
+	_zoom:1;
+}
+
+.hide {
+	display: none;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.block {
+	display: block;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.none {
+	display: none;
+}
+
+.clear {
+	&:after {
+		display: block;
+		clear: both;
+
+		content: '';
+	}
+}
+
+.bg-white {
+	background-color: $advanceBg;
+}
+
+.help-block {
+	color: #999;
+}
+
+.help {
+	font-size: small;
+	color: #999;
+}
+
+.border-none {
+	border: none;
+}
+
+
+.hide {
+	display: none;
+}

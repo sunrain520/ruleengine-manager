@@ -1,0 +1,98 @@
+@charset "utf-8";
+@import "variables";
+
+.pagination-panel {
+	padding: 10px 0;
+	text-align: right;
+
+	background-color: $advanceBg;
+
+	.pages-wrap:after{
+		display: block;
+		clear: both;
+
+		content: '';
+	}
+
+	.options-panel {
+		float: left;
+
+		height: 100%;
+
+		.checkbox-item {
+			display: inline-block;
+			vertical-align: middle;
+
+			border: 1px solid $tabBorderColor;
+			height: 36px;
+			line-height: 32px;
+			padding-left: 5px;
+			padding-right: 5px;
+
+			font-size: 0;
+
+			.checkbox-wrap {
+				display: inline-block;
+				vertical-align: middle;
+
+				font-size: $baseFontSize;
+
+				.checkbox {
+					font-size: 0;
+
+					.glyphicon-ok {
+						top: -4px;
+						font-size: 12px;
+					}
+				}
+
+				& + .text {
+					display: inline-block;
+					vertical-align: middle;
+
+					margin-left: 5px;
+
+					font-size: $baseFontSize;
+				}
+			}
+
+			& + .options-wrap {
+				margin-left: 25px;
+			}
+
+		}
+
+		.options-wrap {
+			display: inline-block;
+			vertical-align: middle;
+
+			.option-item {
+				margin-left: 10px;
+				margin-right: 10px;
+
+				&.gray {
+					color: #999;
+				}
+			}
+		}
+	}
+	.total-wrap {
+		float: right;
+
+		height: 100%;
+
+		select.pages-select.form-control {
+			display: inline-block;
+
+			width: 76px;
+		}
+
+		.current-page {
+			margin-left: 10px;
+		}
+
+		.total-pages {
+			margin-right: 10px;
+		}
+	}
+}

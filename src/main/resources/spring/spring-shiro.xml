@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/aop 
+						http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+						http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+	
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+              <value>${profile.properties}/shiro.properties</value>
+           </list>
+		</property>
+	</bean>
+	
+	<bean id="PMSInvoker" class="com.xiaoniu.dataplatform.ruleengine.invoker.PMSInvoker">
+	<property name="json">
+	<value>
+<!-- 	{"appId":"test","code":"SUCCESS","data":[{"name":"规则引擎门户系统","parent_id":"","pid":"aa15df5f-ac91-11e6-8eb4-14187767f4d8","remark":"","status":1,"type":3,"url":"http://127.0.0.1:8020/ruleengine-web"},{"name":"规则类型","parent_id":"aa15df5f-ac91-11e6-8eb4-14187767f4d8","pid":"ed5f907d-226a-4a11-96a3-20e2f4155f99","remark":"","status":1,"type":1,"url":"route/ruleengine/item/list"},{"name":"参数配置","parent_id":"aa15df5f-ac91-11e6-8eb4-14187767f4d8","pid":"025fe370-8d6b-4b33-b72e-377d197a09c4","remark":"","status":1,"type":1,"url":"route/ruleengine/param/list?from=sub"},{"name":"系统管理","parent_id":"aa15df5f-ac91-11e6-8eb4-14187767f4d8","pid":"8739ce41-1d65-4d4d-acb9-4348b47ef211","remark":"","status":1,"type":1,"url":"/api/user/userinfo"},{"name":"简单准入规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"18adced5-1478-4f4a-ba6b-2628b4765dab","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=SimpleAccess"},{"name":"准入规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"3bf0b535-4513-4e7d-beeb-51a4249bc94e","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=Access"},{"name":"黑名单规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"ec4b566f-1bf6-469c-9794-7b9d583cda38","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=BlackList"},{"name":"反欺诈规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"80030613-e6ac-467b-a9dd-a0a1660968eb","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=AntiFraud"},{"name":"审批规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"3ea9c74b-5b83-40e7-bddb-75e4729c1e80","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=Approve"},{"name":"评分卡规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"71910212-e599-433e-97bd-8029155af362","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=ScoreCard"},{"name":"额度规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"56dc1473-25c9-4a48-ab63-b6beb4dd7ae7","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=CreditLimit"},{"name":"贷后规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"6d4ab4d1-ec58-4fb7-85bf-1639a00f967a","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=PostLoan"},{"name":"预审批简单准入规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"2ed34796-7dab-4eff-8cf8-6615ef7a4fcd","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=PreSimpleAccess"},{"name":"预审批准入规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"f7218f1b-07ae-4aad-83b6-a45a826178fb","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=PreAccess"},{"name":"预审批黑名单规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"a350b7b6-a5ab-4fca-a4b9-10eb488ff407","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=PreBlackList"},{"name":"预审批反欺诈规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"849dc652-172b-4a4c-86d9-d508243e4359","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=PreAntiFraud"},{"name":"预审批审批规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"3f550a83-5c7d-4a22-8aa1-0b27ae3e105b","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=PreApprove"},{"name":"预审批评分卡规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"6426d37c-45b0-4c6f-af04-8d9fcf80a798","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=PreScoreCard"},{"name":"预审批额度规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"6d08714a-05bb-48d0-8074-9a83dbce07ec","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=PreCreditLimit"},{"name":"资产线上化准入","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"5618f7f8-7596-44b5-a967-30a51f7ae490","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=credit-ndf_ao_rule1"},{"name":"资产线上化反欺诈","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"8a67ce0c-5467-43b7-8923-67eb86aa9449","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=credit-ndf_ao_rule2"},{"name":"资产线上化贷后规则","parent_id":"ed5f907d-226a-4a11-96a3-20e2f4155f99","pid":"eab6feff-95cb-4bd7-8191-1f1f9ffb45db","remark":"","status":1,"type":2,"url":"route/ruleengine/item/list?ruleId=credit-ndf-AO_PostLoan"},{"name":"规则参数","parent_id":"025fe370-8d6b-4b33-b72e-377d197a09c4","pid":"33daecdd-0993-4456-a9f5-3e7b0a58136c","remark":"","status":1,"type":2,"url":"route/ruleengine/param/list"},{"name":"评分卡等级","parent_id":"025fe370-8d6b-4b33-b72e-377d197a09c4","pid":"7e0cc7d5-1d6a-4dcb-804f-cfe71aed6fea","remark":"","status":1,"type":2,"url":"route/ruleengine/scoredegree/list"},{"name":"关键字配置","parent_id":"025fe370-8d6b-4b33-b72e-377d197a09c4","pid":"e86e0d78-5986-46b3-b64f-60b208504363","remark":"","status":1,"type":2,"url":"route/ruleengine/keyword/list"},{"name":"拒绝名单","parent_id":"025fe370-8d6b-4b33-b72e-377d197a09c4","pid":"d1f84448-0ada-4211-9d0a-6692fac44b23","remark":"","status":1,"type":2,"url":"route/ruleengine/reject/list"},{"name":"渠道列表","parent_id":"025fe370-8d6b-4b33-b72e-377d197a09c4","pid":"1e1e1467-2c3b-4f75-885a-508a385a7927","remark":"","status":1,"type":2,"url":"route/ruleengine/channel/list"},{"name":"城市列表","parent_id":"025fe370-8d6b-4b33-b72e-377d197a09c4","pid":"67855d10-d14c-4c9c-a947-3f57eab6b748","remark":"","status":1,"type":2,"url":"route/ruleengine/cityinfo/list"},{"name":"规则结果","parent_id":"025fe370-8d6b-4b33-b72e-377d197a09c4","pid":"37e7ff83-6ffc-4e58-935c-4956f62306e2","remark":"","status":1,"type":2,"url":"route/ruleengine/ruleresult/list"},{"name":"原始数据","parent_id":"025fe370-8d6b-4b33-b72e-377d197a09c4","pid":"55253091-db34-4e93-8377-323c9d1f6e5a","remark":"","status":1,"type":2,"url":"route/ruleengine/rawdata/list"},{"name":"白名单","parent_id":"025fe370-8d6b-4b33-b72e-377d197a09c4","pid":"24e88e8f-35aa-452c-a1b6-0aa157be6736","remark":"","status":1,"type":2,"url":"route/ruleengine/whitelist"},{"name":"员工查询","parent_id":"8739ce41-1d65-4d4d-acb9-4348b47ef211","pid":"80f40a88-e181-4fdb-8ea0-2c1111a9fdbc","remark":"","status":1,"type":2,"url":"route/ruleengine/userinfo"},{"name":"操作日志","parent_id":"8739ce41-1d65-4d4d-acb9-4348b47ef211","pid":"8377c039-1041-41c6-8c0d-516fbf3257e8","remark":"","status":1,"type":2,"url":"route/ruleengine/operatelogs"},{"name":"权限配置","parent_id":"8739ce41-1d65-4d4d-acb9-4348b47ef211","pid":"c5f2f07f-ae6c-48d9-9c3f-da1c059ae40d","remark":"","status":1,"type":2,"url":"http://10.8.37.240:11001"}]} -->
+	<![CDATA[
+	{
+	"appId": "test",
+	"code": "SUCCESS",
+	"data": [{
+		"name": "规则引擎门户系统",
+		"parent_id": "",
+		"pid": "aa15df5f-ac91-11e6-8eb4-14187767f4d8",
+		"remark": "",
+		"status": 1,
+		"type": 3,
+		"url": "http://127.0.0.1:8020/ruleengine-web"
+	},
+	{
+		"name": "工作流",
+		"parent_id": "aa15df5f-ac91-11e6-8eb4-14187767f4d8",
+		"pid": "ed5f907d-226a-4a11-96a3-20e2f0000000",
+		"remark": "",
+		"status": 1,
+		"type": 1,
+		"url": "workflow/model/parent"
+	},
+	{
+		"name": "规则类型",
+		"parent_id": "aa15df5f-ac91-11e6-8eb4-14187767f4d8",
+		"pid": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"remark": "",
+		"status": 1,
+		"type": 1,
+		"url": "route/ruleengine/item/list"
+	},
+	{
+		"name": "参数配置",
+		"parent_id": "aa15df5f-ac91-11e6-8eb4-14187767f4d8",
+		"pid": "025fe370-8d6b-4b33-b72e-377d197a09c4",
+		"remark": "",
+		"status": 1,
+		"type": 1,
+		"url": "route/ruleengine/param/list?from=sub"
+	},
+	{
+		"name": "系统管理",
+		"parent_id": "aa15df5f-ac91-11e6-8eb4-14187767f4d8",
+		"pid": "8739ce41-1d65-4d4d-acb9-4348b47ef211",
+		"remark": "",
+		"status": 1,
+		"type": 1,
+		"url": "api/user/userinfo"
+	},
+	{
+		"name": "工作流编辑",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f0000000",
+		"pid": "ed5f907d-226a-4a11-96a3-20e2f0000001",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "workflow/model/list"
+	},
+	{
+		"name": "工作流触发",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f0000000",
+		"pid": "ed5f907d-226a-4a11-96a3-20e2f0000002",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "workflow/deployment/list"
+	},
+	{
+		"name": "简单准入规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "18adced5-1478-4f4a-ba6b-2628b4765dab",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=SimpleAccess"
+	},
+	{
+		"name": "准入规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "3bf0b535-4513-4e7d-beeb-51a4249bc94e",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=Access"
+	},
+	{
+		"name": "黑名单规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "ec4b566f-1bf6-469c-9794-7b9d583cda38",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=BlackList"
+	},
+	{
+		"name": "反欺诈规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "80030613-e6ac-467b-a9dd-a0a1660968eb",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=AntiFraud"
+	},
+	{
+		"name": "审批规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "3ea9c74b-5b83-40e7-bddb-75e4729c1e80",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=Approve"
+	},
+	{
+		"name": "评分卡规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "71910212-e599-433e-97bd-8029155af362",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=ScoreCard"
+	},
+	{
+		"name": "额度规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "56dc1473-25c9-4a48-ab63-b6beb4dd7ae7",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=CreditLimit"
+	},
+	{
+		"name": "贷后规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "6d4ab4d1-ec58-4fb7-85bf-1639a00f967a",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=PostLoan"
+	},
+	{
+		"name": "预审批简单准入规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "2ed34796-7dab-4eff-8cf8-6615ef7a4fcd",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=PreSimpleAccess"
+	},
+	{
+		"name": "预审批准入规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "f7218f1b-07ae-4aad-83b6-a45a826178fb",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=PreAccess"
+	},
+	{
+		"name": "预审批黑名单规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "a350b7b6-a5ab-4fca-a4b9-10eb488ff407",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=PreBlackList"
+	},
+	{
+		"name": "预审批反欺诈规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "849dc652-172b-4a4c-86d9-d508243e4359",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=PreAntiFraud"
+	},
+	{
+		"name": "预审批审批规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "3f550a83-5c7d-4a22-8aa1-0b27ae3e105b",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=PreApprove"
+	},
+	{
+		"name": "预审批评分卡规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "6426d37c-45b0-4c6f-af04-8d9fcf80a798",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=PreScoreCard"
+	},
+	{
+		"name": "预审批额度规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "6d08714a-05bb-48d0-8074-9a83dbce07ec",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=PreCreditLimit"
+	},
+	{
+		"name": "资产线上化准入",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "5618f7f8-7596-44b5-a967-30a51f7ae490",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=credit-ndf_ao_rule1"
+	},
+	{
+		"name": "资产线上化反欺诈",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "8a67ce0c-5467-43b7-8923-67eb86aa9449",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=credit-ndf_ao_rule2"
+	},
+	{
+		"name": "资产线上化贷后规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "eab6feff-95cb-4bd7-8191-1f1f9ffb45db",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=credit-ndf_AO_PostLoan"
+	},
+	{
+		"name": "普惠接口2同盾黑名单规则",
+		"parent_id": "ed5f907d-226a-4a11-96a3-20e2f4155f99",
+		"pid": "eab6feff-95cb-4bd7-8191-1f1f9ffb45cd",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/item/list?ruleId=PHInterface2Tongdun"
+	},
+	{
+		"name": "规则参数",
+		"parent_id": "025fe370-8d6b-4b33-b72e-377d197a09c4",
+		"pid": "33daecdd-0993-4456-a9f5-3e7b0a58136c",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/param/list"
+	},
+	{
+		"name": "评分卡等级",
+		"parent_id": "025fe370-8d6b-4b33-b72e-377d197a09c4",
+		"pid": "7e0cc7d5-1d6a-4dcb-804f-cfe71aed6fea",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/scoredegree/list"
+	},
+	{
+		"name": "关键字配置",
+		"parent_id": "025fe370-8d6b-4b33-b72e-377d197a09c4",
+		"pid": "e86e0d78-5986-46b3-b64f-60b208504363",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/keyword/list"
+	},
+	{
+		"name": "拒绝名单",
+		"parent_id": "025fe370-8d6b-4b33-b72e-377d197a09c4",
+		"pid": "d1f84448-0ada-4211-9d0a-6692fac44b23",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/reject/list"
+	},
+	{
+		"name": "渠道列表",
+		"parent_id": "025fe370-8d6b-4b33-b72e-377d197a09c4",
+		"pid": "1e1e1467-2c3b-4f75-885a-508a385a7927",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/channel/list"
+	},
+	{
+		"name": "城市列表",
+		"parent_id": "025fe370-8d6b-4b33-b72e-377d197a09c4",
+		"pid": "67855d10-d14c-4c9c-a947-3f57eab6b748",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/cityinfo/list"
+	},
+	{
+		"name": "规则结果",
+		"parent_id": "025fe370-8d6b-4b33-b72e-377d197a09c4",
+		"pid": "37e7ff83-6ffc-4e58-935c-4956f62306e2",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/ruleresult/list"
+	},
+	{
+		"name": "原始数据",
+		"parent_id": "025fe370-8d6b-4b33-b72e-377d197a09c4",
+		"pid": "55253091-db34-4e93-8377-323c9d1f6e5a",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/rawdata/list"
+	},
+	{
+		"name": "白名单",
+		"parent_id": "025fe370-8d6b-4b33-b72e-377d197a09c4",
+		"pid": "24e88e8f-35aa-452c-a1b6-0aa157be6736",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/whitelist"
+	},
+	{
+		"name": "员工查询",
+		"parent_id": "8739ce41-1d65-4d4d-acb9-4348b47ef211",
+		"pid": "80f40a88-e181-4fdb-8ea0-2c1111a9fdbc",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/userinfo"
+	},
+	{
+		"name": "操作日志",
+		"parent_id": "8739ce41-1d65-4d4d-acb9-4348b47ef211",
+		"pid": "8377c039-1041-41c6-8c0d-516fbf3257e8",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "route/ruleengine/operatelogs"
+	},
+	{
+		"name": "权限配置",
+		"parent_id": "8739ce41-1d65-4d4d-acb9-4348b47ef211",
+		"pid": "c5f2f07f-ae6c-48d9-9c3f-da1c059ae40d",
+		"remark": "",
+		"status": 1,
+		"type": 2,
+		"url": "http://10.8.37.240:11001"
+	}]
+}
+	]]>
+	</value>
+	</property>
+	</bean>
+	
+	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManagerConfigFile" value="classpath:cache/ehcache.xml"/>
+	</bean>
+
+	<bean id="myRealm" class="com.xiaoniu.dataplatform.ruleengine.shiro.realm.MyRealm">
+		<property name="cachingEnabled" value="true" />  
+        <property name="authenticationCachingEnabled" value="true" />  
+        <property name="authenticationCacheName" value="authenticationCache" />  
+        <property name="authorizationCachingEnabled" value="true" />  
+        <property name="authorizationCacheName" value="authorizationCache" /> 
+        <property name="casServerUrlPrefix" value="${CAS_SERVER_ADDRESS}/sso" /> 
+        <property name="casService" value="${SERVICE_ADDRESS}/${SERVICE_NAME}/cas" />
+	</bean>
+	
+	<bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
+	
+	<bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">
+        <property name="activeSessionsCacheName" value="shiro-activeSessionCache"/>
+        <property name="sessionIdGenerator" ref="sessionIdGenerator"/>
+    </bean>
+    
+    <bean id="sessionValidationScheduler" class="org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler">
+        <property name="sessionValidationInterval" value="${SESSION_VALIDATION_INTERVAL_MILLISECOND}"/>
+        <property name="sessionManager" ref="sessionManager"/>
+    </bean>
+    
+    <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+		<constructor-arg value="sid"/>
+        <property name="httpOnly" value="true"/>
+        <property name="maxAge" value="${COOKIE_MAX_AGE_SECOND}"/>
+    </bean>
+    
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="globalSessionTimeout" value="${GLOBAL_SESSION_MILLISECOND}"/>
+        <property name="deleteInvalidSessions" value="true"/>
+        <property name="sessionValidationSchedulerEnabled" value="true"/>
+        <property name="sessionValidationScheduler" ref="sessionValidationScheduler"/>
+        <property name="sessionDAO" ref="sessionDAO"/>
+        <property name="sessionIdCookieEnabled" value="true"/>
+        <property name="sessionIdCookie" ref="sessionIdCookie"/>
+    </bean>
+    
+    <bean id="rememberMeCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="rememberMe"/>
+        <property name="httpOnly" value="true"/>
+        <property name="maxAge" value="${COOKIE_MAX_AGE_SECOND}"/>
+    </bean>
+	
+	<bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <property name="cipherKey" value="#{T(org.apache.shiro.codec.Base64).decode('4AvVhmFLUs0KTA3Kprsdag==')}"/>
+        <property name="cookie" ref="rememberMeCookie"/>
+    </bean>
+    
+    <bean id="casSubjectFactory" class="org.apache.shiro.cas.CasSubjectFactory"/>
+    
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="myRealm"/>
+        <property name="sessionManager" ref="sessionManager"/>
+        <property name="cacheManager" ref="cacheManager"/>
+        <property name="rememberMeManager" ref="rememberMeManager"/>
+        <property name="subjectFactory" ref="casSubjectFactory"/>
+    </bean>
+    
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"/>
+        <property name="arguments" ref="securityManager"/>
+    </bean>
+    
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" /> 
+    
+	<aop:config proxy-target-class="true"></aop:config>
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager"/>
+	</bean>
+
+	<bean id="casFilter" class="org.apache.shiro.cas.CasFilter">
+        <property name="failureUrl" value="/casFailure.jsp"/>
+    </bean>
+    
+	<bean id="logout" class="org.apache.shiro.web.filter.authc.LogoutFilter"> 
+        <property name="redirectUrl" value="${CAS_SERVER_ADDRESS}/sso/logout?service=${SERVICE_ADDRESS}/${SERVICE_NAME}/cas" /> 
+    </bean> 
+    
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="${CAS_SERVER_ADDRESS}/sso/login?service=${SERVICE_ADDRESS}/${SERVICE_NAME}/cas"/>
+        <property name="successUrl" value="/index.jsp"/>
+        <property name="filters">
+            <util:map>
+                <entry key="cas" value-ref="casFilter"/>
+            </util:map>
+        </property>
+        <property name="filterChainDefinitions">
+            <value>
+            	/casFailure.jsp = anon
+            	/cas = cas
+                /logout = logout
+                /** = authc
+            </value>
+        </property>
+    </bean>
+</beans>	

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>权限设置</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-wrapper">
+
+            <!-- 头部 -->
+            <div class="container-header js-container-header">
+                <h5>新增角色</h5>
+                <div class="right-btn">
+                    <button class="btn btn-info" type="button"><span class="icon icon-save icon-left"></span>编辑</button>
+                    <button class="btn btn-warning js-close-current-tab" type="button"><span class="icon icon-delete icon-left"></span>取消</button>
+                </div>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 编辑权限 -->
+            <div class="module-wrapper row">
+
+                <div class="module row-box">
+                    <div class="module-content">
+                        <form method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="w-label control-label">角色名称：</label>
+                                <div class="list-detail">
+                                    采购支持
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">部门：</label>
+                                <div class="list-detail">
+                                    采购部
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">职位：</label>
+                                <div class="list-detail">
+                                    数据专员
+                                </div>
+                            </div>
+
+                            <!-- 复选框部分 -->
+                            <div class="form-group">
+                                <label class="w-label control-label">权限：</label>
+                                <div class="list-detail">
+                                    <div class="select-checkbox-panel">
+                                        <ul class="list-block js-list-block">
+                                            <!-- 标题行 -->
+                                            <li class="list-item">
+                                                <div class="item-content item-header">
+                                                    <div class="left">
+                                                        <span class="title">模块>页面</span>
+                                                    </div>
+                                                    <div class="center">
+                                                        <span class="title">查看</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <span class="title">操作</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- 标题行 END -->
+
+                                            <!-- 每个模块行 -->
+                                            <li class="list-item js-list-item js-list-item-header">
+                                                <div class="item-content">
+                                                    <div class="left">
+                                                        <span class="title">全部</span>
+                                                    </div>
+                                                    <div class="center js-check-wrap">
+                                                        <div class="checkbox-wrap js-select-all-check">
+                                                            <input type="checkbox">
+                                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right">
+                                                        <!-- 左边部分 全部 -->
+                                                        <div class="content-left">
+                                                            <div class="js-option-wrap">
+                                                                <div class="checkbox-wrap js-select-all-option">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">全部</span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 左边部分 全部 END -->
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- 每个模块行 END -->
+
+                                            <!-- 每个模块行 -->
+                                            <li class="list-item js-list-item">
+                                                <div class="item-content js-item-content">
+                                                    <div class="left">
+                                                        <span class="title">
+                                                            <span class="icon icon-menu-right"></span>
+                                                            项目管理
+                                                        </span>
+                                                    </div>
+                                                    <div class="center  js-check-wrap">
+                                                        <div class="checkbox-wrap js-select-check">
+                                                            <input type="checkbox">
+                                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right  js-option-wrap">
+                                                        <!-- 左边部分 全部 -->
+                                                        <div class="content-left">
+                                                            <div class="js-select-all-wrap">
+                                                                <div class="checkbox-wrap js-select-all-option">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">全部</span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 左边部分 全部 END -->
+
+                                                        <!-- 左边部分 右边 -->
+                                                        <div class="content-right">
+                                                            <!-- 每个checkbox 单元 -->
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+                                                            </div>
+                                                            <!-- 每个checkbox 单元 END -->
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- 左边部分 右边 END -->
+                                                    </div>
+                                                </div>
+
+                                                <!-- 下面是展开之后的子列表 -->
+                                                <div class="item-content js-item-content">
+                                                    <div class="left">
+                                                        <span class="title">
+                                                            项目管理
+                                                        </span>
+                                                    </div>
+                                                    <div class="center js-check-wrap">
+                                                        <div class="checkbox-wrap js-select-check">
+                                                            <input type="checkbox">
+                                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right js-option-wrap">
+                                                        <!-- 左边部分 全部 -->
+                                                        <div class="content-left">
+                                                            <div class="js-select-all-wrap">
+                                                                <div class="checkbox-wrap js-select-all-option">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">全部</span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 左边部分 全部 END -->
+
+                                                        <!-- 左边部分 右边 -->
+                                                        <div class="content-right">
+                                                            <!-- 每个checkbox 单元 -->
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+                                                            </div>
+                                                            <!-- 每个checkbox 单元 END -->
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- 左边部分 右边 END -->
+                                                    </div>
+                                                </div>
+                                                <!-- 展开之后的子列表 END -->
+
+
+                                            </li>
+                                            <!-- 每个模块行 END -->
+
+                                            <!-- 每个模块行 -->
+                                            <li class="list-item js-list-item">
+                                                <div class="item-content js-item-content">
+                                                    <div class="left">
+                                                        <span class="title">
+                                                            <span class="icon icon-menu-right"></span>
+                                                            项目管理
+                                                        </span>
+                                                    </div>
+                                                    <div class="center  js-check-wrap">
+                                                        <div class="checkbox-wrap js-select-check">
+                                                            <input type="checkbox">
+                                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right  js-option-wrap">
+                                                        <!-- 左边部分 全部 -->
+                                                        <div class="content-left">
+                                                            <div class="js-select-all-wrap">
+                                                                <div class="checkbox-wrap js-select-all-option">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">全部</span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 左边部分 全部 END -->
+
+                                                        <!-- 左边部分 右边 -->
+                                                        <div class="content-right">
+                                                            <!-- 每个checkbox 单元 -->
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+                                                            </div>
+                                                            <!-- 每个checkbox 单元 END -->
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- 左边部分 右边 END -->
+                                                    </div>
+                                                </div>
+
+                                                <!-- 下面是展开之后的子列表 -->
+                                                <div class="item-content js-item-content">
+                                                    <div class="left">
+                                                        <span class="title">
+                                                            项目管理
+                                                        </span>
+                                                    </div>
+                                                    <div class="center js-check-wrap">
+                                                        <div class="checkbox-wrap js-select-check">
+                                                            <input type="checkbox">
+                                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="right js-option-wrap">
+                                                        <!-- 左边部分 全部 -->
+                                                        <div class="content-left">
+                                                            <div class="js-select-all-wrap">
+                                                                <div class="checkbox-wrap js-select-all-option">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">全部</span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- 左边部分 全部 END -->
+
+                                                        <!-- 左边部分 右边 -->
+                                                        <div class="content-right">
+                                                            <!-- 每个checkbox 单元 -->
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+                                                            </div>
+                                                            <!-- 每个checkbox 单元 END -->
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+
+                                                            <div class="checkbox-item">
+                                                                <div class="checkbox-wrap js-checkbox-wrap">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                                <span class="text">编辑</span>
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- 左边部分 右边 END -->
+                                                    </div>
+                                                </div>
+                                                <!-- 展开之后的子列表 END -->
+
+
+                                            </li>
+                                            <!-- 每个模块行 END -->
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 复选框部分 END -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- 编辑权限 END -->
+        </div>
+    </div>
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script>
+        $(function () {
+
+            /*
+             * 复选框交互
+             * 全部：.js-list-item-header
+             *   -> 查看：js-check-wrap -> js-select-all-check
+             *   -> 全选：js-option-wrap -> js-select-all-option
+             *
+             * 二级全部：.js-list-item js-item-content[0]
+             *   -> 查看：js-select-wrap -> js-select-check
+             *   -> 全选：js-select-all-wrap -> js-select-all-option
+             *
+             * 三级全部：.js-list-item js-item-content not first
+             *   -> 查看：js-select-wrap -> js-select-check
+             *   -> 全选：js-select-all-wrap -> js-select-all-option
+             *
+             * 其他普通复选框：js-checkbox-wrap -> input[type="checkbox"] checked="checked"
+             *
+             * 交互：
+             * 1. 全部       ： 二级全部、三级全部、其他普通复选框 全部被选中/取消选中
+             * 2. 二级全部   ： 该二级全部下的所有三级全部和普通复选框都被选中/取消选中
+             * 3. 三级全部   ： 该三级全部下的所有普通复选框全部被选中/取消选中
+             * 4. 普通复选框 ： 选中/取消选中
+             *
+             * 其他交互：
+             * 1. 操作复选框：
+             *    -> 选中    ： 对应的查看复选框被选中
+             *    -> 取消选中 ： 判断对应查看复选框是否需要取消选中
+             */
+
+            var $listItem = $('.js-list-block .js-list-item');
+
+            // 全部 .js-list-item-header
+            $('.js-list-item-header').on('click', '.js-select-all-check', function () {      // 查看
+                var $this     = $(this),
+                    $list     = $this.closest('.js-list-block'),
+                    $checkbox = $list.find('.js-item-content .js-select-check');
+
+                // checkCheckbox($this, checkedCallback, uncheckedCallback)
+                checkCheckbox($this, function () {
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($checkbox, 'true');
+                }, function () {
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($checkbox, 'false');
+                });
+            }).on('click', '.js-select-all-option', function () {    // 全选
+                var $this         = $(this),
+                    $list         = $this.closest('.js-list-block'),
+                    $checkbox     = $list.find('.js-item-content .js-checkbox-wrap'),
+                    $subSelectAll = $list.find('.js-item-content .js-select-all-option'),
+                    $checkAll     = $list.find('.js-select-all-check'),
+                    $check        = $list.find('.js-select-check');
+
+                /*
+                 * 1. 判断自身状态 选择/取消
+                 * 2. 更新 所有复选框 的状态 选择/取消 （全选、普通复选框）
+                 */
+                // checkCheckbox($this, checkedCallback, uncheckedCallback)
+                checkCheckbox($this, function () {
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($checkbox, 'true');
+                    setCheckboxStatus($subSelectAll, 'true');
+                    setCheckboxStatus($checkAll, 'true');
+                    setCheckboxStatus($check, 'true');
+                }, function () {
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($checkbox, 'false');
+                    setCheckboxStatus($subSelectAll, 'false');
+                    setCheckboxStatus($checkAll, 'false');
+                    setCheckboxStatus($check, 'false');
+                })
+            });
+
+            // 二级全部 .js-list-item js-item-content[0]
+            $listItem.on('click', '.js-item-content:first-child .js-select-check', function () {    // 查看
+                /*
+                 * 1. 判断状态 选择/取消选择
+                 * 2. 该二级全部下的所有三级全部和普通复选框都被选中/取消选中
+                 * 3. 对应的查看复选框选中/取消选中
+                 * 4. 判断 全部 复选框选择/取消选择
+                 */
+
+                var $this        = $(this),
+                    $itemContent = $this.closest('.js-item-content'),
+                    $checklist   = $itemContent.siblings('.js-item-content').find('.js-select-check'),
+                    $checkedAll  = $this.closest('.js-list-block').find('.js-select-all-check'),
+                    $checkbox    = $this.closest('.js-list-item').siblings('.js-list-item').find('.js-item-content .js-select-check');
+
+                // checkCheckbox($this, checkedCallback, uncheckedCallback)
+                checkCheckbox($this, function () {    // 选中回调
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($checklist, 'true');
+
+                    // checkSelectAll($selectAll, $checkbox)
+                    checkSelectAll($checkedAll, $checkbox);
+
+                }, function () {
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($checklist, 'false');
+                    setCheckboxStatus($checkedAll, 'false');
+                })
+            }).on('click', '.js-item-content:first-child .js-select-all-option', function () {  // 全选
+                /*
+                 * 1. 判断自身 选中/取消选中
+                 * 2. 更新 该三级下的所有普通复选框状态 选中/取消
+                 * 3. 更新 上一级（二级）复选框的状态 选中/取消
+                 * 4. 更新 全选 复选框状态 选中/取消
+                 * 5. 更新 对应的 查看 复选框状态 选中/取消
+                 */
+
+                var $this         = $(this),
+                    $listItem     = $this.closest('.js-list-item'),
+                    $subCheckbox  = $listItem.find('.js-checkbox-wrap'),
+                    $subCheckAll  = $listItem.find('.js-select-all-option'),
+                    $subChecked   = $listItem.find('.js-select-check'),
+                    $itemSelect   = $this.closest('.js-list-item').find('.js-select-all-option'),  // 这里有问题
+                    $checkedAll   = $this.closest('.js-list-item').find('.js-select-all-check'),
+                    $topSelect    = $this.closest('.js-list-block').find('.js-list-item-header .js-select-all-option'),
+                    $selectAll    = $this.closest('.js-list-block').find('.js-list-item .js-checkbox-wrap'),
+                    $topCheck     = $this.closest('.js-list-block').find('.js-list-item-header .js-select-all-check'),
+                    $checkTotal   = $this.closest('.js-list-item').find('.js-item-content .js-select-check'),
+                    $nextCheckBox = $listItem.find('.js-checkbox-wrap');
+
+                // checkCheckbox($this, checkedCallback, uncheckedCallback)
+                checkCheckbox($this, function () {
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($subCheckbox, 'true');
+                    setCheckboxStatus($subCheckAll, 'true');
+
+                    // checkSelectAll($selectAll, $checkbox)
+                    checkSelectAll($itemSelect, $nextCheckBox);
+                    checkSelectAll($topSelect, $selectAll);
+
+                    setCheckboxStatus($subChecked, 'true');
+                    checkSelectAll($checkedAll, $nextCheckBox);
+                    checkSelectAll($topCheck, $checkTotal);
+
+                }, function () {
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($subCheckbox, 'false');
+                    setCheckboxStatus($subCheckAll, 'false');
+                    setCheckboxStatus($topSelect, 'false');
+
+                    setCheckboxStatus($subChecked, 'false');
+                    setCheckboxStatus($itemSelect, 'false');
+                    setCheckboxStatus($checkedAll, 'false');
+                    setCheckboxStatus($topCheck, 'false');
+                })
+            });
+
+            // 三级全部 .js-list-item js-item-content not first
+            $listItem.on('click', '.js-item-content:not(:first-child) .js-select-check', function () {      // 查看
+                var  $this        = $(this),
+                     $secondCheck = $this.closest('.js-list-item').find('.js-item-content:first-child .js-select-check'), // 二级全选 查看
+                     $checkedAll  = $this.closest('.js-list-block').find('.js-select-all-check'),
+                     $checkbox    = $this.closest('.js-list-item').find('.js-item-content .js-select-check'),
+                     $otherCheck  = $this.siblings('.js-item-content:not(:first-child) .js-select-check');
+
+                /*
+                 * 1. 判断自身 选中/取消选选中
+                 * 2. 更新 全部复选框 选中/取消选中
+                 */
+                // checkCheckbox($this, checkedCallback, uncheckedCallback)
+                checkCheckbox($this, function () {
+
+                    // checkSelectAll($selectAll, $checkbox)
+                    checkSelectAll($secondCheck, $otherCheck);
+                    checkSelectAll($checkedAll, $checkbox);
+
+                }, function () {
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($secondCheck, 'false');
+                    setCheckboxStatus($checkedAll, 'false');
+                })
+            }).on('click', '.js-item-content:not(:first-child) .js-select-all-option', function () {  // 全选
+                /*
+                 * 1. 判断自身状态 选择/取消
+                 * 2. 更新 下面的所有普通复选框的状态 选中/取消
+                 * 3. 更新 上面所有 全选复选框的状态 递增 判断更新 (二级，一级)
+                 * 4. 更新 查看复选框的状态 选择/取消
+                 * 5. 更新 上面所有 全选查看复选框的状态 选中/取消
+                 */
+                var $this = $(this),
+                        $listItem          = $this.closest('.js-list-item'),
+                        $list              = $this.closest('.js-list-block'),
+                        $itemContent       = $this.closest('.js-item-content'),
+                        $checkbox          = $listItem.find('.js-checkbox-wrap'),
+                        $ItemCheckbox      = $itemContent.find('.js-option-wrap .js-checkbox-wrap'),
+                        $supSelectAll      = $listItem.find('.js-item-content:first-child').find('.js-select-all-option'),
+                        $SelectAll         = $list.find('.js-list-item .js-item-content:first-child').find('.js-select-all-option'),
+                        $topSelectAll      = $listItem.closest('.js-list-block').find('.js-list-item-header .js-select-all-option'),
+                        $check             = $listItem.find('.js-select-check'),
+                        $ItemCheck         = $itemContent.find('.js-select-check'),
+                        $nextCheckAll      = $listItem.siblings('.js-item-content:not(:first-child) .js-select-check'),
+                        $CheckAll          = $list.find('.js-list-item').find('.js-item-content:first-child').find('.js-select-check'),
+                        $supCheck          = $listItem.find('.js-item-content:first-child').find('.js-select-check'),
+                        $topCheck          = $listItem.closest('.js-list-block').find('.js-list-item-header .js-select-all-check');
+
+                // checkCheckbox($this, checkedCallback, uncheckedCallback)
+                checkCheckbox($this, function () {
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($ItemCheckbox, 'true');
+                    setCheckboxStatus($check, 'true');
+
+                    // checkSelectAll($selectAll, $checkbox)
+                    checkSelectAll($supSelectAll, $checkbox);
+                    checkSelectAll($topSelectAll, $SelectAll);
+                    checkSelectAll($supCheck, $nextCheckAll);
+
+                    checkSelectAll($topCheck, $CheckAll);
+                }, function () {
+
+                    // setCheckboxStatus($this, status, callback)
+                    console.log($supSelectAll,'----------jjj')
+                    setCheckboxStatus($ItemCheckbox, 'false');
+                    setCheckboxStatus($supSelectAll, 'false');
+                    setCheckboxStatus($topSelectAll, 'false');
+
+                    setCheckboxStatus($ItemCheck, 'false');
+
+                    // checkSelectAll($selectAll, $checkbox)
+                    checkSelectAll($supCheck, $check);
+                    checkSelectAll($topCheck, $CheckAll);
+                })
+            });
+
+            // 普通复选框
+            $listItem.on('click', '.js-checkbox-wrap', function () {
+                /*
+                 * 1. 判断自身状态
+                 * 2. 更新 上面所有 全选复选框的状态 递增
+                 * 3. 更新 查看复选框的状态
+                 * 4. 更新 上面所有 查看复选的状态
+                 */
+                var $this = $(this),
+                    $optionWrap      = $this.closest('.js-option-wrap'),
+                    $itemContent    = $optionWrap.closest('.js-item-content'),
+                    $listItem       = $itemContent.closest('.js-list-item'),
+                    $list           = $listItem.closest('.js-list-block'),
+                    $optionCheckbox = $optionWrap.find('.js-checkbox-wrap'),
+                    $itemCheckbox   = $itemContent.find('.js-checkbox-wrap'),
+                    $itemSelectAll  = $itemContent.find('.js-select-all-option'),
+                    $listCheckbox   = $listItem.find('.js-checkbox-wrap'),
+                    $selectAllCheckbox = $listItem.find('.js-item-content:first-child .js-checkbox-wrap'),
+                    $listSelectAll  = $list.find('.js-item-content .js-select-all-option'),
+                    $supSelectAll   = $listItem.find('.js-item-content:first-child .js-select-all-option'),
+                    $topSelectAll   = $list.find('.js-list-item-header .js-select-all-option'),
+                    $itemCheck      = $itemContent.find('.js-select-check'),
+                    $supCheck       = $listItem.find('.js-item-content:first-child .js-select-check'),
+                    $listCheck      = $listItem.find('.js-item-content:not(:first-child) .js-select-check'),
+                    $topCheck       = $list.find('.js-list-item-header .js-select-all-check'),
+                    $CheckAll       = $list.find('.js-item-content .js-select-check');
+
+                // checkCheckbox($this, checkedCallback, uncheckedCallback)
+                checkCheckbox($this, function () {
+
+                    // checkSelectAll($selectAll, $checkbox)
+                    checkSelectAll($itemSelectAll, $optionCheckbox);
+                    checkSelectAll($supSelectAll, $listCheckbox);
+                    checkSelectAll($topSelectAll, $listSelectAll);
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($itemCheck, 'true');
+                    checkSelectAll($supCheck, $listCheck);
+
+                    $itemContent.index() == 0 && (setCheckboxStatus($itemCheck, 'true'));
+
+                    checkSelectAll($topCheck, $CheckAll);
+                }, function () {
+
+                    // setCheckboxStatus($this, status, callback)
+                    setCheckboxStatus($itemSelectAll, 'false');
+                    setCheckboxStatus($supSelectAll, 'false');
+                    setCheckboxStatus($topSelectAll, 'false');
+
+                    // checkCheckSelect($check, $checkbox)
+                    checkCheckSelect($itemCheck, $optionCheckbox);
+                    checkCheckSelect($supCheck, $listCheck);
+                    checkCheckSelect($supCheck, $selectAllCheckbox);
+
+                    checkSelectAll($topCheck, $CheckAll);
+
+                })
+            });
+
+
+            /**
+             * Description: 判断复选框是否被选中
+             * @param $this：当前复选框对象
+             * @param checkedCallback：选中时的回调
+             * @param uncheckedCallback：未选中的回调
+             */
+            function checkCheckbox($this, checkedCallback, uncheckedCallback) {
+                var $checkbox = $this.find('input[type="checkbox"]');
+
+                if($this.prop('checked') || $checkbox.attr('checked') == 'checked') {
+                    $this.prop('checked',false);
+                    $checkbox.prop('checked',false).removeAttr('checked');
+
+                    uncheckedCallback && uncheckedCallback();
+                }
+                else {
+                    $this.prop('checked',true);
+                    $checkbox.prop('checked',true).attr('checked','checked');
+
+                    checkedCallback && checkedCallback();
+                }
+            }
+
+            /**
+             * Description: 设置复选框的状态
+             * @param $this：需要改变复选框对象
+             * @param status：'true' or 'false'
+             * @param callback: 改变状态之后的回调
+             */
+            function setCheckboxStatus($this, status, callback) {
+                var $checkbox = $this.find('input[type="checkbox"]');
+
+                if (status == 'true') {
+                    $this.prop('checked',true);
+                    $checkbox.prop('checked',true).attr('checked','checked');
+                }
+                else {
+                    $this.prop('checked',false);
+                    $checkbox.prop('checked',false).removeAttr('checked');
+                }
+                callback && callback($this);
+            }
+
+            /**
+             * Description: 判断是否全选
+             * @param $selectAll：需要更新状态的全选复选框对象
+             * @param $checkbox：用来判断全选复选框状态的复选框对象 是一个array
+             */
+            function checkSelectAll($selectAll, $checkbox) {
+                var isSelectedAll = true;
+
+                $checkbox.each(function () {
+                    var $this     = $(this),
+                        $checkbox = $this.find('input[type="checkbox"]');
+
+                    (!$this.prop('checked') || $checkbox.attr('checked') != 'checked') && (isSelectedAll = false);
+                });
+
+                // setCheckboxStatus($this, status, callback)
+                isSelectedAll ? setCheckboxStatus($selectAll, 'true') : setCheckboxStatus($selectAll, 'false');
+            }
+
+            /**
+             * Description: 查看复选框状态更新，主要用于普通复选框点击事件
+             * @param $check：需要更新的复选框对象
+             * @param $checkbox： 用来判断复选框状态的复选框对象 是一个array
+             */
+            function checkCheckSelect($check, $checkbox) {
+                var isCheck = false;
+
+                $checkbox.each(function () {
+                    var $this     = $(this),
+                        $checkbox = $this.find('input[type="checkbox"]');
+
+                    ($this.prop('checked') || $checkbox.attr('checked') == 'checked') && (isCheck = true);
+                });
+
+                // setCheckboxStatus($this, status, callback)
+                isCheck ? setCheckboxStatus($check, 'true') : setCheckboxStatus($check, 'false');
+            }
+
+        });
+    </script>
+</body>
+</html>

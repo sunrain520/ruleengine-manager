@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报批清单</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/table.scss">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-wrapper">
+            <div class="module-wrapper row">
+                <!--新增清单头部-->
+                <div class="container-header js-container-header">
+                    <h5>新增项目</h5>
+                    <div class="right-btn">
+                        <button class="btn btn-info js-add" type="submit"><span class="icon icon-email icon-left"></span>寄送资料</button>
+                        <button class="btn btn-info js-cancel" type="button"><span class="icon icon-log icon-left"></span>操作日志</button>
+                    </div>
+                </div>
+                <!--新增清单头部 END-->
+
+                <!--排期信息-->
+                <div class="module row-box">
+                    <div class="module-title">排期信息</div>
+                    <div class="module-content">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="w-label control-label">排期名称：</label>
+                                <span class="list-detail">屈臣氏三生花-我和小鸟和铃铛-深圳</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">批文类型：</label>
+                                <div class="list-detail">文化批文</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">城市：</label>
+                                <div class="list-detail">深圳</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">区：</label>
+                                <div class="list-detail">全部</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">
+                                    是否涉外：</label>
+                                <div class="list-detail">否</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">
+                                    演出时间：</label>
+                                <div class="list-detail">
+                                    <span class="mr5">2016.09.08 09:00</span>
+                                    <span class="mr5">至</span>
+                                    <span>2016.09.08 11:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--排期信息 END-->
+
+                <!--报批清单-->
+                <div class="module row-box">
+                    <div class="module-title">
+                        报批清单
+                        <div class="title-after">
+                            <a href="javascript:" class="link">下载全部附件</a>
+                        </div>
+                    </div>
+                    <!--剧组资料-->
+                    <div class="module-content">
+                        <div class="data-wrapper">
+                            <div class="data-title">剧组资料：
+                                <span class="icon icon-pass"></span>
+                            </div>
+                            <div class="data-box">
+                                <div class="data-content">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="w-label control-label">资料清单：</label>
+                                            <ul class="list-detail" style="list-style: none">
+                                                <li>演员身份证</li>
+                                                <li>演员短工证</li>
+                                                <li>曲目单</li>
+                                            </ul>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="w-label control-label">附件：</label>
+                                            <a href="javascript:" class="list-detail">剧组资料.rar</a>
+                                            <!--<a href="javascript:" class="icon icon-download" style="margin-lef:3px;"></a>-->
+                                            <span class="icon icon-download" style="margin-left: 10px;"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="w-label control-label">备注：</label>
+                                            <ul class="list-detail" style="list-style: none">
+                                                <li>http://pan.baidu.com/1234</li>
+                                                <li>提取码：XXX23</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--剧组资料 END-->
+
+                    <!--基础资料-->
+                    <div class="module-content">
+                        <div class="data-wrapper">
+                            <div class="data-title">基础资料：
+                                <span class="icon icon-change-hidden"></span>
+                            </div>
+                            <div class="data-box" style="width: 830px;margin-left: 122px;">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">序号</th>
+                                            <th>资料名称</th>
+                                            <th>附件</th>
+                                            <th>备注</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td>请示（抬头：锦江区文化局）--2份</td>
+                                            <td>
+                                                <a href="javascript:" class="link">证书.jpg</a>
+                                                <span class="icon icon-download"></span>
+                                            </td>
+                                            <td>--</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td>营业性演出申请登记表</td>
+                                            <td>
+                                                <a href="javascript:" class="link">证书.jpg</a>
+                                                <span class="icon icon-download"></span>
+                                            </td>
+                                            <td>--</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">3</td>
+                                            <td>剧本/歌词、音频/视频（光碟）</td>
+                                            <td>--</td>
+                                            <td>
+                                                <div>http://pan.baidu.com/1234</div>
+                                                <div>提取码：XXX23</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">4</td>
+                                            <td>两个经纪人的证书复印件（梁贵重、李素梅）</td>
+                                            <td>
+                                                <div>
+                                                    <a href="javascript:" class="link">证书1.jpg</a>
+                                                    <span class="icon icon-download"></span>
+                                                </div>
+                                                <div>
+                                                    <a href="javascript:" class="link">证书2.jpg</a>
+                                                    <span class="icon icon-download"></span>
+                                                </div>
+                                            </td>
+                                            <td>--</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">5</td>
+                                            <td>声明（附件3）、演出活动承诺书（附件4）</td>
+                                            <td>
+                                                <a href="javascript:" class="link">证书.jpg</a>
+                                                <span class="icon icon-download"></span>
+                                            </td>
+                                            <td>--</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--基础资料 END-->
+
+                    <!--区域资料-->
+                    <div class="module-content">
+                        <div class="data-wrapper">
+                            <div class="data-title">区域资料：
+                                <span class="icon icon-change-hidden"></span>
+                            </div>
+                            <div class="data-box" style="width: 830px;margin-left: 122px;">
+                                <table class="data-table">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">序号</th>
+                                        <th>资料名称</th>
+                                        <th>附件</th>
+                                        <th>备注</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-center">1</td>
+                                        <td>请示（抬头：锦江区文化局）--2份</td>
+                                        <td>
+                                            <a href="javascript:" class="link">证书.jpg</a>
+                                            <span class="icon icon-download"></span>
+                                        </td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+                                        <td>营业性演出申请登记表</td>
+                                        <td>
+                                            <a href="javascript:" class="link">证书.jpg</a>
+                                            <span class="icon icon-download"></span>
+                                        </td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">3</td>
+                                        <td>剧本/歌词、音频/视频（光碟）</td>
+                                        <td>--</td>
+                                        <td>
+                                            <div>http://pan.baidu.com/1234</div>
+                                            <div>提取码：XXX23</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">4</td>
+                                        <td>两个经纪人的证书复印件（梁贵重、李素梅）</td>
+                                        <td>
+                                            <div>
+                                                <a href="javascript:" class="link">证书1.jpg</a>
+                                                <span class="icon icon-download"></span>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:" class="link">证书2.jpg</a>
+                                                <span class="icon icon-download"></span>
+                                            </div>
+                                        </td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">5</td>
+                                        <td>声明（附件3）、演出活动承诺书（附件4）</td>
+                                        <td>
+                                            <a href="javascript:" class="link">证书.jpg</a>
+                                            <span class="icon icon-download"></span>
+                                        </td>
+                                        <td>--</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--区域资料 END-->
+                </div>
+                <!--报批清单 END-->
+            </div>
+        </div>
+    </div>
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/approval-tools.js"></script>
+</body>
+</html>

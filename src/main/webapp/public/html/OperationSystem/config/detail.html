@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他配置</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <style>
+        .w-info {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-wrapper">
+            <!-- 头部 -->
+            <div class="container-header js-container-header">
+                <h5>其他配置</h5>
+                <div class="right-btn">
+                    <button class="btn btn-info" type="submit">操作日志</button>
+                </div>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 详情部分 -->
+            <div class="module-wrapper">
+                <div class="min-box-wrap">
+                    <!-- 基本信息 -->
+                    <div class="module row-box">
+                        <div class="module-content">
+                            <div class="form-horizontal pl15">
+                                <div class="form-group js-show-wrap">
+                                    <span>自动下排期时间：<=演出开始时间</span>
+                                    <span class="ml30">150天</span>
+
+                                    <div class="fr pointer js-edit font-24">
+                                        <span class="icon icon-edit"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group js-edit-wrap none">
+                                    <label class="control-label">自动下排期时间：</label>
+                                    <div class="w-info">
+                                        <select class="form-control">
+                                            <option value="">></option>
+                                            <option value="">>=</option>
+                                            <option value=""><</option>
+                                            <option value=""><=</option>
+                                            <option value="">!=</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-info">
+                                        <select class="form-control">
+                                            <option value="">演出开始时间</option>
+                                            <option value="">演出结束时间</option>
+                                            <option value="">开票时间</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-info">
+                                        <input type="number" class="form-control">
+                                    </div>
+                                    <div class="fr">
+                                        <button class="btn btn-success" type="submit">
+                                            <span class="icon icon-save icon-left"></span>保存
+                                        </button>
+                                        <button class="btn btn-default js-cancel" type="button">
+                                            <span class="icon icon-delete icon-left"></span>取消
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 基本信息 END -->
+
+                </div>
+            </div>
+            <!-- 详情部分END -->
+        </div>
+    </div>
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+<script>
+
+    $(function () {
+
+        // 编辑配置
+        $('.js-edit').on('click', function () {
+            var $editWrap = $('.js-edit-wrap'),
+                $showWrap = $(this).closest('.js-show-wrap');
+
+            $editWrap.removeClass('none');
+            $showWrap.addClass('none');
+        });
+
+        // 取消编辑
+        $('.js-cancel').on('click', function () {
+            var $editWrap = $(this).closest('.js-edit-wrap'),
+                $showWrap = $('.js-show-wrap');
+
+            $editWrap.addClass('none');
+            $showWrap.removeClass('none');
+        })
+    })
+</script>
+</body>
+</html>

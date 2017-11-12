@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+@import "variables";
+
+.select-checkbox-panel {
+	width: 827px;
+
+	.list-block {
+		list-style: none;
+		padding-left: 0;
+
+		border: 1px solid $btnDefaultBorderColor;
+
+		.list-item {
+
+			font-size: 0;
+
+			&:last-child {
+				.item-content {
+					border-bottom: none;
+				}
+			}
+
+			.item-content {
+
+				background-color: #fafafa;
+
+				&:last-child {
+					border-bottom: 1px solid $btnDefaultBorderColor;
+				}
+
+				& + .item-content {
+					border-top: 1px dashed $btnDefaultBorderColor;
+
+					background-color: $advanceBg;
+
+					.left {
+						width: 133px;
+
+						.title {
+							padding-left: 20px;
+						}
+					}
+
+					.center {
+						margin-left: -1px;
+					}
+				}
+
+				&.item-header {
+					height: 34px;
+					line-height: 34px;
+					text-align: center;
+
+					background-color: $baseBg;
+
+					.left,
+					.right,
+					.center {
+						padding-top: 0;
+						padding-bottom: 0;
+
+					}
+
+
+				}
+
+				.center {
+					border-left: 1px solid $btnDefaultBorderColor;
+					border-right: 1px solid $btnDefaultBorderColor;
+				}
+
+				.left,
+				.center,
+				.right {
+					display: table-cell;
+					vertical-align: middle;
+					table-layout: fixed;
+
+					padding: 8px 20px;
+					font-size: $baseFontSize;
+
+
+				}
+
+				.left {
+					width: 133px;
+					max-width: 16%;
+					min-width: 16%;
+
+					padding: 8px 10px 8px 10px;
+
+					.title {
+
+					}
+					cursor: pointer;
+				}
+
+				.center {
+					width: 74px;
+					max-width: 9%;
+					min-width: 9%;
+
+					text-align: center;
+				}
+
+				.right {
+					width: 625px;
+					max-width: 75%;
+					min-width: 75%;
+
+					.content-left,
+					.content-right {
+						display: table-cell;
+						vertical-align: middle;
+
+						table-layout: fixed;
+					}
+
+					.content-left {
+						width: 100px;
+					}
+
+					.content-right {
+						padding-left: 15px;
+
+						width: calc(100% - 106px);
+
+						.checkbox-item {
+							display: inline-block;
+							vertical-align: middle;
+
+							width: 110px;
+
+							margin-bottom: 3px;
+							padding-right: 5px;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

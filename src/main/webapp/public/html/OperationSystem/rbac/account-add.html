@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增账户设置</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <style>
+        .w-info {text-align: left;}
+    </style>
+</head>
+<body class="bg-white">
+    <div class="role-edit-ui-wrap ">
+        <div class="module row-box role-edit-ui">
+            <div class="module-content">
+                <div class="form-horizontal text-center">
+                    <div class="form-group">
+                        <label class="w-label control-label">姓名：</label>
+                        <div class="w-info">
+                            <label class="control-label">黄佳佳（技术中心）</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="w-label control-label">账号：</label>
+                        <div class="w-info">
+                            <label class="control-label">wanglingling@juooo.com</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="w-label control-label">选择角色：</label>
+                        <div class="w-info ">
+                            <div class="blur-panel js-blur-panel full-width">
+                                <input type="text" class="form-control form-list js-blur-input" placeholder="深圳">
+                                <span class="icon icon-menu-block-down"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="w-label control-label"><span class="must">*</span>状态：</label>
+                        <div class="w-info">
+                            <label class="radio-label"><input type="radio" value="1" name="status" checked="">正常</label>
+                            <label class="radio-label"><input type="radio" value="2" name="status">停用</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script>
+        var option = {
+            multiSelect: true,
+            maxSelectNum: 1,              // 最大选择个数
+            maxNumCallback: function () { // 选完限制个数之后再次选择的回调
+
+            },
+            resultID: 'id',
+            resultText: 'text',
+            ajax: {
+                type: "GET",
+                dataType: "json",
+                url: '../blur-selection.json'
+            },
+            enterKeyFun: function ($dom) {
+                console.log('hello word 111',$dom)
+            }
+        };
+
+        // 模糊查询 使用测试
+        $('.js-blur-panel').blurSelect(option);
+    </script>
+</body>
+</html>

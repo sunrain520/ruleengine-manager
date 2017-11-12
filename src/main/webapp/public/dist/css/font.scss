@@ -1,0 +1,38 @@
+@charset "utf-8";
+@import "variables";
+
+.c-end {
+	color: $statusEndFontColor;
+}
+
+.c-prepare {
+	color: $statusPrepareFontColor;
+}
+
+.c-in {
+	color: $statusInFontColor;
+}
+
+.c-available {
+	color: $statusAvailableFontColor;
+}
+
+.c-error {
+	color: $inputErrorBorderColor;
+}
+
+.c-success {
+	color: $btnSuccessColor;
+}
+
+.c-999 {
+	color: #999;
+}
+
+.c-666 {
+	color: #666;
+}
+
+.font-24 {
+	font-size: 24px;
+}

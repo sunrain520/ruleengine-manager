@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>审批流程配置</title>
+    <link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/table.scss">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+</head>
+<body>
+<div class="container-main">
+    <div style="width: 100%;" class="content">
+        <!--按钮操作-->
+        <div class="operation-btns">
+            <button class="btn btn-success js-update-schedule" name="activate" type="button">
+                <span class="icon icon-add icon-left"></span>新增
+            </button>
+            <button class="btn btn-info js-update-schedule" name="activate" type="button">
+                <span class="icon icon-edit icon-left"></span>编辑
+            </button>
+        </div>
+        <!--按钮操作 END-->
+
+        <!-- 搜索部分 -->
+        <div class="search-box clear js-search-box">
+            <div class="js-form-wrap form-wrap">
+                <form class="form-horizontal js-form clear" style="display: block;">
+                    <div class="form-group" data-rule="schedule_progress_rule">
+                        <label class="control-label">事业部/子公司：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="请选择">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" data-rule="schedule_progress_rule">
+                        <label class="control-label">合同类型：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="请选择">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" data-rule="schedule_progress_rule">
+                        <label class="control-label">初审人：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="请选择">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="fr btn-wrap">
+                        <button class="btn btn-info">搜索</button>
+                        <button class="btn btn-default ceee">清空</button>
+                    </div>
+                </form>
+            </div>
+            <!--展开和收起图标-->
+            <div class="folder-wrap" style="margin-top: -10px;">
+                <div class="text-wrap">
+                    <div class="text js-search-folder">
+                        <span class="js-text-info"></span>
+                        <div class="folder">
+                            <div class="triangle left"></div>
+                            <div class="rect"><span class="icon icon-menu-block-down icon-up js-icon icon-up"></span></div>
+                            <div class="triangle right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 搜索部分 END -->
+
+
+        <!--表格明细-->
+        <div class="table-panel panel-white box table-panel-full row-box" style="text-align: center">
+            <div class="table-wrap box-content">
+                <div class="table-header-wrap js-table-header-wrap">
+                    <table class="table tableScroll table-border table-full table-fix-height table-header js-table-header">
+                        <colgroup>
+                            <col width="10%">
+                            <col width="15%">
+                            <col width="30%">
+                            <col width="15%">
+                            <col width="15%">
+                            <col width="15%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>合同类型</th>
+                            <th>事业部/子公司</th>
+                            <th>初审人员</th>
+                            <th>OA流程名称</th>
+                            <th>状态</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="table-body-wrap js-table-body-wrap">
+                    <table class="table tableScroll table-border table-full js-table table-fix-height">
+                        <colgroup>
+                            <col width="10%">
+                            <col width="15%">
+                            <col width="30%">
+                            <col width="15%">
+                            <col width="15%">
+                            <col width="15%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="max-td" style="text-align: left;text-indent: 12px">01</td>
+                                <td class="max-td">
+                                    演出合同
+                                </td>
+                                <td>深圳市聚橙网络技术有限公司</td>
+                                <td>==</td>
+                                <td>==</td>
+                                <td>
+                                    <span style="font-size: 19px;" class="icon icon-pass textIndent"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="max-td" style="text-align: left;text-indent: 12px">01</td>
+                                <td class="max-td">
+                                    演出合同
+                                </td>
+                                <td>深圳市聚橙网络技术有限公司</td>
+                                <td>==</td>
+                                <td>==</td>
+                                <td>
+                                    <span style="font-size: 19px;" class="icon icon-pass textIndent"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="max-td" style="text-align: left;text-indent: 12px">01</td>
+                                <td class="max-td">
+                                    演出合同
+                                </td>
+                                <td>深圳市聚橙网络技术有限公司</td>
+                                <td>==</td>
+                                <td>==</td>
+                                <td>
+                                    <span style="font-size: 19px;" class="icon icon-changeAgain-hidden textIndent"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="max-td" style="text-align: left;text-indent: 12px">01</td>
+                                <td class="max-td">
+                                    演出合同
+                                </td>
+                                <td>深圳市聚橙网络技术有限公司</td>
+                                <td>==</td>
+                                <td>==</td>
+                                <td>
+                                    <span style="font-size: 19px;" class="icon icon-pass textIndent"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 分页 -->
+                <div class="pagination-panel js-pagination-panel">
+                    <div class="pages-wrap">
+                        <div class="options-panel js-options-panel none">
+                            <div class="checkbox-item">
+                                <div class="checkbox-wrap js-select-all">
+                                    <input type="checkbox">
+                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                </div>
+                                <span class="text">选择</span>
+                            </div>
+
+                            <div class="options-wrap">
+                                <a class="option-item ">编辑</a> |
+                                <a class="option-item gray">删除</a>
+                            </div>
+                        </div>
+                        <div class="total-wrap">
+                            共<span class="total">114</span>条，
+                            每页
+                            <select class="pages-select form-control">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                            </select>
+                            <span class="current-page">12</span>/
+                            <span class="total-pages">15</span>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default disabled">
+                                    <span class="icon icon-fast-backward"></span>
+                                </button>
+                                <button type="button" class="btn btn-default">
+                                    <span class="icon icon-step-backward"></span>
+                                </button>
+                                <button type="button" class="btn btn-default">
+                                    <span class="icon icon-step-forward"></span>
+                                </button>
+                                <button type="button" class="btn btn-default">
+                                    <span class="icon icon-fast-forward"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 分页 END -->
+
+            </div>
+        </div>
+        <!--表格明细 END-->
+    </div>
+</div>
+</body>
+</html>

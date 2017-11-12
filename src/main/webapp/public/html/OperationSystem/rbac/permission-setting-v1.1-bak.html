@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>权限设置</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-wrapper">
+
+            <!-- 头部 -->
+            <div class="container-header js-container-header">
+                <h5>权限设置</h5>
+                <div class="right-btn">
+                    <button class="btn btn-info" type="button"><span class="icon icon-save icon-left"></span>编辑</button>
+                    <button class="btn btn-warning js-close-current-tab" type="button"><span class="icon icon-delete icon-left"></span>取消</button>
+                </div>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 编辑权限 -->
+            <div class="module-wrapper row">
+
+                <div class="module row-box">
+                    <div class="module-content">
+                        <form method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="w-label control-label">角色名称：</label>
+                                <input type="hidden" name="role_id" value="91">
+                                <div class="list-detail">
+                                    www
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">部门：</label>
+                                <input type="hidden" name="role_id" value="91">
+                                <div class="list-detail">
+                                    采购部
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">职位：</label>
+                                <input type="hidden" name="role_id" value="91">
+                                <div class="list-detail">
+                                    数据专员
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">其它：</label>
+                                <input type="hidden" name="role_id" value="91">
+                                <div class="list-detail">
+                                    <div class="checkbox-wrap js-checkbox-wrap">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                    区分城市
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="w-label control-label">权限：</label>
+                                <div class="w-info">
+                                </div>
+                                <span class="checked-tip"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label"><p style="color: #aaa;">请在下面勾选</p></label>
+                                <div class="w-info">
+                                </div>
+                                <span class="checked-tip"></span>
+                            </div>
+
+                            
+
+                            <!--表格方案3 表格明细 -->
+                            <table class="setting-table">
+                                <tr>
+                                    <th>板块</th>
+                                    <th>模块</th>
+                                    <th>栏目</th>
+                                    <th>操作</th>
+                                    <th>列表项展示</th>
+                                </tr>
+
+                                <!-- 第一板块 -->
+                                <!-- <tr>
+                                    <td rowspan="3">
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+                                    </td>
+
+
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+                                        
+                                    </td>
+
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                        
+                                    </td>
+
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+                                        
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                    </td>
+                                
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                        
+                                    </td>
+                                    
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                    </td>
+                                
+                                </tr> -->
+
+                                <!-- 第二板块 -->
+                                <!-- <tr>
+                                    <td rowspan="3">
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+                                    </td>
+
+
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+                                        
+                                    </td>
+
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                        
+                                    </td>
+
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+                                        
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                    </td>
+                                
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                        
+                                    </td>
+
+                                    <td>
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+                                        
+                                        <div class="checkbox-wrap js-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>内容管理</span>
+
+                                    </td>
+                                
+                                </tr> -->
+                                
+                                
+                                <!-- 全选行 -->
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <div class="checkbox-wrap js-all-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>全选</span>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox-wrap js-all-checkbox-wrap">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span>全选</span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- 表格明细 END -->
+
+
+
+                            <!-- 表格方案1 -->
+
+                            <!-- <style type="text/css">
+                                .td-wraper{width: 100%;background: blue;}
+                                .td{float: left;min-width: 60px;background: red;display: table-row;}
+                                .td-title{border: 1px solid black;display: table-cell;}
+                                .td-title-wraper{float: left;display: flex;flex-direction:column; }
+                            </style>
+
+                            <div class="td-wraper">
+                                <div class="td">
+                                    <div class="td-title-wraper">
+                                        <div class="td-title">1</div>
+                                    </div>
+                                    
+
+                                    <div class="td">
+                                        <div class="td-title-wraper">
+                                            <div class="td-title">2</div>
+                                            <div class="td-title">3</div>
+                                        </div>
+                                        
+
+                                        <div class="td">
+                                            <div class="td-title-wraper">
+                                                <div class="td-title">4</div>
+                                                <div class="td-title">5</div>
+                                                <div class="td-title">6</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+
+                            <!--表格方案2 表格明细 -->
+                                <!-- <div class="setting-table">
+                                    <div class="setting-table-tr">
+                                        <div class="setting-table-th">板块</div>
+                                        <div class="setting-table-th">模块</div>
+                                        <div class="setting-table-th">页面</div>                                            
+                                    </div>
+                                    <div class="setting-table-tr">
+                                        <div class="setting-table-tr">
+                                            <div class="setting-table-td">
+                                                <div class="center js-check-wrap">
+                                                    <div class="checkbox-wrap js-select-all-check">
+                                                        <input type="checkbox">
+                                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                    </div>
+                                                </div>
+                                                <span>内容管理</span>
+
+                                                    <div class="setting-table-tr">
+
+                                                        <div class="setting-table-td">
+                                                            <div class="center js-check-wrap">
+                                                                <div class="checkbox-wrap js-select-all-check">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                            </div>
+                                                            <span>内容管理</span>
+                                                        </div>
+                                                        <div class="setting-table-td">
+
+                                                            <div class="center js-check-wrap">
+                                                                <div class="checkbox-wrap js-select-all-check">
+                                                                    <input type="checkbox">
+                                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                </div>
+                                                            </div>
+                                                            <span>内容管理</span>
+
+                                                            
+                                                        </div>
+
+                                                        <div class="setting-table-tr">
+                                                            <div class="setting-table-td">
+                                                                <div class="center js-check-wrap">
+                                                                    <div class="checkbox-wrap js-select-all-check">
+                                                                        <input type="checkbox">
+                                                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                    </div>
+                                                                </div>
+                                                                <span>内容管理</span>
+
+                                                                <div class="center js-check-wrap">
+                                                                    <div class="checkbox-wrap js-select-all-check">
+                                                                        <input type="checkbox">
+                                                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                                    </div>
+                                                                </div>
+                                                                <span>内容管理</span>
+                                                            </div>
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                </div>    
+                                                
+                                            </div>
+
+                                        </div>                           
+                                    </div>
+                                </div> -->
+                            <!-- 表格明细 END -->
+
+
+
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- 编辑权限 END -->
+        </div>
+    </div>
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script>
+
+
+    var data = {
+  "code": "200",
+  "msg": "ok",
+  "data": {
+    "role_id": "33",
+    "role_name": "角色名称33",
+    "city_id": "48,49",
+    "city_name": "帝都22,火炉22",
+    "dep_name": "票务公司>自有平台(天猫淘宝)",
+    "position_name": "天猫客服",
+    "node_list": [
+      {
+        "node_id": "1",
+        "module": "allmodule",
+        "controller": "allcontroller",
+        "action": "allaction",
+        "title": "运营管理",
+        "parent_id": "0",
+        "state": "1",
+        "left_nav": "1",
+        "create_time": "2016-12-08 14:16:13",
+        "has": 0,
+        "node_list": [],
+        "child": [
+          {
+            "node_id": "2",
+            "module": "Sview",
+            "controller": "project",
+            "action": "",
+            "title": "项目管理",
+            "parent_id": "1",
+            "state": "1",
+            "left_nav": "1",
+            "create_time": "2016-12-08 14:16:41",
+            "has": 0,
+            "node_list": [
+                  {
+                    "node_id": "3",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "add",
+                    "title": "新增",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:28:56",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "3",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "add",
+                    "title": "新增",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:28:56",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "3",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "add",
+                    "title": "新增",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:28:56",
+                    "has": 1
+                  }
+                ],
+            "option_list": [
+                  {
+                    "list_option_id": "1",
+                    "option_key": "project_id",
+                    "option_name": "项目ID",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "1",
+                    "option_key": "project_id",
+                    "option_name": "项目ID",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "1",
+                    "option_key": "project_id",
+                    "option_name": "项目ID",
+                    "node_id": "2",
+                    "has": 0
+                  }
+                ],
+            "child": [
+              {
+                "node_id": "3",
+                "module": "Sview",
+                "controller": "project",
+                "action": "add",
+                "title": "新增",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 14:28:56",
+                "has": 0
+              },
+              {
+                "node_id": "4",
+                "module": "Sview",
+                "controller": "project",
+                "action": "edit",
+                "title": "编辑",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 14:28:59",
+                "has": 0
+              },
+              {
+                "node_id": "5",
+                "module": "Sview",
+                "controller": "project",
+                "action": "index",
+                "title": "列表",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 14:52:48",
+                "has": 0
+              },
+              {
+                "node_id": "6",
+                "module": "Sview",
+                "controller": "project",
+                "action": "detail",
+                "title": "详情",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 14:52:50",
+                "has": 0
+              },
+              {
+                "node_id": "11",
+                "module": "Sview",
+                "controller": "project",
+                "action": "progress",
+                "title": "项目进展",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 14:53:03",
+                "has": 0
+              },
+              {
+                "node_id": "12",
+                "module": "Sview",
+                "controller": "project",
+                "action": "changeProjectState",
+                "title": "改变状态",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 15:10:42",
+                "has": 0
+              },
+              {
+                "node_id": "13",
+                "module": "Sview",
+                "controller": "project",
+                "action": "deleteProject",
+                "title": "删除项目",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 15:10:45",
+                "has": 0
+              }
+            ]
+          },
+          {
+            "node_id": "14",
+            "module": "Sview",
+            "controller": "schedule",
+            "action": "",
+            "title": "排期管理",
+            "parent_id": "1",
+            "state": "1",
+            "left_nav": "1",
+            "create_time": "2016-12-08 15:10:48",
+            "has": 0,
+            "node_list": [
+                  {
+                    "node_id": "3",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "add",
+                    "title": "新增",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:28:56",
+                    "has": 1
+                  }
+                ],
+            "option_list": [
+                  {
+                    "list_option_id": "1",
+                    "option_key": "project_id",
+                    "option_name": "项目ID",
+                    "node_id": "2",
+                    "has": 0
+                  }
+                ],
+            "child": [
+              {
+                "node_id": "15",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "index",
+                "title": "排期列表",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 15:10:51",
+                "has": 0
+              },
+              {
+                "node_id": "16",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "add",
+                "title": "添加",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 15:10:53",
+                "has": 0
+              },
+              {
+                "node_id": "17",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "edit",
+                "title": "编辑",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 15:10:56",
+                "has": 0
+              },
+              {
+                "node_id": "22",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "progress",
+                "title": "排期进展",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "25",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "copySchedule",
+                "title": "复制排期",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "26",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "reviewSchedule",
+                "title": "审核",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "27",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "activeSchedule",
+                "title": "激活",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "28",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "cancelSchedule",
+                "title": "取消",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "29",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "addSellPlan",
+                "title": "添加销售计划",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "30",
+                "module": "Sview",
+                "controller": "\r\nschedule",
+                "action": "detail",
+                "title": "排期详情",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "node_id": "1",
+        "module": "allmodule",
+        "controller": "allcontroller",
+        "action": "allaction",
+        "title": "运营管理",
+        "parent_id": "0",
+        "state": "1",
+        "left_nav": "1",
+        "create_time": "2016-12-08 14:16:13",
+        "has": 0,
+        "node_list": [],
+        "child": [
+          {
+            "node_id": "2",
+            "module": "Sview",
+            "controller": "project",
+            "action": "",
+            "title": "项目管理",
+            "parent_id": "1",
+            "state": "1",
+            "left_nav": "1",
+            "create_time": "2016-12-08 14:16:41",
+            "has": 0,
+            "node_list": [
+                  {
+                    "node_id": "3",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "add",
+                    "title": "新增",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:28:56",
+                    "has": 1
+                  }
+                ],
+            "option_list": [
+                  {
+                    "list_option_id": "1",
+                    "option_key": "project_id",
+                    "option_name": "项目ID",
+                    "node_id": "2",
+                    "has": 0
+                  }
+                ],
+            "child": [
+              {
+                "node_id": "3",
+                "module": "Sview",
+                "controller": "project",
+                "action": "add",
+                "title": "新增",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 14:28:56",
+                "has": 0
+              },
+              {
+                "node_id": "4",
+                "module": "Sview",
+                "controller": "project",
+                "action": "edit",
+                "title": "编辑",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 14:28:59",
+                "has": 0
+              },
+              {
+                "node_id": "5",
+                "module": "Sview",
+                "controller": "project",
+                "action": "index",
+                "title": "列表",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 14:52:48",
+                "has": 0
+              },
+              {
+                "node_id": "6",
+                "module": "Sview",
+                "controller": "project",
+                "action": "detail",
+                "title": "详情",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 14:52:50",
+                "has": 0
+              },
+              {
+                "node_id": "11",
+                "module": "Sview",
+                "controller": "project",
+                "action": "progress",
+                "title": "项目进展",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 14:53:03",
+                "has": 0
+              },
+              {
+                "node_id": "12",
+                "module": "Sview",
+                "controller": "project",
+                "action": "changeProjectState",
+                "title": "改变状态",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 15:10:42",
+                "has": 0
+              },
+              {
+                "node_id": "13",
+                "module": "Sview",
+                "controller": "project",
+                "action": "deleteProject",
+                "title": "删除项目",
+                "parent_id": "2",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 15:10:45",
+                "has": 0
+              }
+            ]
+          },
+          {
+            "node_id": "14",
+            "module": "Sview",
+            "controller": "schedule",
+            "action": "",
+            "title": "排期管理",
+            "parent_id": "1",
+            "state": "1",
+            "left_nav": "1",
+            "create_time": "2016-12-08 15:10:48",
+            "has": 0,
+            "node_list": [
+                  {
+                    "node_id": "3",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "add",
+                    "title": "新增",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:28:56",
+                    "has": 1
+                  }
+                ],
+            "option_list": [
+                  {
+                    "list_option_id": "1",
+                    "option_key": "project_id",
+                    "option_name": "项目ID",
+                    "node_id": "2",
+                    "has": 0
+                  }
+                ],
+            "child": [
+              {
+                "node_id": "15",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "index",
+                "title": "排期列表",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 15:10:51",
+                "has": 0
+              },
+              {
+                "node_id": "16",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "add",
+                "title": "添加",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 15:10:53",
+                "has": 0
+              },
+              {
+                "node_id": "17",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "edit",
+                "title": "编辑",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "2016-12-08 15:10:56",
+                "has": 0
+              },
+              {
+                "node_id": "22",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "progress",
+                "title": "排期进展",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "25",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "copySchedule",
+                "title": "复制排期",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "26",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "reviewSchedule",
+                "title": "审核",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "27",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "activeSchedule",
+                "title": "激活",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "28",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "cancelSchedule",
+                "title": "取消",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "29",
+                "module": "Sview",
+                "controller": "schedule",
+                "action": "addSellPlan",
+                "title": "添加销售计划",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              },
+              {
+                "node_id": "30",
+                "module": "Sview",
+                "controller": "\r\nschedule",
+                "action": "detail",
+                "title": "排期详情",
+                "parent_id": "14",
+                "state": "1",
+                "left_nav": "0",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+};
+
+//权限设置表格  ---START
+(function(root){
+
+    var authSettingTable = function(data)
+    {
+        var tableHtml = createTableHtml(data);
+
+        $('.setting-table tr:first').after(tableHtml);
+
+        //初始化检测第4，5列的全选状态
+        checkColTdAllCheck(4);
+        checkColTdAllCheck(5);
+
+        //表格勾选框
+        $('body').on('click','.setting-table .js-checkbox-wrap',function(){
+            var checkbox = $(this).find('input[type="checkbox"]'),
+                parentTd = checkbox.parents('td:first'),
+                tdIndex  = parentTd.attr('tdCol');
+
+            if (checkbox.attr('checked') == 'checked')
+            {
+                //取消选中
+                checkbox.removeAttr('checked');
+
+                //td全选取消
+                if ($(this).hasClass('js-td-all-checkbox'))
+                {
+                    parentTd.find('.js-checkbox-wrap input').removeAttr('checked');
+                }
+                else
+                {
+                    //检测本td内是否全部取消
+                    /*var normalCheckbox = parentTd.find('.js-checkbox-wrap:not(.js-td-all-checkbox) input');
+                    var length = parentTd.find('.js-checkbox-wrap:not(.js-td-all-checkbox) input[checked="checked"]').length;
+                    if (length < normalCheckbox.length)
+                    {
+                        parentTd.find('.js-td-all-checkbox input').removeAttr('checked');
+                    }*/
+
+                    checkTdAllCheck(parentTd)
+                }
+
+                //检测本列td是否全部取消
+                /*var tdColNormalCheckbox = $('td[tdCol="'+tdIndex+'"]').find('.js-checkbox-wrap:not(.js-td-all-checkbox) input');
+                var length = $('td[tdCol="'+tdIndex+'"]').find('.js-checkbox-wrap:not(.js-td-all-checkbox) input[checked="checked"]').length;
+                if (length < tdColNormalCheckbox.length)
+                {
+                    $('.setting-table tr:last td').eq(tdIndex-1).find('.js-all-checkbox-wrap input').removeAttr('checked');
+                }*/
+
+                checkColTdAllCheck(tdIndex)
+
+            }
+            else
+            {
+                //选中
+                checkbox.attr('checked','checked');
+
+                //td全选选中
+                if ($(this).hasClass('js-td-all-checkbox'))
+                {
+                    parentTd.find('.js-checkbox-wrap input').attr('checked','checked');
+                }
+                else
+                {
+                    //检测本td内是否全部选中
+                    /*var normalCheckbox = parentTd.find('.js-checkbox-wrap:not(.js-td-all-checkbox) input');
+                    var length = parentTd.find('.js-checkbox-wrap:not(.js-td-all-checkbox) input[checked="checked"]').length;
+                    if (length == normalCheckbox.length)
+                    {
+                        parentTd.find('.js-td-all-checkbox input').attr('checked','checked');
+                    }*/
+
+                    checkTdAllCheck(parentTd)
+                }
+
+                //检测本列td是否全部选中
+                /*var tdColNormalCheckbox = $('td[tdCol="'+tdIndex+'"]').find('.js-checkbox-wrap:not(.js-td-all-checkbox) input');
+                var length = $('td[tdCol="'+tdIndex+'"]').find('.js-checkbox-wrap:not(.js-td-all-checkbox) input[checked="checked"]').length;
+                if (length == tdColNormalCheckbox.length)
+                {
+                    $('.setting-table tr:last td').eq(tdIndex-1).find('.js-all-checkbox-wrap input').attr('checked','checked');
+                }*/
+
+                checkColTdAllCheck(tdIndex)
+            }
+
+            
+        });
+
+        //列全选勾选框
+        $('body').on('click','.setting-table .js-all-checkbox-wrap',function(){
+            var checkbox = $(this).find('input[type="checkbox"]'),
+                parentTd = checkbox.parents('td:first'),
+                tdIndex  = parentTd.index()+1;
+
+            if (checkbox.attr('checked') == 'checked')
+            {
+                //取消选中
+                checkbox.removeAttr('checked');
+                $('td[tdCol="'+tdIndex+'"]').find('.js-checkbox-wrap input').removeAttr('checked');
+            }
+            else
+            {
+                //选中
+                checkbox.attr('checked','checked');
+                $('td[tdCol="'+tdIndex+'"]').find('.js-checkbox-wrap input').attr('checked','checked');
+            }
+            
+        });
+    }
+    
+
+    function createTableHtml(list)
+    {
+        var tableHtml = '',
+            checkBox  = '<div class="checkbox-wrap js-checkbox-wrap">'+
+                            '<input type="checkbox">'+
+                            '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>'+
+                        '</div>',
+            checkedCheckBox  = '<div class="checkbox-wrap js-checkbox-wrap">'+
+                            '<input type="checkbox" checked="checked">'+
+                            '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>'+
+                        '</div>',
+            tdAllCheckBox  = '<div class="checkbox-wrap js-checkbox-wrap js-td-all-checkbox">'+
+                                '<input type="checkbox">'+
+                                '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>'+
+                            '</div>',
+            checkedTdAllCheckBox  = '<div class="checkbox-wrap js-checkbox-wrap js-td-all-checkbox">'+
+                                '<input type="checkbox" checked="checked">'+
+                                '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>'+
+                            '</div>';
+
+
+        for(var k = 0; k<list.length ; k++)
+        {
+            //第一行
+            tableHtml += '<tr>';
+
+            var lv2List = list[k].child,
+                rowSpan = lv2List.length;
+
+            if (rowSpan<=1)
+            {
+                rowSpan = '';
+            }
+
+            //第一列
+            tableHtml += '<td tid="'+k+'-1" pid=0 rowspan="'+rowSpan+'">'+'<span class="checkbox-label">'+list[k].title+'</span></td>';
+
+            //第二列
+
+            tableHtml += '<td tid="'+k+'-2" pid="'+k+'-1">'+'<span class="checkbox-label">'+lv2List[0].title+'</span></td>';
+            var lv2NodeId = lv2List[0].node_id;
+            //第三列
+            var lv3List = lv2List[0].child;
+            tableHtml += '<td tid="'+k+'-3" pid="'+k+'-2">';
+            for(var k1 = 0; k1 < lv3List.length ; k1++)
+            {
+                tableHtml += '<span class="checkbox-label">'+lv3List[k1].title+'</span>';
+            }
+            tableHtml += '</td>';
+            
+
+            //第四列
+            var lv4List = lv2List[0].node_list;
+            tableHtml += '<td tdCol=4 tid="'+k+'-4" pid="'+k+'-2">';
+            if (lv4List && lv4List.length>0)
+            {
+                var tempAllCheckBox = checkedTdAllCheckBox,
+                    tempTds         = '';
+                for(var k1 = 0; k1 < lv4List.length ; k1++)
+                {
+                    var tempCheckbox = checkBox;
+                    if (lv4List[k1].has != 1)
+                    {
+                        tempAllCheckBox = tdAllCheckBox;
+                    }
+                    else
+                    {
+                        tempCheckbox = checkedCheckBox;
+                    }
+
+                    tempTds += tempCheckbox+'<span oid="'+lv4List[k1].node_id+'" class="checkbox-label">'+lv4List[k1].title+'</span>';
+                }
+
+                tableHtml += tempAllCheckBox+'<span class="checkbox-label">全选</span>'+tempTds;
+            }           
+
+            tableHtml += '</td>';
+
+            //第五列
+            var lv5List = lv2List ? lv2List[0].option_list : false ;
+            tableHtml += '<td tdCol=5 tid="'+k+'-5" pid="'+k+'-2">';
+            if (lv5List && lv5List.length > 0)
+            {
+                var tempAllCheckBox = checkedTdAllCheckBox,
+                    tempTds         = '';
+
+                for(var k1 = 0; k1 < lv5List.length ; k1++)
+                {
+                    var tempCheckbox = checkBox;
+                    if (lv5List[k1].has != 1)
+                    {
+                        tempAllCheckBox = tdAllCheckBox;
+                    }
+                    else
+                    {
+                        tempCheckbox = checkedCheckBox;
+                    }
+
+
+                    tempTds += tempCheckbox+'<span option_key="'+lv5List[k1].option_key+'" node_id="'+lv5List[k1].node_id+'" oid="'+lv5List[k1].list_option_id+'" class="checkbox-label">'+lv5List[k1].option_name+'</span>';
+                }
+
+                tableHtml += tempAllCheckBox+'<span class="checkbox-label">全选</span>'+tempTds;
+            }
+
+            tableHtml += '</td>';
+
+            
+            tableHtml += '</tr>';
+
+
+            //下面的行
+            for(var k2 = 1; k2 < rowSpan ; k2++)
+            {
+                tableHtml += '<tr>';
+
+                //第二列，第一列被上面的行占掉
+                tableHtml += '<td tid="'+k+'-row-'+k2+'-2" pid="'+k+'-1"><span class="checkbox-label">'+lv2List[k2].title+'</span></td>';
+
+                lv2NodeId = lv2List[k2].node_id; 
+                //第三列
+                tableHtml += '<td tid="'+k+'-row-'+k2+'-3" pid="'+k+'-row-'+k2+'-2">';
+                lv3List    = lv2List[k2].child;
+                for(var k1 = 0; k1 < lv3List.length ; k1++)
+                {
+                    tableHtml += '<span class="checkbox-label">'+lv3List[k1].title+'</span>';
+                }
+                tableHtml += '</td>';
+
+                //第四列
+                tableHtml += '<td tdCol=4 tid="'+k+'-row-'+k2+'-4" pid="'+k+'-row-'+k2+'-3">';
+                lv4List    = lv2List[k2].node_list;
+                if (lv4List && lv4List.length>0)
+                {
+                    var tempAllCheckBox = checkedTdAllCheckBox,
+                        tempTds         = '';
+
+                    for(var k1 = 0; k1 < lv4List.length ; k1++)
+                    {
+                        var tempCheckbox = checkBox;
+                        if (lv4List[k1].has != 1)
+                        {
+                            tempAllCheckBox = tdAllCheckBox;
+                        }
+                        else
+                        {
+                            tempCheckbox = checkedCheckBox;
+                        }
+
+                        tempTds += tempCheckbox+'<span oid="'+lv4List[k1].node_id+'" class="checkbox-label">'+lv4List[k1].title+'</span>';
+                    }
+
+                    tableHtml += tempAllCheckBox+'<span class="checkbox-label">全选</span>'+tempTds;
+                }
+
+                tableHtml += '</td>';
+
+                //第五列
+                tableHtml += '<td tdCol=5 tid="'+k+'-row-'+k2+'-5" pid="'+k+'-row-'+k2+'-4">';
+                lv5List    = lv2List ? lv2List[k2].option_list : false;
+                if (lv5List && lv5List.length > 0)
+                {
+                    var tempAllCheckBox = checkedTdAllCheckBox,
+                        tempTds         = '';
+
+                    for(var k1 = 0; k1 < lv5List.length ; k1++)
+                    {
+                        var tempCheckbox = checkBox;
+                        if (lv5List[k1].has != 1)
+                        {
+                            tempAllCheckBox = tdAllCheckBox;
+                        }
+                        else
+                        {
+                            tempCheckbox = checkedCheckBox;
+                        }
+
+                        tempTds += tempCheckbox+'<span option_key="'+lv5List[k1].option_key+'" node_id="'+lv5List[k1].node_id+'" oid="'+lv5List[k1].list_option_id+'" class="checkbox-label">'+lv5List[k1].option_name+'</span>';
+
+                    }
+
+                    tableHtml += tempAllCheckBox+'<span class="checkbox-label">全选</span>'+tempTds;
+                }
+                tableHtml += '</td>';
+
+                tableHtml += '</tr>';
+
+            }            
+
+        }
+
+        return tableHtml;
+    }
+
+    function createTreeTableHtml(data)
+    {
+        for(var k = 0; k<list.length ; k++)
+        {
+            tableHtml += '<tr>';
+            if (list[k].child.length>0)
+            {
+                createTreeTableHtml(list[k].child);
+            }
+
+            tableHtml += '</tr>';
+        }
+    }
+
+
+
+    //检测某td内checkbox全选状态
+    function checkTdAllCheck(td)
+    {        
+        var normalCheckbox = td.find('.js-checkbox-wrap:not(.js-td-all-checkbox) input');
+        var length = td.find('.js-checkbox-wrap:not(.js-td-all-checkbox) input[checked="checked"]').length;
+        if (length == normalCheckbox.length)
+        {
+            //全选中
+            td.find('.js-td-all-checkbox input').attr('checked','checked');
+        }
+        else if(length < normalCheckbox.length)
+        {
+            //未全选中
+            td.find('.js-td-all-checkbox input').removeAttr('checked');
+        }
+    }
+
+    //检测某列td的checkbox全选状态
+    function checkColTdAllCheck(tdIndex)
+    {
+        var tdColNormalCheckbox = $('td[tdCol="'+tdIndex+'"]').find('.js-checkbox-wrap:not(.js-td-all-checkbox) input');
+        var length = $('td[tdCol="'+tdIndex+'"]').find('.js-checkbox-wrap:not(.js-td-all-checkbox) input[checked="checked"]').length;
+        if (length == tdColNormalCheckbox.length)
+        {
+            //全选中
+            $('.setting-table tr:last td').eq(tdIndex-1).find('.js-all-checkbox-wrap input').attr('checked','checked');
+        }
+        else if(length < tdColNormalCheckbox.length)
+        {
+            //未全选中
+            $('.setting-table tr:last td').eq(tdIndex-1).find('.js-all-checkbox-wrap input').removeAttr('checked');
+        }
+    }
+
+    root.authSettingTable = authSettingTable;
+
+}(window));
+//权限设置表格  ---END
+
+var table = new authSettingTable(data.data.node_list);
+
+    </script>
+</body>
+</html>

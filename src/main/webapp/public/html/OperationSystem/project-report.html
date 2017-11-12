@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>项目报表</title>
+    <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../dist/css/content.css">
+    <link rel="stylesheet" href="../../dist/css/main.css">
+</head>
+
+<body>
+    <div class="container-main ">
+        <!-- 项目报表 -->
+        <div class="content">
+            <!-- 搜索部分 -->
+            <div class="search-box clear">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label">项目编码：</label>
+                        <input type="text" class="form-control form-list" placeholder="项目编码">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">项目名称：</label>
+                        <input type="text" class="form-control form-list" placeholder="输入关键字">
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">品类：</label>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="选择事业部/子公司">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                        <div class="blur-panel js-blur-panel">
+                            <input type="text" class="form-control form-list js-blur-input" placeholder="大流行">
+                            <span class="icon icon-menu-block-down"></span>
+                        </div>
+                    </div>
+                    <div class="fr btn-wrap">
+                        <button class="btn btn-info">搜索</button>
+                        <button class="btn btn-default ceee">清空</button>
+                    </div>
+                </form>
+            </div>
+            <!-- 搜索部分 -->
+            <!-- 表格明细 -->
+            <div class="table-panel panel-white box table-panel-full row-box">
+                <div class="box-title">
+                    <h5 class="title"><strong>项目报表</strong></h5>
+                </div>
+                <div class="table-wrap box-content">
+                    <div class="table-header-wrap js-table-header-wrap">
+                        <table class="table table-border table-full table-fix-height table-header js-table-header">
+                            <col width="20%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <thead>
+                            <tr>
+                                <th class="max-td">项目名称</th>
+                                <th>事业部/子公司</th>
+                                <th>品类</th>
+                                <th>合作方式</th>
+                                <th class="js-sort-item">排期
+                                    <div class="options-wrap fr">
+                                        <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                        <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                    </div>
+                                </th>
+                                <th>项目计划</th>
+                                <th>销售额</th>
+                                <th class="js-sort-item">平均完成率
+                                    <div class="options-wrap fr">
+                                        <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                        <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                    </div>
+                                </th>
+                                <th class="js-sort-item">平均上座率
+                                    <div class="options-wrap fr">
+                                        <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                        <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                    </div>
+                                </th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="table-body-wrap js-table-body-wrap">
+                        <table class="table table-border table-full js-table table-fix-height">
+                            <col width="20%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <col width="10%"/>
+                            <tbody>
+                                <tr>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="js-nav-item" data-target="market/project-sale-detail.html">屈臣氏三生花-我和小鸟和铃铛-深圳</a>
+                                        </div>
+                                    </td>
+                                    <td>大流行</td>
+                                    <td>演唱会</td>
+                                    <td>主办</td>
+                                    <td>3</td>
+                                    <td>90,000.00</td>
+                                    <td>4,500.00</td>
+                                    <td>51.00%</td>
+                                    <td>80.24%</td>
+                                </tr>
+                                <tr>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;"  class="js-nav-item" data-target="market/project-sale-detail.html">赵雷无法长大...</a>
+                                        </div>
+                                    </td>
+                                    <td>儿童亲子</td>
+                                    <td>儿童剧</td>
+                                    <td>合办</td>
+                                    <td>10</td>
+                                    <td>50,000.00</td>
+                                    <td>90,000.00</td>
+                                    <td>100.00%</td>
+                                    <td>80.24%</td>
+                                </tr>
+                                <tr>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="js-nav-item" data-target="market/project-sale-detail.html">屈臣氏三生花-我和小鸟和铃铛-深圳</a>
+                                        </div>
+                                    </td>
+                                    <td>大流行</td>
+                                    <td>演唱会</td>
+                                    <td>主办</td>
+                                    <td>3</td>
+                                    <td>90,000.00</td>
+                                    <td>4,500.00</td>
+                                    <td>51.00%</td>
+                                    <td>80.24%</td>
+                                </tr>
+                                <tr>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="js-nav-item" data-target="market/project-sale-detail.html">屈臣氏三生花-我和小鸟和铃铛-深圳</a>
+                                        </div>
+                                    </td>
+                                    <td>大流行</td>
+                                    <td>演唱会</td>
+                                    <td>主办</td>
+                                    <td>3</td>
+                                    <td>90,000.00</td>
+                                    <td>4,500.00</td>
+                                    <td>51.00%</td>
+                                    <td>80.24%</td>
+                                </tr>
+                                <tr>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;"  class="js-nav-item" data-target="market/project-sale-detail.html">屈臣氏三生花-我和小鸟和铃铛-深圳</a>
+                                        </div>
+                                    </td>
+                                    <td>大流行</td>
+                                    <td>演唱会</td>
+                                    <td>主办</td>
+                                    <td>3</td>
+                                    <td>90,000.00</td>
+                                    <td>4,500.00</td>
+                                    <td>51.00%</td>
+                                    <td>80.24%</td>
+                                </tr>
+                                <tr>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;"  class="js-nav-item" data-target="market/project-sale-detail.html">屈臣氏三生花-我和小鸟和铃铛-深圳</a>
+                                        </div>
+                                    </td>
+                                    <td>大流行</td>
+                                    <td>演唱会</td>
+                                    <td>主办</td>
+                                    <td>3</td>
+                                    <td>90,000.00</td>
+                                    <td>4,500.00</td>
+                                    <td>51.00%</td>
+                                    <td>80.24%</td>
+                                </tr>
+                                <tr>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;"  class="js-nav-item" data-target="market/project-sale-detail.html">屈臣氏三生花-我和小鸟和铃铛-深圳</a>
+                                        </div>
+                                    </td>
+                                    <td>大流行</td>
+                                    <td>演唱会</td>
+                                    <td>主办</td>
+                                    <td>3</td>
+                                    <td>90,000.00</td>
+                                    <td>4,500.00</td>
+                                    <td>51.00%</td>
+                                    <td>80.24%</td>
+                                </tr>
+                                <tr>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;"  class="js-nav-item" data-target="market/project-sale-detail.html">屈臣氏三生花-我和小鸟和铃铛-深圳</a>
+                                        </div>
+                                    </td>
+                                    <td>大流行</td>
+                                    <td>演唱会</td>
+                                    <td>主办</td>
+                                    <td>3</td>
+                                    <td>90,000.00</td>
+                                    <td>4,500.00</td>
+                                    <td>51.00%</td>
+                                    <td>80.24%</td>
+                                </tr>
+                                <tr>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;"  class="js-nav-item" data-target="market/project-sale-detail.html">屈臣氏三生花-我和小鸟和铃铛-深圳</a>
+                                        </div>
+                                    </td>
+                                    <td>大流行</td>
+                                    <td>演唱会</td>
+                                    <td>主办</td>
+                                    <td>3</td>
+                                    <td>90,000.00</td>
+                                    <td>4,500.00</td>
+                                    <td>51.00%</td>
+                                    <td>80.24%</td>
+                                </tr>
+                                <tr>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;"  class="js-nav-item" data-target="market/project-sale-detail.html">屈臣氏三生花-我和小鸟和铃铛-深圳</a>
+                                        </div>
+                                    </td>
+                                    <td>大流行</td>
+                                    <td>演唱会</td>
+                                    <td>主办</td>
+                                    <td>3</td>
+                                    <td>90,000.00</td>
+                                    <td>4,500.00</td>
+                                    <td>51.00%</td>
+                                    <td>80.24%</td>
+                                </tr>                            
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 分页 -->
+                    <div class="pagination-panel js-pagination-panel">
+                        <div class="pages-wrap">
+                            <div class="total-wrap">
+                                共<span class="total">114</span>条，
+                                每页
+                                <select class="pages-select form-control">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                </select>
+                                <span class="current-page">12</span>/
+                                <span class="total-pages">15</span>
+                                <div class="btn-group fr">
+                                    <button type="button" class="btn btn-default disabled">
+                                        <span class="icon icon-fast-backward"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="icon icon-step-backward"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="icon icon-step-forward"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="icon icon-fast-forward"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 分页 END -->
+
+                </div>
+            </div>
+            <!-- 表格明细 END -->
+        </div>
+        <!-- 分页 -->
+        <!-- 项目报表 END -->
+
+    </div>
+    <script src="../../dist/js/jquery.min.js"></script>
+    <script src="../../dist/js/common-iframe.js"></script>
+    <script>
+    $(function() {
+
+        var option = {
+            multiSelect: true,
+            maxSelectNum: 1,              // 最大选择个数
+            maxNumCallback: function () { // 选完限制个数之后再次选择的回调
+
+            },
+            resultID: 'id',
+            resultText: 'text',
+            ajax: {
+                type: "GET",
+                dataType: "json",
+                url: 'blur-selection.json'
+            },
+            enterKeyFun: function ($dom) {
+                console.log('hello word 111',$dom)
+            }
+        };
+
+        // 模糊查询 使用测试
+        $('.js-blur-panel').blurSelect(option);
+
+
+        // 模糊查询 使用测试
+        $('.js-blur-panel-single').blurSelect({
+            panelClass: '.js-blur-panel-single',
+            multiSelect: false,
+            resultID: 'id',
+            resultText: 'text',
+            ajax: {
+                type: "GET",
+                dataType: "json",
+                url: 'blur-selection.json'
+            },
+            enterKeyFun: function ($dom) {
+                console.log('hello word 111',$dom)
+            }
+        });
+
+        //
+        $(".js-sort-up").on('click', function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+        });
+
+        $('.js-sort-down').on('click', function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+        });
+
+        $('.js-block-remove').on('click',function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+            console.log('hello')
+        });
+
+        $('.js-table').table({
+           sort: {
+                sortUpFun: function ($dom) {
+                    console.log('hello world up',$dom);
+                },
+                sortDownFun: function ($dom) {
+                    console.log('hello world down',$dom);
+                }
+           }
+        });
+
+    })
+    </script>
+</body>
+
+</html>

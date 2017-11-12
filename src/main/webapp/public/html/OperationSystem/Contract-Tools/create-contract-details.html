@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建/编辑详情</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+</head>
+<body>
+<div class="container-main">
+    <div class="container-wrapper">
+        <div class="module-wrapper row">
+            <!--创建合同-->
+            <div class="container-header js-container-header">
+                <h5>创建合同</h5>
+                <div class="right-btn">
+                    <button class="btn btn-success">
+                        <span class="icon icon-hold icon-left"></span>
+                        保存草稿
+                    </button>
+                    <button class="btn btn-success">
+                        <span class="icon icon-hold icon-left"></span>
+                        保存并提交初审
+                    </button>
+                </div>
+            </div>
+            <!--创建合同 END-->
+
+            <!--基本信息-->
+            <div class="module row-box">
+                <div class="module-title">基本信息</div>
+                <div class="module-content">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="w-label control-label">
+                                <span class="must">*</span>
+                                合同名称：</label>
+                            <div class="w-info">
+                                <input type="text" class="form-control Validform_error" placeholder="输入合同名称" maxlength="20" value="" name="title" datatype="*1-20" nullmsg="*通知事项为必填项" errormsg="*不得超过20个字">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="w-label control-label">
+                                <span class="must">*</span>
+                                合同类型：</label>
+                            <div class="w-info">
+                                <select class="form-control" style="width: 50%;">
+                                    <option value="">请选择</option>
+                                    <option value="">==</option>
+                                    <option value="">==</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="w-label control-label">
+                                <span class="must">*</span>
+                                模板类型：</label>
+                            <div class="w-info">
+                                <label class="radio-label">
+                                    <input type="radio" value="0" name="foreign" checked>我司标准版本
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" value="1" name="foreign">新做版本
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" value="2" name="foreign">对方版本
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="w-label control-label">
+                                <span class="must">*</span>
+                                事务部/子公司：</label>
+                            <div class="w-info">
+                                <select class="form-control" style="width: 50%;">
+                                    <option value="">请选择</option>
+                                    <option value="">==</option>
+                                    <option value="">==</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="w-label control-label">
+                                <span class="must">*</span>
+                                合同主体：</label>
+                            <div class="w-info">
+                                <select class="form-control" style="width: 50%;">
+                                    <option value="">请选择</option>
+                                    <option value="">==</option>
+                                    <option value="">==</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="w-label control-label">
+                                <span class="must">*</span>
+                                是否关联演出：</label>
+                            <div class="w-info">
+                                <label class="radio-label">
+                                    <input type="radio" value="1" name="foreign" checked>是
+                                </label><label class="radio-label">
+                                <input type="radio" value="0" name="foreign">否
+                            </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="w-label control-label">
+                                <span class="must">*</span>
+                                关联演出：</label>
+                            <div class="w-info">
+                                <select class="form-control" style="width: 80px;display: inline-block;">
+                                    <option value="">项目</option>
+                                    <option value="">==</option>
+                                    <option value="">==</option>
+                                </select>
+                                <select class="form-control" style="width: 218px;display: inline-block;margin-left: -5px;">
+                                    <option value="">请选择</option>
+                                    <option value="">==</option>
+                                    <option value="">==</option>
+                                </select>
+                            </div>
+                            <div class="w-info" style="margin-left: 10px;">
+                                <span class="icon icon-delcontact" style="font-size: 20px"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="w-info">
+                                <label class="w-label control-label"></label>
+                                <button class="btn btn-default new-plus">
+                                    新增
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--基本信息 END-->
+
+            <!--合同信息-->
+            <div class="module row-box">
+                <div class="module-title">合同信息</div>
+                <div class="module-content">
+                    <div class="form-horizontal">
+                        <div class="form-group" style="margin-bottom: 20px">
+                            <label class="w-label control-label">
+                                <span class="must">*</span>
+                                甲方名称：</label>
+                            <div class="w-info">
+                                <input type="text" class="form-control Validform_error" placeholder="" maxlength="20" value="" name="title" datatype="*1-20" nullmsg="*通知事项为必填项" errormsg="*不得超过20个字">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label class="w-label control-label">
+                                <span class="must">*</span>
+                                乙方名称：</label>
+                            <div class="w-info">
+                                <input type="text" class="form-control Validform_error" placeholder="" maxlength="20" value="" name="title" datatype="*1-20" nullmsg="*通知事项为必填项" errormsg="*不得超过20个字">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px">
+                            <label class="w-label control-label">
+                                <span class="must">*</span>
+                                合同附件：</label>
+                            <div class="w-info">
+                                <button class="btn btn-primary btn-sm">
+                                    <span class="icon icon-data-upload" style="color: #FFFFFF;"></span>上传
+                                </button>
+                            </div>
+                            <div class="w-info" style="width: 340px;margin-left: -226px;">
+                                <span style="color: #878ea4;">支持WORD、pdf等格式，单个文件大小不超过3M</span>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px">
+                            <label class="w-label control-label"></label>
+                            <div class="w-info" style="width: 510px;">
+                                <span>小橙堡演出合同.doc
+                                    <div class="bg-process-bar">
+                                        <div class="vista-process-bar"></div>
+                                    </div>
+                                </span>
+                                <span class="bar-text">516KB</span>
+                            </div>
+                            <div class="w-info">
+                                <button class="btn btn-default" style="width: 70px;height: 22px;line-height: 22px;padding: 0px">取消</button>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px">
+                            <label class="w-label control-label"></label>
+                            <div class="w-info" style="width: 138px;">
+                                <span>小橙堡演出合同.doc</span>
+                            </div>
+                            <div class="w-info">
+                                <button class="btn btn-default" style="width: 70px;height: 22px;line-height: 22px;padding: 0px">删除</button>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label class="w-label control-label">
+                                备注：</label>
+                            <div class="w-info">
+                                <textarea name="" id="" cols="50" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--合同信息 END-->
+        </div>
+    </div>
+</div>
+<script src="../../../dist/js/jquery.min.js"></script>
+<script src="../../../dist/js/approval-tools.js"></script>
+</body>
+</html>

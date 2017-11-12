@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>编辑流程</title>
+		<link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+		<link rel="stylesheet" href="../../../dist/css/content.css">
+		<link rel="stylesheet" href="../../../dist/css/main.css">
+		<link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+		<link rel="stylesheet" type="text/css" href="../../../dist/css/configure.css" />
+	</head>
+
+	<body>
+		<div class="container-main">
+			<div class="container-wrapper">
+				<div class="module-wrapper row">
+					<!--创建报批流程头部-->
+					<div class="container-header js-container-header">
+						<h5>创建报批流程</h5>
+						<div class="right-btn">
+							<button class="btn btn-success">
+								<span class="icon icon-hold icon-left"></span>
+								保存
+							</button>
+							<button class="btn btn-default">
+								<span class="icon icon-delete icon-left"></span>
+								取消
+							</button>
+						</div>
+					</div>
+					<!--创建任务流程 END-->
+
+					<!--基本信息-->
+					<div class="module row-box">
+						<div class="module-title">基本信息</div>
+						<div class="module-content">
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label class="w-label control-label">城市：</label>
+									<div class="list-detail">深圳</div>
+								</div>
+								<div class="form-group">
+									<label class="w-label control-label">区：</label>
+									<div class="list-detail">通用</div>
+								</div>
+								<div class="form-group">
+									<label class="w-label control-label">是否涉外：</label>
+									<div class="list-detail">是</div>
+								</div>
+								<div class="form-group">
+									<label class="w-label control-label">清单：</label>
+									<div class="list-detail">
+										<a href="javascript:;">查看</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--基本信息 END-->
+
+					<!--审批单位信息-->
+					<div class="module row-box">
+						<div class="module-title">审批单位信息</div>
+						<div class="module-content">
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label class="w-label control-label">单位名称：</label>
+									<input type="text"/>
+								</div>
+								<div class="form-group">
+									<label class="w-label control-label">联系人：</label>
+									<input type="text" />
+								</div>
+								<div class="form-group">
+									<label class="w-label control-label">联系电话：</label>
+									<input type="text"/>
+								</div>
+								<div class="form-group">
+									<label class="w-label control-label">邮寄地址：</label>
+									<div class="list-detail">
+										<div id="distpicker" class="clearfix">
+										  <select></select>
+										  <select></select>
+										  <select></select>
+										</div>
+										<p class="detail"><textarea placeholder="输入详细地址"></textarea></p>
+									</div>
+								</div>
+								<div class="form-group consuming">
+									<label class="w-label control-label">批文下发所需时间：</label>
+									<div class="days">
+										<input type="text" value="0" />
+										<span class="icon add">&#xe6ac;</span>
+										<span class="icon minus">&#xe659;</span>
+									</div>
+									<span>工作日</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--审批单位信息 END-->
+
+					<!--报批流程-->
+					<div class="module row-box">
+						<div class="module-title">报批流程</div>
+						<div class="module-content">
+							<div class="data-wrapper">
+								<!--任务及负责人表格-->
+								<table class="mission">
+									<tr>
+										<td class="serial">1</td>
+										<td class="mission_name"><input type="text" placeholder="输入名称" /></td>
+										<td class="executor">执行者</td>
+										<td class="role">
+											<select name="executor">
+												<option value="选择角色" selected="selected">选择角色</option>
+												<option value="区域">区域</option>
+												<option value="报批负责人">报批负责人</option>
+												<option value="品类采购">品类采购</option>
+												<option value="采购支持">采购支持</option>
+											</select>
+										</td>
+										<td class="delete"></td>
+									</tr>
+									<tr>
+										<td class="serial">1</td>
+										<td class="mission_name"><input type="text" placeholder="输入名称" /></td>
+										<td class="executor">执行者</td>
+										<td class="role">
+											<select name="executor">
+												<option value="选择角色" selected="selected">选择角色</option>
+												<option value="区域">区域</option>
+												<option value="报批负责人">报批负责人</option>
+												<option value="品类采购">品类采购</option>
+												<option value="采购支持">采购支持</option>
+											</select>
+										</td>
+										<td class="delete">
+											<span class="icon icon-delcontact logo-margin"></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="serial">1</td>
+										<td class="mission_name"><input type="text" placeholder="输入名称" /></td>
+										<td class="executor">执行者</td>
+										<td class="role">
+											<select name="executor">
+												<option value="选择角色" selected="selected">选择角色</option>
+												<option value="区域">区域</option>
+												<option value="报批负责人">报批负责人</option>
+												<option value="品类采购">品类采购</option>
+												<option value="采购支持">采购支持</option>
+											</select>
+										</td>
+										<td class="delete">
+											<span class="icon icon-delcontact logo-margin"></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="serial">1</td>
+										<td class="mission_name"><input type="text" placeholder="输入名称" /></td>
+										<td class="executor">执行者</td>
+										<td class="role">
+											<select name="executor">
+												<option value="选择角色" selected="selected">选择角色</option>
+												<option value="区域">区域</option>
+												<option value="报批负责人">报批负责人</option>
+												<option value="品类采购">品类采购</option>
+												<option value="采购支持">采购支持</option>
+											</select>
+										</td>
+										<td class="delete">
+											<span class="icon icon-delcontact logo-margin"></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="serial">1</td>
+										<td class="mission_name"><input type="text" placeholder="输入名称" /></td>
+										<td class="executor">执行者</td>
+										<td class="role"> 
+											<select name="executor">
+												<option value="选择角色" selected="selected">选择角色</option>
+												<option value="区域">区域</option>
+												<option value="报批负责人">报批负责人</option>
+												<option value="品类采购">品类采购</option>
+												<option value="采购支持">采购支持</option>
+											</select>
+										</td>
+										<td class="delete">
+											<span class="icon icon-delcontact logo-margin"></span>
+										</td>
+									</tr>
+								</table>
+								<div class="data-button newly">
+									<button class="btn btn-default new-plus" style="margin-left: 10px;margin-top: -12px;">
+		                                   	新增
+		                            </button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../../dist/js/jquery2.1.js"></script>
+		<script src="../../../dist/js/distpicker.data.js"></script>
+		<script src="../../../dist/js/distpicker.js"></script>
+		<script src="../../../dist/js/approval-tools.js"></script>
+		<script type="text/javascript">
+			var minus = $('.minus'),
+				add = $('.add'),
+				Oday = $(".days input");
+			
+//			天数减
+			minus.on('click', minus, function(envent) {
+				var dayNum = Oday.val();
+				if(dayNum > 0){
+					dayNum = parseInt(dayNum) - 1;
+					Oday.val(dayNum);
+				}
+			});
+
+//			天数加
+			add.on('click', add, function(envent) {
+				var dayNum = Oday.val();
+				dayNum = parseInt(dayNum) + 1;
+				Oday.val(dayNum);
+			});
+			
+//			天数输入必须为数字
+		  Oday.on('change',function(){
+		  	var re = /\d/;
+		  	var dayNum = Oday.val();
+		  	if(!re.test(parseInt(dayNum))){
+		  		Oday.val("0");
+		  	}
+		  });
+		  
+//		  省市区三级联动
+		  $("#distpicker").distpicker({
+			  province: "选择省份",
+			  city: "选择城市",
+			  district: "选择地区"
+			});
+			
+			
+		</script>
+	</body>
+
+</html>

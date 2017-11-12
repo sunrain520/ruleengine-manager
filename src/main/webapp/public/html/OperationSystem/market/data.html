@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数据录入</title>
+	<link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/need/laydate.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/market.css">
+</head>
+<style>
+    .w-label.text-top { vertical-align: top;}
+    .checked-tip.text-top { vertical-align: top;}
+</style>
+<body>
+	<div class="container-main">
+        <div class="content">
+
+           <!-- 头部 -->
+           <div class="operation-btns">
+                <button class="btn btn-success" id="layerOpen"><span class="icon icon-add icon-left"></span>录入/编辑</button>  
+                <div class="tips">待录入: <span class="num">5</span> <div class="arrow-top"><span class="c-red"></span></div>Tips：红色角标代表未完善销售数据</div>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 搜索 -->
+            <div class="search-box clear">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label">排期编码：</label>
+                        <input class="form-control form-list" placeholder="排期编码" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">排期名称：</label>
+                        <input class="form-control form-list" placeholder="输入关键字" type="text">
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">品类：</label>
+                        <select class="form-control form-list js-blur-panel">
+                            <option value="">选择事业部/子公司</option>
+                        </select>
+                        <select class="form-control form-list js-blur-panel">
+                            <option value="">大流行</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">录入状态：</label>
+                        <select class="form-control form-list">
+                            <option value="">未录入</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">统计日期：</label>
+                        <input class="form-control form-list laydate-icon" placeholder="YY-MM-DD" type="text" onclick="laydate()">
+                        <span class="c-999">至</span>
+                        <input class="form-control form-list laydate-icon" placeholder="YY-MM-DD" type="text" onclick="laydate()">
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">城市和场馆：</label>
+                        <select class="form-control form-list js-blur-panel">
+                            <option value="">深圳</option>
+                        </select>
+                        <select class="form-control form-list js-blur-panel">
+                            <option value="">选择场馆</option>
+                        </select>
+                    </div>
+                    <div class="fr btn-wrap">
+                        <button class="btn btn-info">搜索</button>
+                        <button class="btn btn-default ceee">清空</button>
+                    </div>
+                </form>
+            </div>
+            <!-- 搜索 -->
+
+            <!-- 表格 -->
+            <div class="table-panel panel-white box table-panel-full row-box">
+                <div class="table-wrap box-content">
+                    <div class="table-scroll">
+                        <div class="table-header-wrap js-table-header-wrap" style="padding-left: 271px; height: 42px;">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th class="w-checkbox" style="position: absolute; z-index: 3; left: 0px; top: 0px;">
+                                        <div class="checkbox-wrap js-select-all">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </th>
+                                    <th class="w-name" style="position: absolute; z-index: 3; left: 41px; top: 0px;">统计日期</th>
+                                    <th class="js-sort-item w-name" style="position: absolute; z-index: 3; left: 121px; top: 0px;">排期名称
+                                        <!-- <div class="options-wrap fr">
+                                            <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                            <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                        </div> -->
+                                    </th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">场馆</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">票务系统</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">外部销售张数</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">外部销售金额</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">内部销售张数</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">内部销售金额</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">备票张数</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">备票金额</th>
+                                    <th class="js-sort-item" style="width: 200px; min-width: 200px; max-width: 200px;">赠票数
+                                       <!--  <div class="options-wrap fr">
+                                            <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                            <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                        </div> -->
+                                    </th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">赞助金额</th>
+                                    <th class="js-sort-item" style="width: 200px; min-width: 200px; max-width: 200px;">置换票数
+                                        <!-- <div class="options-wrap fr">
+                                            <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                            <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                        </div> -->
+                                    </th>
+
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap" style="padding-left: 271px;">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+
+                                <tbody>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                        <div class="arrow-top"><span class="c-red"></span></div>
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                   <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input checked="checked" type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td w-name" style="position: absolute; z-index: 1; left: 41px; height: 42px;">
+                                        2016.11.02
+                                    </td>
+                                    <td class="w-name" style="position: absolute; z-index: 1; left: 121px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">
+                                        南山文体中心
+                                    </td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">聚橙票务</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">-</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 分页 -->
+                        <div class="pagination-panel js-pagination-panel" style="width: 1604px; position: static; bottom: 0px; left: 0px; height: 74px; z-index: 2; padding-left: 0px; padding-right: 0px;">
+
+                            <!-- 水平滚动条 -->
+                            <div class="table-scroll-horizontal js-table-scroll-horizontal" style="margin-left: 271px;">
+                                <div class="scroll js-scroll" style="width: 2201px;">
+                                </div>
+                            </div>
+                            <!-- 水平滚动条 END -->
+
+                            <div class="pages-wrap">
+                                <div class="options-panel js-options-panel none" style="display: none;">
+                                    <div class="checkbox-item">
+                                        <div class="checkbox-wrap js-select-all">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span class="text">选择</span>
+                                    </div>
+
+                                    <div class="options-wrap">
+                                        <a class="option-item ">编辑</a> |
+                                        <a class="option-item gray">删除</a>
+                                    </div>
+                                </div>
+                                <div class="total-wrap">
+                                    共<span class="total">114</span>条，
+                                    每页
+                                    <select class="pages-select form-control">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        <option value="500">500</option>
+                                        <option value="1000">1000</option>
+                                    </select>
+                                    <span class="current-page">12</span>/
+                                    <span class="total-pages">15</span>
+                                    <div class="btn-group fr">
+                                        <button type="button" class="btn btn-default disabled">
+                                            <span class="icon icon-fast-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-forward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-fast-forward"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 分页 END -->
+                    </div>
+
+                </div>
+            </div>
+            <!-- 表格 -->
+        </div>
+    </div>
+
+
+    <div class="text-center mt20 layer-hidden" style="display:none;">
+        <form class="form-horizontal text-left inline-block" >
+            <div class="form-group">
+                <label class="control-label w-label">排期名称：</label>
+                <div class="w-info">
+                    屈臣氏三生花-我和小鸟和铃铛-深圳
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-label">城市场馆：</label>
+                <div class="w-info">
+                    深圳 南山文体中心聚橙剧院大剧院
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-label">开票时间：</label>
+                <div class="w-info">
+                    2016.09.20 20:00
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-label">演出时间：</label>
+                <div class="w-info">
+                    2016.09.20 20:00
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-labeltext-top"><span class="must">*</span>外部销售张数：</label>
+                <div class="w-info">
+                    <input class="form-control" type="text" value="" placeholder="">
+                </div>
+                <span class="checked-tiptext-top"><span class="must">*</span>必填项</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-labeltext-top"><span class="must">*</span>外部销售金额：</label>
+                <div class="w-info">
+                    <input class="form-control" type="text" value="" placeholder="">
+                </div>
+                <span class="checked-tiptext-top"><span class="must">*</span>必填项</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-labeltext-top"><span class="must">*</span>内部销售数据：</label>
+                <div class="w-info">
+                    <input class="form-control" type="text" value="" placeholder="">
+                </div>
+                <span class="checked-tiptext-top"><span class="must">*</span>必填项</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-labeltext-top"><span class="must">*</span>内部销售金额：</label>
+                <div class="w-info">
+                    <input class="form-control" type="text" value="" placeholder="">
+                </div>
+                <span class="checked-tiptext-top"><span class="must">*</span>必填项</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-labeltext-top"><span class="must">*</span>备票张数：</label>
+                <div class="w-info">
+                    <input class="form-control" type="text" value="" placeholder="">
+                </div>
+                <span class="checked-tiptext-top"><span class="must">*</span>必填项</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-labeltext-top"><span class="must">*</span>备票金额：</label>
+                <div class="w-info">
+                    <input class="form-control" type="text" value="" placeholder="">
+                </div>
+                <span class="checked-tiptext-top"><span class="must">*</span>必填项</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-labeltext-top"><span class="must">*</span>赠票数：</label>
+                <div class="w-info">
+                    <input class="form-control" type="text" value="" placeholder="">
+                </div>
+                <span class="checked-tiptext-top"><span class="must">*</span>必填项</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-labeltext-top"><span class="must">*</span>赞助金额：</label>
+                <div class="w-info">
+                    <input class="form-control" type="text" value="" placeholder="">
+                </div>
+                <span class="checked-tiptext-top"><span class="must">*</span>必填项</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-labeltext-top"><span class="must">*</span>置换票数：</label>
+                <div class="w-info">
+                    <input class="form-control" type="text" value="" placeholder="">
+                </div>
+                <span class="checked-tiptext-top"><span class="must">*</span>必填项</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-labeltext-top"><span class="must">*</span>置换金额：</label>
+                <div class="w-info">
+                    <input class="form-control" type="text" value="" placeholder="">
+                </div>
+                <span class="checked-tiptext-top"><span class="must">*</span>必填项</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label w-labeltext-top">备注：</label>
+                <div class="w-info">
+                    <input class="form-control" type="text" value="" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="button" class="btn btn-primary btn-sm mr20" id="layerConfirm">确定</button>
+                <!-- <button type="button" class="btn btn-default">取消</button> -->
+            </div>
+        </form>
+    </div>
+
+
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script src="../../../dist/js/layer/layer.js"></script>
+    <script src="../../../dist/js/laydate/laydate.js"></script>
+
+    <script>
+        var layerOpen;
+        $("#layerOpen").on("click",function(){ 
+            layerAdd = layer.open({
+                type: 1,
+                title: ['2016.11.02 销售数据录入', 'text-align:center;font-weight:bold;font-size:large'],
+                area: ['800px'],
+                content: $('.layer-hidden')
+            });
+        })
+        
+        $("#layerConfirm").on("click",function(){ 
+            layer.closeAll();
+        })
+    </script>
+
+
+</body>
+</html>

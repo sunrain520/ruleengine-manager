@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry location="E:\tanhui\software\mysql-connector-java-5.1.30.jar"/>
+    <context id="MysqlTables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://10.17.2.24:3306/ruleengine_db?autoReconnect=true" userId="root"
+                        password="Root@123">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.xiaoniu.dataplatform.ruleengine.entity"
+                            targetProject="E:\tanhui\neoworkspace\ruleengine\ruleengine-web\trunk\ruleengine-web\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="mybatis\mapper\ruleengine"
+                         targetProject="E:\tanhui\neoworkspace\ruleengine\ruleengine-web\trunk\ruleengine-web\src\main\resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine"
+                             targetProject="E:\tanhui\neoworkspace\ruleengine\ruleengine-web\trunk\ruleengine-web\src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--<table schema="ruleengine_db" tableName="t_rule_item" domainObjectName="RuleItem" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+        <!--<table schema="ruleengine_db" tableName="t_rule_param" domainObjectName="RuleParam" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+        <!--<table schema="ruleengine_db" tableName="t_scorecard_degree" domainObjectName="ScoreCardDegree" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+        <!--</table>-->
+        <table schema="ruleengine_db" tableName="t_white_list" domainObjectName="WhiteList" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>
+    </context>
+</generatorConfiguration>

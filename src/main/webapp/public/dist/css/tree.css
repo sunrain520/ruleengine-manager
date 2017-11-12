@@ -1,0 +1,202 @@
+@charset "UTF-8";
+/* 全局变量 */
+/* 全局变量 END */
+/* 字体样式变量 */
+/* 字体样式变量 END */
+/* 框架头部变量 */
+/* 框架头部变量 END */
+/* 框架侧边导航变量 */
+/* 框架侧边导航变量 END */
+/* 头部导航变量 */
+/* 头部导航变量 END */
+/* iframe 内部变量 */
+/* iframe 内部变量 END */
+/* 表格变量 */
+/* 表格变量 END */
+/* 按钮公共变量 */
+/* 按钮公共变量 END */
+/* 表单样式 */
+/* 模糊查询样式变量 */
+/* 模糊查询样式变量 END */
+/* 表单样式 END */
+/* 正常隐藏状态图标样式 */
+/* 正常隐藏状态图标样式 END */
+/* 危险操作颜色 */
+/* 危险操作颜色 END */
+/* module分块背景色 */
+/* module分块背景色 END */
+/* 搜索表单变量 */
+/* 搜索表单变量 END */
+.tree-panel {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 550px;
+  max-height: 450px;
+  border: 1px solid #ddd;
+  color: #666; }
+  .tree-panel .tree-header {
+    height: 44px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid #e7e7e7;
+    background-color: #f3f3f5; }
+    .tree-panel .tree-header .title {
+      margin: 0;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 44px;
+      color: #666; }
+      .tree-panel .tree-header .title .title-after {
+        float: right;
+        height: 44px; }
+  .tree-panel .tree-content {
+    height: 402px; }
+    .tree-panel .tree-content :after {
+      display: block;
+      clear: both;
+      content: ''; }
+    .tree-panel .tree-content .left .title,
+    .tree-panel .tree-content .right .title {
+      height: 34px;
+      line-height: 34px; }
+      .tree-panel .tree-content .left .title .title-after,
+      .tree-panel .tree-content .right .title .title-after {
+        float: right; }
+    .tree-panel .tree-content .left {
+      float: left;
+      overflow-y: auto;
+      width: 50%;
+      height: 100%;
+      padding: 10px 20px;
+      background-color: #fafafa; }
+      .tree-panel .tree-content .left.full-width {
+        float: none;
+        width: 100%; }
+      .tree-panel .tree-content .left .content {
+        position: relative;
+        overflow: auto;
+        min-height: 348px; }
+      .tree-panel .tree-content .left .search-result-panel {
+        display: none;
+        position: absolute;
+        z-index: 3;
+        top: 5px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #fafafa; }
+        .tree-panel .tree-content .left .search-result-panel.active {
+          display: block; }
+      .tree-panel .tree-content .left .tree-list {
+        list-style: none;
+        padding-left: 0;
+        padding-top: 10px; }
+        .tree-panel .tree-content .left .tree-list .tree-list {
+          padding-top: 0;
+          padding-left: 20px; }
+        .tree-panel .tree-content .left .tree-list .icon-left,
+        .tree-panel .tree-content .left .tree-list .text {
+          display: inline-block;
+          vertical-align: middle; }
+        .tree-panel .tree-content .left .tree-list .item-right {
+          float: right;
+          height: 26px; }
+        .tree-panel .tree-content .left .tree-list .list-item .item-content {
+          line-height: 26px; }
+    .tree-panel .tree-content .right {
+      float: left;
+      overflow-y: auto;
+      width: 50%;
+      height: 100%;
+      padding: 10px 20px;
+      background-color: #fff; }
+      .tree-panel .tree-content .right .title {
+        color: #999; }
+        .tree-panel .tree-content .right .title .title-after {
+          cursor: pointer; }
+      .tree-panel .tree-content .right .content .selected-list {
+        list-style: none;
+        padding-left: 0;
+        padding-top: 10px; }
+        .tree-panel .tree-content .right .content .selected-list .list-item .item-content {
+          border-bottom: 1px solid #e7e7e7;
+          height: 30px;
+          line-height: 30px; }
+          .tree-panel .tree-content .right .content .selected-list .list-item .item-content .text {
+            display: inline-block; }
+          .tree-panel .tree-content .right .content .selected-list .list-item .item-content .item-right {
+            float: right; }
+            .tree-panel .tree-content .right .content .selected-list .list-item .item-content .item-right .icon-delcontact {
+              font-size: 16px;
+              color: #ccc;
+              cursor: pointer; }
+    .tree-panel .tree-content .input-group {
+      border: 1px solid #e7e7e7;
+      width: 100%;
+      padding-right: 10px;
+      background-color: #fff; }
+      .tree-panel .tree-content .input-group .input-group-add {
+        background-color: #fff; }
+      .tree-panel .tree-content .input-group .form-control,
+      .tree-panel .tree-content .input-group .input-group-add {
+        display: table-cell;
+        vertical-align: middle; }
+      .tree-panel .tree-content .input-group .form-control,
+      .tree-panel .tree-content .input-group .form-control:focus,
+      .tree-panel .tree-content .input-group .form-control:hover {
+        border: none;
+        box-shadow: none;
+        outline: none; }
+      .tree-panel .tree-content .input-group .icon-search {
+        color: #ccc; }
+  .tree-panel .checkbox-wrap {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    line-height: 1.2; }
+    .tree-panel .checkbox-wrap + .text {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 5px; }
+    .tree-panel .checkbox-wrap + .checkbox-wrap {
+      margin-left: 10px; }
+    .tree-panel .checkbox-wrap input[type="checkbox"] {
+      position: absolute;
+      display: block;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer; }
+      .tree-panel .checkbox-wrap input[type="checkbox"][checked="checked"] + .checkbox .glyphicon-ok {
+        display: inline-block; }
+      .tree-panel .checkbox-wrap input[type="checkbox"] + .checkbox {
+        position: absolute;
+        display: block;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 1px solid #e7e7e7;
+        height: 100%;
+        min-height: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 0;
+        background-color: #fff;
+        cursor: pointer; }
+        .tree-panel .checkbox-wrap input[type="checkbox"] + .checkbox .glyphicon-ok {
+          display: none;
+          font-size: 12px; }
+
+/*# sourceMappingURL=tree.css.map */

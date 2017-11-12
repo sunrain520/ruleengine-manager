@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+    <title>通用流程配置</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/table.scss">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+    <link rel="stylesheet" type="text/css" href="../../../dist/css/configure.css"/>
+	</head>
+	<body>
+		<div class="container-main">
+			<div class="container-wrapper">
+				<div class="module-wrapper row">
+					<!--通用流程配置head-->
+					<div class="container-header js-container-header">
+						<h5>通用流程配置</h5>
+						<div class="right-btn">
+							<button class="btn btn-success">
+								<span class="icon icon-hold icon-left"></span>
+								保存
+							</button>
+						</div>
+					</div>
+					<!--头部end-->
+					
+					<div class="module row-box">
+						<div class="module-content">
+							<div class="data-wrapper">
+						<!--任务及负责人表格-->
+								<table class="mission">
+									<tr>
+										<td class="serial">1</td>
+										<td class="mission_name"><input type="text" placeholder="输入名称"/></td>
+										<td class="executor">执行者</td>
+										<td class="role">
+											<select name="executor">
+												<option value="选择角色" selected="selected">选择角色</option>
+												<option value="区域">区域</option>
+												<option value="报批负责人">报批负责人</option>
+												<option value="品类采购">品类采购</option>
+												<option value="采购支持">采购支持</option>
+											</select>
+										</td>
+										<td class="delete"></td>
+									</tr>
+									<tr>
+										<td class="serial">1</td>
+										<td class="mission_name"><input type="text" placeholder="输入名称"/></td>
+										<td class="executor">执行者</td>
+										<td class="role">
+											<select name="executor">
+												<option value="选择角色" selected="selected">选择角色</option>
+												<option value="区域">区域</option>
+												<option value="报批负责人">报批负责人</option>
+												<option value="品类采购">品类采购</option>
+												<option value="采购支持">采购支持</option>
+											</select>
+										</td>
+										<td class="delete"><a href="javascript:" class="icon icon-delcontact logo-margin"style="font-size: 16px;"></a></td>
+									</tr>
+									<tr>
+										<td class="serial">1</td>
+										<td class="mission_name"><input type="text" placeholder="输入名称"/></td>
+										<td class="executor">执行者</td>
+										<td class="role">
+											<select name="executor">
+												<option value="选择角色" selected="selected">选择角色</option>
+												<option value="区域">区域</option>
+												<option value="报批负责人">报批负责人</option>
+												<option value="品类采购">品类采购</option>
+												<option value="采购支持">采购支持</option>
+											</select>
+										</td>
+										<td class="delete"><a href="javascript:" class="icon icon-delcontact logo-margin"style="font-size: 16px;"></a></td>
+									</tr>
+									<tr>
+										<td class="serial">1</td>
+										<td class="mission_name"><input type="text" placeholder="输入名称"/></td>
+										<td class="executor">执行者</td>
+										<td class="role">
+											<select name="executor">
+												<option value="选择角色" selected="selected">选择角色</option>
+												<option value="区域">区域</option>
+												<option value="报批负责人">报批负责人</option>
+												<option value="品类采购">品类采购</option>
+												<option value="采购支持">采购支持</option>
+											</select>
+										</td>
+										<td class="delete"><a href="javascript:" class="icon icon-delcontact logo-margin"style="font-size: 16px;"></a></td>
+									</tr>
+									<tr>
+										<td class="serial">1</td>
+										<td class="mission_name"><input type="text" placeholder="输入名称"/></td>
+										<td class="executor">执行者</td>
+										<td class="role">
+											<select name="executor">
+												<option value="选择角色" selected="selected">选择角色</option>
+												<option value="区域">区域</option>
+												<option value="报批负责人">报批负责人</option>
+												<option value="品类采购">品类采购</option>
+												<option value="采购支持">采购支持</option>
+											</select>
+										</td>
+										<td class="delete"><a href="javascript:" class="icon icon-delcontact logo-margin"style="font-size: 16px;"></a></td>
+									</tr>
+								</table>
+								<div class="data-button newly">
+		                            <button class="btn btn-default new-plus" style="margin-left: 8px;margin-top: -13px">
+		                                   	新增
+		                            </button>
+		                        </div>
+							</div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../../dist/js/jquery2.1.js"></script>
+		<script src="../../../dist/js/approval-tools.js"></script>
+		<script type="text/javascript">
+			$(".delete").on('click',function(){
+				$(this).parent().remove();
+			});
+		</script>
+	</body>
+</html>

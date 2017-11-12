@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>项目销售明细</title>
+	<link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/market.css">
+    <style type="text/css">
+        /*.bg-white{background: white;margin-bottom: 15px;padding: 15px;}*/
+        .chart-wrap{width: 100%;height: 600px;}
+        .chart-block{position: relative;}
+    </style>
+</head>
+<body>
+	<div class="container-main">
+        <div class="container-wrapper">
+
+            <!-- 头部 -->
+            <div class="container-header js-container-header">
+                <h5>项目销售明细</h5>
+                <div class="right-btn">
+                    <button class="btn btn-info" type="submit">导出报表</button>
+                </div>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 详情部分 -->
+            <div class="module-wrapper">            
+                
+                <!-- 基本信息 -->
+                <div class="module row-box">
+                    <div class="module-title">
+                        基本信息
+                    </div>
+                    <div class="module-content">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="w-label control-label">所属项目：</label>
+                                <div class="list-detail">
+                                    屈臣氏三生花-我和小鸟和铃铛-深圳
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">项目编号：</label>
+                                <div class="list-detail">
+                                    01.01.01.0001.16
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">事业部：</label>
+                                <div class="list-detail">
+                                    万有音乐
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">演员团体：</label>
+                                <div class="list-detail">
+                                    程璧
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">品类：</label>
+                                <div class="list-detail">
+                                    小流行
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">团体人数：</label>
+                                <div class="list-detail">
+                                    6
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">供应商：</label>
+                                <div class="list-detail">
+                                    万有音乐
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">演员国籍：</label>
+                                <div class="list-detail">
+                                    中国
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">排期：</label>
+                                <div class="list-detail">
+                                    6
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">合作方式：</label>
+                                <div class="list-detail">
+                                    主办
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 基本信息 END -->
+
+
+                <!-- 销售数据 -->
+                <div class="module row-box">
+                    <div class="module-title">
+                        销售数据
+                        <div class="title-after">
+                            <a class="link" >查看销售数据</a>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <ul class="list-inline list-data">
+                            <li class="list-item">
+                                <div class="item-content total">
+                                    <p class="text">
+                                        总成本<br>
+                                        <span class="number">98,000.00</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content plane">
+                                    <p class="text">
+                                        销售计划<br>
+                                        <span class="number">18,000.00</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content column">
+                                    <p class="text">
+                                        销售额<br>
+                                        <span class="number">1,800.00</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content pie">
+                                    <p class="text">
+                                        完成率<br>
+                                        <span class="number">80.00%</span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 销售数据 END -->
+
+                <!-- 图表 START -->
+                <div class="module row-box">
+                    <div class="module-title">  
+                        各区域销售情况 (数据更新至：2016-11-07 18:00:00)
+                        <div class="title-after">
+                            <a class="link" ></a>
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <div class="bg-white chart-block">
+                            <div class="daily-sale-chart-wrap chart-wrap">
+                                
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
+                <!-- 图表 END -->
+
+                <!-- 排期列表 -->
+                <div class="module row-box">
+                    <div class="module-title">
+                        排期列表
+                    </div>
+                    <div class="module-content">
+                        <div class="table-wrap box-content">
+                            <div class="table-scroll">
+                                <div class="table-header-wrap js-table-header-wrap js-ignore">
+                                    <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                        <thead>
+                                        <tr>
+                                            <th class="w-name" style="position:absolute;z-index: 1;left: 0;">排期名称</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">城市</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">场馆</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">开票时间
+                                                <div class="options-wrap fr">
+                                                    <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                                    <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                                </div>
+                                            </th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">演出时间
+                                                <div class="options-wrap fr">
+                                                    <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                                    <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                                </div>
+                                            </th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">总票量</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">总票房</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">销售计划</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">余票数</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">售票数</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">赠票数</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">销售额</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">完成率
+                                                <div class="options-wrap fr">
+                                                    <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                                    <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                                </div>
+                                            </th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">上座率
+                                                <div class="options-wrap fr">
+                                                    <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                                    <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                                </div>
+                                            </th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">赞助金额</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">置换金额</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">子公司/事业部</th>
+                                            <th style="width: 200px; min-width: 200px; max-width: 200px;">品类</th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="table-body-wrap js-table-body-wrap js-ignore">
+                                    <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                        <tbody>
+                                        <tr>
+                                            <td class="max-td w-name" style="position:absolute;z-index:1;left:0;">
+                                                <a href="javascript:;" class="">赵雷无法长大...</a>
+                                                <div class="arrow-top"><span class="c-red"></span></div>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">深圳</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">南山文体中心</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-11-12 12:00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-12-20 13:30</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">3006</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">12000</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">9,000.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">560</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">5,451</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">232</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">464,551.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">90.00%</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">40.00%</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">231.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">4,505.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">万有天橙</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">大流行</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="max-td w-name" style="position:absolute;z-index:1;left:0;">
+                                                <a href="javascript:;" class="">赵雷无法长大...</a>
+                                                <div class="arrow-top"><span class="c-yellow"></span></div>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">深圳</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">南山文体中心</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-11-12 12:00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-12-20 13:30</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">3006</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">12000</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">9,000.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">560</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">5,451</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">232</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">464,551.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">90.00%</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">40.00%</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">231.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">4,505.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">万有天橙</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">大流行</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="max-td w-name" style="position:absolute;z-index:1;left:0;">
+                                                <a href="javascript:;" class="">赵雷无法长大...</a>
+                                                <div class="arrow-top"><span class="c-green"></span></div>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">深圳</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">南山文体中心</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-11-12 12:00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-12-20 13:30</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">3006</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">12000</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">9,000.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">560</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">5,451</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">232</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">464,551.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">90.00%</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">40.00%</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">231.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">4,505.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">万有天橙</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">大流行</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="max-td w-name" style="position:absolute;z-index:1;left:0;">
+                                                <a href="javascript:;" class="">赵雷无法长大...</a>
+                                                <div class="arrow-top"><span class="c-blur"></span></div>
+                                            </td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">深圳</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">南山文体中心</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-11-12 12:00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">2016-12-20 13:30</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">3006</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">12000</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">9,000.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">560</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">5,451</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">232</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">464,551.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">90.00%</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">40.00%</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">231.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">4,505.00</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">万有天橙</td>
+                                            <td style="width: 200px; min-width: 200px; max-width: 200px;">大流行</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- 分页 -->
+                                <div class="pagination-panel js-pagination-panel">
+
+                                    <!-- 水平滚动条 -->
+                                    <div class="table-scroll-horizontal js-table-scroll-horizontal" style="margin-left: 675px;">
+                                        <div class="scroll js-scroll" style="">
+                                        </div>
+                                    </div>
+                                    <!-- 水平滚动条 END -->
+
+                                    <div class="pages-wrap">
+                                        <div class="total-wrap">
+                                            共<span class="total">114</span>条，
+                                            每页
+                                            <select class="pages-select form-control">
+                                                <option value="10">10</option>
+                                                <option value="20">20</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                                <option value="500">500</option>
+                                                <option value="1000">1000</option>
+                                            </select>
+                                            <span class="current-page">12</span>/
+                                            <span class="total-pages">15</span>
+                                            <div class="btn-group fr">
+                                                <button type="button" class="btn btn-default disabled">
+                                                    <span class="icon icon-fast-backward"></span>
+                                                </button>
+                                                <button type="button" class="btn btn-default">
+                                                    <span class="icon icon-step-backward"></span>
+                                                </button>
+                                                <button type="button" class="btn btn-default">
+                                                    <span class="icon icon-step-forward"></span>
+                                                </button>
+                                                <button type="button" class="btn btn-default">
+                                                    <span class="icon icon-fast-forward"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 分页 END -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- 排期列表 END -->
+
+            </div>
+
+
+        </div>
+    </div>
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+
+    <script src="../../../dist/js/echarts3/echarts.min.js"></script>
+    <script src="../../../dist/js/echarts3/macarons.js"></script>
+    <script type="text/javascript">
+
+        /*//图标导航切换按钮
+        $('.chart-nav li').on('click',function(){
+                        $(this).siblings().removeClass('active');
+                        var index = $(this).addClass('active').index();
+                        $('.chart-wrap').hide().eq(index).show();
+                    })*/
+
+        // 图表 ------------------START
+        var areaChartData = {
+            //title:'ECharts 示例',
+            legend:['项目计划','销售额'],
+            xAxis:["深圳","广州","上海","北京","厦门","台北"],
+            series:[],
+        }
+
+        var areaSaleChart = echarts.init($('.daily-sale-chart-wrap')[0],'macarons');
+
+        // 指定图表的配置项和数据
+        var areaChartOption = {
+            title: {
+                text:areaChartData.title
+            },
+            tooltip: {},
+            legend: {
+                data:areaChartData.legend
+            },
+            xAxis: {
+                data:areaChartData.xAxis
+            },
+            yAxis: {},
+            series: [{
+                name: '项目计划',
+                type: 'bar',
+                data: [7777, 8888, 9999, 11111, 12222, 6666]
+            },{
+                name: '销售额',
+                type: 'bar',
+                data: [7000, 8000, 9000, 11000, 12000, 8888]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        areaSaleChart.setOption(areaChartOption);
+        // 图标 ------------------END
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+{
+  "code": 0,
+  "msg": "success",
+  "data": [
+    {
+      "dep_id": "357",
+      "dep_name": "测试公司",
+      "pid": "0",
+      "dep_level": "1",
+      "path": "0",
+      "user_list": [{
+        "id": "628",
+        "email": "ceshi2222@juooo.com",
+        "name": "测试员工1",
+        "sex": "1",
+        "os_state": "1"
+      },{
+        "id": "629",
+        "email": "ceshi2222@juooo.com",
+        "name": "测试员工2",
+        "sex": "1",
+        "os_state": "1"
+      }],
+      "child": [
+        {
+          "dep_id": "321",
+          "dep_name": "测试部门",
+          "pid": "357",
+          "dep_level": "2",
+          "path": "0-357",
+          "user_list": [
+            {
+              "id": "630",
+              "email": "ceshi2222@juooo.com",
+              "name": "测试员工3",
+              "sex": "1",
+              "os_state": "1"
+            }
+          ],
+          "child": [
+            {
+              "dep_id": "500",
+              "dep_name": "8568956",
+              "pid": "321",
+              "dep_level": "3",
+              "path": "0-357-321",
+              "user_list": [{
+                "id": "678",
+                "email": "ceshi2222@juooo.com",
+                "name": "测试员工4",
+                "sex": "1",
+                "os_state": "1"
+              }],
+              "child": [{
+                "dep_id": "362",
+                "dep_name": "测试部门4",
+                "pid": "357",
+                "dep_level": "2",
+                "path": "0-357",
+                "user_list": [{
+                  "id": "690",
+                  "email": "ceshi2222@juooo.com",
+                  "name": "测试员工5",
+                  "sex": "1",
+                  "os_state": "1"},{
+                  "id": "691",
+                  "email": "ceshi2222@juooo.com",
+                  "name": "测试员工6",
+                  "sex": "1",
+                  "os_state": "1"}],
+                "child": [
+                ]
+              }]
+            }
+          ]
+        },
+        {
+          "dep_id": "362",
+          "dep_name": "测试部门3",
+          "pid": "357",
+          "dep_level": "2",
+          "path": "0-357",
+          "user_list": [],
+          "child": [
+            {
+              "dep_id": "499",
+              "dep_name": "789789",
+              "pid": "359",
+              "dep_level": "3",
+              "path": "0-357-359",
+              "user_list": [],
+              "child": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

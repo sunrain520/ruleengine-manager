@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑票图</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+</head>
+<body>
+    <div class="container-main">
+        <!-- 编辑票图 -->
+        <div class="container-wrapper">
+
+            <!-- 头部 -->
+            <div class="container-header">
+                <h5>编辑票图</h5>
+                <div class="right-btn">
+                    <button class="btn btn-info" type="submit"><span class="icon icon-save icon-left"></span>保存</button>
+                    <button class="btn btn-warning js-close-current-tab" type="button"><span class="icon icon-delete icon-left"></span>取消</button>
+                </div>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 新增部分 -->
+            <div class="module-wrapper row">
+
+                <div class="module row-box">
+                    <div class="module-content">
+                        <form method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="w-label control-label">项目名称：</label>
+                                <div class="w-info">
+                                    <label class="control-label">程璧我和小鸟和铃铛</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">排期编码：</label>
+                                <div class="w-info">
+                                    <label class="control-label">
+                                        <a href="javascript:;">1.A.P.0001.17.001.01</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">城市：</label>
+                                <div class="w-info">
+                                    <label class="control-label">深圳</label>
+                                </div>
+                            </div>
+                            <div class="form-group address-detail">
+                                <label class="w-label control-label">演出时间：</label>
+                                <div class="w-info">
+                                    <label class="control-label">2017-09-12 09：30</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">预售时间：</label>
+                                <div class="w-info">
+                                    <input class="form-control laydate-icon" placeholder="YYYY-MM-DD HH:MM" onclick="laydate({istime: true, format: 'YYYY-MM-DD HH:MM',min: laydate.now(),istoday: true})">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">开票时间：</label>
+                                <div class="w-info">
+                                    <input class="form-control laydate-icon" placeholder="YYYY-MM-DD HH:MM" onclick="laydate({istime: true, format: 'YYYY-MM-DD HH:MM',min: laydate.now(),istoday: true})">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">票务系统：</label>
+                                <div class="w-info">
+                                    <div class="blur-panel js-blur-panel">
+                                        <input type="text" class="form-control form-list js-blur-input" placeholder="">
+                                        <span class="icon icon-menu-block-down"></span>
+                                    </div>
+                                </div>
+                                <a class="new-btn">新增</a>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">票价&票量：</label>
+                                <div class="w-info auto-width" >
+                                    <div class="">
+                                        <ul class="list-block js-list-block">
+                                            <li class="list-item list-bg js-list-item">
+                                                <div class="form-group inline">
+                                                    <label class="control-label">票价：</label>
+                                                    <div class="blur-panel blur-panel-sm">
+                                                        <input type="text" class="form-control form-list" placeholder="">
+                                                        <span class="">元</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group inline">
+                                                    <label class="control-label">票量：</label>
+                                                    <div class="blur-panel blur-panel-sm">
+                                                        <input type="text" class="form-control form-list" placeholder="">
+                                                        <span class="">张</span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group inline">
+                                                    <label class="control-label">状态：</label>
+                                                    <select class="form-control blur-panel-sm">
+                                                        <option value="">正常</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group inline">
+                                                    <span class="icon icon-delcontact js-price-del"></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <button type="button" class="btn btn-border-success js-price-add">新增</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">总票量：</label>
+                                <div class="w-info">
+                                    <input class="form-control" value="">
+                                </div>
+                                <span>张</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">总票房：</label>
+                                <div class="w-info">
+                                    <input type="text" class="form-control form-list" placeholder="">
+                                </div>
+                                <span>元</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">票图：</label>
+                                <div class="w-info auto-width">
+                                    <div class="form-horizontal ">
+                                        <div class=""  id="uploader-wrap" >
+                                            <div class="form-group">
+                                                <div class="progress-bg fl">
+                                                    <div class="angled-135 stripes" style="width:100px;"></div>
+                                                    <div class="upload-title">
+                                                        helloworld.jpg
+                                                    </div>
+                                                </div>
+                                                <span class="progress-cancel fl">取消</span>
+                                            </div>
+                                            <div class="form-group">
+                                                <a href="javascript:;">helloworld.jpg</a><span class="del-uploadfile">删除</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" >
+                                            <button class="btn btn-success uploadBtn" id="picker" type="button" style="position: relative;"><span class="icon icon-upload"></span>上传</button>
+                                            <span class="upload-tips">支持JPG、JPEG、PNG、WORD、EXCEL、PPT等格式</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="w-label control-label">状态：</label>
+                                <div class="w-info">
+                                    <label class="radio-label"><input type="radio" value="1" name="status" checked="">正常</label>
+                                    <label class="radio-label"><input type="radio" value="2" name="status">隐藏</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- 新增部分 END -->
+        </div>
+        <!-- 新增/编辑供应商 -->
+
+    </div>
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script src="../../../dist/js/laydate/laydate.js"></script>
+    <script>
+        $(function () {
+            // 票价和票量新增
+            $('.js-price-add').on('click', function () {
+                var $list = $(this).prevAll('.js-list-block'),
+                    html  = '';
+
+                html  = '<li class="list-item list-bg js-list-item">';
+                html += '<div class="form-group inline">';
+                html += '<label class="control-label">票价：</label>';
+                html += '<div class="blur-panel blur-panel-sm">';
+                html += '<input type="text" class="form-control form-list" placeholder="">';
+                html += '<span class="">元</span>';
+                html += '</div>';
+                html += '</div>';
+                html += '<div class="form-group inline">';
+                html += '<label class="control-label">票量：</label>';
+                html += '<div class="blur-panel blur-panel-sm">';
+                html += '<input type="text" class="form-control form-list" placeholder="">';
+                html += '<span class="">张</span>';
+                html += '</div>';
+                html += '</div>';
+                html += '<div class="form-group inline">';
+                html += '<label class="control-label">状态：</label>';
+                html += '<select class="form-control blur-panel-sm">';
+                html += ' <option value="">正常</option>';
+                html += ' <option value="">隐藏</option>';
+                html += ' </select>';
+                html += '</div>';
+                html += '<div class="form-group inline">';
+                html += '<span class="icon icon-delcontact js-price-del"></span>';
+                html += '</div>';
+                html += '</li>';
+
+                $list.append(html)
+            });
+
+            // 删除票价
+            $('.js-list-item').on('click', '.js-price-del', function () {
+                var $listItem = $(this).closest('.js-list-item');
+
+                $listItem.remove();
+            })
+        })
+    </script>
+</body>
+</html>

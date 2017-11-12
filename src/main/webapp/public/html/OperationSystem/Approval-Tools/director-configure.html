@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>报批负责人配置</title>
+		<link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+		<link rel="stylesheet" href="../../../dist/css/table.scss">
+		<link rel="stylesheet" href="../../../dist/css/content.css">
+		<link rel="stylesheet" href="../../../dist/css/main.css">
+		<link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+		<link rel="stylesheet" type="text/css" href="../../../dist/css/configure.css" />
+	</head>
+
+	<body>
+		<!--新增弹窗-->
+		<div class="mask1 hide">
+			<div class="mask_add">
+				<div class="add_title clearfix">
+					<span class="fl">新增</span>
+					<span class="fr close icon icon-delete"></span>
+				</div>
+				<div class="add_content">
+					<div class="form-group">
+						<label class="w-label control-label"><span class="star">*</span>报批负责人：</label>
+						<select>
+							<option selected="selected">选择角色</option>
+						</select>
+						<select class="staff"><option selected="selected">选择员工</option></select>
+					</div>
+					<div class="form-group">
+						<label class="w-label control-label"><span class="star">*</span>品类：</label>
+						<select class="category">
+							<option>选择品类</option>
+						</select>
+					</div>
+				</div>
+				<div class="confirm">
+					<span class="sure">确定</span>
+					<span class="cancel">取消</span>
+				</div>
+			</div>
+		</div>
+		
+		<!--删除弹窗-->
+		<div class="mask2 hide">
+			<div class="mask_minus">
+				<div class="minus_title clearfix">
+					<span class="fl">删除</span>
+					<span class="fr close icon icon-delete"></span>
+				</div>
+				<div class="confirm">
+					<span class="sure">确定</span>
+					<span class="cancel">取消</span>
+				</div>
+			</div>
+		</div>
+		<!--新增弹窗end-->
+
+		<div class="container-main">
+			<div class="container-wrapper">
+				<div class="module-wrapper row">
+					<!--头部-->
+					<div class="container-header js-container-header">
+						<div class="">
+							<button class="btn btn-success btn-add">
+								<span class="icon icon-add"></span>新增
+							</button>
+							<button class="btn btn-info">
+								<span class="icon icon-edit icon-left"></span>编辑
+							</button>
+							<button class="btn btn-info">
+								<span class="icon icon-log"></span>操作日志
+							</button>
+							<button class="btn btn-default btn-delete">
+								<span class="icon icon-remove icon-left"></span>删除
+							</button>
+						</div>
+					</div>
+					<!--头部 END-->
+					<div class="module row-box">
+						<div class="data-wrapper configure-table">
+							<table>
+								<tr>
+									<th class="w-checkbox">
+										<div class="checkbox-wrap js-select-all">
+											<input type="checkbox" class="checkbox">
+											<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+										</div>
+									</th>
+									<th class="director">报批负责人</th>
+									<th class="category">品类</th>
+								</tr>
+								<tr>
+									<td class="w-checkbox">
+										<div class="checkbox-wrap js-checkbox">
+											<input class="checkbox" type="checkbox">
+											<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+										</div>
+									</td>
+									<td>采购支持-XXX</td>
+									<td>品类1、品类2</td>
+								</tr>
+								<tr>
+									<td class="w-checkbox">
+										<div class="checkbox-wrap js-checkbox">
+											<input class="list-item-checkbox" type="checkbox">
+											<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+										</div>
+									</td>
+									<td>采购支持-XXX</td>
+									<td>小流行</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../../dist/js/jquery2.1.js"></script>
+		<script type="text/javascript">
+//		显示增加弹窗
+			$(".button .btn-add").on('click',function(){
+				$(".mask1").removeClass("hide");
+			})
+			
+//			隐藏增加弹窗
+			$(".close, .sure, .cancel").on('click',function(){
+				$(".mask1").addClass("hide");
+			})
+			
+//			显示删除弹窗
+			$(".button .btn-delete").on('click',function(){
+				$(".mask2").removeClass("hide");
+			})
+			
+//			隐藏删除弹窗
+			$(".close, .sure, .cancel").on('click',function(){
+				$(".mask2").addClass("hide");
+			})
+			
+//			删除选中项
+			$(".mask2 .sure").on('click',function(){
+				$(".checkbox-wrap input:checked").parent().parent().parent().remove();
+			})
+		</script>
+	</body>
+
+</html>

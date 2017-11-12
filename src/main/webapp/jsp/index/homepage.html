@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="<?php echo SUPPLIER_CSS; ?>bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo SUPPLIER_CSS; ?>content.css">
+    <link rel="stylesheet" href="<?php echo SUPPLIER_CSS; ?>main.css">
+    <style type="text/css">
+        .w810{width: 810px;}
+        .table-wrap .table-fixed-sm{width: 100%;}
+        .green-txt{color: #84bd7f;}
+    </style>
+</head>
+<body>
+<div class="container-main">
+    <div class="container-wrapper w810">
+
+        <!-- 头部 -->
+        <div class="container-header js-container-header">
+            <h5>欢迎访问聚橙运营系统</h5>
+        </div>
+        <!-- 头部 END -->
+
+        <!-- 详情部分 -->
+        <div class="module-wrapper">
+
+            <!-- 快捷操作 -->
+            <div class="module row-box">
+                <div class="module-title">
+                    快捷操作
+                </div>
+                <div class="module-content">
+                    <ul class="list-inline list-data">
+                        <li class="shortcut-item">
+                            <div class="shortcut-content icon-sche js-nav-item" data-target="/Sview/schedule/index">
+                                排期管理
+                            </div>
+                        </li>
+                        <li class="shortcut-item">
+                            <div class="shortcut-content icon-add js-nav-item" data-target="/Sview/project/add">
+                                新增项目
+                            </div>
+                        </li>
+                        <li class="shortcut-item">
+                            <div class="shortcut-content icon-data js-nav-item" data-target="/Sview/document/budgetlist">
+                                资料管理
+                            </div>
+                        </li>
+                         <li class="shortcut-item">
+                            <div class="shortcut-content icon-input js-nav-item" data-target="/Saleview/Saleregion/getSaleRegion">
+                                销售统计
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="module row-box">
+                <div class="module-title">
+                    日历
+                </div>
+                <div class="module-content">
+                    <ul class="list-inline list-data">
+                        <li class="shortcut-item">
+                            <div class="shortcut-content s-data js-nav-item" data-target="/Sview/Project/Projectcalendar">
+                                项目日历
+                            </div>
+                        </li>
+                        <li class="shortcut-item">
+                            <div class="shortcut-content s-data js-nav-item" data-target="/Sview/Schedule/scheduleCalendar">
+                                排期日历
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 快捷操作 END -->
+
+            <!-- 排期概况 -->
+            <div class="module row-box">
+                <div class="module-title">
+                    排期概况
+                </div>
+                <div class="module-content">
+                    <div class="table-wrap box-content">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>事业部</th>
+                                    <th>进行中</th>
+                                    <th>可开票</th>
+                                    <th>已开票</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                <tr>
+                                    <td>全部</td>
+                                    <td><?php echo $total['prepare']; ?></td>
+                                    <td><?php echo $total['ok']; ?></td>
+                                    <td class="green-txt"><?php echo $total['sale']; ?></td>
+                                </tr>
+                                <?php foreach($depList as $v){?>
+                                <tr>
+                                    <td><?php echo $v['name']; ?></td>
+                                    <td><?php echo $v['prepare'];?></td>
+                                    <td><?Php echo $v['ok'];?></td>
+                                    <td class="green-txt"><?php echo $v['sale']; ?></td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 排期概况 END -->
+
+        </div>
+        <!-- 详情部分 END-->
+
+
+    </div>
+</div>
+<script src="<?php echo SUPPLIER_JS; ?>jquery.min.js"></script>
+<script src="<?php echo SUPPLIER_JS; ?>common-iframe.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

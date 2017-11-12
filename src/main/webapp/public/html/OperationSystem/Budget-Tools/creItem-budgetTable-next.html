@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建项目预算表(下一步)</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/table.scss">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+</head>
+<body>
+<div class="container-main">
+    <div class="container-wrapper">
+        <div class="module-wrapper row">
+            <!--合同详情头部-->
+            <div class="container-header js-container-header">
+                <h5>创建项目预算表</h5>
+                <div class="right-btn">
+                    <button class="btn btn-info">
+                        <span class="icon icon-cancel icon-left" style="color: #FFFFFF"></span>
+                        提交审核
+                    </button>
+                    <button class="btn btn-success">
+                        <span class="icon icon-hold icon-left"></span>
+                        保存草稿
+                    </button>
+                </div>
+            </div>
+            <!--合同详情头部 END-->
+
+            <!--项目基本信息-->
+            <div class="module row-box">
+                <div class="module-title">项目基本信息</div>
+                <div class="module-content">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="two-line">
+                                <label class="w-label control-label">项目名称：</label>
+                                <span class="list-detail">赵雷“无法长大”全国巡回演唱会</span>
+                            </div>
+                            <div class="two-line">
+                                <label class="w-label control-label">项目编码：</label>
+                                <span class="list-detail">01.01.01.0001.16</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="two-line">
+                                <label class="w-label control-label">事业部/子公司：</label>
+                                <span class="list-detail">万有音乐</span>
+                            </div>
+                            <div class="two-line">
+                                <label class="w-label control-label">品类：</label>
+                                <span class="list-detail">小流行</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--项目基本信息 END-->
+
+            <div class="module row-box">
+                <div class="module-content">
+                    <div class="change-roll">
+                        <ul>
+                            <li class="arrow-btn">
+                                <span class="icon icon-arrow"></span>
+                            </li>
+                            <li class="ml30">
+                                <span class="icon icon-pass icon-left"></span>呼和浩特
+                                <p class="nabla"></p>
+                            </li>
+                            <li class="ml30">
+                                <span class="icon icon-pass icon-left"></span>呼和浩特
+                            </li>
+                            <li class="ml30">
+                                <span class="icon icon-pass icon-left"></span>呼和浩特
+                            </li>
+                            <li class="ml30">
+                                <span class="icon icon-pass icon-left"></span>呼和浩特
+                            </li>
+                            <li class="ml30">
+                                <span class="icon icon-pass icon-left"></span>呼和浩特
+                            </li>
+                            <li class="ml30">
+                                <span class="icon icon-pass icon-left"></span>呼和浩特
+                            </li>
+                            <li class="ml30 arrow-btn">
+                                <span class="icon icon-arrow rotate180"></span>
+                            </li>
+                            <div style="clear: both"></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--均摊固定成本-->
+            <div class="module row-box">
+                <div class="module-title">均摊固定成本</div>
+                <div class="module-content">
+                    <div class="table-wrap box-content">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>费用名称</th>
+                                    <th>费用明细</th>
+                                    <th>分摊数</th>
+                                    <th>数量</th>
+                                    <th>单价（元）</th>
+                                    <th>总金额（元）</th>
+                                    <th>备注</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                <tr>
+                                    <td>演出费</td>
+                                    <td>演出制作费</td>
+                                    <td>1/5</td>
+                                    <td>4</td>
+                                    <td>3,000.00</td>
+                                    <td>12,000.00</td>
+                                    <td>5站分摊</td>
+                                </tr>
+                                <tr>
+                                    <td>剧组国内差旅</td>
+                                    <td>经济舱</td>
+                                    <td>1/5</td>
+                                    <td>4</td>
+                                    <td>3,000.00</td>
+                                    <td>12,000.00</td>
+                                    <td>5站分摊</td>
+                                </tr>
+                                <tr>
+                                    <td>带队人员差旅</td>
+                                    <td>高铁</td>
+                                    <td>1/5</td>
+                                    <td>4</td>
+                                    <td>3,000.00</td>
+                                    <td>12,000.00</td>
+                                    <td>5站分摊</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--均摊固定成本 END-->
+
+            <!--非均摊固定成本-->
+            <div class="module row-box">
+                <div class="module-title">非均摊固定成本</div>
+                <div class="module-content">
+                    <div class="table-wrap box-content">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>费用名称</th>
+                                    <th>费用明细</th>
+                                    <th>分摊数</th>
+                                    <th>数量</th>
+                                    <th>单价（元）</th>
+                                    <th>总金额（元）</th>
+                                    <th>备注</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                <tr>
+                                    <td>场馆费用</td>
+                                    <td>灯光</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>30000</td>
+                                    <td>30,000.00</td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                        <span class="icon icon-configure-set"></span>
+                                        <span class="icon icon-delcontact fz16 ml10"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>场馆费用</td>
+                                    <td>音箱</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>30000</td>
+                                    <td>30,000.00</td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                        <span class="icon icon-configure-set"></span>
+                                        <span class="icon icon-delcontact fz16 ml10"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>场馆费用</td>
+                                    <td>乐器</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>30000</td>
+                                    <td>30,000.00</td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                        <span class="icon icon-configure-set"></span>
+                                        <span class="icon icon-delcontact fz16 ml10"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>带队人员住宿</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>剧组餐补</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>带队人员餐补</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>市场宣传费用</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>网络宣传费用</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>备用金</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>演出工作人员</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="content-btn" style="width: 952px;">
+                                            <button class="btn btn-default btn-sm btn-green-size">添加</button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="amount">
+                        <span class="amount-preamble">固定成本合计:</span>
+                    </div>
+                </div>
+            </div>
+            <!--非均摊固定成本 END-->
+
+            <!--变动成本-->
+            <div class="module row-box">
+                <div class="module-title">变动成本</div>
+                <div class="module-content">
+                    <div class="table-wrap box-content table-for-5">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>费用名称</th>
+                                    <th>费用标准</th>
+                                    <th>明细构成</th>
+                                    <th>明细构成备注</th>
+                                    <th>总金额（元）</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                <tr>
+                                    <td>演出费</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                        <span class="icon icon-configure-set"></span>
+                                        <span class="icon icon-delcontact fz16 ml10"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>演出费</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                        <span class="icon icon-configure-set"></span>
+                                        <span class="icon icon-delcontact fz16 ml10"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>演出费</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                        <span class="icon icon-configure-set"></span>
+                                        <span class="icon icon-delcontact fz16 ml10"></span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="">
+                        <span class="amount-preamble">变动成本合计:</span>
+                    </div>
+                </div>
+            </div>
+            <!--变动成本 END-->
+
+            <div class="big-red-title">成本合计</div>
+
+
+            <!--门票收入-->
+            <div class="module row-box">
+                <div class="module-title">门票收入</div>
+                <div class="module-content">
+                    <div class="table-wrap box-content">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                    <tr>
+                                        <th>票价分区</th>
+                                        <th>票价（人民币）</th>
+                                        <th class="total-seat">总座位</th>
+                                        <th class="total-office">总票房（人民币）</th>
+                                        <th>工作票</th>
+                                        <th>可售票数</th>
+                                        <th>可售总票房</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                    <tr>
+                                        <td>Price A</td>
+                                        <td></td>
+                                        <td class="total-seat"></td>
+                                        <td class="total-office"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="btn-behind-table">
+                                            <span class="icon icon-configure-set"></span>
+                                            <span class="icon icon-delcontact fz16 ml10"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-btn" style="width:  952px;">
+                                            <button class="btn btn-default btn-sm btn-green-size">添加</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>合计：</td>
+                                        <td></td>
+                                        <td class="total-seat"></td>
+                                        <td class="total-office"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--门票收入 END-->
+
+            <!--合作分成说明-->
+            <div class="module row-box">
+                <div class="module-title">合作分成说明</div>
+                <div class="module-content">
+                    <div class="table-wrap box-content table-for-5">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>分成方</th>
+                                    <th>合作支付费用名称</th>
+                                    <th>合作支付金额</th>
+                                    <th>成本比例</th>
+                                    <th>分成比例</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                    <tr>
+                                        <td>聚橙网</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="btn-behind-table">
+                                            <span class="icon icon-configure-set"></span>
+                                            <span class="icon icon-delcontact fz16 ml10"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-btn">
+                                            <button class="btn btn-default btn-sm btn-green-size">添加</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--合作分成说明 END-->
+
+            <!--盈亏平衡点-->
+            <div class="module row-box">
+                <div class="module-title">盈亏平衡点</div>
+                <div class="module-content">
+                    <div class="table-wrap box-content table-for-4">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>费用名称</th>
+                                    <th>费用明细</th>
+                                    <th>分摊数</th>
+                                    <th>数量</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                    <tr>
+                                    <td>聚橙网</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                        <span class="icon icon-configure-set"></span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="table-wrap box-content table-for-4">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>费用名称</th>
+                                    <th>费用明细</th>
+                                    <th>分摊数</th>
+                                    <th>数量</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                <tr>
+                                    <td>聚橙网</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="btn-behind-table">
+                                        <span class="icon icon-configure-set"></span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--盈亏平衡点 END-->
+            <div class="up-save-step">
+                <button class="btn btn-warning btn-sm">上一步</button>
+                <button class="btn btn-warning btn-sm">保存</button>
+            </div>
+
+            <!--项目预算进展-->
+            <div class="module row-box">
+                <div class="module-title">项目预算进展</div>
+                <div class="module-content">
+                    <div>
+                        <ul class="list-inline list-title list-sm clearfix">
+                            <li class="list-item">
+                                <div class="item-content list-for-4">
+                                    <div class="title">
+                                        <div>
+                                            <span class="fl ml10">1.创建项目预算表</span>
+                                            <span class="icon icon-change-hidden fr mr10 mt-12"></span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="item">
+                                            <span class="text">执行者：</span>
+                                            <span class="text">品类采购</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="text">完成时间：</span>
+                                            <span class="text">2016.01.09 10:09</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-item list-arrow">
+                                <span class="icon icon-two-arrow"></span>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content list-for-4">
+                                    <div class="title">
+                                        <div>
+                                            <span class="fl ml10">2.提交执行部审核</span>
+                                            <span class="icon icon-delcontact fr mr10 mt-12"></span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="item">
+                                            <span class="text">执行者：</span>
+                                            <span class="text">品类采购</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="text">完成时间：</span>
+                                            <span class="text">2016.01.09 10:09</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-item list-arrow">
+                                <span class="icon icon-two-arrow"></span>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content list-for-4">
+                                    <div class="title">
+                                        <div>
+                                            <span class="fl ml10">3.审核项目预算表</span>
+                                            <span class="icon icon-pass fr mr10 mt-12"></span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="item">
+                                            <span class="text">执行者：</span>
+                                            <span class="text">品类采购</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="text">完成时间：</span>
+                                            <span class="text">2016.01.09 10:09</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-item list-arrow">
+                                <span class="icon icon-two-arrow"></span>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content list-for-4">
+                                    <div class="title">
+                                        <div>
+                                            <span class="fl ml10">4.提交OA审批</span>
+                                            <span class="icon icon-pass fr mr10 mt-12"></span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="item">
+                                            <span class="text">执行者：</span>
+                                            <span class="text">品类采购</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="text">完成时间：</span>
+                                            <span class="text">暂无</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="text">OA审批状态：</span>
+                                            <span class="text">暂无</span>
+                                            <a href="javascript:">查看</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--项目预算进展 END-->
+        </div>
+    </div>
+</div>
+<script src="../../../dist/js/jquery.min.js"></script>
+<script src="../../../dist/js/approval-tools.js"></script>
+</body>
+</html>

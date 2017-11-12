@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看排期预算表</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/table.scss">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+</head>
+<body>
+<div class="container-main">
+    <div class="container-wrapper">
+        <div class="module-wrapper row">
+            <!--合同详情头部-->
+            <div class="container-header js-container-header">
+                <h5>查看排期预算表</h5>
+            </div>
+            <!--合同详情头部 END-->
+
+            <!--排期基本信息-->
+            <div class="module row-box">
+                <div class="module-title">排期基本信息</div>
+                <div class="module-content">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="two-line">
+                                <label class="w-label control-label">排期编码：</label>
+                                <span class="list-detail">1.A.P.0001.17.001.01</span>
+                            </div>
+                            <div class="two-line">
+                                <label class="w-label control-label">所属项目：</label>
+                                <span class="list-detail">程璧-我和小鸟和铃</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="two-line">
+                                <label class="w-label control-label">排期名称：</label>
+                                <span class="list-detail">屈臣氏三生花-我和小鸟和铃铛-深圳</span>
+                            </div>
+                            <div class="two-line">
+                                <label class="w-label control-label">事业部/子公司：</label>
+                                <span class="list-detail">万有音乐</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="two-line">
+                                <label class="w-label control-label">品类：</label>
+                                <span class="list-detail">小流行</span>
+                            </div>
+                            <div class="two-line">
+                                <label class="w-label control-label">城市：</label>
+                                <span class="list-detail">深圳</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="two-line">
+                                <label class="w-label control-label">演出场馆：</label>
+                                <span class="list-detail">深圳 南山文体中心聚橙剧院大剧院</span>
+                            </div>
+                            <div class="two-line">
+                                <label class="w-label control-label">赞助商：</label>
+                                <span class="list-detail">屈臣氏</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="two-line">
+                                <label class="w-label control-label">合作方式：</label>
+                                <span class="list-detail">主办</span>
+                            </div>
+                            <div class="two-line">
+                                <label class="w-label control-label">演出时间：</label>
+                                <span class="list-detail">2016-05-10 20:00</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="two-line">
+                                <label class="w-label control-label">排期预算额度：</label>
+                                <span class="list-detail">90,000.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--排期基本信息 END-->
+
+            <!--固定成本-->
+            <div class="module row-box">
+                <div class="module-title">固定成本</div>
+                <div class="module-content">
+                    <div class="table-wrap box-content rowTable">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>费用名称</th>
+                                    <th>费用明细</th>
+                                    <th>场次数/天数</th>
+                                    <th>数量</th>
+                                    <th>单价</th>
+                                    <th>总金额</th>
+                                    <th>备注</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="5">演出费</td>
+                                        <td>演出费</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>35100</td>
+                                        <td>35，100.00</td>
+                                        <td>10站分摊</td>
+                                    </tr>
+                                    <tr>
+                                        <td>演出制作费</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>3510</td>
+                                        <td>3,510.00</td>
+                                        <td>10站分摊</td>
+                                    </tr>
+                                    <tr>
+                                        <td>演出费税款</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>4212</td>
+                                        <td>4,212.00</td>
+                                        <td>10站分摊</td>
+                                    </tr>
+                                    <tr>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>演出费</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>35100</td>
+                                        <td>35，100.00</td>
+                                        <td>10站分摊</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="3">演出制作费</td>
+                                        <td>演出费</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>3510</td>
+                                        <td>3,510.00</td>
+                                        <td>10站分摊</td>
+                                    </tr>
+                                    <tr>
+                                        <td>演出费税款</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>4212</td>
+                                        <td>4,212.00</td>
+                                        <td>10站分摊</td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="">
+                        <span class="amount-preamble">固定成本合计:</span>
+                        <span class="total-number">¥ 101,819.80</span>
+                    </div>
+                </div>
+            </div>
+            <!--固定成本 END-->
+
+            <!--变动成本-->
+            <div class="module row-box">
+                <div class="module-title">变动成本</div>
+                <div class="module-content">
+                    <div class="table-wrap box-content table-for-5 rowTable">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>费用名称</th>
+                                    <th>费用标准</th>
+                                    <th>明细构成</th>
+                                    <th>明细构成备注</th>
+                                    <th>总金额（元）</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                    <tr>
+                                        <td>票务代理费</td>
+                                        <td>80,360.00</td>
+                                        <td>10%</td>
+                                        <td>票务代理费10%</td>
+                                        <td>8,036.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>收入类税务费</td>
+                                        <td>114,800.00</td>
+                                        <td>3.7%</td>
+                                        <td>税务费3.37%</td>
+                                        <td>3,868.76</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="">
+                        <span class="amount-preamble">固定成本合计:</span>
+                        <span class="total-number">¥ 101,819.80</span>
+                    </div>
+                </div>
+            </div>
+            <!--变动成本 END-->
+
+            <div class="big-red-title">
+                <span>成本合计：</span>
+                <span>¥ 113,724.56</span>
+            </div>
+
+            <!--门票收入-->
+            <div class="module row-box">
+                <div class="module-title">门票收入</div>
+                <div class="module-content">
+                    <div class="table-wrap box-content rowTable">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>票价分区</th>
+                                    <th>票价（人民币）</th>
+                                    <th>总座位</th>
+                                    <th>总票房（人民币）</th>
+                                    <th>工作票</th>
+                                    <th>可售票数</th>
+                                    <th>可售总票房</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                    <tr>
+                                        <td>Price A</td>
+                                        <td>¥380</td>
+                                        <td>300</td>
+                                        <td>¥ 114,000</td>
+                                        <td>0</td>
+                                        <td>300</td>
+                                        <td>¥ 114,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>....</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>合计：</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="">
+                        <span class="amount-preamble">1场可售总票房:</span>
+                        <span class="total-number">¥ 101,819.80</span>
+                    </div>
+                </div>
+            </div>
+            <!--门票收入 END-->
+
+            <!--盈亏平衡点-->
+            <div class="module row-box">
+                <div class="module-title">盈亏平衡点</div>
+                <div class="module-content">
+                    <div class="table-wrap box-content table-for-4 rowTable">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>盈亏平衡点（销售比例）（%）</th>
+                                    <th>销售额</th>
+                                    <th>利润率</th>
+                                    <th>利润</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                    <tr>
+                                        <td>70</td>
+                                        <td>¥ 114,800.00</td>
+                                        <td>1%</td>
+                                        <td>¥ 1,075.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--盈亏平衡点 END-->
+
+        </div>
+    </div>
+</div>
+<script src="../../../dist/js/jquery.min.js"></script>
+<script src="../../../dist/js/approval-tools.js"></script>
+</body>
+</html>

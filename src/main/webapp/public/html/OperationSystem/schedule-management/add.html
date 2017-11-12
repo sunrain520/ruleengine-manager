@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增排期</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/need/laydate.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-wrapper">
+
+            <!-- 头部 -->
+            <div class="container-header js-container-header">
+                <h5>新增/编辑排期</h5>
+                <div class="right-btn">
+                    <button class="btn btn-success" type="submit"><span class="icon icon-save icon-left"></span>保存</button>
+                    <button class="btn btn-default" type="button"><span class="icon icon-delete icon-left"></span>取消</button>
+                </div>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 表单信息 -->
+            <form class="module-wrapper row">
+                <!-- 基本信息 -->
+                <div class="module row-box">
+                    <div class="module-title">
+                        基本信息
+                    </div>
+                    <div class="module-content">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="w-label control-label">所属项目：</label>
+                                <div class="w-info">
+                                    <label class="control-label">程璧我和小鸟和铃铛</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label"><span class="must">*</span>排期名称：</label>
+                                <div class="w-info">
+                                    <input type="text" class="form-control" placeholder="项目名">
+                                </div>
+                                <span class="checked-tip"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label"><span class="must">*</span>事业部/子公司：</label>
+                                <div class="w-info">
+                                    <label class="control-label">万有天橙</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label"><span class="must">*</span>品类：</label>
+                                <div class="w-info">
+                                    <label class="control-label">小流行</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label"><span class="must">*</span>城市：</label>
+                                <div class="w-info">
+                                    <div class="blur-panel js-blur-panel full-width">
+                                        <input type="text" class="form-control form-list js-blur-input" placeholder="选择城市">
+                                        <span class="icon icon-menu-block-down"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label"><span class="must">*</span>演出场馆：</label>
+                                <div class="w-info">
+                                    <div class="blur-panel js-blur-panel full-width">
+                                        <input type="text" class="form-control form-list js-blur-input" placeholder="选择场馆">
+                                        <span class="icon icon-menu-block-down"></span>
+                                    </div>
+                                </div>
+                                <a class="new-btn">新增场馆</a>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label w-label">赞助商：</label>
+                                <div class="w-info">
+                                    <div class="blur-panel js-blur-panel full-width">
+                                        <input type="text" class="form-control form-list js-blur-input" placeholder="赞助商信息">
+                                        <span class="icon icon-menu-block-down"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label"><span class="must">*</span>合作方式：</label>
+                                <div class="w-info">
+                                    <select class="form-control">
+                                        <option value="">主办</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label"><span class="must">*</span>演出时间：</label>
+                                <div class="w-info">
+                                    <input type="text" class="form-control laydate-icon" placeholder="YYYY-MM-DD" onclick="laydate({istime: true, format: 'YYYY-MM-DD',min: laydate.now(),istoday: true})">
+                                </div>
+                                <div class="w-info">
+                                    <input type="text" class="form-control laydate-icon" placeholder="YYYY-MM-DD" onclick="laydate({istime: true, format: 'YYYY-MM-DD',min: laydate.now(),istoday: true})">
+                                </div>
+                                <span class="checked-tip">结束时间可不填</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">目标采购额：</label>
+                                <div class="w-info">
+                                    <input type="text" class="form-control" placeholder="0.00" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 基本信息 END -->
+
+                <!-- 装走拆台 -->
+                <div class="module row-box">
+                    <div class="module-title">
+                        装走拆台
+                    </div>
+                    <div class="module-content">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="w-label control-label">装台走台时间：</label>
+                                <div class="w-info">
+                                    <input type="text" class="form-control laydate-icon" placeholder="YYYY-MM-DD HH:MM" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm',min: laydate.now(),istoday: true})">
+                                </div>
+                                <div class="w-info">
+                                    <input type="text" class="form-control laydate-icon" placeholder="YYYY-MM-DD HH:MM" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm',min: laydate.now(),istoday: true})">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">拆台时间：</label>
+                                <div class="w-info">
+                                    <input type="text" class="form-control laydate-icon" placeholder="YYYY-MM-DD HH:MM" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm',min: laydate.now(),istoday: true})">
+                                </div>
+                                <div class="w-info">
+                                    <input type="text" class="form-control laydate-icon" placeholder="YYYY-MM-DD HH:MM" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm',min: laydate.now(),istoday: true})">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 装走拆台 END -->
+
+                <!-- 项目基础资料 -->
+                <div class="module row-box">
+                    <div class="module-title">
+                        配套资料设置
+                        <span class="help">请在下面勾选排期需要准备的资料</span>
+                    </div>
+                    <div class="module-content">
+                        <div class="">
+                            <ul class="list-inline list-title clearfix">
+                                <li class="list-item">
+                                    <div class="item-content">
+                                        <div class="title">合同</div>
+                                        <div class="content">
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">项目预算</span>
+                                            </div>
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">保安合同</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-item">
+                                    <div class="item-content">
+                                        <div class="title">批文</div>
+                                        <div class="content">
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">文化批文</span>
+                                            </div>
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">公安批文</span>
+                                            </div>
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">公安批文</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-item">
+                                    <div class="item-content">
+                                        <div class="title">票图</div>
+                                        <div class="content">
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">文化批文</span>
+                                            </div>
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">公安批文</span>
+                                            </div>
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">公安批文</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-item">
+                                    <div class="item-content">
+                                        <div class="title">销售计划</div>
+                                        <div class="content">
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">文化批文</span>
+                                            </div>
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">公安批文</span>
+                                            </div>
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">公安批文</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-item">
+                                    <div class="item-content">
+                                        <div class="title">执行</div>
+                                        <div class="content">
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">文化批文</span>
+                                            </div>
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">公安批文</span>
+                                            </div>
+                                            <div class="">
+                                                <div class="checkbox-wrap js-checkbox">
+                                                    <input type="checkbox">
+                                                    <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                                </div>
+                                                <span class="text">公安批文</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 项目基础资料 END -->
+            </form>
+            <!-- 表单信息 END -->
+
+        </div>
+    </div>
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script src="../../../dist/js/laydate/laydate.js"></script>
+</body>
+</html>

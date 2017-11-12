@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/* 全局变量 */
+/* 全局变量 END */
+/* 字体样式变量 */
+/* 字体样式变量 END */
+/* 框架侧边导航变量 */
+/* 框架侧边导航变量 END */
+/* 头部导航变量 */
+/* 头部导航变量 END */
+/* iframe 内部变量 */
+/* iframe 内部变量 END */
+/* 表格变量 */
+/* 表格变量 END */
+/* 按钮公共变量 */
+/* 按钮公共变量 END */
+/* 表单样式 */
+/* 模糊查询样式变量 */
+/* 模糊查询样式变量 END */
+/* 表单样式 END */
+/* 正常隐藏状态图标样式 */
+/* 正常隐藏状态图标样式 END */
+/* 危险操作颜色 */
+/* 危险操作颜色 END */
+/* module分块背景色 */
+/* module分块背景色 END */
+/* 搜索表单变量 */
+/* 搜索表单变量 END */
+.form-group {
+  margin-bottom: 10px; }
+  .form-group .checked-tip {
+    display: inline-block;
+    margin-bottom: 0;
+    padding-top: 7px;
+    color: #ed5565; }
+
+.form-control {
+  display: block;
+  border: 1px solid #e7e7e7;
+  border-radius: 1px;
+  width: 100%;
+  padding: 6px 12px;
+  -webkit-transition: border-color .15s ease-in-out 0s, box-shadow .15s ease-in-out 0s;
+  transition: border-color .15s ease-in-out 0s, box-shadow .15s ease-in-out 0s;
+  box-shadow: none;
+  color: inherit;
+  background-color: #FFF;
+  background-image: none; }
+  .form-control:focus {
+    outline: 0;
+    border-color: #f8ac59;
+    box-shadow: none; }
+  .form-control.input-error {
+    outline: 0;
+    border-color: #ed5565;
+    box-shadow: none; }
+
+/* 一行两列 - 中间有间隔 */
+.checkbox-wrap {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  line-height: 1.2; }
+  .checkbox-wrap + .text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px; }
+  .checkbox-wrap + .checkbox-wrap {
+    margin-left: 10px; }
+  .checkbox-wrap input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer; }
+    .checkbox-wrap input[type="checkbox"][checked="checked"] + .checkbox .glyphicon-ok {
+      display: inline-block; }
+    .checkbox-wrap input[type="checkbox"] + .checkbox {
+      position: absolute;
+      display: block;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: 1px solid #ccc;
+      height: 100%;
+      min-height: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+      text-align: center;
+      font-size: 0;
+      background-color: #fff;
+      cursor: pointer; }
+      .checkbox-wrap input[type="checkbox"] + .checkbox .glyphicon-ok {
+        display: none;
+        font-size: 12px; }
+
+/*# sourceMappingURL=form.css.map */

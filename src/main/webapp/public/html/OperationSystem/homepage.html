@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<link rel="stylesheet" href="<?php echo SUPPLIER_CSS; ?>bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo SUPPLIER_CSS; ?>content.css">
+    <link rel="stylesheet" href="<?php echo SUPPLIER_CSS; ?>main.css">
+    <style type="text/css">
+        .w810{width: 810px;}
+        .table-wrap .table-fixed-sm{width: 100%;}
+        .green-txt{color: #84bd7f;}
+    </style>
+</head>
+<body>
+	<div class="container-main">
+        <div class="container-wrapper w810">
+
+            <!-- 头部 -->
+            <div class="container-header js-container-header">
+                <h5>欢迎访问聚橙运营系统</h5>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 详情部分 -->
+            <div class="module-wrapper">            
+
+                <!-- 快捷操作 -->
+                <div class="module row-box">
+                    <div class="module-title">
+                        快捷操作
+                    </div>
+                    <div class="module-content">
+                        <ul class="list-inline list-data">
+                            <li class="shortcut-item">
+                                <div class="shortcut-content icon-sche js-nav-item" data-target="javascript:;">
+                                    排期管理
+                                </div>
+                            </li>
+                            <li class="shortcut-item">
+                                <div class="shortcut-content icon-add js-nav-item" data-target="javascript:;">
+                                    新增项目
+                                </div>
+                            </li>
+                            <li class="shortcut-item">
+                                <div class="shortcut-content icon-input js-nav-item" data-target="javascript:;">
+                                    销售数据录入
+                                </div>
+                            </li>
+                            <li class="shortcut-item">
+                                <div class="shortcut-content icon-data js-nav-item" data-target="javascript:;">
+                                    资料管理
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 快捷操作 END -->
+
+                <!-- 排期概况 -->
+                <div class="module row-box">
+                    <div class="module-title">
+                        排期概况
+                    </div>
+                    <div class="module-content">
+                        <div class="table-wrap box-content">
+                            <div class="table-header-wrap js-table-header-wrap js-ignore">
+                                <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                    <thead>
+                                    <tr>
+                                        <th>事业部</th>
+                                        <th>进行中</th>
+                                        <th>可开票</th>
+                                        <th>已开票</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div class="table-body-wrap js-table-body-wrap js-ignore">
+                                <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                    <tbody>
+                                    <tr>
+                                        <td>全部</td>
+                                        <td>29850</td>
+                                        <td>3580</td>
+                                        <td class="green-txt">1153</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>大流行事业部</td>
+                                        <td>3506</td>
+                                        <td>2580</td>
+                                        <td class="green-txt">1568</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>万有天橙</td>
+                                        <td>890</td>
+                                        <td>256</td>
+                                        <td class="green-txt">637</td>  
+                                    </tr>
+                                    <tr>
+                                        <td>小橙堡</td>
+                                        <td>2589</td>
+                                        <td>1875</td>
+                                        <td class="green-txt">357</td>
+                                    </tr>
+                                    <tr>
+                                        <td>嬉习喜戏</td>
+                                        <td>586</td>
+                                        <td>354</td>
+                                        <td class="green-txt">289</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>艺术演出事业部</td>
+                                        <td>214</td>
+                                        <td>147</td>
+                                        <td class="green-txt">386</td> 
+                                    </tr>
+                                    <tr>
+                                        <td>音乐剧事业部</td>
+                                        <td>665</td>
+                                        <td>354</td>
+                                        <td class="green-txt">387</td> 
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 排期概况 END -->
+
+            </div>
+            <!-- 详情部分 END-->
+
+
+        </div>
+    </div>
+    <script src="<?php echo SUPPLIER_JS; ?>jquery.min.js"></script>
+    <script src="<?php echo SUPPLIER_JS; ?>common-iframe.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</body>
+</html>

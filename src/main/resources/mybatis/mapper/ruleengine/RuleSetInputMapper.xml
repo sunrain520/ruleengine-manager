@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.RuleSetInputMapper">
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.RuleSetInput">
+    <id column="f_auto_id" jdbcType="INTEGER" property="fAutoId" />
+    <result column="f_rule_set_id" jdbcType="INTEGER" property="fRuleSetId" />
+    <result column="f_field_name" jdbcType="VARCHAR" property="fFieldName" />
+    <result column="f_remark" jdbcType="VARCHAR" property="fRemark" />
+    <result column="f_is_required" jdbcType="BIT" property="fIsRequired" />
+    <result column="f_create_time" jdbcType="TIMESTAMP" property="fCreateTime" />
+    <result column="f_create_user" jdbcType="VARCHAR" property="fCreateUser" />
+    <result column="f_update_time" jdbcType="TIMESTAMP" property="fUpdateTime" />
+    <result column="f_update_user" jdbcType="VARCHAR" property="fUpdateUser" />
+    <result column="f_rule_set_name" jdbcType="VARCHAR" property="fRuleSetName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    rs.f_auto_id, rs.f_rule_set_id, rs.f_field_name, rs.f_remark, rs.f_is_required, rs.f_create_time, rs.f_create_user, 
+    rs.f_update_time, rs.f_update_user
+  </sql>
+  <select id="queryRuleSetInputsByPage" resultMap="BaseResultMap" parameterType="map">
+        select 
+        <include refid="Base_Column_List" />, rs.f_rule_id as  f_rule_set_name
+        from t_rule_set_input rsi
+        left join t_rule_set rs 
+        on rsi.f_rule_set_id = rs.f_auto_id
+        where 1=1
+        <if test="ruleSet != null and ruleSet != ''">
+            and instr(rs.f_rule_id,#{ruleSet}) > 0
+        </if>
+        <if test="fieldName != null and fieldName != ''">
+            and instr(rsi.f_field_name,#{fieldName}) > 0
+        </if>
+        <if test="remark != null and remark != ''">
+            and instr(rsi.f_remark,#{remark}) > 0
+        </if>
+        <if test="isRequired != null and isRequired != ''">
+            and rsi.f_is_required = #{isRequired}
+        </if>
+        limit #{pageNum},#{pageSize}
+     </select>
+
+    <select id="queryRuleSetInputCount" resultType="Integer" parameterType="map">
+        select count(*) from t_rule_set_input rsi
+        left join t_rule_set rs 
+        on rsi.f_rule_set_id = rs.f_auto_id
+        where 1=1
+        <if test="ruleSet != null and ruleSet != ''">
+            and instr(rs.f_rule_id,#{ruleSet}) > 0
+        </if>
+        <if test="fieldName != null and fieldName != ''">
+            and instr(rsi.f_field_name,#{fieldName}) > 0
+        </if>
+        <if test="remark != null and remark != ''">
+            and instr(rsi.f_remark,#{remark}) > 0
+        </if>
+        <if test="isRequired != null and isRequired != ''">
+            and rsi.f_is_required = #{isRequired}
+        </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />, rs.f_rule_id as  f_rule_set_name
+        from t_rule_set_input rsi
+        left join t_rule_set rs 
+        on rsi.f_rule_set_id = rs.f_auto_id
+    where rsi.f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_rule_set_input
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleSetInput">
+    insert into t_rule_set_input (f_auto_id, f_rule_set_id, f_field_name, 
+      f_remark, f_is_required, f_create_time, 
+      f_create_user, f_update_time, f_update_user
+      )
+    values (#{fAutoId,jdbcType=INTEGER}, #{fRuleSetId,jdbcType=INTEGER}, #{fFieldName,jdbcType=VARCHAR}, 
+      #{fRemark,jdbcType=VARCHAR}, #{fIsRequired,jdbcType=BIT}, #{fCreateTime,jdbcType=TIMESTAMP}, 
+      #{fCreateUser,jdbcType=VARCHAR}, #{fUpdateTime,jdbcType=TIMESTAMP}, #{fUpdateUser,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleSetInput">
+    insert into t_rule_set_input
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fAutoId != null">
+        f_auto_id,
+      </if>
+      <if test="fRuleSetId != null">
+        f_rule_set_id,
+      </if>
+      <if test="fFieldName != null">
+        f_field_name,
+      </if>
+      <if test="fRemark != null">
+        f_remark,
+      </if>
+      <if test="fIsRequired != null">
+        f_is_required,
+      </if>
+      <if test="fCreateTime != null">
+        f_create_time,
+      </if>
+      <if test="fCreateUser != null">
+        f_create_user,
+      </if>
+      <if test="fUpdateTime != null">
+        f_update_time,
+      </if>
+      <if test="fUpdateUser != null">
+        f_update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fAutoId != null">
+        #{fAutoId,jdbcType=INTEGER},
+      </if>
+      <if test="fRuleSetId != null">
+        #{fRuleSetId,jdbcType=INTEGER},
+      </if>
+      <if test="fFieldName != null">
+        #{fFieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null">
+        #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fIsRequired != null">
+        #{fIsRequired,jdbcType=BIT},
+      </if>
+      <if test="fCreateTime != null">
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null">
+        #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null">
+        #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null">
+        #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleSetInput">
+    update t_rule_set_input
+    <set>
+      <if test="fRuleSetId != null">
+        f_rule_set_id = #{fRuleSetId,jdbcType=INTEGER},
+      </if>
+      <if test="fFieldName != null">
+        f_field_name = #{fFieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null">
+        f_remark = #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fIsRequired != null">
+        f_is_required = #{fIsRequired,jdbcType=BIT},
+      </if>
+      <if test="fCreateTime != null">
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null">
+        f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null">
+        f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null">
+        f_update_user = #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleSetInput">
+    update t_rule_set_input
+    set f_rule_set_id = #{fRuleSetId,jdbcType=INTEGER},
+      f_field_name = #{fFieldName,jdbcType=VARCHAR},
+      f_remark = #{fRemark,jdbcType=VARCHAR},
+      f_is_required = #{fIsRequired,jdbcType=BIT},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      f_update_user = #{fUpdateUser,jdbcType=VARCHAR}
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+</mapper>

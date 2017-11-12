@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>运营系统</title>
+    <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../dist/css/style.css">
+</head>
+<body>
+    <div class="container-main login-main">
+        <div class="login-wrap">
+            <div class="login-bg"></div>
+            <div class="login-content">
+                <div class="logo-wrap">
+                    <span class="logo"></span>
+                    <h1 class="title">运营系统</h1>
+                </div>
+                <form class="form-horizontal js-login-form">
+                    <div class="form-group login-group">
+                        <div class="input-bg"></div>
+                        <input type="text" name="username" class="form-control" placeholder="用户名">
+                    </div>
+                    <div class="form-group login-group">
+                        <div class="input-bg"></div>
+                        <input type="password" name="password" class="form-control" placeholder="密码">
+                    </div>
+
+                    <div class="form-group hide js-error-wrap error-wrap">
+                        <span class="icon icon-exclamation"></span>
+                        <span class="error js-error">账户不存在</span>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" class="btn btn-stander btn-lg btn-block" id="js-login-submit">登录</button>
+                    </div>
+                    <div class="checkbox-wrap js-checkbox">
+                        <input type="checkbox">
+                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+<script src="../../dist/js/jquery.min.js"></script>
+<script src="../../dist/js/common.js"></script>
+<script>
+
+    $(function () {
+
+        // 输入框失去焦点进行表单验证  看需求上貌似没有要求这里就不做验证了
+        $('.js-login-form input').on('blur', function () {
+
+        });
+
+        // 输入框获得焦点 隐藏错误提示信息
+        $('.js-login-form input').on('focus', function () {
+            var $errorWrap = $('.js-login-form .js-error-wrap');
+
+            $errorWrap.addClass('hide');
+        });
+
+        // 登录
+        $('#js-login-submit').on('click', function () {
+            var $form      = $('.js-login-form'),
+                $errorWrap = $form.find('.js-error-wrap');
+
+            // 如果验证不通过 信息显示
+            $errorWrap.removeClass('hide').find('.js-error').text('这里是错误提示信息');
+        });
+
+
+    })
+</script>
+
+</body>
+</html>

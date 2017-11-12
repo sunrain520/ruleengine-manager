@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.ScoreCardDegreeMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.ScoreCardDegree" >
+    <id column="f_auto_id" property="fAutoId" jdbcType="INTEGER" />
+    <result column="f_app_id" property="fAppId" jdbcType="VARCHAR" />
+    <result column="f_rule_id" property="fRuleId" jdbcType="VARCHAR" />
+    <result column="f_rule_item_id" property="fRuleItemId" jdbcType="INTEGER" />
+    <result column="f_degree" property="fDegree" jdbcType="VARCHAR" />
+    <result column="f_left_interval" property="fLeftInterval" jdbcType="DOUBLE" />
+    <result column="f_right_interval" property="fRightInterval" jdbcType="DOUBLE" />
+    <result column="f_period" property="fPeriod" jdbcType="INTEGER" />
+    <result column="f_coefficient" property="fCoefficient" jdbcType="DOUBLE" />
+    <result column="f_credit_limit" property="fCreditLimit" jdbcType="DOUBLE" />
+    <result column="f_create_time" property="fCreateTime" jdbcType="TIMESTAMP" />
+    <result column="f_create_user" property="fCreateUser" jdbcType="VARCHAR" />
+    <result column="f_update_time" property="fUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="f_update_user" property="fUpdateUser" jdbcType="VARCHAR" />
+    <result column="f_remark" property="fRemark" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    f_auto_id, f_app_id, f_rule_id, f_rule_item_id, f_degree, f_left_interval, f_right_interval, 
+    f_period, f_coefficient, f_credit_limit, f_create_time, f_create_user, f_update_time, 
+    f_update_user, f_remark
+  </sql>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_scorecard_degree
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </select>
+
+  <select id="queryScoreDegreesByPage" resultMap="BaseResultMap" parameterType="map">
+    select
+    <include refid="Base_Column_List" />
+    from t_scorecard_degree
+    where 1=1
+    <if test="itemId != null and itemId != 0">
+      and  f_rule_item_id =#{itemId}
+    </if>
+    <if test="ruleId != null and ruleId != ''">
+      and  f_rule_id =#{ruleId}
+    </if>
+    <if test="degree != null and degree != ''">
+      and  f_degree =#{degree}
+    </if>
+    <if test="remark != null and remark != ''">
+      and  f_remark =#{remark}
+    </if>
+    and f_app_id =#{appId}
+    order by f_rule_id,f_rule_item_id
+    limit #{pageNum},#{pageSize}
+  </select>
+
+  <select id="queryScoreDegreesCount"  resultType="Integer" parameterType="map">
+    select count(*)
+    from t_scorecard_degree
+    where 1=1
+    <if test="itemId != null and itemId != 0">
+      and  f_rule_item_id =#{itemId}
+    </if>
+    <if test="ruleId != null and ruleId != ''">
+      and  f_rule_id =#{ruleId}
+    </if>
+    <if test="degree != null and degree != ''">
+      and  f_degree =#{degree}
+    </if>
+    <if test="remark != null and remark != ''">
+      and  f_remark =#{remark}
+    </if>
+    and  f_app_id =#{appId}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_scorecard_degree
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.ScoreCardDegree" >
+    insert into t_scorecard_degree (f_auto_id, f_app_id, f_rule_id, 
+      f_rule_item_id, f_degree, f_left_interval, 
+      f_right_interval, f_period, f_coefficient, 
+      f_credit_limit, f_create_time, f_create_user, 
+      f_update_time, f_update_user, f_remark
+      )
+    values (#{fAutoId,jdbcType=INTEGER}, #{fAppId,jdbcType=VARCHAR}, #{fRuleId,jdbcType=VARCHAR}, 
+      #{fRuleItemId,jdbcType=INTEGER}, #{fDegree,jdbcType=VARCHAR}, #{fLeftInterval,jdbcType=DOUBLE}, 
+      #{fRightInterval,jdbcType=DOUBLE}, #{fPeriod,jdbcType=INTEGER}, #{fCoefficient,jdbcType=DOUBLE}, 
+      #{fCreditLimit,jdbcType=DOUBLE}, #{fCreateTime,jdbcType=TIMESTAMP}, #{fCreateUser,jdbcType=VARCHAR}, 
+      #{fUpdateTime,jdbcType=TIMESTAMP}, #{fUpdateUser,jdbcType=VARCHAR}, #{fRemark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyProperty="fAutoId" useGeneratedKeys="true" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.ScoreCardDegree" >
+    insert into t_scorecard_degree
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fAutoId != null" >
+        f_auto_id,
+      </if>
+      <if test="fAppId != null" >
+        f_app_id,
+      </if>
+      <if test="fRuleId != null" >
+        f_rule_id,
+      </if>
+      <if test="fRuleItemId != null" >
+        f_rule_item_id,
+      </if>
+      <if test="fDegree != null" >
+        f_degree,
+      </if>
+      <if test="fLeftInterval != null" >
+        f_left_interval,
+      </if>
+      <if test="fRightInterval != null" >
+        f_right_interval,
+      </if>
+      <if test="fPeriod != null" >
+        f_period,
+      </if>
+      <if test="fCoefficient != null" >
+        f_coefficient,
+      </if>
+      <if test="fCreditLimit != null" >
+        f_credit_limit,
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time,
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user,
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time,
+      </if>
+      <if test="fUpdateUser != null" >
+        f_update_user,
+      </if>
+      <if test="fRemark != null" >
+        f_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fAutoId != null" >
+        #{fAutoId,jdbcType=INTEGER},
+      </if>
+      <if test="fAppId != null" >
+        #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleId != null" >
+        #{fRuleId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleItemId != null" >
+        #{fRuleItemId,jdbcType=INTEGER},
+      </if>
+      <if test="fDegree != null" >
+        #{fDegree,jdbcType=VARCHAR},
+      </if>
+      <if test="fLeftInterval != null" >
+        #{fLeftInterval,jdbcType=DOUBLE},
+      </if>
+      <if test="fRightInterval != null" >
+        #{fRightInterval,jdbcType=DOUBLE},
+      </if>
+      <if test="fPeriod != null" >
+        #{fPeriod,jdbcType=INTEGER},
+      </if>
+      <if test="fCoefficient != null" >
+        #{fCoefficient,jdbcType=DOUBLE},
+      </if>
+      <if test="fCreditLimit != null" >
+        #{fCreditLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="fCreateTime != null" >
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null" >
+        #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null" >
+        #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null" >
+        #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null" >
+        #{fRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.ScoreCardDegree" >
+    update t_scorecard_degree
+    <set >
+      <if test="fAppId != null" >
+        f_app_id = #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleId != null" >
+        f_rule_id = #{fRuleId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleItemId != null" >
+        f_rule_item_id = #{fRuleItemId,jdbcType=INTEGER},
+      </if>
+      <if test="fDegree != null" >
+        f_degree = #{fDegree,jdbcType=VARCHAR},
+      </if>
+      <if test="fLeftInterval != null" >
+        f_left_interval = #{fLeftInterval,jdbcType=DOUBLE},
+      </if>
+      <if test="fRightInterval != null" >
+        f_right_interval = #{fRightInterval,jdbcType=DOUBLE},
+      </if>
+      <if test="fPeriod != null" >
+        f_period = #{fPeriod,jdbcType=INTEGER},
+      </if>
+      <if test="fCoefficient != null" >
+        f_coefficient = #{fCoefficient,jdbcType=DOUBLE},
+      </if>
+      <if test="fCreditLimit != null" >
+        f_credit_limit = #{fCreditLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null" >
+        f_update_user = #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemark != null" >
+        f_remark = #{fRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.ScoreCardDegree" >
+    update t_scorecard_degree
+    set f_app_id = #{fAppId,jdbcType=VARCHAR},
+      f_rule_id = #{fRuleId,jdbcType=VARCHAR},
+      f_rule_item_id = #{fRuleItemId,jdbcType=INTEGER},
+      f_degree = #{fDegree,jdbcType=VARCHAR},
+      f_left_interval = #{fLeftInterval,jdbcType=DOUBLE},
+      f_right_interval = #{fRightInterval,jdbcType=DOUBLE},
+      f_period = #{fPeriod,jdbcType=INTEGER},
+      f_coefficient = #{fCoefficient,jdbcType=DOUBLE},
+      f_credit_limit = #{fCreditLimit,jdbcType=DOUBLE},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      f_update_user = #{fUpdateUser,jdbcType=VARCHAR},
+      f_remark = #{fRemark,jdbcType=VARCHAR}
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+</mapper>

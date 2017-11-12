@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.manage.OperateLogMapper">
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.OperateLog">
+    <id column="f_auto_id" jdbcType="INTEGER" property="fAutoId" />
+    <result column="f_app_id" jdbcType="VARCHAR" property="fAppId" />
+    <result column="f_service_name" jdbcType="VARCHAR" property="fServiceName" />
+    <result column="f_local_address" jdbcType="VARCHAR" property="fLocalAddress" />
+    <result column="f_remote_address" jdbcType="VARCHAR" property="fRemoteAddress" />
+    <result column="f_url" jdbcType="VARCHAR" property="fUrl" />
+    <result column="f_method" jdbcType="VARCHAR" property="fMethod" />
+    <result column="f_sub_module" jdbcType="VARCHAR" property="fSubModule" />
+    <result column="f_module" jdbcType="VARCHAR" property="fModule" />
+    <result column="f_operate" jdbcType="VARCHAR" property="fOperate" />
+    <result column="f_operator" jdbcType="VARCHAR" property="fOperator" />
+    <result column="f_create_time" jdbcType="TIMESTAMP" property="fCreateTime" />
+    <result column="f_update_time" jdbcType="TIMESTAMP" property="fUpdateTime" />
+    <result column="f_data" jdbcType="VARCHAR" property="fData" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    f_auto_id, f_app_id,f_service_name, f_local_address, f_remote_address, f_url, f_method, f_sub_module,
+    f_module, f_operate, f_operator, f_create_time, f_update_time,f_data
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_ruleengine_log
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </select>
+
+  <select id="queryOperateLogsByPage" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_ruleengine_log
+    where 1=1
+    <if test="module != null and module != ''">
+      and  f_module =#{module}
+    </if>
+    <if test="operator != null and operator != ''">
+      and  f_operator =#{operator}
+    </if>
+    and f_app_id =#{appId}
+    limit #{pageNum},#{pageSize}
+  </select>
+
+  <select id="queryOperateLogsCount" parameterType="map" resultType="Integer">
+    select
+    count(*)
+    from t_ruleengine_log
+    where 1=1
+    <if test="module != null and module != ''">
+      and  f_module =#{module}
+    </if>
+    <if test="operator != null and operator != ''">
+      and  f_operator =#{operator}
+    </if>
+    and f_app_id =#{appId}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_ruleengine_log
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.OperateLog">
+    insert into t_ruleengine_log (f_auto_id, f_app_id,f_service_name, f_local_address,
+      f_remote_address, f_url, f_method, 
+      f_sub_module, f_module, f_operate, 
+      f_operator, f_create_time, f_update_time, 
+      f_data)
+    values (#{fAutoId,jdbcType=INTEGER},#{fAppId,jdbcType=VARCHAR}, #{fServiceName,jdbcType=VARCHAR}, #{fLocalAddress,jdbcType=VARCHAR},
+      #{fRemoteAddress,jdbcType=VARCHAR}, #{fUrl,jdbcType=VARCHAR}, #{fMethod,jdbcType=VARCHAR}, 
+      #{fSubModule,jdbcType=VARCHAR}, #{fModule,jdbcType=VARCHAR}, #{fOperate,jdbcType=VARCHAR}, 
+      #{fOperator,jdbcType=VARCHAR}, #{fCreateTime,jdbcType=TIMESTAMP}, #{fUpdateTime,jdbcType=TIMESTAMP}, 
+      #{fData,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.OperateLog">
+    insert into t_ruleengine_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="fAutoId != null">
+        f_auto_id,
+      </if>
+      <if test="fAppId != null">
+        f_app_id,
+      </if>
+      <if test="fServiceName != null">
+        f_service_name,
+      </if>
+      <if test="fLocalAddress != null">
+        f_local_address,
+      </if>
+      <if test="fRemoteAddress != null">
+        f_remote_address,
+      </if>
+      <if test="fUrl != null">
+        f_url,
+      </if>
+      <if test="fMethod != null">
+        f_method,
+      </if>
+      <if test="fSubModule != null">
+        f_sub_module,
+      </if>
+      <if test="fModule != null">
+        f_module,
+      </if>
+      <if test="fOperate != null">
+        f_operate,
+      </if>
+      <if test="fOperator != null">
+        f_operator,
+      </if>
+      <if test="fCreateTime != null">
+        f_create_time,
+      </if>
+      <if test="fUpdateTime != null">
+        f_update_time,
+      </if>
+      <if test="fData != null">
+        f_data,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="fAutoId != null">
+        #{fAutoId,jdbcType=INTEGER},
+      </if>
+      <if test="fAppId != null">
+        #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fServiceName != null">
+        #{fServiceName,jdbcType=VARCHAR},
+      </if>
+      <if test="fLocalAddress != null">
+        #{fLocalAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemoteAddress != null">
+        #{fRemoteAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fUrl != null">
+        #{fUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="fMethod != null">
+        #{fMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="fSubModule != null">
+        #{fSubModule,jdbcType=VARCHAR},
+      </if>
+      <if test="fModule != null">
+        #{fModule,jdbcType=VARCHAR},
+      </if>
+      <if test="fOperate != null">
+        #{fOperate,jdbcType=VARCHAR},
+      </if>
+      <if test="fOperator != null">
+        #{fOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateTime != null">
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateTime != null">
+        #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fData != null">
+        #{fData,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.OperateLog">
+    update t_ruleengine_log
+    <set>
+      <if test="fServiceName != null">
+        f_service_name = #{fServiceName,jdbcType=VARCHAR},
+      </if>
+      <if test="fLocalAddress != null">
+        f_local_address = #{fLocalAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fRemoteAddress != null">
+        f_remote_address = #{fRemoteAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="fUrl != null">
+        f_url = #{fUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="fMethod != null">
+        f_method = #{fMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="fSubModule != null">
+        f_sub_module = #{fSubModule,jdbcType=VARCHAR},
+      </if>
+      <if test="fModule != null">
+        f_module = #{fModule,jdbcType=VARCHAR},
+      </if>
+      <if test="fOperate != null">
+        f_operate = #{fOperate,jdbcType=VARCHAR},
+      </if>
+      <if test="fOperator != null">
+        f_operator = #{fOperator,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateTime != null">
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateTime != null">
+        f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fData != null">
+        f_data = #{fData,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.OperateLog">
+    update t_ruleengine_log
+    set f_service_name = #{fServiceName,jdbcType=VARCHAR},
+      f_local_address = #{fLocalAddress,jdbcType=VARCHAR},
+      f_remote_address = #{fRemoteAddress,jdbcType=VARCHAR},
+      f_url = #{fUrl,jdbcType=VARCHAR},
+      f_method = #{fMethod,jdbcType=VARCHAR},
+      f_sub_module = #{fSubModule,jdbcType=VARCHAR},
+      f_module = #{fModule,jdbcType=VARCHAR},
+      f_operate = #{fOperate,jdbcType=VARCHAR},
+      f_operator = #{fOperator,jdbcType=VARCHAR},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      f_data = #{fData,jdbcType=LONGVARCHAR}
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.OperateLog">
+    update t_ruleengine_log
+    set f_service_name = #{fServiceName,jdbcType=VARCHAR},
+      f_local_address = #{fLocalAddress,jdbcType=VARCHAR},
+      f_remote_address = #{fRemoteAddress,jdbcType=VARCHAR},
+      f_url = #{fUrl,jdbcType=VARCHAR},
+      f_method = #{fMethod,jdbcType=VARCHAR},
+      f_sub_module = #{fSubModule,jdbcType=VARCHAR},
+      f_module = #{fModule,jdbcType=VARCHAR},
+      f_operate = #{fOperate,jdbcType=VARCHAR},
+      f_operator = #{fOperator,jdbcType=VARCHAR},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP}
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+</mapper>

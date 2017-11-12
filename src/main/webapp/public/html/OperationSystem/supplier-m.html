@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>供应商管理</title>
+    <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../dist/css/content.css">
+    <link rel="stylesheet" href="../../dist/js/layer/skin/default/layer.css">
+    <link rel="stylesheet" href="../../dist/css/main.css">
+</head>
+
+<body>
+    <div class="container-main ">
+        <!-- 供应商管理 -->
+        <div class="content">
+            <!-- 操作部分 -->
+            <div class="operation-btns">
+                <button class="btn btn-primary js-nav-item" data-target="supplier-new-edit.html"><span class="icon icon-add icon-left"></span>新增</button>
+                <button class="btn btn-info"><span class="icon icon-edit icon-left"></span>编辑</button>
+                <button class="btn btn-warning"><span class="icon icon-remove icon-left"></span>删除</button>
+            </div>
+            <!-- 操作部分END -->
+
+            <!-- 搜索部分 -->
+            <div class="search-box clear js-search-box">
+                <div class="js-form-wrap form-wrap">
+                    <form class="form-horizontal js-form clear">
+                        <div class="form-group">
+                            <label class="control-label">ID：</label>
+                            <input type="text" class="form-control form-list" placeholder="输入ID号">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">供应商名称：</label>
+                            <input type="text" class="form-control form-list" placeholder="输入关键字">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">联系人：</label>
+                            <div class="blur-panel js-blur-panel">
+                                <input type="text" class="form-control form-list js-blur-input" placeholder="输入姓名">
+                                <span class="icon icon-menu-block-down"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">联系人电话：</label>
+                            <input type="text" class="form-control form-list" placeholder="输入电话">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">国家：</label>
+                            <div class="blur-panel js-blur-panel">
+                                <input type="text" class="form-control form-list js-blur-input" placeholder="输入姓名">
+                                <span class="icon icon-menu-block-down"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">状态：</label>
+                            <div class="blur-panel js-blur-panel-single">
+                                <input type="text" class="form-control form-list js-blur-input" placeholder="输入姓名">
+                                <span class="icon icon-menu-block-down"></span>
+                            </div>
+                        </div>
+                        <div class="fr btn-wrap">
+                            <button class="btn btn-info">搜索</button>
+                            <button class="btn btn-default ceee">清空</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="folder-wrap ">
+                    <div class="text-wrap">
+                       <div class="text js-search-folder">
+                           <span class="js-text-info"></span>
+                           <div class="folder">
+                               <div class="triangle left"></div>
+                               <div class="rect"><span class="icon icon-menu-block-down icon-up js-icon"></span></div>
+                               <div class="triangle right"></div>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 搜索部分 -->
+            <!-- 表格明细 -->
+            <div class="table-panel panel-white box table-panel-full row-box">
+                <div class="box-title">
+                    <h5 class="title"><strong>供应商管理</strong></h5>
+                    
+                </div>
+                <div class="table-wrap box-content">
+                    <div class="table-header-wrap js-table-header-wrap">
+                        <table class="table table-border table-full table-fix-height table-header js-table-header">
+                            <col width="41px"/>
+                            <col width="30%"/>
+                            <col width="15%" />
+                            <col width="15%" />
+                            <col/>
+                            <col width="12%" />
+                            <col width="12%" />
+                            <thead>
+                            <tr>
+                                <th>
+                                    <div class="checkbox-wrap js-select-all">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                </th>
+                                <th class="max-td">供应商ID</th>
+                                <th>国家</th>
+                                <th>联系人</th>
+                                <th>联系人手机</th>
+                                <th class="js-sort-item">合作项目
+                                    <div class="options-wrap fr">
+                                        <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                        <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                    </div>
+                                </th>
+                                <th class="js-sort-item">状态
+                                    <div class="options-wrap fr">
+                                        <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                        <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                    </div>
+                                </th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="table-body-wrap js-table-body-wrap">
+                        <table class="table table-border table-full js-table table-fix-height">
+                            <col width="41px"/>
+                            <col width="30%" />
+                            <col width="15%" />
+                            <col width="15%" />
+                            <col/>
+                            <col width="12%" />
+                            <col width="12%" />
+                            <tbody>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-hidden font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>中国</td>
+                                    <td>Mr.x</td>
+                                    <td>1886666666</td>
+                                    <td><a href="javascript:;">15</a></td>
+                                    <td><span class="icon icon-normal font-24 js-block-remove"></span></td>
+                                </tr>
+                                <tfoot class="fixed-foot" style="width: 1312px;">
+                                    <tr class="">
+                                        <td class="fixed-td">
+                                            <div class="left fl">
+                                            	
+                                            </div>
+                                            <div class="right fr"></div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 分页 -->
+                    <div class="pagination-panel js-pagination-panel">
+                        <div class="pages-wrap">
+                            <div class="options-panel js-options-panel none">
+                                <div class="checkbox-item">
+                                    <div class="checkbox-wrap js-select-all">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                    <span class="text">选择</span>
+                                </div>
+
+                                <div class="options-wrap">
+                                    <a class="option-item ">编辑</a> |
+                                    <a class="option-item gray">删除</a>
+                                </div>
+                            </div>
+                            <div class="total-wrap">
+                                共<span class="total">114</span>条，
+                                每页
+                                <select class="pages-select form-control">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="500">500</option>
+                                    <option value="1000">1000</option>
+                                </select>
+                                <span class="current-page">12</span>/
+                                <span class="total-pages">15</span>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default disabled">
+                                        <span class="icon icon-fast-backward"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="icon icon-step-backward"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="icon icon-step-forward"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="icon icon-fast-forward"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 分页 END -->
+
+                </div>
+            </div>
+            <!-- 表格明细 END -->
+        </div>
+        <!-- 分页 -->
+        <!-- 供应商管理 END -->
+
+        <div class="checkbox-wrap js-checkbox" id="js-checkbox">
+            <input type="checkbox" value="1">
+            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+        </div>
+        <a class="" id="js-ceshi">ceshi</a>
+    </div>
+    <script src="../../dist/js/jquery.min.js"></script>
+    <script src="../../dist/js/common-iframe.js"></script>
+    <script src="../../dist/js/layer/layer.js"></script>
+    <script>
+    $(function() {
+        layer.confirm('确定取消吗？')
+
+        $('#js-ceshi').on('click', function () {
+            var checkbox = $('#js-checkbox input[checked="checked"]');
+
+            console.log(checkbox.val(),'ceshi')
+        });
+
+        var option = {
+            multiSelect: true,
+            maxSelectNum: 1,              // 最大选择个数
+            maxNumCallback: function () { // 选完限制个数之后再次选择的回调
+
+            },
+            resultID: 'id',
+            resultText: 'text',
+            ajax: {
+                type: "GET",
+                dataType: "json",
+                url: 'blur-selection.json'
+            },
+            enterKeyFun: function ($dom) {
+                console.log('hello word 111',$dom)
+            }
+        };
+
+        // 模糊查询 使用测试
+        $('.js-blur-panel').blurSelect(option);
+
+
+        // 模糊查询 使用测试
+        $('.js-blur-panel-single').blurSelect({
+            panelClass: '.js-blur-panel-single',
+            multiSelect: false,
+            resultID: 'id',
+            resultText: 'text',
+            ajax: {
+                type: "GET",
+                dataType: "json",
+                url: 'blur-selection.json'
+            },
+            enterKeyFun: function ($dom) {
+                console.log('hello word 111',$dom)
+            }
+        });
+
+        //
+        $(".js-sort-up").on('click', function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+        });
+
+        $('.js-sort-down').on('click', function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+        });
+
+        $('.js-block-remove').on('click',function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+            console.log('hello')
+        });
+
+        $('.js-table').table({
+           sort: {
+               sortUpFun: function ($dom) {
+                   console.log('hello world up',$dom);
+               },
+               sortDownFun: function ($dom) {
+                   console.log('hello world down',$dom);
+               }
+           }
+        });
+
+    })
+    </script>
+</body>
+
+</html>

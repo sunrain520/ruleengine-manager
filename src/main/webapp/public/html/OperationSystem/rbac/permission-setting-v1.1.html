@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>权限设置</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-wrapper">
+
+            <!-- 头部 -->
+            <div class="container-header js-container-header">
+                <h5>权限设置</h5>
+                <div class="right-btn">
+                    <button class="btn btn-info" type="button"><span class="icon icon-save icon-left"></span>编辑</button>
+                    <button class="btn btn-warning js-close-current-tab" type="button"><span class="icon icon-delete icon-left"></span>取消</button>
+                </div>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 编辑权限 -->
+            <div class="module-wrapper row">
+
+                <div class="module row-box">
+                    <div class="module-content">
+                        <form method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="w-label control-label">角色名称：</label>
+                                <input type="hidden" name="role_id" value="91">
+                                <div class="list-detail">
+                                    www
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">部门：</label>
+                                <input type="hidden" name="role_id" value="91">
+                                <div class="list-detail">
+                                    采购部
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">职位：</label>
+                                <input type="hidden" name="role_id" value="91">
+                                <div class="list-detail">
+                                    数据专员
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">其它：</label>
+                                <input type="hidden" name="role_id" value="91">
+                                <div class="list-detail">
+                                    <div class="checkbox-wrap js-checkbox-wrap">
+                                        <input type="checkbox">
+                                        <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                    </div>
+                                    区分城市
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="w-label control-label">权限：</label>
+                                <div class="w-info">
+                                </div>
+                                <span class="checked-tip"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label"><p style="color: #aaa;">请在下面勾选</p></label>
+                                <div class="w-info">
+                                </div>
+                                <span class="checked-tip"></span>
+                            </div>
+
+
+
+                            <!--表格方案3 表格明细 -->
+                            <div class="tree-table-wrap">
+                                <ul class="tree-table-header">
+                                    <li>板块</li>
+                                    <li>模块</li>
+                                    <li>栏目</li>
+                                    <li>操作</li>
+                                    <li>列表项展示</li>
+                                </ul>
+                                <table class="tree-table">
+                                </table>
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- 编辑权限 END -->
+        </div>
+    </div>
+
+
+
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script>
+
+    var checkBox  = '<div class="checkbox-wrap js-checkbox-wrap">'+
+                            '<input type="checkbox">'+
+                            '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>'+
+                        '</div>',
+            checkedCheckBox  = '<div class="checkbox-wrap js-checkbox-wrap">'+
+                            '<input type="checkbox" checked="checked">'+
+                            '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>'+
+                        '</div>',
+            tdAllCheckBox  = '<div class="checkbox-wrap js-checkbox-wrap js-td-all-checkbox">'+
+                                '<input type="checkbox">'+
+                                '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>'+
+                            '</div>',
+            checkedTdAllCheckBox  = '<div class="checkbox-wrap js-checkbox-wrap js-td-all-checkbox">'+
+                                '<input type="checkbox" checked="checked">'+
+                                '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>'+
+                            '</div>',
+            allCheckBox = '<div class="checkbox-wrap js-all-checkbox-wrap">'+
+                                '<input type="checkbox">'+
+                                '<label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>'+
+                            '</div>';
+
+    var data = {
+  "code": "200",
+  "msg": "ok",
+  "data": {
+    "role_id": "25",
+    "role_name": "项目和排1-cp3",
+    "dep_id": "0",
+    "dep_name": "",
+    "position_id": "0",
+    "position_name": "",
+    "city_id": "-1",
+    "city_name": "不限",
+    "create_time": "2017-01-08 13:28:44",
+    "state": "1",
+    "distinct_city": "0",
+    "distinct_department": "0",
+    "node_info": [
+      {
+        "node_id": "1",
+        "module": "operateSystem",
+        "controller": "",
+        "action": "",
+        "title": "运营管理",
+        "parent_id": "0",
+        "state": "1",
+        "left_nav": "1",
+        "create_time": "2016-12-08 14:16:13",
+        "has": 1,
+        "child": [
+          {
+            "node_id": "131",
+            "module": "Sview",
+            "controller": "project",
+            "action": "",
+            "title": "项目",
+            "parent_id": "1",
+            "state": "1",
+            "left_nav": "1",
+            "create_time": "0000-00-00 00:00:00",
+            "has": 1,
+            "child": [
+              {
+                "node_id": "2",
+                "module": "Sview",
+                "controller": "project",
+                "action": "index",
+                "title": "项目管理",
+                "parent_id": "131",
+                "state": "1",
+                "left_nav": "1",
+                "create_time": "2016-12-08 14:16:41",
+                "has": 1,
+                "child": [
+
+                ],
+                "node_list": [
+                  {
+                    "node_id": "3",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "add",
+                    "title": "新增",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:28:56",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "4",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "edit",
+                    "title": "编辑",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:28:59",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "6",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "detail",
+                    "title": "详情",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:52:50",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "11",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "progress",
+                    "title": "项目进展",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:53:03",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "12",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "changeProjectState",
+                    "title": "改变状态",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 15:10:42",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "13",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "deleteProject",
+                    "title": "删除项目",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 15:10:45",
+                    "has": 1
+                  }
+                ],
+                "option_list": [
+                  {
+                    "list_option_id": "1",
+                    "option_key": "project_id",
+                    "option_name": "项目ID",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "2",
+                    "option_key": "project_name",
+                    "option_name": "项目名称",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "3",
+                    "option_key": "number",
+                    "option_name": "项目编码",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "4",
+                    "option_key": "department_name",
+                    "option_name": "事业部/子公司",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "5",
+                    "option_key": "type_name",
+                    "option_name": "品类",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "6",
+                    "option_key": "co_way_name",
+                    "option_name": "合作方式",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "7",
+                    "option_key": "budget",
+                    "option_name": "项目预算",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "8",
+                    "option_key": "contract",
+                    "option_name": "演出合同",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "9",
+                    "option_key": "approval",
+                    "option_name": "报批基础资料",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "10",
+                    "option_key": "propaganda",
+                    "option_name": "原始宣传资料",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "11",
+                    "option_key": "schedule_total",
+                    "option_name": "排期数量",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "12",
+                    "option_key": "project_state",
+                    "option_name": "显示状态",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "13",
+                    "option_key": "add_by",
+                    "option_name": "创建人",
+                    "node_id": "2",
+                    "has": 1
+                  }
+                ]
+              }
+            ,{
+                "node_id": "2",
+                "module": "Sview",
+                "controller": "project",
+                "action": "index",
+                "title": "项目管理",
+                "parent_id": "131",
+                "state": "1",
+                "left_nav": "1",
+                "create_time": "2016-12-08 14:16:41",
+                "has": 0,
+                "child": [
+
+                ],
+                "node_list": [
+                  {
+                    "node_id": "3",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "add",
+                    "title": "新增",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:28:56",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "4",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "edit",
+                    "title": "编辑",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:28:59",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "6",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "detail",
+                    "title": "详情",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:52:50",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "11",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "progress",
+                    "title": "项目进展",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 14:53:03",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "12",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "changeProjectState",
+                    "title": "改变状态",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 15:10:42",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "13",
+                    "module": "Sview",
+                    "controller": "project",
+                    "action": "deleteProject",
+                    "title": "删除项目",
+                    "parent_id": "2",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "2016-12-08 15:10:45",
+                    "has": 0
+                  }
+                ],
+                "option_list": [
+                  {
+                    "list_option_id": "1",
+                    "option_key": "project_id",
+                    "option_name": "项目ID",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "2",
+                    "option_key": "project_name",
+                    "option_name": "项目名称",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "3",
+                    "option_key": "number",
+                    "option_name": "项目编码",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "4",
+                    "option_key": "department_name",
+                    "option_name": "事业部/子公司",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "5",
+                    "option_key": "type_name",
+                    "option_name": "品类",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "6",
+                    "option_key": "co_way_name",
+                    "option_name": "合作方式",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "7",
+                    "option_key": "budget",
+                    "option_name": "项目预算",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "8",
+                    "option_key": "contract",
+                    "option_name": "演出合同",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "9",
+                    "option_key": "approval",
+                    "option_name": "报批基础资料",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "10",
+                    "option_key": "propaganda",
+                    "option_name": "原始宣传资料",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "11",
+                    "option_key": "schedule_total",
+                    "option_name": "排期数量",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "12",
+                    "option_key": "project_state",
+                    "option_name": "显示状态",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "13",
+                    "option_key": "add_by",
+                    "option_name": "创建人",
+                    "node_id": "2",
+                    "has": 1
+                  }
+                ]
+              }
+            ]
+          }
+          ,{
+            "node_id": "131",
+            "module": "Sview",
+            "controller": "project",
+            "action": "",
+            "title": "项目22",
+            "parent_id": "1",
+            "state": "1",
+            "left_nav": "1",
+            "create_time": "0000-00-00 00:00:00",
+            "has": 1,
+            "child": [
+              {
+                "node_id": "2",
+                "module": "Sview",
+                "controller": "project",
+                "action": "index",
+                "title": "项目管理",
+                "parent_id": "131",
+                "state": "1",
+                "left_nav": "1",
+                "create_time": "2016-12-08 14:16:41",
+                "has": 1,
+                "child": [
+
+                ],
+                "node_list": [],
+                "option_list": [
+                  {
+                    "list_option_id": "1",
+                    "option_key": "project_id",
+                    "option_name": "项目ID",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "2",
+                    "option_key": "project_name",
+                    "option_name": "项目名称",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "3",
+                    "option_key": "number",
+                    "option_name": "项目编码",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "4",
+                    "option_key": "department_name",
+                    "option_name": "事业部/子公司",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "5",
+                    "option_key": "type_name",
+                    "option_name": "品类",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "6",
+                    "option_key": "co_way_name",
+                    "option_name": "合作方式",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "7",
+                    "option_key": "budget",
+                    "option_name": "项目预算",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "8",
+                    "option_key": "contract",
+                    "option_name": "演出合同",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "9",
+                    "option_key": "approval",
+                    "option_name": "报批基础资料",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "10",
+                    "option_key": "propaganda",
+                    "option_name": "原始宣传资料",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "11",
+                    "option_key": "schedule_total",
+                    "option_name": "排期数量",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "12",
+                    "option_key": "project_state",
+                    "option_name": "显示状态",
+                    "node_id": "2",
+                    "has": 1
+                  },
+                  {
+                    "list_option_id": "13",
+                    "option_key": "add_by",
+                    "option_name": "创建人",
+                    "node_id": "2",
+                    "has": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "node_id": "122",
+        "module": "contentManager",
+        "controller": "",
+        "action": "",
+        "title": "内容管理",
+        "parent_id": "0",
+        "state": "1",
+        "left_nav": "1",
+        "create_time": "0000-00-00 00:00:00",
+        "has": 1,
+        "child": [
+          {
+            "node_id": "124",
+            "module": "Sview",
+            "controller": "supplier",
+            "action": "",
+            "title": "供应商管理",
+            "parent_id": "122",
+            "state": "1",
+            "left_nav": "1",
+            "create_time": "0000-00-00 00:00:00",
+            "has": 1,
+            "child": [
+              {
+                "node_id": "31",
+                "module": "Sview",
+                "controller": "supplier",
+                "action": "index",
+                "title": "供应商",
+                "parent_id": "124",
+                "state": "1",
+                "left_nav": "1",
+                "create_time": "0000-00-00 00:00:00",
+                "has": 1,
+                "child": [
+
+                ],
+                "node_list": [
+                  {
+                    "node_id": "33",
+                    "module": "Sview",
+                    "controller": "supplier",
+                    "action": "ajaxChangeState",
+                    "title": "改变状态",
+                    "parent_id": "31",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "0000-00-00 00:00:00",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "34",
+                    "module": "Sview",
+                    "controller": "supplier",
+                    "action": "deleteSupplier",
+                    "title": "删除",
+                    "parent_id": "31",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "0000-00-00 00:00:00",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "35",
+                    "module": "Sview",
+                    "controller": "supplier",
+                    "action": "show",
+                    "title": "详情",
+                    "parent_id": "31",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "0000-00-00 00:00:00",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "36",
+                    "module": "Sview",
+                    "controller": "supplier",
+                    "action": "editSupplier",
+                    "title": "编辑",
+                    "parent_id": "31",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "0000-00-00 00:00:00",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "37",
+                    "module": "Sview",
+                    "controller": "supplier",
+                    "action": "addSupplier",
+                    "title": "添加",
+                    "parent_id": "31",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "0000-00-00 00:00:00",
+                    "has": 1
+                  },
+                  {
+                    "node_id": "38",
+                    "module": "Sview",
+                    "controller": "supplier",
+                    "action": "ajaxGetAreaList",
+                    "title": "地区列表",
+                    "parent_id": "31",
+                    "state": "1",
+                    "left_nav": "0",
+                    "create_time": "0000-00-00 00:00:00",
+                    "has": 1
+                  }
+                ],
+                "option_list": [
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+};
+
+
+
+//权限设置表格  ---START
+(function(root){
+
+    var authSettingTable = function(data)
+    {
+        var html    = '',
+            tableLv = 0;
+
+        treeTable(data);
+
+        function treeTable(data,loopK,hub)
+        {
+            
+            html += '<table tableLv="'+loopK+'-'+tableLv+'" class="'+(hub?'hub-table':'')+'" border="0" cellspacing="0" cellpadding="0">';
+            if (hub)
+            {
+                html += '<tr><td>';
+                var tempAllCheckBox = checkedTdAllCheckBox,
+                    tempHubContent = '';
+
+                for(var k = 0 ; k < data.length; k++)
+                {
+                    var tempCheckbox = checkBox;
+                    if (data[k].has != 1)
+                    {
+                        tempAllCheckBox = tdAllCheckBox;
+                    }
+                    else
+                    {
+                        tempCheckbox = checkedCheckBox;
+                    }
+
+                    if (hub==2)
+                    {
+                         
+                        tempHubContent += '<div class="hub-content-wrap" option_key="'+data[k].option_key+'" node_id="'+data[k].node_id+'" oid="'+data[k].list_option_id+'">'+tempCheckbox+(data[k].title ? data[k].title : data[k].option_name)+'</div>';
+                    }
+                    else
+                    {
+                        tempHubContent += '<div class="hub-content-wrap">'+tempCheckbox+(data[k].title ? data[k].title : data[k].option_name)+'</div>';
+                    }
+                    
+                }
+
+                if (data.length>0)
+                {
+                    html += '<div class="hub-content-wrap">'+tempAllCheckBox+'<span class="checkbox-label">全选</span></div>'+tempHubContent;
+                }
+                else
+                {
+                    //如果数据为空
+                    html += '<div class="hub-content-wrap"></div>';
+                }
+                
+                html += '</td></tr>';
+            }
+            else
+            {
+                for(var k = 0 ; k < data.length; k++)
+                {
+                    html += '<tr>';
+
+                    html += '<td><div class="content-wrap">'+(data[k].title ? data[k].title : data[k].option_name)+'</div></td>';
+
+                    
+                    if (data[k].child && data[k].child.length>0)
+                    {
+                        tableLv++;
+
+                        html += '<td>';
+                        treeTable(data[k].child,k);
+                        html += '</td>';
+                    }
+
+                    //if (data[k].node_list && data[k].node_list.length>0)
+                    if (data[k].node_list)
+                    {
+                        html += '<td>';
+                        treeTable(data[k].node_list,k,1);
+                        html += '</td>';
+                    }
+
+                    //if (data[k].option_list && data[k].option_list.length>0)
+                    if (data[k].option_list)
+                    {
+                        html += '<td>';
+                        treeTable(data[k].option_list,k,2);
+                        html += '</td>';
+                    }
+
+                    html += '</tr>';
+                }
+            }
+
+            html += '</table>';
+        }
+
+        
+        $('.tree-table').html(html);
+        $('.tree-table').after('<ul class="tree-table-footer"><li></li><li></li><li></li><li>'+allCheckBox+'<span>全选</span></li><li>'+allCheckBox+'<span>全选</span></li></ul>');
+
+
+        //初始化检测第4，5列的全选状态
+        checkColTdAllCheck(0);
+        checkColTdAllCheck(1);
+
+        //表格勾选框
+        $('body').on('click','.tree-table .js-checkbox-wrap',function(){
+            var checkbox    = $(this).find('input[type="checkbox"]'),
+                parentTd    = checkbox.parents('td:first'),
+                parentTable = checkbox.parents('table:first'),
+                tableIndex  = parentTable.index('.hub-table')%2;
+
+            if (checkbox.attr('checked') == 'checked')
+            {
+                //取消选中
+                checkbox.removeAttr('checked');
+
+                //td全选取消
+                if ($(this).hasClass('js-td-all-checkbox'))
+                {
+                    parentTd.find('.js-checkbox-wrap input').removeAttr('checked');
+                }
+                else
+                {
+
+                    checkTdAllCheck(parentTd)
+                }
+
+                checkColTdAllCheck(tableIndex)
+
+            }
+            else
+            {
+                //选中
+                checkbox.attr('checked','checked');
+
+                //td全选选中
+                if ($(this).hasClass('js-td-all-checkbox'))
+                {
+                    parentTd.find('.js-checkbox-wrap input').attr('checked','checked');
+                }
+                else
+                {
+
+                    checkTdAllCheck(parentTd)
+                }
+
+                checkColTdAllCheck(tableIndex)
+            }
+
+
+        });
+
+        //列全选勾选框
+        $('body').on('click','.tree-table-wrap .js-all-checkbox-wrap',function(){
+
+            var checkbox = $(this).find('input[type="checkbox"]'),
+                parentLi = checkbox.parents('li:first'),
+                liIndex  = parentLi.index()%2,
+                tables   = null;
+
+            if (liIndex == 1)
+            {                    
+                tables = $('.hub-table:even');
+            }
+            else
+            {
+                tables = $('.hub-table:odd');
+            }
+
+            if (checkbox.attr('checked') == 'checked')
+            {
+                //取消选中
+                checkbox.removeAttr('checked');                
+                tables.find('.js-checkbox-wrap input').removeAttr('checked');
+            }
+            else
+            {
+                //选中
+                checkbox.attr('checked','checked');
+                tables.find('.js-checkbox-wrap input').attr('checked','checked');
+            }
+
+        });
+    }
+
+
+    //检测某td内checkbox全选状态
+    function checkTdAllCheck(td)
+    {
+        var normalCheckbox = td.find('.js-checkbox-wrap:not(.js-td-all-checkbox) input');
+        var length = td.find('.js-checkbox-wrap:not(.js-td-all-checkbox) input[checked="checked"]').length;
+        if (length == normalCheckbox.length)
+        {
+            //全选中
+            td.find('.js-td-all-checkbox input').attr('checked','checked');
+        }
+        else if(length < normalCheckbox.length)
+        {
+            //未全选中
+            td.find('.js-td-all-checkbox input').removeAttr('checked');
+        }
+    }
+
+    //检测某列td的checkbox全选状态
+    function checkColTdAllCheck(tableIndex)
+    {
+        
+        var tables = null;
+
+        if (tableIndex == 1)
+        {
+            tables = $('.hub-table:odd');
+        }
+        else
+        {
+            tables = $('.hub-table:even');
+        }
+
+        var total = tables.find('.js-checkbox-wrap:not(.js-td-all-checkbox) input').length;
+
+        var checkedLength = tables.find('.js-checkbox-wrap:not(.js-td-all-checkbox) input[checked="checked"]').length;
+
+        if (checkedLength == total)
+        {
+            //全选中
+            $('.tree-table-wrap .tree-table-footer li').eq(3+tableIndex).find('.js-all-checkbox-wrap input').attr('checked','checked');
+        }
+        else if(checkedLength < total)
+        {
+            //未全选中
+            $('.tree-table-wrap .tree-table-footer li').eq(3+tableIndex).find('.js-all-checkbox-wrap input').removeAttr('checked');
+        }
+    }
+
+    root.authSettingTable = authSettingTable;
+
+}(window));
+//权限设置表格  ---END
+
+var table = new authSettingTable(data.data.node_info);
+
+    </script>
+</body>
+</html>

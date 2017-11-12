@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增/编辑预警</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/need/laydate.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <style>
+        .w-info.no-space [class*="col"] { padding-left: 0; padding-right: 0; }
+        .w-info.no-space + .w-info.no-space { margin-left: 10px;}
+        .container-wrapper .module-wrapper .module .form-group .w-info.no-space .blur-panel .form-control.inline {display: inline-block; width: 56%;}
+        .container-wrapper .module-wrapper .module .form-group .w-info.no-space .blur-panel .text {display: inline-block; width: 38%; text-align: right;}
+    </style>
+</head>
+<body>
+    <div class="container-main">
+        <div class="container-wrapper">
+
+            <!-- 头部 -->
+            <div class="container-header js-container-header">
+                <h5>新增/编辑预警</h5>
+                <div class="right-btn">
+                    <button class="btn btn-success" type="submit"><span class="icon icon-save icon-left"></span>保存</button>
+                    <button class="btn btn-default" type="button"><span class="icon icon-delete icon-left"></span>取消</button>
+                </div>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 表单信息 -->
+            <form class="module-wrapper row">
+                <!-- 基本信息 -->
+                <div class="module row-box">
+                    <div class="module-content">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="w-label control-label"><span class="must">*</span>预警事项：</label>
+                                <div class="w-info">
+                                    <input type="text" class="form-control error" placeholder="事项名称" maxlength="50">
+                                </div>
+                                <span class="checked-tip"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label"><span class="must">*</span>节点：</label>
+                                <div class="w-info">
+                                    <select class="form-control">
+                                        <option value="">演出开始时间</option>
+                                        <option value="">开票时间</option>
+                                    </select>
+                                </div>
+                                <span class="checked-tip"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label"><span class="must">*</span>提醒时间：</label>
+                                <div class="w-info no-space">
+                                    <div class="col-sm-6">
+                                        <select class="form-control">
+                                            <option value="">节点日期</option>
+                                            <option value="">节点时间</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <select class="form-control">
+                                            <option value="">前</option>
+                                            <option value="">后</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="w-info no-space">
+                                    <div class="col-sm-4">
+                                        <div class="blur-panel">
+                                            <input class="form-control inline" value="0">
+                                            <span class="text">天</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="blur-panel">
+                                            <input class="form-control inline" value="0">
+                                            <span class="text">小时</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="blur-panel">
+                                            <input class="form-control inline" value="0">
+                                            <span class="text">分</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">提醒方式：</label>
+                                <div class="w-info">
+                                    <label class="control-label">
+                                    <label class="control-label">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        邮件
+                                    </label>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label w-label"><span class="must">*</span>消息内容：</label>
+                                <div class="w-info">
+                                    <textarea class="form-control comment" rows="3">您好，【变量-排期名称】将于【变量-开票时间】开票，敬请留意。<br/>  http://oa.juooo.net.cn/</textarea>
+                                    <div class="mt10">
+                                        点击可插入变量：
+                                        <a href="javascript:;">排期名称</a>
+                                        <a href="javascript:;">演出时间</a>
+                                        <a href="javascript:;">开票时间</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">提醒人员设置：</label>
+                                <div class="w-info js-selected-wrap">
+                                    <div class="blur-panel border-none">
+                                        <div class="selected-list js-selected-list">
+                                            <span class="selected-item js-list-item" data-id="629" data-name="黄佳佳">黄佳佳
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mt10">
+                                        <button class="btn btn-border-success" type="button" id="js-role-add">
+                                            <span class="icon icon-add icon-left"></span>新增
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="w-label control-label">状态：</label>
+                                <div class="w-info">
+                                    <label class="radio-label"><input type="radio" value="1" name="status" checked="">正常</label>
+                                    <label class="radio-label"><input type="radio" value="2" name="status">停用</label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 基本信息 END -->
+            </form>
+            <!-- 表单信息 END -->
+
+        </div>
+    </div>
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script src="../../../dist/js/tree.js"></script>
+    <script>
+        $(function () {
+
+            // 新增员工
+            $('#js-role-add').on('click', function () {
+                var $this = $(this);
+
+                $.ajax({
+                    type: "POST",
+                    url:'../demo/tree.json',
+                    dataType: 'json',
+                    success: function (data) {
+
+                        $this.TreePanel({
+                            originalData: [{id: 629, name:'hjj'}],
+                            data: data
+                        })
+                    }
+                })
+            });
+
+            // 删除员工 .js-selected-wrap .js-list-item .glyphicon-remove
+            $('.js-selected-wrap').on('click', '.js-list-item .glyphicon-remove', function () {
+                var $this     = $(this),
+                    $listItem = $this.closest('.js-list-item');
+
+                $listItem.remove();
+            })
+/*
+            function a(b) {  // 测试
+//                var b = 'hello world';
+                function b() {
+                    alert(b);
+                }
+                b();
+            }
+            a('Hello World')*/
+
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.RuleResultMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.RuleResult" >
+    <id column="f_auto_id" property="fAutoId" jdbcType="INTEGER" />
+    <result column="f_app_id" property="fAppId" jdbcType="VARCHAR" />
+    <result column="f_req_id" property="fReqId" jdbcType="VARCHAR" />
+    <result column="f_rule_id" property="fRuleId" jdbcType="VARCHAR" />
+    <result column="f_rule_item_id" property="fRuleItemId" jdbcType="INTEGER" />
+    <result column="f_id_num" property="fIdNum" jdbcType="VARCHAR" />
+    <result column="f_cost_time" property="fCostTime" jdbcType="INTEGER" />
+    <result column="f_rule_result" property="fRuleResult" jdbcType="TINYINT" />
+    <result column="f_rule_score" property="fRuleScore" jdbcType="DOUBLE" />
+    <result column="f_version" property="fVersion" jdbcType="INTEGER" />
+    <result column="f_remark" property="fRemark" jdbcType="VARCHAR" />
+    <result column="f_create_time" property="fCreateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    f_auto_id, f_app_id, f_req_id, f_rule_id, f_rule_item_id, f_id_num, f_cost_time, 
+    f_rule_result, f_rule_score, f_version, f_remark, f_create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_rule_result_2016_10
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </select>
+
+  <select id="queryRuleResultsByPage" parameterType="map" resultMap="BaseResultMap">
+      select
+     <include refid="Base_Column_List" />
+      from ${tableName}
+      where 1=1
+    <if test="reqId != null and reqId != ''">
+      and  f_req_id =#{reqId}
+    </if>
+    <if test="ruleId != null and ruleId != ''">
+      and  f_rule_id =#{ruleId}
+    </if>
+    <if test="idNum != null and idNum != ''">
+      and  f_id_num =#{idNum}
+    </if>
+      and f_app_id =#{appId}
+      order by f_rule_id
+      limit #{pageNum},#{pageSize}
+  </select>
+
+  <select id="queryRuleResultsCount" parameterType="map" resultType="Integer">
+      select
+      count(*)
+      from ${tableName}
+      where 1=1
+      <if test="reqId != null and reqId != ''">
+        and  f_req_id =#{reqId}
+      </if>
+      <if test="ruleId != null and ruleId != ''">
+        and  f_rule_id =#{ruleId}
+      </if>
+      <if test="idNum != null and idNum != ''">
+        and  f_id_num =#{idNum}
+      </if>
+        and f_app_id =#{appId}
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_rule_result_2016_10
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleResult" >
+    insert into t_rule_result_2016_10 (f_auto_id, f_app_id, f_req_id, 
+      f_rule_id, f_rule_item_id, f_id_num, 
+      f_cost_time, f_rule_result, f_rule_score, 
+      f_version, f_remark, f_create_time
+      )
+    values (#{fAutoId,jdbcType=INTEGER}, #{fAppId,jdbcType=VARCHAR}, #{fReqId,jdbcType=VARCHAR}, 
+      #{fRuleId,jdbcType=VARCHAR}, #{fRuleItemId,jdbcType=INTEGER}, #{fIdNum,jdbcType=VARCHAR}, 
+      #{fCostTime,jdbcType=INTEGER}, #{fRuleResult,jdbcType=TINYINT}, #{fRuleScore,jdbcType=DOUBLE}, 
+      #{fVersion,jdbcType=INTEGER}, #{fRemark,jdbcType=VARCHAR}, #{fCreateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleResult" >
+    insert into t_rule_result_2016_10
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fAutoId != null" >
+        f_auto_id,
+      </if>
+      <if test="fAppId != null" >
+        f_app_id,
+      </if>
+      <if test="fReqId != null" >
+        f_req_id,
+      </if>
+      <if test="fRuleId != null" >
+        f_rule_id,
+      </if>
+      <if test="fRuleItemId != null" >
+        f_rule_item_id,
+      </if>
+      <if test="fIdNum != null" >
+        f_id_num,
+      </if>
+      <if test="fCostTime != null" >
+        f_cost_time,
+      </if>
+      <if test="fRuleResult != null" >
+        f_rule_result,
+      </if>
+      <if test="fRuleScore != null" >
+        f_rule_score,
+      </if>
+      <if test="fVersion != null" >
+        f_version,
+      </if>
+      <if test="fRemark != null" >
+        f_remark,
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fAutoId != null" >
+        #{fAutoId,jdbcType=INTEGER},
+      </if>
+      <if test="fAppId != null" >
+        #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fReqId != null" >
+        #{fReqId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleId != null" >
+        #{fRuleId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleItemId != null" >
+        #{fRuleItemId,jdbcType=INTEGER},
+      </if>
+      <if test="fIdNum != null" >
+        #{fIdNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fCostTime != null" >
+        #{fCostTime,jdbcType=INTEGER},
+      </if>
+      <if test="fRuleResult != null" >
+        #{fRuleResult,jdbcType=TINYINT},
+      </if>
+      <if test="fRuleScore != null" >
+        #{fRuleScore,jdbcType=DOUBLE},
+      </if>
+      <if test="fVersion != null" >
+        #{fVersion,jdbcType=INTEGER},
+      </if>
+      <if test="fRemark != null" >
+        #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateTime != null" >
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleResult" >
+    update t_rule_result_2016_10
+    <set >
+      <if test="fAppId != null" >
+        f_app_id = #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fReqId != null" >
+        f_req_id = #{fReqId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleId != null" >
+        f_rule_id = #{fRuleId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleItemId != null" >
+        f_rule_item_id = #{fRuleItemId,jdbcType=INTEGER},
+      </if>
+      <if test="fIdNum != null" >
+        f_id_num = #{fIdNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fCostTime != null" >
+        f_cost_time = #{fCostTime,jdbcType=INTEGER},
+      </if>
+      <if test="fRuleResult != null" >
+        f_rule_result = #{fRuleResult,jdbcType=TINYINT},
+      </if>
+      <if test="fRuleScore != null" >
+        f_rule_score = #{fRuleScore,jdbcType=DOUBLE},
+      </if>
+      <if test="fVersion != null" >
+        f_version = #{fVersion,jdbcType=INTEGER},
+      </if>
+      <if test="fRemark != null" >
+        f_remark = #{fRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RuleResult" >
+    update t_rule_result_2016_10
+    set f_app_id = #{fAppId,jdbcType=VARCHAR},
+      f_req_id = #{fReqId,jdbcType=VARCHAR},
+      f_rule_id = #{fRuleId,jdbcType=VARCHAR},
+      f_rule_item_id = #{fRuleItemId,jdbcType=INTEGER},
+      f_id_num = #{fIdNum,jdbcType=VARCHAR},
+      f_cost_time = #{fCostTime,jdbcType=INTEGER},
+      f_rule_result = #{fRuleResult,jdbcType=TINYINT},
+      f_rule_score = #{fRuleScore,jdbcType=DOUBLE},
+      f_version = #{fVersion,jdbcType=INTEGER},
+      f_remark = #{fRemark,jdbcType=VARCHAR},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP}
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+</mapper>

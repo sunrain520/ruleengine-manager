@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>演出日历</title>
+    <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../dist/css/content.css">
+    <link rel="stylesheet" href="../../dist/css/main.css">
+    <link rel="stylesheet" href="../../dist/css/date.css">
+</head>
+
+<body>
+    <div class="container-main">
+        <!-- 日历 -->
+        <div class="container-wrapper w100">
+            <!-- 头部 -->
+            <div class="container-header" style="position: absolute;">
+                <h5 class="date-h5">演出日历 
+            		<select class="form-control">
+						<option value="">1212</option>
+						<option value="">2121</option>
+                    </select>
+                </h5>
+                <div class="right-btn">
+	                <select class="form-control blur-wrap select-date" id="se_year">
+	                    <!-- <option value="1">年份</option> -->
+	                </select>
+                </div>
+            </div>
+            <!-- 头部 END -->
+             <!-- 选择时间 ， 品类 -->
+                        
+            <div class="module-wrapper row project">
+            	<div class="search-box clear">
+                    <form class="form-horizontal">
+               			<div class="form-group" data-rule="project_state_rule">
+	                        <select class="form-control form-list" placeholder="选择状态" name="state">
+	                             <option value="1">全部事业部</option>
+	                        </select>
+                		</div>
+                		<div class="form-group" data-rule="project_state_rule">
+	                        <select class="form-control form-list" placeholder="选择状态" name="state">
+	                             <option value="1">全部品类</option>
+	                        </select>
+                		</div>
+                		<div class="fr btn-wrap">
+	                        <button class="btn btn-info  js-search" id="js-search-submit">搜索</button>
+	                    </div>
+            		</form>
+        		</div>
+                <!-- 添加date-month显示月份内容，添加date-weekend显示周内容，添加date-year显示年份内容 -->
+                <div class="module row-box " style="margin-bottom: 150px;">
+                    <div class="module-title">
+                       
+                        <!-- <div class="date-top date-top0">
+                            <div class="act-input">
+                                <select class="form-control blur-wrap select-date">
+                                    <option value="1">全部事业部</option>
+                                </select>
+                                <select class="form-control blur-wrap select-date">
+                                    <option value="1">全部品类</option>
+                                </select>
+                                <button class="btn btn-info  js-search">搜索</button>
+                            </div>
+                        </div> -->
+                    </div>
+                    <!-- 演出日历内容 -->
+                    <div class="project-box">
+                    	<!-- 1月 -->
+                        <div class="item">
+                            <h1 class="little">
+								<span>2016年1月</span>
+								<!-- <div class="fr custom">
+									<span class="icon icon-setting"></span>自定义列表
+								</div> -->
+							</h1>
+                            <div class="" style="padding: 0 15px;">
+                                <div class="table-wrap box-content">
+                                    <div class="table-scroll">
+                                        <div class="table-header-wrap js-table-header-wrap" style="padding-left: 530px">
+                                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="w-checkbox" style="z-index: 99;width: 150px;position: absolute;left: 0;">
+                                                            项目ID
+                                                        </th>
+                                                        <th class="w-checkbox" style="z-index: 99;width: 300px;position: absolute;left: 150px" data-rule="project_id_rule">
+                                                            项目名称
+                                                        </th>
+                                                        <th class="js-sort-item w-name" style=" z-index: 99;width: 80px;position: absolute;left: 450px" data-rule='project_name_rule'>场次</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">北京</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">上海</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">广州</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">南京</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                         <th style="width: 150px; min-width: 150px; max-width: 150px;">南京</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="table-body-wrap js-table-body-wrap" style="padding-left: 530px;">
+                                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm table-header">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="w-checkbox" style="position: absolute;z-index: 1;left: 0; width: 150px">000010</td>
+                                                        <td class="max-td w-id" style="position: absolute;z-index: 1;left: 150px;width: 300px;" data-rule='project_id_rule'>
+                                                        	<div class="item">
+																<span class="logo">酒干尚卖</span>
+																<span class="name-txt">酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无 </span>
+															</div>
+                                                        </td>
+                                                        <td class="hoverable w-name project-name" style="position:absolute; z-index: 1; left: 350px;width: 80px;" data-rule='project_name_rule'>240
+
+                                                        </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'>
+                                                        	<div class="itme-box">
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 (<span class="not-make">预计开票</span>)</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+                                                        	</div>
+                                                        	<div class="puprop">
+                                                        		<div class="puprop-box">	
+                                                        		<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	</div>
+	                                                        	<span class="icon icon-packUp js-packup"></span>
+                                                        	</div>
+                                                        	<span class="icon icon-unfold js-unfold"></span>
+                                                        </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'>
+                                                        	<div class="itme-box">
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">28 (<span class="make">开票</span>)</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 <span class="not-make">预计开票</span></p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+                                                        	</div>
+                                                        	<div class="puprop">
+                                                        		<div class="puprop-box">	
+                                                        		<div class="item-list">
+	                                                        		<p class="time">09-28 (<span class="make">开票</span>)</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28(<span class="not-make">预计开票</span>)</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	</div>
+	                                                        	<span class="icon icon-packUp js-packup"></span>
+                                                        	</div>
+                                                        	<span class="icon icon-unfold js-unfold"></span>
+                                                        </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="pagination-panel js-pagination-panel">
+                                            <!-- 水平滚动条 -->
+                                            <div class="table-scroll-horizontal js-table-scroll-horizontal" style="margin-left: 561px;">
+                                                <div class="scroll js-scroll" style="width: 1521px;">
+                                                </div>
+                                            </div>
+                                            <!-- 水平滚动条 END -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 1月 -->
+
+                        <!-- 2月 -->
+
+						 <div class="item">
+                            <h1 class="little">
+								<span>2016年2月</span>
+							</h1>
+                            <div class="" style="padding: 0 15px;">
+                                <div class="table-wrap box-content">
+                                    <div class="table-scroll">
+                                        <div class="table-header-wrap js-table-header-wrap" style="padding-left: 530px">
+                                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="w-checkbox" style="z-index: 99;width: 150px;position: absolute;left: 0;">
+                                                            项目ID
+                                                        </th>
+                                                        <th class="w-checkbox" style="z-index: 99;width: 300px;position: absolute;left: 150px" data-rule="project_id_rule">
+                                                            项目名称
+                                                        </th>
+                                                        <th class="js-sort-item w-name" style=" z-index: 99;width: 80px;position: absolute;left: 450px" data-rule='project_name_rule'>场次</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">北京</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">上海</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">广州</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">南京</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">南京</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="table-body-wrap js-table-body-wrap" style="padding-left: 530px;">
+                                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm table-header">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="w-checkbox" style="position: absolute;z-index: 1;left: 0; width: 150px">000010</td>
+                                                        <td class="max-td w-id" style="position: absolute;z-index: 1;left: 150px;width: 300px;" data-rule='project_id_rule'>
+                                                        	<div class="item">
+																<span class="logo">酒干尚卖</span>
+																<span class="name-txt">酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无 </span>
+															</div>
+                                                        </td>
+                                                        <td class="hoverable w-name project-name" style="position:absolute; z-index: 1; left: 350px;width: 80px;" data-rule='project_name_rule'>240
+
+                                                        </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'>
+                                                        	<div class="itme-box">
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+                                                        	</div>
+                                                        	<div class="puprop">
+                                                        		<div class="puprop-box">	
+                                                        		<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	</div>
+	                                                        	<span class="icon icon-packUp js-packup"></span>
+                                                        	</div>
+                                                        	<span class="icon icon-unfold js-unfold"></span>
+                                                        </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'>
+                                                        	<div class="itme-box">
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+                                                        	</div>
+                                                        	<div class="puprop">
+                                                        		<div class="puprop-box">	
+                                                        		<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	</div>
+	                                                        	<span class="icon icon-packUp js-packup"></span>
+                                                        	</div>
+                                                        	<span class="icon icon-unfold js-unfold"></span>
+                                                        </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="pagination-panel js-pagination-panel">
+                                            <div class="table-scroll-horizontal js-table-scroll-horizontal" style="margin-left: 561px;">
+                                                <div class="scroll js-scroll" style="width: 1521px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 2月 -->
+
+                        <!-- 3月 -->
+                        <div class="item">
+                            <h1 class="little">
+								<span>2016年1月</span>
+							</h1>
+                            <div class="" style="padding: 0 15px;">
+                                <div class="table-wrap box-content">
+                                    <div class="table-scroll">
+                                        <div class="table-header-wrap js-table-header-wrap" style="padding-left: 530px">
+                                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="w-checkbox" style="z-index: 99;width: 150px;position: absolute;left: 0;">
+                                                            项目ID
+                                                        </th>
+                                                        <th class="w-checkbox" style="z-index: 99;width: 300px;position: absolute;left: 150px" data-rule="project_id_rule">
+                                                            项目名称
+                                                        </th>
+                                                        <th class="js-sort-item w-name" style=" z-index: 99;width: 80px;position: absolute;left: 450px" data-rule='project_name_rule'>场次</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">北京</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">上海</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">广州</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">南京</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">南京</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                        <th style="width: 150px; min-width: 150px; max-width: 150px;">深圳</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="table-body-wrap js-table-body-wrap" style="padding-left: 530px;">
+                                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm table-header">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="w-checkbox" style="position: absolute;z-index: 1;left: 0; width: 150px">000010</td>
+                                                        <td class="max-td w-id" style="position: absolute;z-index: 1;left: 150px;width: 300px;" data-rule='project_id_rule'>
+                                                        	<div class="item">
+																<span class="logo">酒干尚卖</span>
+																<span class="name-txt">酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无酒干尚卖无 </span>
+															</div>
+                                                        </td>
+                                                        <td class="hoverable w-name project-name" style="position:absolute; z-index: 1; left: 350px;width: 80px;" data-rule='project_name_rule'>240
+
+                                                        </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'>
+                                                        	<div class="itme-box">
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+                                                        	</div>
+                                                        	<div class="puprop">
+                                                        		<div class="puprop-box">	
+                                                        		<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	</div>
+	                                                        	<span class="icon icon-packUp js-packup"></span>
+                                                        	</div>
+                                                        	<span class="icon icon-unfold js-unfold"></span>
+                                                        </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'>
+                                                        	<div class="itme-box">
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+                                                        	</div>
+                                                        	<div class="puprop">
+                                                        		<div class="puprop-box">	
+                                                        		<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	</div>
+	                                                        	<span class="icon icon-packUp js-packup"></span>
+                                                        	</div>
+                                                        	<span class="icon icon-unfold js-unfold"></span>
+                                                        </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> 
+                                                        <div class="itme-box">
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+                                                        	</div>
+                                                        	<div class="puprop">
+                                                        		<div class="puprop-box">	
+                                                        		<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	<div class="item-list">
+	                                                        		<p class="time">09-28 20:00</p>
+	                                                        		<p class="adress">【自】南山文体中心</p>
+	                                                        	</div>
+	                                                        	</div>
+	                                                        	<span class="icon icon-packUp js-packup"></span>
+                                                        	</div>
+                                                        	<span class="icon icon-unfold js-unfold"></span></td>
+                                                        	<td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                        <td style="width: 150px; min-width: 150px; max-width: 150px;" class="js-project-number" data-rule='number_rule'> </td>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="pagination-panel js-pagination-panel">
+                                            <div class="table-scroll-horizontal js-table-scroll-horizontal" style="margin-left: 561px;">
+                                                <div class="scroll js-scroll" style="width: 1521px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 3月 -->
+                    </div>
+                    <!-- 演出日历内容 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../dist/js/jquery.min.js"></script>
+    <script src="../../dist/js/common.js"></script>
+    <script src="../../dist/js/common-iframe.js"></script>
+    <script>
+    (function() {
+        function name(cla, num) {
+            $(cla).each(function() {
+                var _this = $(this);
+                var oheight = _this.parent().outerHeight() - num + 'px';
+                _this.css('line-height', oheight);
+            })
+        }
+        name('.hoverable', 10);
+        name('.w-checkbox', 15);
+        name('.max-td', 10);
+
+
+        //展开下拉框
+        $('.js-unfold').on('click',function(){
+        	var otop  = $(this).parent().offset().top-$(document).scrollTop();+'px',
+        	    oleft = $(this).parent().offset().left+'px';
+        	$('.js-packup').parent().slideUp();
+        	$(this).parent().find('.puprop').css({'top':otop,'left':oleft})
+        	$(this).parent().find('.puprop').slideDown()
+        })
+
+        $(document).scroll(function(){
+        	unfold();
+        })
+        $('.js-table-scroll-horizontal').scroll(function(){
+        	$('.js-packup').parent().slideUp();
+        })
+
+        function unfold(){
+        	$('.js-unfold').each(function(){
+        		var otop  = $(this).parent().offset().top-$(document).scrollTop();+'px',
+        	    	oleft = $(this).parent().offset().left+'px';
+        	    	$(this).parent().find('.puprop').css({'top':otop,'left':oleft})
+        	})
+        }
+
+
+        $('.js-packup').on('click',function(){
+        	$(this).parent().slideUp()
+        })
+
+        var oyear    ='',
+            quarter  ='';
+		for (i = 1990; i <= 2200; i++) {
+		    oyear += '<option value="' + i + '">' + i + '年</option>';
+		}
+		$('#se_year').append(oyear);
+
+		for (i = 1; i <= 4; i++) {
+	        quarter += '<option value="' + i + '">第' + i + '季度</option>';
+	    }
+	    $('#quarter').append(quarter);
+	})()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+@charset "utf-8";
+
+@import "variables";
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+
+    font-size: $baseFontSize;
+    font-family: "微软雅黑";
+
+    color: $baseColor;
+    background-color: $baseBg;
+
+}
+
+
+a {
+    color: $linkFontColor;
+}
+
+@import "iconfont";
+
+.icon {
+    display: inline-block;
+}
+
+
+
+[class*='col-sm'] {
+    float: left;
+}
+
+@import "button";
+
+/* input样式 */
+@import "form";
+
+[class ^="col-"].box {
+    clear: none;
+}
+
+.box {
+    clear: both;
+
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding: 0;
+
+    .box-title {
+        border-bottom: 1px solid $borderColor;
+        margin-bottom: 0;
+        padding: 14px 15px 7px;
+        min-height: 48px;
+
+        color: inherit;
+        background-color: #fff;
+
+        .title {
+            display: inline-block;
+
+            margin: 0 0 7px;
+            padding: 0;
+            font-size: 14px;
+            text-overflow: ellipsis;
+        }
+
+        .title-right {
+        	display: inline-block;
+        	float: right;
+
+        	margin: 0 15px 7px;
+        	padding: 0;
+        	font-size: 15px;
+        	letter-spacing: 2px;
+        }
+    }
+
+    .box-content {
+        border-color: $borderColor;
+        -webkit-border-image: none;
+        -o-border-image: none;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 0 0;
+        padding: 15px 20px 10px;
+
+        background-color: #fff;
+        color: inherit;
+
+    }
+}
+
+/* 固定表格前两列 */
+
+@import "table";
+/* 固定表格前两列 END */
+
+.container-main {
+    margin: $marginTop $marginLeft 0;
+
+    .container-title {
+        padding-bottom: 20px;
+
+        .title {
+            margin: 0;
+
+            font-weight: bold;
+            font-size: $titleFontSize;
+        }
+    }
+
+    .row {
+        margin: 0;
+    }
+
+    .row-box{
+    	border-top: 3px solid #e6eaed;
+    }
+
+    .table-panel {
+        width: 100%;
+    }
+
+    .table-list {
+    	width: 100%;
+
+    	tr {
+    		&:hover {
+				background-color: $tableHoverBg;
+    		}
+
+			&:first-child td {
+				border: 0;
+			}
+    	}
+    }
+
+    &.panel-white {
+        border-top: 3px solid #e6eaed;
+        background-color: #fff;
+    }
+}
+
+.content {
+	overflow-x: auto;
+
+	width: 100%;
+}
+
+/* 模糊查询 */
+@import "blur-panel";
+/* 模糊查询 END */
+
+/* 分页样式 */
+@import "pagination";
+/* 分页样式 END */
+
+/* 报错信息样式 */
+@import "empty";
+
+/* 报错信息样式 END */
+@import "list-inline";
+
+/* 权限管理 编辑权限 */
+@import "select-checkbox-panel";
+/* 权限管理 编辑权限 END */
+
+/* 角色管理 树形结构 */
+@import "tree";
+/* 角色管理 树形结构 END */
+
+/* 列表悬浮功能 */
+@import "td-hover-layer";
+/* 列表悬浮功能 END */
+
+/* 带复选框 */
+
+.min-box-wrap {
+    width: 100%;
+    overflow: auto;
+}
+
+.min-box {
+    width: 100%;
+    min-width: 1200px;
+}
+
+@import "font";
+
+.word-bg {
+    &.warning {
+        padding:0 3px;
+
+        line-height: 1;
+
+        color: #fff;
+        background-color: $inputHoverBorderColor;
+    }
+}
+
+@import "space";
+
+/* 编辑页及详情页 */
+
+// 上传文件样式
+@import "file-upload";
+
+/* 日期控件样式修改 */
+@import "datepick";
+
+/*-----------------公共树形选择器 START*/
+@import "common-tree-wrap";
+/*-----------------公共树形选择器 END*/
+
+//方案3--公用设置表格
+.setting-table{
+    width: 88%;
+    float: right;
+    th{
+        background-color:#f3f3f5;
+        text-align: center;
+        padding: 3px 0;
+    }
+    td{
+        padding: 10px;
+        .checkbox-label{
+            margin: 0 13px 0 3px;
+        }
+    }
+    td,th{
+        border:1px solid $btnDefaultBorderColor;
+    }
+}
+
+//树形数据table
+.tree-table-wrap{
+    width: 88%;
+    float: right;
+    margin-bottom: 15px;
+    table{width: 100%;}
+    .checkbox-wrap{
+                margin-right: 3px;
+            }
+    .hub-table{
+        td{
+            border:0px !important;
+            .hub-content-wrap{
+                max-width: 140px;
+                min-width: 140px;
+                overflow: hidden;
+                width: 140px;
+                padding:5px 10px;
+            }
+        }
+    }
+    .tree-table-header{
+        width: 100%;
+        padding-left: 0;
+        border-top: 1px solid $btnDefaultBorderColor;
+        border-left: 1px solid $btnDefaultBorderColor;
+        height: 25px;
+        margin-bottom: 0px;
+        li{
+            float: left;
+            list-style: none;
+            width: 20%;
+            height: 100%;
+            background-color:#f3f3f5;
+            text-align: center;
+            font-size:bold;
+            padding:3px 0;
+            border-right: 1px solid $btnDefaultBorderColor;
+
+        }
+    }
+
+    .tree-table-footer{
+        width: 100%;
+        padding-left: 0;
+        border-bottom: 1px solid $btnDefaultBorderColor;
+        border-left: 1px solid $btnDefaultBorderColor;
+        height: 35px;
+        margin-bottom: 0px;
+        li{
+            float: left;
+            list-style: none;
+            width: 20%;
+            height: 100%;
+            text-indent: 0px;
+            font-size:bold;
+            padding:3px 0;
+            border-right: 1px solid $btnDefaultBorderColor;
+            .checkbox-wrap{
+                margin-left: 10px;
+            }
+        }
+    }
+    .tree-table{
+        width: 100%;
+        
+        td{
+            .checkbox-label{
+                margin: 0 13px 0 3px;
+            }
+            .content-wrap{
+                padding: 20px;
+                max-width: 140px;
+                min-width: 140px;
+                overflow: hidden;
+                width: 140px;
+            }
+            
+        }
+        td,th{
+            border:1px solid $btnDefaultBorderColor;
+        }
+    }
+}
+
+
+/** 排期详情页的弹框样式  */
+@import "detail-popover";
+/** 排期详情页的弹框样式 END */
+
+/** 辅助样式 */
+@import "assist";
+/** 辅助样式 END */
+
+.icon-xin{
+    position: absolute;
+    top: -5px;
+    left: -8px;
+    font-size: 30px;
+    color: #f29417;
+}

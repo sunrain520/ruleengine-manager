@@ -1,0 +1,55 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/tx
+						http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+    <description>Spring RuleEngine DataSource</description>
+
+    <!--manage datasource-->
+    <bean id="rtDataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="url" value="${jdbc.rt.url}" />
+        <property name="username" value="${jdbc.rt.username}" />
+        <property name="password" value="${jdbc.rt.password}" />
+        <property name="driverClassName" value="${jdbc.rt.driverClassName}" />
+        <property name="filters" value="${jdbc.filters}" />
+        <property name="maxActive" value="${jdbc.maxActive}" />
+        <property name="initialSize" value="${jdbc.initialSize}" />
+        <property name="maxWait" value="${jdbc.maxWait}" />
+        <property name="minIdle" value="${jdbc.minIdle}" />
+        <property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}" />
+        <property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}" />
+        <property name="validationQuery" value="${jdbc.validationQuery}" />
+        <property name="testWhileIdle" value="${jdbc.testWhileIdle}" />
+        <property name="testOnBorrow" value="${jdbc.testOnBorrow}" />
+        <property name="testOnReturn" value="${jdbc.testOnReturn}" />
+        <property name="maxOpenPreparedStatements" value="${jdbc.maxOpenPreparedStatements}" />
+        <property name="removeAbandoned" value="${jdbc.removeAbandoned}" />
+        <property name="removeAbandonedTimeout" value="${jdbc.removeAbandonedTimeout}" />
+        <property name="logAbandoned" value="${jdbc.logAbandoned}" />
+        <property name="defaultAutoCommit" value="${jdbc.defaultAutoCommit}" />
+    </bean>
+
+    <!-- 创建SqlSessionFactory -->
+    <bean id ="rtSqlSessionFactory" class= "org.mybatis.spring.SqlSessionFactoryBean" >
+        <!-- 指定数据源 -->
+        <property name ="dataSource" ref="rtDataSource" />
+        <!-- 指定mybatis 的配置文件 -->
+        <property name ="configLocation" value= "classpath:/mybatis/mybatis-config.xml" />
+        <property name="mapperLocations" value="classpath:/mybatis/mapper/manage/*Mapper.xml"/>
+    </bean >
+
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.xiaoniu.dataplatform.ruleengine.mapper.manage"/>
+        <property name="sqlSessionFactoryBeanName" value="rtSqlSessionFactory"/>
+    </bean>
+
+    <bean id="rtTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="rtDataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="rtTransactionManager" proxy-target-class="true"/>
+</beans>

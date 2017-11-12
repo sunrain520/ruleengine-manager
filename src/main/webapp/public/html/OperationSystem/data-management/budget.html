@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预算</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+</head>
+<body>
+
+    <div class="container-main">
+        <div class="content">
+            <!-- 操作部分 -->
+            <div class="operation-btns">
+                <button class="btn btn-info js-nav-item" data-target="data-management/edit.html" type="button">
+                    <span class="icon icon-edit icon-left"></span>编辑
+                </button>
+                <button class="btn btn-info js-nav-item" type="button"  data-target="data-management/check.html" >
+                    <span class="icon icon-eye icon-left"></span>查看
+                </button>
+            </div>
+            <!-- 操作部分END -->
+
+            <!-- 搜索部分 -->
+            <div class="search-box clear">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label">排期编码：</label>
+                        <input type="text" class="form-control form-list" placeholder="排期编码">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">项目编码：</label>
+                        <input type="text" class="form-control form-list" placeholder="项目编码">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">排期名称：</label>
+                        <input type="text" class="form-control form-list" placeholder="输入关键字">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">城市：</label>
+                        <select class="form-control form-list">
+                            <option value="">选择城市</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">预算类型：</label>
+                        <select class="form-control form-list">
+                            <option value="">选择类型</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">演出开始时间：</label>
+                        <input type="text" class="form-control form-list js-blur-input" placeholder="YY-MM-DD">
+                        <span class="c-999">至</span>
+                        <input type="text" class="form-control form-list js-blur-input" placeholder="YY-MM-DD">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">距离演出时间：</label>
+                        <div class="blur-panel inset">
+                            <span>≤</span>
+                            <input type="text" class="form-control form-list" placeholder="">
+                            <span class="">天</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">完成状态：</label>
+                        <select class="form-control form-list">
+                            <option value="">完成</option>
+                            <option value="">未完成</option>
+                        </select>
+                    </div>
+                    <div class="fr btn-wrap">
+                        <button class="btn btn-info">搜索</button>
+                        <button class="btn btn-default ceee">清空</button>
+                    </div>
+                </form>
+            </div>
+            <!-- 搜索部分 END -->
+
+            <!-- 表格明细 -->
+            <div class="table-panel panel-white box table-panel-full row-box">
+                <div class="table-wrap box-content">
+                    <div class="table-scroll">
+                        <div class="table-header-wrap js-table-header-wrap">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header">
+                                <col width="41px">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="">
+                                <col width="10%">
+                                <col width="13%">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="9%">
+                                <col width="8%">
+                                <thead>
+                                <tr>
+                                    <th class="w-checkbox">
+                                        <div class="checkbox-wrap js-select-all">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </th>
+                                    <th>项目编码</th>
+                                    <th>排期编码</th>
+                                    <th>项目名称</th>
+                                    <th>城市</th>
+                                    <th>演出开始时间</th>
+                                    <th>距离演出时间</th>
+                                    <th>预算类型</th>
+                                    <th>附件数（个）</th>
+                                    <th>完成状态</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap" style="padding-left: 171px;">
+                            <table class="table table-border table-full js-table table-fix-height ">
+                                <col width="41px">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="">
+                                <col width="10%">
+                                <col width="13%">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="9%">
+                                <col width="8%">
+                                <tbody>
+                                <tr>
+                                    <td class="w-checkbox">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td>0001</td>
+                                    <td>0001</td>
+                                    <td class="js-copy-name max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>杭州</td>
+                                    <td>2016-5-10 09：00</td>
+                                    <td>120</td>
+                                    <td>项目预算</td>
+                                    <td>2
+                                        <a class="glyphicon glyphicon-save" href="javascript:;"></a>
+                                    </td>
+                                    <td>
+                                        <p><span class="icon icon-normal"></span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td>0001</td>
+                                    <td>0001</td>
+                                    <td class="js-copy-name max-td">
+                                        <div class="fix-height">
+                                            <a href="javascript:;" class="">小橙堡儿童剧团小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡小橙堡</a>
+                                        </div>
+                                    </td>
+                                    <td>杭州</td>
+                                    <td>2016-5-10 09：00</td>
+                                    <td>120</td>
+                                    <td>项目预算</td>
+                                    <td>2
+                                        <a class="glyphicon glyphicon-save" href="javascript:;"></a>
+                                    </td>
+                                    <td>
+                                        <p><span class="icon icon-delcontact"></span></p>
+                                    </td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 分页 -->
+                        <div class="pagination-panel js-pagination-panel">
+
+                            <!-- 水平滚动条 -->
+                            <div class="table-scroll-horizontal js-table-scroll-horizontal" style="margin-left: 675px;">
+                                <div class="scroll js-scroll" style="">
+                                </div>
+                            </div>
+                            <!-- 水平滚动条 END -->
+
+                            <div class="pages-wrap">
+                                <div class="options-panel js-options-panel none">
+                                    <div class="checkbox-item">
+                                        <div class="checkbox-wrap js-select-all">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span class="text">选择</span>
+                                    </div>
+
+                                    <div class="options-wrap">
+                                        <a class="option-item ">编辑</a> |
+                                        <a class="option-item gray">删除</a>
+                                    </div>
+                                </div>
+                                <div class="total-wrap">
+                                    共<span class="total">114</span>条，
+                                    每页
+                                    <select class="pages-select form-control">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        <option value="500">500</option>
+                                        <option value="1000">1000</option>
+                                    </select>
+                                    <span class="current-page">12</span>/
+                                    <span class="total-pages">15</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default disabled">
+                                            <span class="icon icon-fast-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-forward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-fast-forward"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 分页 END -->
+                    </div>
+
+                </div>
+            </div>
+            <!-- 表格明细 END -->
+
+        </div>
+    </div>
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+</body>
+</html>

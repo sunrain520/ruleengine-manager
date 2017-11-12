@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看预算列表</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/table.scss">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/budget-tools.css">
+</head>
+<body>
+<div class="container-main">
+    <div class="container-wrapper">
+        <div class="module-wrapper row">
+            <!--合同详情头部-->
+            <div class="container-header js-container-header">
+                <h5>查看项目预算表</h5>
+                <div class="right-btn">
+                    <button class="btn btn-info">
+                        <span class="icon icon-cancel icon-left" style="color: #FFFFFF;"></span>
+                        提交审核
+                    </button>
+                    <button class="btn btn-success">
+                        <span class="icon icon-hold icon-left"></span>
+                        保存草稿
+                    </button>
+                </div>
+            </div>
+            <!--合同详情头部 END-->
+
+            <!--项目基本信息-->
+            <div class="module row-box">
+                <div class="module-title">项目基本信息</div>
+                <div class="module-content">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="two-line">
+                                <label class="w-label control-label">项目名称：</label>
+                                <span class="list-detail">赵雷“无法长大”全国巡回演唱会</span>
+                            </div>
+                            <div class="two-line">
+                                <label class="w-label control-label">项目编码：</label>
+                                <span class="list-detail">01.01.01.0001.16</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="two-line">
+                                <label class="w-label control-label">事业部/子公司：</label>
+                                <span class="list-detail">万有音乐</span>
+                            </div>
+                            <div class="two-line">
+                                <label class="w-label control-label">品类：</label>
+                                <span class="list-detail">小流行</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--项目基本信息 END-->
+
+            <!--项目均摊固定成本-->
+            <div class="module row-box">
+                <div class="module-title">项目均摊固定成本</div>
+                <div class="module-content">
+                    <div class="table-wrap box-content">
+                        <div class="table-header-wrap js-table-header-wrap js-ignore">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th>费用名称</th>
+                                    <th>费用明细</th>
+                                    <th>分摊数</th>
+                                    <th>数量</th>
+                                    <th>单价（元）</th>
+                                    <th>总金额（元）</th>
+                                    <th>备注</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap js-ignore">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                    <tr>
+                                        <td>演出费</td>
+                                        <td>演出费</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>35100</td>
+                                        <td>35，100.00</td>
+                                        <td>10站分摊
+                                            <p class="postil"></p>
+                                            <p class="postil-content">注</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>演出费</td>
+                                        <td>演出制作费</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>3510</td>
+                                        <td>3,510.00</td>
+                                        <td>10站分摊</td>
+                                    </tr>
+                                    <tr>
+                                        <td>演出费</td>
+                                        <td>演出费税款</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>4212</td>
+                                        <td>4,212.00</td>
+                                        <td>10站分摊</td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>剧组国际差旅</td>
+                                        <td>签证费</td>
+                                        <td>3</td>
+                                        <td>5</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content-btn">
+                        <button class="btn btn-default btn-sm btn-green-size">添加</button>
+                        <button class="btn btn-info next-step fr">下一步</button>
+                    </div>
+                </div>
+            </div>
+            <!--项目均摊固定成本 END-->
+
+            <!--项目预算进展-->
+            <div class="module row-box">
+                <div class="module-title">项目预算进展</div>
+                <div class="module-content">
+                    <div>
+                        <ul class="list-inline list-title list-sm clearfix">
+                            <li class="list-item">
+                                <div class="item-content list-for-4">
+                                    <div class="title">
+                                        <div>
+                                            <span class="fl ml10">1.创建项目预算表</span>
+                                            <span class="icon icon-change-hidden fr mr10 mt-12"></span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="item">
+                                            <span class="text">执行者：</span>
+                                            <span class="text">品类采购</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="text">完成时间：</span>
+                                            <span class="text">2016.01.09 10:09</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-item list-arrow">
+                                <span class="icon icon-two-arrow"></span>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content list-for-4">
+                                    <div class="title">
+                                        <div>
+                                            <span class="fl ml10">2.提交执行部审核</span>
+                                            <span class="icon icon-delcontact fr mr10 mt-12"></span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="item">
+                                            <span class="text">执行者：</span>
+                                            <span class="text">品类采购</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="text">完成时间：</span>
+                                            <span class="text">2016.01.09 10:09</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-item list-arrow">
+                                <span class="icon icon-two-arrow"></span>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content list-for-4">
+                                    <div class="title">
+                                        <div>
+                                            <span class="fl ml10">3.审核项目预算表</span>
+                                            <span class="icon icon-pass fr mr10 mt-12"></span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="item">
+                                            <span class="text">执行者：</span>
+                                            <span class="text">品类采购</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="text">完成时间：</span>
+                                            <span class="text">2016.01.09 10:09</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-item list-arrow">
+                                <span class="icon icon-two-arrow"></span>
+                            </li>
+                            <li class="list-item">
+                                <div class="item-content list-for-4">
+                                    <div class="title">
+                                        <div>
+                                            <span class="fl ml10">4.提交OA审批</span>
+                                            <span class="icon icon-pass fr mr10 mt-12"></span>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="item">
+                                            <span class="text">执行者：</span>
+                                            <span class="text">品类采购</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="text">完成时间：</span>
+                                            <span class="text">暂无</span>
+                                        </div>
+                                        <div class="item">
+                                            <span class="text">OA审批状态：</span>
+                                            <span class="text">暂无</span>
+                                            <a href="javascript:">查看</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--项目预算进展 END-->
+        </div>
+    </div>
+</div>
+<script src="../../../dist/js/jquery.min.js"></script>
+<script src="../../../dist/js/approval-tools.js"></script>
+</body>
+</html>

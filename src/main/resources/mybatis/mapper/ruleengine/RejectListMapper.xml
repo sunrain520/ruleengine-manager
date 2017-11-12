@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.RejectListMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.RejectList" >
+    <id column="f_auto_id" property="fAutoId" jdbcType="INTEGER" />
+    <result column="f_id_num" property="fIdNum" jdbcType="VARCHAR" />
+    <result column="f_id_index" property="fIdIndex" jdbcType="BIGINT" />
+    <result column="f_name" property="fName" jdbcType="VARCHAR" />
+    <result column="f_mobile" property="fMobile" jdbcType="VARCHAR" />
+    <result column="f_app_id" property="fAppId" jdbcType="VARCHAR" />
+    <result column="f_req_id" property="fReqId" jdbcType="VARCHAR" />
+    <result column="f_rule_id" property="fRuleId" jdbcType="VARCHAR" />
+    <result column="f_rule_item_id" property="fRuleItemId" jdbcType="INTEGER" />
+    <result column="f_reason" property="fReason" jdbcType="VARCHAR" />
+    <result column="f_create_time" property="fCreateTime" jdbcType="TIMESTAMP" />
+    <result column="f_update_time" property="fUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="f_expire_date" property="fExpireDate" jdbcType="TIMESTAMP" />
+    <result column="f_state" property="fState" jdbcType="TINYINT" />
+    <result column="f_type" property="fType" jdbcType="TINYINT" />
+    <result column="f_sub_type" property="fSubType" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    f_auto_id, f_id_num, f_id_index, f_name, f_mobile, f_app_id, f_req_id, f_rule_id, 
+    f_rule_item_id, f_reason, f_create_time, f_update_time, f_expire_date, f_state, f_type, 
+    f_sub_type
+  </sql>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_reject_list_0
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </select>
+
+  <select id="queryRejectsByPage" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from ${tableName}
+    where 1=1
+    <if test="idNum != null and idNum != ''">
+      and  f_id_num =#{idNum}
+    </if>
+    <if test="ruleId != null and ruleId != ''">
+      and  f_rule_id =#{ruleId}
+    </if>
+    <if test="reason != null and reason != ''">
+      and instr(f_reason,#{reason}) > 0
+    </if>
+    and f_app_id =#{appId}
+    order by f_state,f_type
+    limit #{pageNum},#{pageSize}
+  </select>
+
+  <select id="queryRejectsCount" parameterType="map" resultType="Integer">
+    select
+    count(*)
+    from ${tableName}
+    where 1=1
+    <if test="idNum != null and idNum != ''">
+      and  f_id_num =#{idNum}
+    </if>
+    <if test="ruleId != null and ruleId != ''">
+      and  f_rule_id =#{ruleId}
+    </if>
+    <if test="reason != null and reason != ''">
+      and  instr(f_reason,#{reason}) > 0
+    </if>
+    and f_app_id =#{appId}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from ${tableName}
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RejectList" >
+    insert into t_reject_list_0 (f_auto_id, f_id_num, f_id_index, 
+      f_name, f_mobile, f_app_id, 
+      f_req_id, f_rule_id, f_rule_item_id, 
+      f_reason, f_create_time, f_update_time, 
+      f_expire_date, f_state, f_type, 
+      f_sub_type)
+    values (#{fAutoId,jdbcType=INTEGER}, #{fIdNum,jdbcType=VARCHAR}, #{fIdIndex,jdbcType=BIGINT}, 
+      #{fName,jdbcType=VARCHAR}, #{fMobile,jdbcType=VARCHAR}, #{fAppId,jdbcType=VARCHAR}, 
+      #{fReqId,jdbcType=VARCHAR}, #{fRuleId,jdbcType=VARCHAR}, #{fRuleItemId,jdbcType=INTEGER}, 
+      #{fReason,jdbcType=VARCHAR}, #{fCreateTime,jdbcType=TIMESTAMP}, #{fUpdateTime,jdbcType=TIMESTAMP}, 
+      #{fExpireDate,jdbcType=TIMESTAMP}, #{fState,jdbcType=TINYINT}, #{fType,jdbcType=TINYINT}, 
+      #{fSubType,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" keyProperty="fAutoId" useGeneratedKeys="true"  parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RejectList" >
+    insert into ${tableName}
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fAutoId != null" >
+        f_auto_id,
+      </if>
+      <if test="fIdNum != null" >
+        f_id_num,
+      </if>
+      <if test="fIdIndex != null" >
+        f_id_index,
+      </if>
+      <if test="fName != null" >
+        f_name,
+      </if>
+      <if test="fMobile != null" >
+        f_mobile,
+      </if>
+      <if test="fAppId != null" >
+        f_app_id,
+      </if>
+      <if test="fReqId != null" >
+        f_req_id,
+      </if>
+      <if test="fRuleId != null" >
+        f_rule_id,
+      </if>
+      <if test="fRuleItemId != null" >
+        f_rule_item_id,
+      </if>
+      <if test="fReason != null" >
+        f_reason,
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time,
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time,
+      </if>
+      <if test="fExpireDate != null" >
+        f_expire_date,
+      </if>
+      <if test="fState != null" >
+        f_state,
+      </if>
+      <if test="fType != null" >
+        f_type,
+      </if>
+      <if test="fSubType != null" >
+        f_sub_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fAutoId != null" >
+        #{fAutoId,jdbcType=INTEGER},
+      </if>
+      <if test="fIdNum != null" >
+        #{fIdNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fIdIndex != null" >
+        #{fIdIndex,jdbcType=BIGINT},
+      </if>
+      <if test="fName != null" >
+        #{fName,jdbcType=VARCHAR},
+      </if>
+      <if test="fMobile != null" >
+        #{fMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="fAppId != null" >
+        #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fReqId != null" >
+        #{fReqId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleId != null" >
+        #{fRuleId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleItemId != null" >
+        #{fRuleItemId,jdbcType=INTEGER},
+      </if>
+      <if test="fReason != null" >
+        #{fReason,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateTime != null" >
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateTime != null" >
+        #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fExpireDate != null" >
+        #{fExpireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fState != null" >
+        #{fState,jdbcType=TINYINT},
+      </if>
+      <if test="fType != null" >
+        #{fType,jdbcType=TINYINT},
+      </if>
+      <if test="fSubType != null" >
+        #{fSubType,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RejectList" >
+    update ${tableName}
+    <set >
+      <if test="fIdNum != null" >
+        f_id_num = #{fIdNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fIdIndex != null" >
+        f_id_index = #{fIdIndex,jdbcType=BIGINT},
+      </if>
+      <if test="fName != null" >
+        f_name = #{fName,jdbcType=VARCHAR},
+      </if>
+      <if test="fMobile != null" >
+        f_mobile = #{fMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="fAppId != null" >
+        f_app_id = #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fReqId != null" >
+        f_req_id = #{fReqId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleId != null" >
+        f_rule_id = #{fRuleId,jdbcType=VARCHAR},
+      </if>
+      <if test="fRuleItemId != null" >
+        f_rule_item_id = #{fRuleItemId,jdbcType=INTEGER},
+      </if>
+      <if test="fReason != null" >
+        f_reason = #{fReason,jdbcType=VARCHAR},
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fExpireDate != null" >
+        f_expire_date = #{fExpireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fState != null" >
+        f_state = #{fState,jdbcType=TINYINT},
+      </if>
+      <if test="fType != null" >
+        f_type = #{fType,jdbcType=TINYINT},
+      </if>
+      <if test="fSubType != null" >
+        f_sub_type = #{fSubType,jdbcType=TINYINT},
+      </if>
+    </set>
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.RejectList" >
+    update t_reject_list_0
+    set f_id_num = #{fIdNum,jdbcType=VARCHAR},
+      f_id_index = #{fIdIndex,jdbcType=BIGINT},
+      f_name = #{fName,jdbcType=VARCHAR},
+      f_mobile = #{fMobile,jdbcType=VARCHAR},
+      f_app_id = #{fAppId,jdbcType=VARCHAR},
+      f_req_id = #{fReqId,jdbcType=VARCHAR},
+      f_rule_id = #{fRuleId,jdbcType=VARCHAR},
+      f_rule_item_id = #{fRuleItemId,jdbcType=INTEGER},
+      f_reason = #{fReason,jdbcType=VARCHAR},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      f_expire_date = #{fExpireDate,jdbcType=TIMESTAMP},
+      f_state = #{fState,jdbcType=TINYINT},
+      f_type = #{fType,jdbcType=TINYINT},
+      f_sub_type = #{fSubType,jdbcType=TINYINT}
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+</mapper>

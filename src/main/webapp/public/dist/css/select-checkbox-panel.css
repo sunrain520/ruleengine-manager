@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/* 全局变量 */
+/* 全局变量 END */
+/* 字体样式变量 */
+/* 字体样式变量 END */
+/* 框架侧边导航变量 */
+/* 框架侧边导航变量 END */
+/* 头部导航变量 */
+/* 头部导航变量 END */
+/* iframe 内部变量 */
+/* iframe 内部变量 END */
+/* 表格变量 */
+/* 表格变量 END */
+/* 按钮公共变量 */
+/* 按钮公共变量 END */
+/* 表单样式 */
+/* 模糊查询样式变量 */
+/* 模糊查询样式变量 END */
+/* 表单样式 END */
+/* 正常隐藏状态图标样式 */
+/* 正常隐藏状态图标样式 END */
+/* 危险操作颜色 */
+/* 危险操作颜色 END */
+/* module分块背景色 */
+/* module分块背景色 END */
+/* 搜索表单变量 */
+/* 搜索表单变量 END */
+.select-checkbox-panel {
+  width: 827px; }
+  .select-checkbox-panel .list-block {
+    list-style: none;
+    padding-left: 0;
+    border: 1px solid #ddd; }
+    .select-checkbox-panel .list-block .list-item {
+      font-size: 0; }
+      .select-checkbox-panel .list-block .list-item:last-child .item-content {
+        border-bottom: none; }
+      .select-checkbox-panel .list-block .list-item .item-content {
+        background-color: #fafafa; }
+        .select-checkbox-panel .list-block .list-item .item-content:last-child {
+          border-bottom: 1px solid #ddd; }
+        .select-checkbox-panel .list-block .list-item .item-content + .item-content {
+          border-top: 1px dashed #ddd;
+          background-color: #fff; }
+          .select-checkbox-panel .list-block .list-item .item-content + .item-content .left {
+            width: 133px; }
+            .select-checkbox-panel .list-block .list-item .item-content + .item-content .left .title {
+              padding-left: 20px; }
+          .select-checkbox-panel .list-block .list-item .item-content + .item-content .center {
+            margin-left: -1px; }
+        .select-checkbox-panel .list-block .list-item .item-content.item-header {
+          height: 34px;
+          line-height: 34px;
+          text-align: center;
+          background-color: #f3f3f5; }
+          .select-checkbox-panel .list-block .list-item .item-content.item-header .left,
+          .select-checkbox-panel .list-block .list-item .item-content.item-header .right,
+          .select-checkbox-panel .list-block .list-item .item-content.item-header .center {
+            padding-top: 0;
+            padding-bottom: 0; }
+        .select-checkbox-panel .list-block .list-item .item-content .center {
+          border-left: 1px solid #ddd;
+          border-right: 1px solid #ddd; }
+        .select-checkbox-panel .list-block .list-item .item-content .left,
+        .select-checkbox-panel .list-block .list-item .item-content .center,
+        .select-checkbox-panel .list-block .list-item .item-content .right {
+          display: table-cell;
+          vertical-align: middle;
+          table-layout: fixed;
+          padding: 8px 20px;
+          font-size: 14px; }
+        .select-checkbox-panel .list-block .list-item .item-content .left {
+          width: 133px;
+          max-width: 16%;
+          min-width: 16%;
+          padding: 8px 10px 8px 10px;
+          cursor: pointer; }
+        .select-checkbox-panel .list-block .list-item .item-content .center {
+          width: 74px;
+          max-width: 9%;
+          min-width: 9%;
+          text-align: center; }
+        .select-checkbox-panel .list-block .list-item .item-content .right {
+          width: 625px;
+          max-width: 75%;
+          min-width: 75%; }
+          .select-checkbox-panel .list-block .list-item .item-content .right .content-left,
+          .select-checkbox-panel .list-block .list-item .item-content .right .content-right {
+            display: table-cell;
+            vertical-align: middle;
+            table-layout: fixed; }
+          .select-checkbox-panel .list-block .list-item .item-content .right .content-left {
+            width: 100px; }
+          .select-checkbox-panel .list-block .list-item .item-content .right .content-right {
+            padding-left: 15px;
+            width: calc(100% - 106px); }
+            .select-checkbox-panel .list-block .list-item .item-content .right .content-right .checkbox-item {
+              display: inline-block;
+              vertical-align: middle;
+              width: 110px;
+              margin-bottom: 3px;
+              padding-right: 5px; }
+
+/*# sourceMappingURL=select-checkbox-panel.css.map */

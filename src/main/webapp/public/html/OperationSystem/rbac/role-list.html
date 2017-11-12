@@ -1,0 +1,2626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>角色管理</title>
+    <link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/tree.css">
+    <style type="text/css">
+        .dep-pos-staff-select-wrap{position: relative;}
+        .dep-pos-staff-select{position: relative;}
+
+        /*y-tree 默认主题 START*/
+        .y-tree-wrap{min-height: 200px;background: white;border: 1px solid #eee;min-width: 200px;width: 200px;display: none;}
+        .y-tree-wrap .y-tree-node{margin-bottom: 3px;}
+        .y-tree-wrap .y-tree-node .y-tree-node{margin-left: 20px;}
+        
+        .y-tree-wrap .y-tree-node .y-tree-node-title{background-color: #eceac7;padding: 6px;cursor: pointer;position: relative;}
+        /*.y-tree-wrap .y-tree-node .y-tree-node-title:hover{background-color: #d4d2af;}*/
+        .y-tree-wrap .y-tree-item{margin-left: 20px;background-color: #fffdec;padding: 6px;position: relative;cursor: pointer;}
+        .y-tree-wrap .y-tree-item:hover{background-color: #696969;color:white;}
+        .y-tree-wrap .selected{background-color: #696969;color:white;}
+        .y-tree-wrap .y-tree-node .y-tree-node-title input{position: absolute;right: 10px;}
+        .y-tree-wrap .y-tree-item input{position: absolute;right: 10px;}
+        .y-tree-wrap .y-tree-children-wrap{display: none;}
+
+        /*y-tree 默认主题 END*/
+
+        /*y-tree 主题1 START*/
+        .y-tree-wrap{background: #fafafa;height: 280px;}
+        .y-tree-wrap .y-tree-node{background-color: #fafafa;}        
+        .y-tree-wrap .y-tree-node .y-tree-node-title{background-color: #fafafa;}
+        .y-tree-wrap .y-tree-item{background-color: #fafafa;}
+        .y-tree-wrap .y-tree-item:hover{background-color: #ccc;color: #666}
+        .y-tree-wrap .selected{background-color: #ccc;color: #666}
+
+        /*y-tree 主题1 END*/
+
+        .dep-pos-staff-select-wrap{position: relative;}
+        .y-tree-wrap{position: absolute;left: 0;top: 37px;z-index: 5;max-height: 600px;overflow-y: auto;width: 100%;overflow-x: auto;}
+
+
+        .td-hover-layer{position: absolute;left: 0;top: 0;border: 1px solid #f8ac59;width: 100%;min-height: 100%;z-index: 5;background-color: white;box-shadow: 2px 2px 12px #ccc;padding: 3px;cursor: move;}
+        .td-hover-layer .tool-bar{text-align: right;font-size: 20px;}
+        .td-hover-layer .tool-bar .tool-icon{cursor: pointer;color: #ccc}
+    </style>
+</head>
+<body>
+    <div class="container-main">
+        <div class="content">
+
+
+            <!-- 操作部分 -->
+            <div class="operation-btns">
+                <button class="btn btn-success add-role-btn" type="button">
+                    <span class="icon icon-add icon-left"></span>新增
+                </button>
+                <button class="btn btn-info edit-role-btn" type="button">
+                    <span class="icon icon-edit icon-left"></span>编辑
+                </button>
+                <button class="btn btn-info js-nav-item copy-role-btn" type="button">
+                    <span class="icon icon-copy icon-left"></span>复制
+                </button>
+                <button class="btn btn-info js-nav-item user-setting-btn" type="button">
+                    用户设置
+                </button>
+                <button class="btn btn-info js-nav-item auth-setting-btn" type="button">
+                    权限设置
+                </button>
+                <button class="btn btn-warning js-nav-item del-btn" type="button"  data-target="notice/detail.html" >
+                    <span class="icon icon-remove icon-left"></span>删除
+                </button>
+
+                <div class="fr search-input-group">
+                    <input class="form-control" value="">
+                    <button class="btn btn-info search-btn" type="button">搜索</button>
+                </div>
+            </div>
+            <!-- 操作部分END -->
+
+            <!-- 表格明细 -->
+            <div class="table-panel panel-white box table-panel-full row-box">
+                <div class="table-wrap box-content">
+                    <div class="table-scroll">
+                        <div class="table-header-wrap js-table-header-wrap">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header">
+                                <col width="41px">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="15%">
+                                <col width="15%">
+                                <col width="13%">
+                                <col width="">
+                                <col width="10%">
+                                <thead>
+                                <tr>
+                                    <th class="w-checkbox">
+                                        <div class="checkbox-wrap js-select-all">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </th>
+                                    <th>ID</th>
+                                    <th>角色</th>
+                                    <th>部门</th>
+                                    <th>职位</th>
+                                    <th>城市</th>
+                                    <th>用户</th>
+                                    <th>状态</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap" style="padding-left: 171px;">
+                            <table class="table table-border table-full js-table table-fix-height ">
+                                <col width="41px">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="15%">
+                                <col width="15%">
+                                <col width="13%">
+                                <col width="">
+                                <col width="10%">
+                                <tbody>
+                                <tr>
+                                    <td class="w-checkbox">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td>0001</td>
+                                    <td>品类采购</td>
+                                    <td class="">聚橙网>采购部</td>
+                                    <td>内容编辑</td>
+                                    <td><a href="#">深圳、广州</a></td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            陈财、崔琦、赵鹏、杨柳、张曼、祝新桐陈财、崔琦、赵鹏、杨柳、张曼、祝新桐
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="icon icon-hidden font-24"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-checkbox">
+                                        <div class="checkbox-wrap js-checkbox">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                    </td>
+                                    <td>0001</td>
+                                    <td>品类采购</td>
+                                    <td class="">聚橙网>采购部</td>
+                                    <td>内容编辑</td>
+                                    <td>深圳、广州</td>
+                                    <td class="max-td">
+                                        <div class="fix-height">
+                                            陈财、崔琦、赵鹏、杨柳、张曼、祝新桐陈财、崔琦、赵鹏、杨柳、张曼、祝新桐
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="icon icon-normal font-24"></span>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 分页 -->
+                        <div class="pagination-panel js-pagination-panel">
+
+                            <!-- 水平滚动条 -->
+                            <div class="table-scroll-horizontal js-table-scroll-horizontal" style="margin-left: 675px;">
+                                <div class="scroll js-scroll" style="">
+                                </div>
+                            </div>
+                            <!-- 水平滚动条 END -->
+
+                            <div class="pages-wrap">
+                                <div class="options-panel js-options-panel none">
+                                    <div class="checkbox-item">
+                                        <div class="checkbox-wrap js-select-all">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span class="text">选择</span>
+                                    </div>
+
+                                    <div class="options-wrap">
+                                        <a class="option-item ">编辑</a> |
+                                        <a class="option-item gray">删除</a>
+                                    </div>
+                                </div>
+                                <div class="total-wrap">
+                                    共<span class="total">114</span>条，
+                                    每页
+                                    <select class="pages-select form-control">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        <option value="500">500</option>
+                                        <option value="1000">1000</option>
+                                    </select>
+                                    <span class="current-page">12</span>/
+                                    <span class="total-pages">15</span>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default disabled">
+                                            <span class="icon icon-fast-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-forward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-fast-forward"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 分页 END -->
+                    </div>
+
+                </div>
+            </div>
+            <!-- 表格明细 END -->
+
+        </div>
+    </div>
+
+    <!-- 角色编辑弹窗内容 -->
+    <div style="background: white;padding: 15px; display: none;" class="role-edit-ui-wrap">
+        <div class="module row-box role-edit-ui">
+            <div class="module-content">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="w-label control-label"><span class="must">*</span>角色：</label>
+                        <div class="w-info">
+                            <input type="text" class="form-control" placeholder="角色名称" maxlength="50">
+                        </div>
+                        <span class="checked-tip"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="w-label control-label">部门和职位：</label>
+                        <div class="w-info dep-pos-staff-select-wrap">
+                            <div class="blur-panel js-blur-panel full-width">
+                                <input type="text" name="position_path" class="form-control form-list js-blur-input" placeholder="选择职位">
+                                <span class="icon icon-menu-block-down"></span>
+                            </div>
+
+                            <div class="y-tree-wrap">
+
+                            </div>
+
+                            <div class="common-tree-wrap">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="w-label control-label"><span class="must">*</span>城市：</label>
+                        <div class="w-info">
+                            <label class="radio-label"><input type="radio" value="1" name="city_limit">不限</label>
+                            <label class="radio-label"><input type="radio" value="2" name="city_limit" checked="">限制</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="w-label control-label"></label>
+                        <div class="w-info">
+                            <div class="blur-panel js-blur-panel full-width">
+                                <input type="text" class="form-control form-list js-blur-input" placeholder="深圳">
+                                <span class="icon icon-menu-block-down"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="w-label control-label"><span class="must">*</span>状态：</label>
+                        <div class="w-info">
+                            <label class="radio-label"><input type="radio" value="1" name="status" checked="">正常</label>
+                            <label class="radio-label"><input type="radio" value="2" name="status">停用</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 角色编辑弹窗内容 END-->
+
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script src="../../../dist/js/layer/layer.js"></script>
+    <script src="../../../dist/js/tree.js"></script>
+
+
+    <script type="text/javascript">
+        var depPosStaffUrl = 'http://oapi.oaplatform-l.com/Uapi/User/getDepAndPositionList';
+
+        var dataJson = {
+    "code": "200",
+    "msg": "ok",
+    "data": [
+        {
+            "id": "70",
+            "name": "剧院管理公司",
+            "type_id": "0",
+            "pid": "0",
+            "dep_level": "1",
+            "path": "0",
+            "position_list": [
+                {
+                    "id": "152",
+                    "name": "剧院管理公司总经理",
+                    "type_id": "1",
+                    "pid": "70",
+                    "dep_level": "2",
+                    "path": "0-70"
+                },
+                {
+                    "id": "347",
+                    "name": "太湖项目总监",
+                    "type_id": "1",
+                    "pid": "70",
+                    "dep_level": "2",
+                    "path": "0-70"
+                },
+                {
+                    "id": "469",
+                    "name": "剧院管理公司副总经理",
+                    "type_id": "1",
+                    "pid": "70",
+                    "dep_level": "2",
+                    "path": "0-70"
+                }
+            ],
+            "child": [
+                {
+                    "id": "71",
+                    "name": "剧院管理部",
+                    "type_id": "0",
+                    "pid": "70",
+                    "dep_level": "2",
+                    "path": "0-70",
+                    "position_list": [
+                        {
+                            "id": "470",
+                            "name": "文案策划",
+                            "type_id": "1",
+                            "pid": "71",
+                            "dep_level": "3",
+                            "path": "0-70-71"
+                        }
+                    ],
+                    "child": [
+                        {
+                            "id": "72",
+                            "name": "南山剧院",
+                            "type_id": "0",
+                            "pid": "71",
+                            "dep_level": "3",
+                            "path": "0-70-71",
+                            "position_list": [
+                                {
+                                    "id": "134",
+                                    "name": "南山剧院总经理",
+                                    "type_id": "1",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72"
+                                },
+                                {
+                                    "id": "136",
+                                    "name": "招商运营经理",
+                                    "type_id": "1",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72"
+                                },
+                                {
+                                    "id": "296",
+                                    "name": "销售经理",
+                                    "type_id": "1",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72"
+                                },
+                                {
+                                    "id": "341",
+                                    "name": "综合管理部经理",
+                                    "type_id": "1",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72"
+                                },
+                                {
+                                    "id": "342",
+                                    "name": "运营助理",
+                                    "type_id": "1",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72"
+                                }
+                            ],
+                            "child": [
+                                {
+                                    "id": "293",
+                                    "name": "南山剧院营销部",
+                                    "type_id": "0",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72",
+                                    "position_list": [
+                                        {
+                                            "id": "135",
+                                            "name": "营销总监",
+                                            "type_id": "1",
+                                            "pid": "293",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-293"
+                                        },
+                                        {
+                                            "id": "371",
+                                            "name": "方案策划专员",
+                                            "type_id": "1",
+                                            "pid": "293",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-293"
+                                        },
+                                        {
+                                            "id": "372",
+                                            "name": "销售经理",
+                                            "type_id": "1",
+                                            "pid": "293",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-293"
+                                        },
+                                        {
+                                            "id": "373",
+                                            "name": "策划经理",
+                                            "type_id": "1",
+                                            "pid": "293",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-293"
+                                        },
+                                        {
+                                            "id": "374",
+                                            "name": "招商主管",
+                                            "type_id": "1",
+                                            "pid": "293",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-293"
+                                        },
+                                        {
+                                            "id": "375",
+                                            "name": "拓展专员",
+                                            "type_id": "1",
+                                            "pid": "293",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-293"
+                                        },
+                                        {
+                                            "id": "376",
+                                            "name": "营销专员",
+                                            "type_id": "1",
+                                            "pid": "293",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-293"
+                                        },
+                                        {
+                                            "id": "377",
+                                            "name": "销售总监",
+                                            "type_id": "1",
+                                            "pid": "293",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-293"
+                                        },
+                                        {
+                                            "id": "423",
+                                            "name": "销售专员",
+                                            "type_id": "1",
+                                            "pid": "293",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-293"
+                                        },
+                                        {
+                                            "id": "498",
+                                            "name": "副经理",
+                                            "type_id": "1",
+                                            "pid": "293",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-293"
+                                        }
+                                    ],
+                                    "child": []
+                                },
+                                {
+                                    "id": "295",
+                                    "name": "南山剧院场务部",
+                                    "type_id": "0",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72",
+                                    "position_list": [
+                                        {
+                                            "id": "300",
+                                            "name": "场务经理",
+                                            "type_id": "1",
+                                            "pid": "295",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-295"
+                                        },
+                                        {
+                                            "id": "367",
+                                            "name": "场务",
+                                            "type_id": "1",
+                                            "pid": "295",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-295"
+                                        },
+                                        {
+                                            "id": "378",
+                                            "name": "场务主管",
+                                            "type_id": "1",
+                                            "pid": "295",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-295"
+                                        },
+                                        {
+                                            "id": "379",
+                                            "name": "场务后台领班",
+                                            "type_id": "1",
+                                            "pid": "295",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-295"
+                                        }
+                                    ],
+                                    "child": []
+                                },
+                                {
+                                    "id": "310",
+                                    "name": "南山剧院人事部",
+                                    "type_id": "0",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72",
+                                    "position_list": [
+                                        {
+                                            "id": "311",
+                                            "name": "行政人事主管",
+                                            "type_id": "1",
+                                            "pid": "310",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-310"
+                                        }
+                                    ],
+                                    "child": []
+                                },
+                                {
+                                    "id": "314",
+                                    "name": "南山剧院物业部",
+                                    "type_id": "0",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72",
+                                    "position_list": [
+                                        {
+                                            "id": "315",
+                                            "name": "物业主管",
+                                            "type_id": "1",
+                                            "pid": "314",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-314"
+                                        }
+                                    ],
+                                    "child": []
+                                },
+                                {
+                                    "id": "318",
+                                    "name": "南山剧院财务部",
+                                    "type_id": "0",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72",
+                                    "position_list": [
+                                        {
+                                            "id": "319",
+                                            "name": "会计主管",
+                                            "type_id": "1",
+                                            "pid": "318",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-318"
+                                        },
+                                        {
+                                            "id": "395",
+                                            "name": "出纳",
+                                            "type_id": "1",
+                                            "pid": "318",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-318"
+                                        }
+                                    ],
+                                    "child": []
+                                },
+                                {
+                                    "id": "322",
+                                    "name": "南山剧院行政部",
+                                    "type_id": "0",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72",
+                                    "position_list": [
+                                        {
+                                            "id": "323",
+                                            "name": "行政主管",
+                                            "type_id": "1",
+                                            "pid": "322",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-322"
+                                        }
+                                    ],
+                                    "child": []
+                                },
+                                {
+                                    "id": "326",
+                                    "name": "南山剧院舞台技术部",
+                                    "type_id": "0",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72",
+                                    "position_list": [
+                                        {
+                                            "id": "327",
+                                            "name": "舞台技术部经理",
+                                            "type_id": "1",
+                                            "pid": "326",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-326"
+                                        },
+                                        {
+                                            "id": "333",
+                                            "name": "舞台技术",
+                                            "type_id": "1",
+                                            "pid": "326",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-326"
+                                        },
+                                        {
+                                            "id": "348",
+                                            "name": "音响师",
+                                            "type_id": "1",
+                                            "pid": "326",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-326"
+                                        },
+                                        {
+                                            "id": "358",
+                                            "name": "灯光师",
+                                            "type_id": "1",
+                                            "pid": "326",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-326"
+                                        },
+                                        {
+                                            "id": "420",
+                                            "name": "演员",
+                                            "type_id": "1",
+                                            "pid": "326",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-326"
+                                        }
+                                    ],
+                                    "child": []
+                                },
+                                {
+                                    "id": "399",
+                                    "name": "商业运营中心",
+                                    "type_id": "0",
+                                    "pid": "72",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-72",
+                                    "position_list": [
+                                        {
+                                            "id": "400",
+                                            "name": "招商主管",
+                                            "type_id": "1",
+                                            "pid": "399",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-399"
+                                        },
+                                        {
+                                            "id": "401",
+                                            "name": "策划专员",
+                                            "type_id": "1",
+                                            "pid": "399",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-399"
+                                        },
+                                        {
+                                            "id": "402",
+                                            "name": "招商经理",
+                                            "type_id": "1",
+                                            "pid": "399",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-399"
+                                        },
+                                        {
+                                            "id": "403",
+                                            "name": "营销专员",
+                                            "type_id": "1",
+                                            "pid": "399",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-399"
+                                        },
+                                        {
+                                            "id": "404",
+                                            "name": "市场营销专员",
+                                            "type_id": "1",
+                                            "pid": "399",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-72-399"
+                                        }
+                                    ],
+                                    "child": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "73",
+                            "name": "苏昆剧院",
+                            "type_id": "0",
+                            "pid": "71",
+                            "dep_level": "3",
+                            "path": "0-70-71",
+                            "position_list": [
+                                {
+                                    "id": "137",
+                                    "name": "苏昆剧院副经理",
+                                    "type_id": "1",
+                                    "pid": "73",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-73"
+                                },
+                                {
+                                    "id": "138",
+                                    "name": "苏昆剧院经理",
+                                    "type_id": "1",
+                                    "pid": "73",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-73"
+                                },
+                                {
+                                    "id": "320",
+                                    "name": "会计",
+                                    "type_id": "1",
+                                    "pid": "73",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-73"
+                                },
+                                {
+                                    "id": "328",
+                                    "name": "剧院经理",
+                                    "type_id": "1",
+                                    "pid": "73",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-73"
+                                },
+                                {
+                                    "id": "355",
+                                    "name": "音响师",
+                                    "type_id": "1",
+                                    "pid": "73",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-73"
+                                },
+                                {
+                                    "id": "396",
+                                    "name": "客服专员",
+                                    "type_id": "1",
+                                    "pid": "73",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-73"
+                                },
+                                {
+                                    "id": "397",
+                                    "name": "场务",
+                                    "type_id": "1",
+                                    "pid": "73",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-73"
+                                },
+                                {
+                                    "id": "398",
+                                    "name": "销售",
+                                    "type_id": "1",
+                                    "pid": "73",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-73"
+                                },
+                                {
+                                    "id": "428",
+                                    "name": "灯光师",
+                                    "type_id": "1",
+                                    "pid": "73",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-73"
+                                },
+                                {
+                                    "id": "472",
+                                    "name": "苏昆剧院副经理（负责人）",
+                                    "type_id": "1",
+                                    "pid": "73",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-73"
+                                }
+                            ],
+                            "child": [
+                                {
+                                    "id": "421",
+                                    "name": "营销部",
+                                    "type_id": "0",
+                                    "pid": "73",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-73",
+                                    "position_list": [
+                                        {
+                                            "id": "422",
+                                            "name": "销售经理",
+                                            "type_id": "1",
+                                            "pid": "421",
+                                            "dep_level": "5",
+                                            "path": "0-70-71-73-421"
+                                        }
+                                    ],
+                                    "child": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "74",
+                            "name": "镇海剧院",
+                            "type_id": "0",
+                            "pid": "71",
+                            "dep_level": "3",
+                            "path": "0-70-71",
+                            "position_list": [
+                                {
+                                    "id": "133",
+                                    "name": "镇海文化中心总经理",
+                                    "type_id": "1",
+                                    "pid": "74",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-74"
+                                },
+                                {
+                                    "id": "407",
+                                    "name": "镇海剧院经理",
+                                    "type_id": "1",
+                                    "pid": "74",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-74"
+                                },
+                                {
+                                    "id": "459",
+                                    "name": "客服专员",
+                                    "type_id": "1",
+                                    "pid": "74",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-74"
+                                },
+                                {
+                                    "id": "510",
+                                    "name": "音响师",
+                                    "type_id": "1",
+                                    "pid": "74",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-74"
+                                }
+                            ],
+                            "child": []
+                        },
+                        {
+                            "id": "145",
+                            "name": "上海金橙剧院",
+                            "type_id": "0",
+                            "pid": "71",
+                            "dep_level": "3",
+                            "path": "0-70-71",
+                            "position_list": [
+                                {
+                                    "id": "146",
+                                    "name": "上海金橙剧院经理",
+                                    "type_id": "1",
+                                    "pid": "145",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-145"
+                                }
+                            ],
+                            "child": []
+                        },
+                        {
+                            "id": "345",
+                            "name": "常州金橙剧院",
+                            "type_id": "0",
+                            "pid": "71",
+                            "dep_level": "3",
+                            "path": "0-70-71",
+                            "position_list": [
+                                {
+                                    "id": "346",
+                                    "name": "常州金橙剧院经理",
+                                    "type_id": "1",
+                                    "pid": "345",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-345"
+                                }
+                            ],
+                            "child": []
+                        },
+                        {
+                            "id": "424",
+                            "name": "世纪坛剧院",
+                            "type_id": "0",
+                            "pid": "71",
+                            "dep_level": "3",
+                            "path": "0-70-71",
+                            "position_list": [
+                                {
+                                    "id": "425",
+                                    "name": "运营总监",
+                                    "type_id": "1",
+                                    "pid": "424",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-424"
+                                },
+                                {
+                                    "id": "434",
+                                    "name": "总监助理",
+                                    "type_id": "1",
+                                    "pid": "424",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-424"
+                                },
+                                {
+                                    "id": "460",
+                                    "name": "舞台技术",
+                                    "type_id": "1",
+                                    "pid": "424",
+                                    "dep_level": "4",
+                                    "path": "0-70-71-424"
+                                }
+                            ],
+                            "child": []
+                        }
+                    ]
+                },
+                {
+                    "id": "492",
+                    "name": "剧院拓展部",
+                    "type_id": "0",
+                    "pid": "70",
+                    "dep_level": "2",
+                    "path": "0-70",
+                    "position_list": [
+                        {
+                            "id": "414",
+                            "name": "总经理助理",
+                            "type_id": "1",
+                            "pid": "492",
+                            "dep_level": "3",
+                            "path": "0-70-492"
+                        }
+                    ],
+                    "child": []
+                }
+            ]
+        },
+        {
+            "id": "75",
+            "name": "票务公司",
+            "type_id": "0",
+            "pid": "0",
+            "dep_level": "1",
+            "path": "0",
+            "position_list": [
+                {
+                    "id": "130",
+                    "name": "票务公司总经理",
+                    "type_id": "1",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75"
+                },
+                {
+                    "id": "132",
+                    "name": "票务公司经理",
+                    "type_id": "1",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75"
+                },
+                {
+                    "id": "330",
+                    "name": "业务部总监",
+                    "type_id": "1",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75"
+                }
+            ],
+            "child": [
+                {
+                    "id": "76",
+                    "name": "客服部",
+                    "type_id": "0",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75",
+                    "position_list": [
+                        {
+                            "id": "131",
+                            "name": "客服经理",
+                            "type_id": "1",
+                            "pid": "76",
+                            "dep_level": "3",
+                            "path": "0-75-76"
+                        },
+                        {
+                            "id": "168",
+                            "name": "客服主管",
+                            "type_id": "1",
+                            "pid": "76",
+                            "dep_level": "3",
+                            "path": "0-75-76"
+                        },
+                        {
+                            "id": "169",
+                            "name": "客服专员",
+                            "type_id": "1",
+                            "pid": "76",
+                            "dep_level": "3",
+                            "path": "0-75-76"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "234",
+                    "name": "自有平台(天猫淘宝)",
+                    "type_id": "0",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75",
+                    "position_list": [
+                        {
+                            "id": "337",
+                            "name": "电商经理",
+                            "type_id": "1",
+                            "pid": "234",
+                            "dep_level": "3",
+                            "path": "0-75-234"
+                        },
+                        {
+                            "id": "515",
+                            "name": "天猫客服",
+                            "type_id": "1",
+                            "pid": "234",
+                            "dep_level": "3",
+                            "path": "0-75-234"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "305",
+                    "name": "自有平台(渠道)",
+                    "type_id": "0",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75",
+                    "position_list": [
+                        {
+                            "id": "306",
+                            "name": "电商专员",
+                            "type_id": "1",
+                            "pid": "305",
+                            "dep_level": "3",
+                            "path": "0-75-305"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "307",
+                    "name": "运营管理部",
+                    "type_id": "0",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75",
+                    "position_list": [
+                        {
+                            "id": "354",
+                            "name": "运维专员",
+                            "type_id": "1",
+                            "pid": "307",
+                            "dep_level": "3",
+                            "path": "0-75-307"
+                        },
+                        {
+                            "id": "370",
+                            "name": "副总监",
+                            "type_id": "1",
+                            "pid": "307",
+                            "dep_level": "3",
+                            "path": "0-75-307"
+                        },
+                        {
+                            "id": "417",
+                            "name": "运营经理",
+                            "type_id": "1",
+                            "pid": "307",
+                            "dep_level": "3",
+                            "path": "0-75-307"
+                        },
+                        {
+                            "id": "484",
+                            "name": "运营助理",
+                            "type_id": "1",
+                            "pid": "307",
+                            "dep_level": "3",
+                            "path": "0-75-307"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "308",
+                    "name": "票务公司（总代）",
+                    "type_id": "0",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75",
+                    "position_list": [
+                        {
+                            "id": "309",
+                            "name": "商务助理",
+                            "type_id": "1",
+                            "pid": "308",
+                            "dep_level": "3",
+                            "path": "0-75-308"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "312",
+                    "name": "票务公司（二级代）",
+                    "type_id": "0",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75",
+                    "position_list": [
+                        {
+                            "id": "313",
+                            "name": "客服专员",
+                            "type_id": "1",
+                            "pid": "312",
+                            "dep_level": "3",
+                            "path": "0-75-312"
+                        },
+                        {
+                            "id": "393",
+                            "name": "商务助理",
+                            "type_id": "1",
+                            "pid": "312",
+                            "dep_level": "3",
+                            "path": "0-75-312"
+                        },
+                        {
+                            "id": "394",
+                            "name": "技术支持工程师",
+                            "type_id": "1",
+                            "pid": "312",
+                            "dep_level": "3",
+                            "path": "0-75-312"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "316",
+                    "name": "市场部",
+                    "type_id": "0",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75",
+                    "position_list": [
+                        {
+                            "id": "317",
+                            "name": "客服专员",
+                            "type_id": "1",
+                            "pid": "316",
+                            "dep_level": "3",
+                            "path": "0-75-316"
+                        }
+                    ],
+                    "child": [
+                        {
+                            "id": "441",
+                            "name": "自有平台二(天猫淘宝)",
+                            "type_id": "0",
+                            "pid": "316",
+                            "dep_level": "3",
+                            "path": "0-75-316",
+                            "position_list": [
+                                {
+                                    "id": "236",
+                                    "name": "电商美工",
+                                    "type_id": "1",
+                                    "pid": "441",
+                                    "dep_level": "4",
+                                    "path": "0-75-316-441"
+                                },
+                                {
+                                    "id": "302",
+                                    "name": "平台经理",
+                                    "type_id": "1",
+                                    "pid": "441",
+                                    "dep_level": "4",
+                                    "path": "0-75-316-441"
+                                },
+                                {
+                                    "id": "335",
+                                    "name": "淘宝平台专员",
+                                    "type_id": "1",
+                                    "pid": "441",
+                                    "dep_level": "4",
+                                    "path": "0-75-316-441"
+                                },
+                                {
+                                    "id": "336",
+                                    "name": "天猫平台专员",
+                                    "type_id": "1",
+                                    "pid": "441",
+                                    "dep_level": "4",
+                                    "path": "0-75-316-441"
+                                }
+                            ],
+                            "child": []
+                        },
+                        {
+                            "id": "442",
+                            "name": "渠道（第三方平台）",
+                            "type_id": "0",
+                            "pid": "316",
+                            "dep_level": "3",
+                            "path": "0-75-316",
+                            "position_list": [
+                                {
+                                    "id": "368",
+                                    "name": "渠道经理",
+                                    "type_id": "1",
+                                    "pid": "442",
+                                    "dep_level": "4",
+                                    "path": "0-75-316-442"
+                                },
+                                {
+                                    "id": "419",
+                                    "name": "渠道助理",
+                                    "type_id": "1",
+                                    "pid": "442",
+                                    "dep_level": "4",
+                                    "path": "0-75-316-442"
+                                }
+                            ],
+                            "child": []
+                        },
+                        {
+                            "id": "443",
+                            "name": "自有平台一（官网、APP）",
+                            "type_id": "0",
+                            "pid": "316",
+                            "dep_level": "3",
+                            "path": "0-75-316",
+                            "position_list": [
+                                {
+                                    "id": "418",
+                                    "name": "平台经理",
+                                    "type_id": "1",
+                                    "pid": "443",
+                                    "dep_level": "4",
+                                    "path": "0-75-316-443"
+                                },
+                                {
+                                    "id": "448",
+                                    "name": "平台助理",
+                                    "type_id": "1",
+                                    "pid": "443",
+                                    "dep_level": "4",
+                                    "path": "0-75-316-443"
+                                }
+                            ],
+                            "child": []
+                        }
+                    ]
+                },
+                {
+                    "id": "415",
+                    "name": "粉丝经济",
+                    "type_id": "0",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75",
+                    "position_list": [
+                        {
+                            "id": "416",
+                            "name": "经理",
+                            "type_id": "1",
+                            "pid": "415",
+                            "dep_level": "3",
+                            "path": "0-75-415"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "440",
+                    "name": "业务部",
+                    "type_id": "0",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75",
+                    "position_list": [
+                        {
+                            "id": "329",
+                            "name": "项目副总监",
+                            "type_id": "1",
+                            "pid": "440",
+                            "dep_level": "3",
+                            "path": "0-75-440"
+                        },
+                        {
+                            "id": "369",
+                            "name": "项目助理",
+                            "type_id": "1",
+                            "pid": "440",
+                            "dep_level": "3",
+                            "path": "0-75-440"
+                        },
+                        {
+                            "id": "445",
+                            "name": "商务经理",
+                            "type_id": "1",
+                            "pid": "440",
+                            "dep_level": "3",
+                            "path": "0-75-440"
+                        },
+                        {
+                            "id": "446",
+                            "name": "商务助理",
+                            "type_id": "1",
+                            "pid": "440",
+                            "dep_level": "3",
+                            "path": "0-75-440"
+                        },
+                        {
+                            "id": "447",
+                            "name": "福建商务经理",
+                            "type_id": "1",
+                            "pid": "440",
+                            "dep_level": "3",
+                            "path": "0-75-440"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "444",
+                    "name": "财务部",
+                    "type_id": "0",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75",
+                    "position_list": [
+                        {
+                            "id": "449",
+                            "name": "财务经理",
+                            "type_id": "1",
+                            "pid": "444",
+                            "dep_level": "3",
+                            "path": "0-75-444"
+                        },
+                        {
+                            "id": "450",
+                            "name": "财务专员",
+                            "type_id": "1",
+                            "pid": "444",
+                            "dep_level": "3",
+                            "path": "0-75-444"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "465",
+                    "name": "网络营销部",
+                    "type_id": "0",
+                    "pid": "75",
+                    "dep_level": "2",
+                    "path": "0-75",
+                    "position_list": [
+                        {
+                            "id": "208",
+                            "name": "网站编辑",
+                            "type_id": "1",
+                            "pid": "465",
+                            "dep_level": "3",
+                            "path": "0-75-465"
+                        },
+                        {
+                            "id": "209",
+                            "name": "微博专员",
+                            "type_id": "1",
+                            "pid": "465",
+                            "dep_level": "3",
+                            "path": "0-75-465"
+                        },
+                        {
+                            "id": "214",
+                            "name": "网站推广专员",
+                            "type_id": "1",
+                            "pid": "465",
+                            "dep_level": "3",
+                            "path": "0-75-465"
+                        },
+                        {
+                            "id": "227",
+                            "name": "微信专员",
+                            "type_id": "1",
+                            "pid": "465",
+                            "dep_level": "3",
+                            "path": "0-75-465"
+                        },
+                        {
+                            "id": "229",
+                            "name": "SEO专员",
+                            "type_id": "1",
+                            "pid": "465",
+                            "dep_level": "3",
+                            "path": "0-75-465"
+                        },
+                        {
+                            "id": "466",
+                            "name": "SEM专员",
+                            "type_id": "1",
+                            "pid": "465",
+                            "dep_level": "3",
+                            "path": "0-75-465"
+                        }
+                    ],
+                    "child": []
+                }
+            ]
+        },
+        {
+            "id": "77",
+            "name": "万有音乐系",
+            "type_id": "0",
+            "pid": "0",
+            "dep_level": "1",
+            "path": "0",
+            "position_list": [
+                {
+                    "id": "144",
+                    "name": "采购专员",
+                    "type_id": "1",
+                    "pid": "77",
+                    "dep_level": "2",
+                    "path": "0-77"
+                },
+                {
+                    "id": "175",
+                    "name": "万有音乐系副总经理",
+                    "type_id": "1",
+                    "pid": "77",
+                    "dep_level": "2",
+                    "path": "0-77"
+                },
+                {
+                    "id": "408",
+                    "name": "会计",
+                    "type_id": "1",
+                    "pid": "77",
+                    "dep_level": "2",
+                    "path": "0-77"
+                },
+                {
+                    "id": "409",
+                    "name": "巡演经理",
+                    "type_id": "1",
+                    "pid": "77",
+                    "dep_level": "2",
+                    "path": "0-77"
+                },
+                {
+                    "id": "410",
+                    "name": "采购助理",
+                    "type_id": "1",
+                    "pid": "77",
+                    "dep_level": "2",
+                    "path": "0-77"
+                },
+                {
+                    "id": "411",
+                    "name": "副总经理",
+                    "type_id": "1",
+                    "pid": "77",
+                    "dep_level": "2",
+                    "path": "0-77"
+                },
+                {
+                    "id": "454",
+                    "name": "市场助理",
+                    "type_id": "1",
+                    "pid": "77",
+                    "dep_level": "2",
+                    "path": "0-77"
+                },
+                {
+                    "id": "455",
+                    "name": "制作总监",
+                    "type_id": "1",
+                    "pid": "77",
+                    "dep_level": "2",
+                    "path": "0-77"
+                },
+                {
+                    "id": "468",
+                    "name": "商务经纪副总监",
+                    "type_id": "1",
+                    "pid": "77",
+                    "dep_level": "2",
+                    "path": "0-77"
+                }
+            ],
+            "child": []
+        },
+        {
+            "id": "78",
+            "name": "嬉习喜戏",
+            "type_id": "0",
+            "pid": "0",
+            "dep_level": "1",
+            "path": "0",
+            "position_list": [
+                {
+                    "id": "159",
+                    "name": "嬉习喜戏总经理",
+                    "type_id": "1",
+                    "pid": "78",
+                    "dep_level": "2",
+                    "path": "0-78"
+                },
+                {
+                    "id": "176",
+                    "name": "嬉习喜戏副总经理",
+                    "type_id": "1",
+                    "pid": "78",
+                    "dep_level": "2",
+                    "path": "0-78"
+                },
+                {
+                    "id": "299",
+                    "name": "产品经理",
+                    "type_id": "1",
+                    "pid": "78",
+                    "dep_level": "2",
+                    "path": "0-78"
+                },
+                {
+                    "id": "339",
+                    "name": "视频总监",
+                    "type_id": "1",
+                    "pid": "78",
+                    "dep_level": "2",
+                    "path": "0-78"
+                },
+                {
+                    "id": "351",
+                    "name": "制作总监",
+                    "type_id": "1",
+                    "pid": "78",
+                    "dep_level": "2",
+                    "path": "0-78"
+                },
+                {
+                    "id": "412",
+                    "name": "内容编辑",
+                    "type_id": "1",
+                    "pid": "78",
+                    "dep_level": "2",
+                    "path": "0-78"
+                },
+                {
+                    "id": "519",
+                    "name": "巡演经理",
+                    "type_id": "1",
+                    "pid": "78",
+                    "dep_level": "2",
+                    "path": "0-78"
+                },
+                {
+                    "id": "523",
+                    "name": "视频编导",
+                    "type_id": "1",
+                    "pid": "78",
+                    "dep_level": "2",
+                    "path": "0-78"
+                }
+            ],
+            "child": []
+        },
+        {
+            "id": "79",
+            "name": "小橙堡",
+            "type_id": "0",
+            "pid": "0",
+            "dep_level": "1",
+            "path": "0",
+            "position_list": [
+                {
+                    "id": "139",
+                    "name": "剧团团长",
+                    "type_id": "1",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79"
+                },
+                {
+                    "id": "141",
+                    "name": "麦鲁店长",
+                    "type_id": "1",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79"
+                },
+                {
+                    "id": "151",
+                    "name": "小橙堡CEO",
+                    "type_id": "1",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79"
+                },
+                {
+                    "id": "353",
+                    "name": "舞台监督",
+                    "type_id": "1",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79"
+                },
+                {
+                    "id": "433",
+                    "name": "总经理助理",
+                    "type_id": "1",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79"
+                },
+                {
+                    "id": "487",
+                    "name": "小橙堡COO",
+                    "type_id": "1",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79"
+                },
+                {
+                    "id": "488",
+                    "name": "小橙堡副总经理",
+                    "type_id": "1",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79"
+                },
+                {
+                    "id": "491",
+                    "name": "小橙堡CEO助理",
+                    "type_id": "1",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79"
+                }
+            ],
+            "child": [
+                {
+                    "id": "179",
+                    "name": "小橙堡剧团",
+                    "type_id": "0",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79",
+                    "position_list": [
+                        {
+                            "id": "388",
+                            "name": "大客户总监",
+                            "type_id": "1",
+                            "pid": "179",
+                            "dep_level": "3",
+                            "path": "0-79-179"
+                        },
+                        {
+                            "id": "429",
+                            "name": "音响师",
+                            "type_id": "1",
+                            "pid": "179",
+                            "dep_level": "3",
+                            "path": "0-79-179"
+                        },
+                        {
+                            "id": "430",
+                            "name": "制作总监",
+                            "type_id": "1",
+                            "pid": "179",
+                            "dep_level": "3",
+                            "path": "0-79-179"
+                        },
+                        {
+                            "id": "431",
+                            "name": "舞台技术",
+                            "type_id": "1",
+                            "pid": "179",
+                            "dep_level": "3",
+                            "path": "0-79-179"
+                        },
+                        {
+                            "id": "436",
+                            "name": "剧团团长",
+                            "type_id": "1",
+                            "pid": "179",
+                            "dep_level": "3",
+                            "path": "0-79-179"
+                        }
+                    ],
+                    "child": [
+                        {
+                            "id": "181",
+                            "name": "演出部",
+                            "type_id": "0",
+                            "pid": "179",
+                            "dep_level": "3",
+                            "path": "0-79-179",
+                            "position_list": [
+                                {
+                                    "id": "182",
+                                    "name": "演员",
+                                    "type_id": "1",
+                                    "pid": "181",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-181"
+                                },
+                                {
+                                    "id": "380",
+                                    "name": "灯光师",
+                                    "type_id": "1",
+                                    "pid": "181",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-181"
+                                },
+                                {
+                                    "id": "381",
+                                    "name": "舞台督导",
+                                    "type_id": "1",
+                                    "pid": "181",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-181"
+                                },
+                                {
+                                    "id": "477",
+                                    "name": "执行专员",
+                                    "type_id": "1",
+                                    "pid": "181",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-181"
+                                }
+                            ],
+                            "child": []
+                        },
+                        {
+                            "id": "303",
+                            "name": "小橙堡品牌中心",
+                            "type_id": "0",
+                            "pid": "179",
+                            "dep_level": "3",
+                            "path": "0-79-179",
+                            "position_list": [
+                                {
+                                    "id": "142",
+                                    "name": "品牌总监",
+                                    "type_id": "1",
+                                    "pid": "303",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-303"
+                                },
+                                {
+                                    "id": "172",
+                                    "name": "展览负责人（副总经理）",
+                                    "type_id": "1",
+                                    "pid": "303",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-303"
+                                },
+                                {
+                                    "id": "360",
+                                    "name": "市场经理",
+                                    "type_id": "1",
+                                    "pid": "303",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-303"
+                                },
+                                {
+                                    "id": "405",
+                                    "name": "市场助理",
+                                    "type_id": "1",
+                                    "pid": "303",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-303"
+                                },
+                                {
+                                    "id": "406",
+                                    "name": "设计助理",
+                                    "type_id": "1",
+                                    "pid": "303",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-303"
+                                },
+                                {
+                                    "id": "432",
+                                    "name": "品牌活动经理",
+                                    "type_id": "1",
+                                    "pid": "303",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-303"
+                                },
+                                {
+                                    "id": "451",
+                                    "name": "实习",
+                                    "type_id": "1",
+                                    "pid": "303",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-303"
+                                },
+                                {
+                                    "id": "464",
+                                    "name": "文案策划",
+                                    "type_id": "1",
+                                    "pid": "303",
+                                    "dep_level": "4",
+                                    "path": "0-79-179-303"
+                                }
+                            ],
+                            "child": []
+                        }
+                    ]
+                },
+                {
+                    "id": "180",
+                    "name": "小橙堡市场部",
+                    "type_id": "0",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79",
+                    "position_list": [
+                        {
+                            "id": "304",
+                            "name": "市场部经理",
+                            "type_id": "1",
+                            "pid": "180",
+                            "dep_level": "3",
+                            "path": "0-79-180"
+                        },
+                        {
+                            "id": "331",
+                            "name": "麦鲁店长",
+                            "type_id": "1",
+                            "pid": "180",
+                            "dep_level": "3",
+                            "path": "0-79-180"
+                        },
+                        {
+                            "id": "386",
+                            "name": "市场专员",
+                            "type_id": "1",
+                            "pid": "180",
+                            "dep_level": "3",
+                            "path": "0-79-180"
+                        },
+                        {
+                            "id": "387",
+                            "name": "媒介经理",
+                            "type_id": "1",
+                            "pid": "180",
+                            "dep_level": "3",
+                            "path": "0-79-180"
+                        },
+                        {
+                            "id": "514",
+                            "name": "展览事业部总监",
+                            "type_id": "1",
+                            "pid": "180",
+                            "dep_level": "3",
+                            "path": "0-79-180"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "349",
+                    "name": "运营中心",
+                    "type_id": "0",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79",
+                    "position_list": [
+                        {
+                            "id": "140",
+                            "name": "运营总监",
+                            "type_id": "1",
+                            "pid": "349",
+                            "dep_level": "3",
+                            "path": "0-79-349"
+                        },
+                        {
+                            "id": "332",
+                            "name": "演出部副经理",
+                            "type_id": "1",
+                            "pid": "349",
+                            "dep_level": "3",
+                            "path": "0-79-349"
+                        },
+                        {
+                            "id": "350",
+                            "name": "大客户专员",
+                            "type_id": "1",
+                            "pid": "349",
+                            "dep_level": "3",
+                            "path": "0-79-349"
+                        },
+                        {
+                            "id": "384",
+                            "name": "运营助理",
+                            "type_id": "1",
+                            "pid": "349",
+                            "dep_level": "3",
+                            "path": "0-79-349"
+                        },
+                        {
+                            "id": "496",
+                            "name": "赛事经理",
+                            "type_id": "1",
+                            "pid": "349",
+                            "dep_level": "3",
+                            "path": "0-79-349"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "382",
+                    "name": "战略与拓展部",
+                    "type_id": "0",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79",
+                    "position_list": [
+                        {
+                            "id": "383",
+                            "name": "人事行政主管",
+                            "type_id": "1",
+                            "pid": "382",
+                            "dep_level": "3",
+                            "path": "0-79-382"
+                        },
+                        {
+                            "id": "385",
+                            "name": "运营总监",
+                            "type_id": "1",
+                            "pid": "382",
+                            "dep_level": "3",
+                            "path": "0-79-382"
+                        },
+                        {
+                            "id": "494",
+                            "name": "行政专员",
+                            "type_id": "1",
+                            "pid": "382",
+                            "dep_level": "3",
+                            "path": "0-79-382"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "426",
+                    "name": "小橙堡财务部",
+                    "type_id": "0",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79",
+                    "position_list": [
+                        {
+                            "id": "427",
+                            "name": "财务部经理",
+                            "type_id": "1",
+                            "pid": "426",
+                            "dep_level": "3",
+                            "path": "0-79-426"
+                        },
+                        {
+                            "id": "438",
+                            "name": "小橙堡财务总监",
+                            "type_id": "1",
+                            "pid": "426",
+                            "dep_level": "3",
+                            "path": "0-79-426"
+                        }
+                    ],
+                    "child": []
+                },
+                {
+                    "id": "435",
+                    "name": "周末剧场院线",
+                    "type_id": "0",
+                    "pid": "79",
+                    "dep_level": "2",
+                    "path": "0-79",
+                    "position_list": [
+                        {
+                            "id": "170",
+                            "name": "全国周末儿童剧场总经理",
+                            "type_id": "1",
+                            "pid": "435",
+                            "dep_level": "3",
+                            "path": "0-79-435"
+                        }
+                    ],
+                    "child": [
+                        {
+                            "id": "489",
+                            "name": "深圳周末儿童剧场",
+                            "type_id": "0",
+                            "pid": "435",
+                            "dep_level": "3",
+                            "path": "0-79-435",
+                            "position_list": [
+                                {
+                                    "id": "490",
+                                    "name": "深圳周末剧场总经理",
+                                    "type_id": "1",
+                                    "pid": "489",
+                                    "dep_level": "4",
+                                    "path": "0-79-435-489"
+                                }
+                            ],
+                            "child": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "80",
+            "name": "优橙品",
+            "type_id": "0",
+            "pid": "0",
+            "dep_level": "1",
+            "path": "0",
+            "position_list": [
+                {
+                    "id": "153",
+                    "name": "优橙品总经理",
+                    "type_id": "1",
+                    "pid": "80",
+                    "dep_level": "2",
+                    "path": "0-80"
+                },
+                {
+                    "id": "286",
+                    "name": "衍生品专员",
+                    "type_id": "1",
+                    "pid": "80",
+                    "dep_level": "2",
+                    "path": "0-80"
+                },
+                {
+                    "id": "287",
+                    "name": "项目推广经理",
+                    "type_id": "1",
+                    "pid": "80",
+                    "dep_level": "2",
+                    "path": "0-80"
+                },
+                {
+                    "id": "288",
+                    "name": "批发专员",
+                    "type_id": "1",
+                    "pid": "80",
+                    "dep_level": "2",
+                    "path": "0-80"
+                },
+                {
+                    "id": "289",
+                    "name": "演出推广部经理",
+                    "type_id": "1",
+                    "pid": "80",
+                    "dep_level": "2",
+                    "path": "0-80"
+                },
+                {
+                    "id": "290",
+                    "name": "销售助理",
+                    "type_id": "1",
+                    "pid": "80",
+                    "dep_level": "2",
+                    "path": "0-80"
+                },
+                {
+                    "id": "291",
+                    "name": "营销主管",
+                    "type_id": "1",
+                    "pid": "80",
+                    "dep_level": "2",
+                    "path": "0-80"
+                },
+                {
+                    "id": "480",
+                    "name": "优橙品临时负责人",
+                    "type_id": "1",
+                    "pid": "80",
+                    "dep_level": "2",
+                    "path": "0-80"
+                },
+                {
+                    "id": "497",
+                    "name": "项目推广专员",
+                    "type_id": "1",
+                    "pid": "80",
+                    "dep_level": "2",
+                    "path": "0-80"
+                }
+            ],
+            "child": []
+        },
+        {
+            "id": "98",
+            "name": "总经办（高管团队）",
+            "type_id": "0",
+            "pid": "0",
+            "dep_level": "1",
+            "path": "0",
+            "position_list": [
+                {
+                    "id": "99",
+                    "name": "董事长",
+                    "type_id": "1",
+                    "pid": "98",
+                    "dep_level": "2",
+                    "path": "0-98"
+                },
+                {
+                    "id": "100",
+                    "name": "副总裁",
+                    "type_id": "1",
+                    "pid": "98",
+                    "dep_level": "2",
+                    "path": "0-98"
+                },
+                {
+                    "id": "101",
+                    "name": "总裁",
+                    "type_id": "1",
+                    "pid": "98",
+                    "dep_level": "2",
+                    "path": "0-98"
+                },
+                {
+                    "id": "474",
+                    "name": "CEO",
+                    "type_id": "1",
+                    "pid": "98",
+                    "dep_level": "2",
+                    "path": "0-98"
+                }
+            ],
+            "child": []
+        },
+        {
+            "id": "154",
+            "name": "旅游演艺",
+            "type_id": "0",
+            "pid": "0",
+            "dep_level": "1",
+            "path": "0",
+            "position_list": [
+                {
+                    "id": "177",
+                    "name": "旅游演艺公司总经理",
+                    "type_id": "1",
+                    "pid": "154",
+                    "dep_level": "2",
+                    "path": "0-154"
+                },
+                {
+                    "id": "297",
+                    "name": "总经理助理",
+                    "type_id": "1",
+                    "pid": "154",
+                    "dep_level": "2",
+                    "path": "0-154"
+                },
+                {
+                    "id": "298",
+                    "name": "策划主管",
+                    "type_id": "1",
+                    "pid": "154",
+                    "dep_level": "2",
+                    "path": "0-154"
+                },
+                {
+                    "id": "457",
+                    "name": "项目经理",
+                    "type_id": "1",
+                    "pid": "154",
+                    "dep_level": "2",
+                    "path": "0-154"
+                },
+                {
+                    "id": "471",
+                    "name": "实习",
+                    "type_id": "1",
+                    "pid": "154",
+                    "dep_level": "2",
+                    "path": "0-154"
+                },
+                {
+                    "id": "473",
+                    "name": "项目总监",
+                    "type_id": "1",
+                    "pid": "154",
+                    "dep_level": "2",
+                    "path": "0-154"
+                }
+            ],
+            "child": []
+        },
+        {
+            "id": "155",
+            "name": "聚创基金",
+            "type_id": "0",
+            "pid": "0",
+            "dep_level": "1",
+            "path": "0",
+            "position_list": [
+                {
+                    "id": "478",
+                    "name": "投资经理",
+                    "type_id": "1",
+                    "pid": "155",
+                    "dep_level": "2",
+                    "path": "0-155"
+                },
+                {
+                    "id": "481",
+                    "name": "聚创总经理",
+                    "type_id": "1",
+                    "pid": "155",
+                    "dep_level": "2",
+                    "path": "0-155"
+                },
+                {
+                    "id": "482",
+                    "name": "投资专员",
+                    "type_id": "1",
+                    "pid": "155",
+                    "dep_level": "2",
+                    "path": "0-155"
+                }
+            ],
+            "child": []
+        },
+        {
+            "id": "520",
+            "name": "董事会秘书处",
+            "type_id": "0",
+            "pid": "0",
+            "dep_level": "1",
+            "path": "0",
+            "position_list": [
+                {
+                    "id": "521",
+                    "name": "董事会秘书处主任",
+                    "type_id": "1",
+                    "pid": "520",
+                    "dep_level": "2",
+                    "path": "0-520"
+                },
+                {
+                    "id": "522",
+                    "name": "董事会秘书",
+                    "type_id": "1",
+                    "pid": "520",
+                    "dep_level": "2",
+                    "path": "0-520"
+                },
+                {
+                    "id": "524",
+                    "name": "董秘助理",
+                    "type_id": "1",
+                    "pid": "520",
+                    "dep_level": "2",
+                    "path": "0-520"
+                }
+            ],
+            "child": []
+        }
+    ]
+};
+
+
+        
+
+        (function(){
+            var depPosStaffSelect = function(option){
+                this.html = ''; 
+
+                option = option || {data:[]};
+
+                this.option = option;
+
+                this.initSelectedItems = option.selectedItems || [];
+                this.initSelectedNodes = option.selectedNodes || [];
+                this.wrapper = option.wrapper ? option.wrapper+' .y-tree-wrap'  : '.y-tree-wrap';
+
+                var _this = this;            
+
+                this.setData = function(data)
+                {
+                    this.html = '';
+                    createHtml(data);
+                    $(this.wrapper).html(this.html);
+                }
+
+                this.setSelectedItem = function(id)
+                {
+                    var $item = $(this.wrapper+' .y-tree-item[data-id="'+id+'"]');
+                    if ($item.length>0)
+                    {
+                        $(this.wrapper+' .y-tree-item').removeClass('selected');
+                        $item.addClass('selected');
+
+                        var pathText = '',
+                            pathArr  = [];
+                        $item.parents('.y-tree-node').each(function(){
+                            pathArr.push($(this).children('.y-tree-node-title').attr('data-name'));
+                        });
+
+                        pathArr.reverse();
+
+                        pathText = $item.attr('data-name');
+                        if (pathArr.length > 0)
+                        {
+                            pathText += '（'+pathArr.join(' > ')+'）';
+                        }
+                        
+                        if (this.option.pathInputName)
+                        {
+                            $('input[name="'+this.option.pathInputName+'"]').attr('data-id',id).attr('data-name',$item.attr('data-name')).val(pathText);
+                        }
+                    }
+                }
+
+
+                if (option.data.length>0)
+                {
+                    createHtml(option.data,true);
+                    $('.y-tree-wrap').html(this.html);
+                    if (this.initSelectedItems.length>0)
+                    {
+                        this.setSelectedItem(this.initSelectedItems[0]);
+                    }
+                }
+
+
+                $('body').off('click',this.wrapper).on('click',this.wrapper,function(event){
+                    stopPropagation(event);
+                });
+
+
+                $('body').off('click',this.wrapper+' .y-tree-node-title').on('click',this.wrapper+' .y-tree-node-title',function(event){
+                    stopPropagation(event)
+                    $(this).next().slideToggle();
+                    $(this).children('span.icon').toggleClass('icon-menu-block-right').toggleClass('icon-menu-block-down');
+                    //$(this).children('span.icon').toggleClass('icon-menu-block-right');
+                    //<span class="icon "></span>
+                    if (typeof option.nodeClickCallback == 'function')
+                    {
+                        option.nodeClickCallback(this)
+                    }
+                });
+
+                $('body').off('click',this.wrapper+' .y-tree-node-title input').on('click',this.wrapper+' .y-tree-node-title input',function(event){
+                    stopPropagation(event)
+                    if (typeof option.inputClickCallback == 'function')
+                    {
+                        option.inputClickCallback(this)
+                    }
+                });
+
+                $('body').off('click',this.wrapper+' .y-tree-item').on('click',this.wrapper+' .y-tree-item',function(event){
+                    stopPropagation(event)
+                    
+                    _this.setSelectedItem($(this).attr('data-id'));
+
+                    $(this).parents(_this.wrapper+':first').hide();
+
+                    if (typeof option.itemClickCallback == 'function')
+                    {
+                        option.itemClickCallback(this)
+                    }
+                });
+
+
+                function stopPropagation(e)
+                {  
+                    e = e || window.event;  
+                    if(e.stopPropagation) 
+                    { 
+                        e.stopPropagation();  //W3C阻止冒泡方法  
+                    }
+                    else
+                    {  
+                        e.cancelBubble = true; //IE阻止冒泡方法  
+                    }  
+                }  
+
+                function inArray(val, arr)
+                {
+                    for (var k = 0; k < arr.length; k++)
+                    {
+                        if (arr[k] == val) 
+                        {
+                            return true;
+                        }
+                    }
+                 return false;
+                }
+
+                //var html = '';
+                function createHtml(data,init)
+                {
+                    for(var k = 0 ; k<data.length ; k++)
+                    {
+                        var arrowIcon = '';
+                        var positions = data[k].position_list;
+                        if (positions.length>0 || data[k].child.length>0)
+                        {
+                            arrowIcon = '<span class="icon icon-menu-block-right icon-left js-icon-menu"></span>';
+                        }
+
+                        //html+='<div class="tree-node"><div data-id="'+data[k].id+'" data-name="'+data[k].name+'" class="tree-node-title">'+arrowIcon+data[k].name+'</div>';
+                        var nodeCheckBox = '';
+                        if (typeof _this.option.nodeCheckBox != 'undefined' && _this.option.nodeCheckBox == true)
+                        {
+                            nodeCheckBox = '<input type="checkbox">';
+                        }
+                        _this.html+='<div class="y-tree-node"><div data-id="'+data[k].id+'" data-name="'+data[k].name+'" class="y-tree-node-title">'+arrowIcon+data[k].name+nodeCheckBox+'</div><div class="y-tree-children-wrap">';
+                        
+                        if (positions.length>0)
+                        {
+                            for(var k1 = 0 ; k1<positions.length ; k1++)
+                            {
+                                //html+='<div class="tree-item">'+positions[k1].name+'</div>';
+                                var checked = selected = '';
+                                if (typeof init != 'undefined' && init == true && _this.initSelectedItems.length>0)
+                                {
+                                    if (inArray(positions[k1].id,_this.initSelectedItems))
+                                    {
+                                        checked  = 'checked';
+                                        selected = 'selected';
+                                    }
+                                }
+
+                                var itemCheckBox = '';
+                                if (typeof _this.option.itemCheckBox != 'undefined' && _this.option.itemCheckBox == true)
+                                {
+                                    itemCheckBox = '<input '+checked+' type="checkbox">';
+                                }
+
+                                _this.html+='<div data-id="'+positions[k1].id+'" data-name="'+positions[k1].name+'" class="y-tree-item '+selected+'">'+positions[k1].name+itemCheckBox+'</div>';
+                            }
+                        }
+
+                        if (data[k].child.length>0)
+                        {
+                            createHtml(data[k].child);
+                        }
+
+                        //html+='</div>';
+                        _this.html+='</div></div>';
+
+                    }
+                }
+            }
+
+            window.depPosStaffSelect = depPosStaffSelect;
+        })();
+
+
+
+
+
+        /*
+        $('body').on('click','input[name="position_path"]',function(e){
+            e = e || window.event;  
+            if(e.stopPropagation) 
+            { 
+                e.stopPropagation();  //W3C阻止冒泡方法  
+            }
+            else
+            {  
+                e.cancelBubble = true; //IE阻止冒泡方法  
+            }  
+
+            $(this).parent().next('.y-tree-wrap').show();
+        });
+
+        $(document).on('click',function(){
+            $('.y-tree-wrap').hide();
+        });
+        */
+
+        $('.operation-btns .add-role-btn').on('click',function(){
+
+            var content = $('.role-edit-ui-wrap').html();
+
+            layer.confirm(content, {
+                  btn: ['确定','取消'], //按钮
+                  area:  ['650px', '500px']
+                }, function(){
+                  layer.msg('确定', {icon: 1});
+                }, function(){
+                  layer.msg('取消', {icon: 1});
+                });
+
+
+            var option = select = false;
+            if (dataJson.data)
+            {
+                option = {wrapper:'.layui-layer-dialog',//下拉选框查找节点
+                          data:dataJson.data,//数据
+                          pathInputName:'position_path',//选中选项的职位路径显示输入框的name值，便于插件查找更新职位路径的显示
+                          selectedItems:[347],//初始化选中职位项
+                          nodeClickCallback:function(elem){},//部门点击事件回调
+                          inputClickCallback:function(elem){},//勾选框点击事件回调
+                          itemRadioBox:true,
+                          nodeRadioBox:true,
+                          radioClickCallback:function(){console.log(arguments)}
+                        }
+                select = new commonTreeSelect(option);
+
+                //select = new depPosStaffSelect(option);
+                
+            }
+            else
+            {
+                $.ajax({
+                    type:'GET',
+                    url:depPosStaffUrl,
+                    dataType:'json',
+                    success:function(result){
+
+                        if (result.code='200')
+                        {
+                            dataJson = result;
+                            option = {wrapper:'.layui-layer-dialog',data:dataJson.data,pathInputName:'position_path',selectedItems:[347,469],nodeClickCallback:function(elem){},inputClickCallback:function(elem){}}
+                            select = new depPosStaffSelect(option);
+                        }
+                    }
+                })
+            }
+        });
+
+        // 用户设置
+        $('.user-setting-btn').on('click', function () {
+            var $this = $(this);
+
+            $.ajax({
+                type: "POST",
+                url:'../demo/tree.json',
+                dataType: 'json',
+                success: function (data) {
+
+                    $this.TreePanel({
+                        data: data
+                    })
+                }
+            })
+        });
+
+
+
+        var tableHover = new tableHoverLayer(null,{layerPos:'center',html:true,copyBtn:false});
+
+
+        $('input').inputLimit({defaultVal:0});
+    </script>
+</body>
+</html>

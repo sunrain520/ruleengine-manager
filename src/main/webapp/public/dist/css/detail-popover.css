@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* 全局变量 */
+/* 全局变量 END */
+/* 字体样式变量 */
+/* 字体样式变量 END */
+/* 框架头部变量 */
+/* 框架头部变量 END */
+/* 框架侧边导航变量 */
+/* 框架侧边导航变量 END */
+/* 头部导航变量 */
+/* 头部导航变量 END */
+/* iframe 内部变量 */
+/* iframe 内部变量 END */
+/* 表格变量 */
+/* 表格变量 END */
+/* 按钮公共变量 */
+/* 按钮公共变量 END */
+/* 表单样式 */
+/* 模糊查询样式变量 */
+/* 模糊查询样式变量 END */
+/* 表单样式 END */
+/* 正常隐藏状态图标样式 */
+/* 正常隐藏状态图标样式 END */
+/* 危险操作颜色 */
+/* 危险操作颜色 END */
+/* module分块背景色 */
+/* module分块背景色 END */
+/* 搜索表单变量 */
+/* 搜索表单变量 END */
+.icon-edit-detail {
+  margin-left: 5px;
+  font-size: 16px;
+  color: #cbcbcb;
+  cursor: pointer; }
+  .icon-edit-detail:hover {
+    color: #666; }
+
+.list-detail {
+  position: relative; }
+  .list-detail .icon-edit-detail:hover + .detail-popover {
+    display: block; }
+  .list-detail .detail-popover {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    border-radius: 5px;
+    width: 425px;
+    padding: 10px 30px;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #ffffdd;
+    color: #999; }
+    .list-detail .detail-popover .title {
+      color: #333; }
+    .list-detail .detail-popover p {
+      margin-bottom: 0; }
+
+/*# sourceMappingURL=detail-popover.css.map */

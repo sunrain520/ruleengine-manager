@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.CityInfoMapper">
+    <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.CityInfo">
+        <result column="f_app_id" property="fAppId" jdbcType="VARCHAR"/>
+        <result column="f_city_code" property="fCityCode" jdbcType="INTEGER"/>
+        <result column="f_city_name" property="fCityName" jdbcType="VARCHAR"/>
+        <result column="f_city_name_abbreviate" property="fCityNameAbbreviate" jdbcType="VARCHAR"/>
+        <result column="f_province_code" property="fProvinceCode" jdbcType="INTEGER"/>
+        <result column="f_province_name" property="fProvinceName" jdbcType="VARCHAR"/>
+        <result column="f_classification" property="fClassification" jdbcType="VARCHAR"/>
+        <result column="f_administration_level" property="fAdministrationLevel" jdbcType="INTEGER"/>
+    </resultMap>
+
+	<select id="queryCityInfoByCode" resultMap="BaseResultMap">
+		select c.*,m.f_app_id,m.f_classification from t_city_info c
+        inner join t_city_classification_mapping m
+        on c.f_city_code = m.f_city_code
+        where c.f_city_code = #{cityCode}
+	</select>
+
+    <select id="queryCityInfosByPage" resultMap="BaseResultMap" parameterType="map">
+        select c.*,m.f_app_id,m.f_classification from t_city_info c
+        inner join t_city_classification_mapping m
+        on c.f_city_code = m.f_city_code
+        where 1=1
+        <if test="cityCode != null and cityCode != 0">
+            and instr(c.f_city_code,#{cityCode}) > 0
+        </if>
+        <if test="cityName != null and cityName != ''">
+            and  instr(c.f_city_name,#{cityName}) > 0
+        </if>
+        <if test="classification != null and classification != ''">
+            and  m.f_classification =#{classification}
+        </if>
+        and m.f_app_id =#{appId}
+        limit #{pageNum},#{pageSize}
+     </select>
+
+    <select id="queryCityInfoCount" resultType="Integer" parameterType="map">
+        select count(*) from (
+            select c.*,m.f_app_id,m.f_classification from t_city_info c
+            inner join t_city_classification_mapping m
+            on c.f_city_code = m.f_city_code
+            where 1=1
+            <if test="cityCode != null and cityCode != 0">
+                and instr(c.f_city_code,#{cityCode}) > 0
+            </if>
+            <if test="cityName != null and cityName != ''">
+                and  instr(c.f_city_name,#{cityName}) > 0
+            </if>
+            <if test="classification != null and classification != ''">
+                and  m.f_classification =#{classification}
+            </if>
+            and m.f_app_id =#{appId}
+        ) p
+  </select>
+
+    <update id="updateClassifcationByCode" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.CityInfo">
+        update t_city_classification_mapping
+        <set>
+            <if test="fClassification != null">
+                f_classification = #{fClassification,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where f_app_id =#{fAppId} and f_city_code =#{fCityCode}
+    </update>
+    
+    <update id="updateCityInfoByCityCode" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.CityInfo">
+        update t_city_info
+        <set>
+            <if test="fClassification != null">
+                f_city_code = #{fCityCode,jdbcType=INTEGER}, 
+                f_city_name = #{fCityName,jdbcType=VARCHAR}, 
+                f_city_name_abbreviate = #{fCityNameAbbreviate,jdbcType=VARCHAR}, 
+      			f_province_code = #{fProvinceCode,jdbcType=INTEGER}, 
+      			f_province_name = #{fProvinceName,jdbcType=VARCHAR}, 
+      			f_administration_level = #{fAdministrationLevel,jdbcType=INTEGER}
+            </if>
+        </set>
+        where f_city_code =#{fCityCode}
+    </update>
+
+    <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.CityInfo">
+    insert into t_city_info (f_city_code, f_city_name, f_city_name_abbreviate, 
+      f_province_code, f_province_name, f_administration_level
+      )
+    values (#{fCityCode,jdbcType=INTEGER}, #{fCityName,jdbcType=VARCHAR}, #{fCityNameAbbreviate,jdbcType=VARCHAR}, 
+      #{fProvinceCode,jdbcType=INTEGER}, #{fProvinceName,jdbcType=VARCHAR}, #{fAdministrationLevel,jdbcType=INTEGER}
+      )
+  </insert>
+  
+  <insert id="insertCityClassification" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.CityInfo">
+    insert into t_city_classification_mapping (f_app_id, f_city_code, f_classification)
+    values ('credit-ndf', #{fCityCode,jdbcType=INTEGER}, #{fClassification,jdbcType=VARCHAR})
+  </insert>
+  
+    <insert id="insertSelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.CityInfo">
+        insert into t_city_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="fCityCode != null">
+                f_city_code,
+            </if>
+            <if test="fCityName != null">
+                f_city_name,
+            </if>
+            <if test="fCityNameAbbreviate != null">
+                f_city_name_abbreviate,
+            </if>
+            <if test="fProvinceCode != null">
+                f_province_code,
+            </if>
+            <if test="fProvinceName != null">
+                f_province_name,
+            </if>
+            <if test="fAdministrationLevel != null">
+                f_administration_level,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="fCityCode != null">
+                #{fCityCode,jdbcType=INTEGER},
+            </if>
+            <if test="fCityName != null">
+                #{fCityName,jdbcType=VARCHAR},
+            </if>
+            <if test="fCityNameAbbreviate != null">
+                #{fCityNameAbbreviate,jdbcType=VARCHAR},
+            </if>
+            <if test="fProvinceCode != null">
+                #{fProvinceCode,jdbcType=INTEGER},
+            </if>
+            <if test="fProvinceName != null">
+                #{fProvinceName,jdbcType=VARCHAR},
+            </if>
+            <if test="fAdministrationLevel != null">
+                #{fAdministrationLevel,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+</mapper>

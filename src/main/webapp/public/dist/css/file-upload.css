@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/* 全局变量 */
+/* 全局变量 END */
+/* 字体样式变量 */
+/* 字体样式变量 END */
+/* 框架头部变量 */
+/* 框架头部变量 END */
+/* 框架侧边导航变量 */
+/* 框架侧边导航变量 END */
+/* 头部导航变量 */
+/* 头部导航变量 END */
+/* iframe 内部变量 */
+/* iframe 内部变量 END */
+/* 表格变量 */
+/* 表格变量 END */
+/* 按钮公共变量 */
+/* 按钮公共变量 END */
+/* 表单样式 */
+/* 模糊查询样式变量 */
+/* 模糊查询样式变量 END */
+/* 表单样式 END */
+/* 正常隐藏状态图标样式 */
+/* 正常隐藏状态图标样式 END */
+/* 危险操作颜色 */
+/* 危险操作颜色 END */
+/* module分块背景色 */
+/* module分块背景色 END */
+/* 搜索表单变量 */
+/* 搜索表单变量 END */
+input[type="file"] {
+  opacity: 0; }
+
+/* 上传控件样式 */
+.progress-bg {
+  position: relative;
+  width: 365px;
+  height: 34px;
+  background-color: #f3f3f5; }
+  .progress-bg .stripes {
+    position: absolute;
+    z-index: 1;
+    width: 365px;
+    height: 34px;
+    -webkit-background-size: 10px 10px;
+    -moz-background-size: 10px 10px;
+    background-size: 10px 10px; }
+  .progress-bg .upload-title {
+    position: absolute;
+    z-index: 2;
+    padding-left: 5px;
+    height: 34px;
+    line-height: 34px;
+    max-width: 365px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .progress-bg .angled-135 {
+    background-color: #ffe5c8;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, rgba(255, 255, 255, 0.2)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.75, rgba(255, 255, 255, 0.2)), color-stop(0.75, transparent), to(transparent));
+    background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent); }
+
+/* 表格上传样式 */
+.table-upload-wrap {
+  text-indent: 0;
+  text-align: left;
+  position: relative;
+  width: 230px;
+  height: 34px;
+  margin-bottom: 0; }
+  .table-upload-wrap .upload-title {
+    padding-left: 20px;
+    height: 34px;
+    line-height: 34px;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    float: left; }
+  .table-upload-wrap .progress-num {
+    color: #666;
+    padding-left: 10px; }
+  .table-upload-wrap .del-uploadfile-txt {
+    color: #999;
+    cursor: pointer;
+    padding: 0 10px;
+    line-height: 34px; }
+  .table-upload-wrap .upload-warning {
+    color: #df5462;
+    font-size: 18px;
+    top: 3px; }
+
+.table-upload-picker {
+  display: inline-block;
+  text-indent: 0;
+  padding-left: 20px;
+  cursor: pointer; }
+
+/*# sourceMappingURL=file-upload.css.map */

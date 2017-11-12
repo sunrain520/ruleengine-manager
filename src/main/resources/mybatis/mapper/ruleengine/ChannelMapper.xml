@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoniu.dataplatform.ruleengine.mapper.ruleengine.ChannelMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoniu.dataplatform.ruleengine.entity.Channel" >
+    <id column="f_auto_id" property="fAutoId" jdbcType="INTEGER" />
+    <result column="f_app_id" property="fAppId" jdbcType="VARCHAR" />
+    <result column="f_channel_name" property="fChannelName" jdbcType="VARCHAR" />
+    <result column="f_channel_id" property="fChannelId" jdbcType="VARCHAR" />
+    <result column="f_coefficient" property="fCoefficient" jdbcType="DOUBLE" />
+    <result column="f_create_time" property="fCreateTime" jdbcType="TIMESTAMP" />
+    <result column="f_create_user" property="fCreateUser" jdbcType="VARCHAR" />
+    <result column="f_update_time" property="fUpdateTime" jdbcType="TIMESTAMP" />
+    <result column="f_update_user" property="fUpdateUser" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    f_auto_id, f_app_id, f_channel_name, f_channel_id, f_coefficient, f_create_time, 
+    f_create_user, f_update_time, f_update_user
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_channel
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </select>
+
+  <select id="queryChannelsByAppId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from t_channel
+    where f_app_id =#{appId}
+    limit #{pageNum},#{pageSize}
+  </select>
+
+  <select id="queryChannelCount" resultType="Integer">
+    select
+    count(*)
+    from t_channel
+    where f_app_id =#{appId}
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_channel
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.Channel" >
+    insert into t_channel (f_auto_id, f_app_id, f_channel_name, 
+      f_channel_id, f_coefficient, f_create_time, 
+      f_create_user, f_update_time, f_update_user
+      )
+    values (#{fAutoId,jdbcType=INTEGER}, #{fAppId,jdbcType=VARCHAR}, #{fChannelName,jdbcType=VARCHAR}, 
+      #{fChannelId,jdbcType=VARCHAR}, #{fCoefficient,jdbcType=DOUBLE}, #{fCreateTime,jdbcType=TIMESTAMP}, 
+      #{fCreateUser,jdbcType=VARCHAR}, #{fUpdateTime,jdbcType=TIMESTAMP}, #{fUpdateUser,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyProperty="fAutoId" useGeneratedKeys="true" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.Channel" >
+    insert into t_channel
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fAutoId != null" >
+        f_auto_id,
+      </if>
+      <if test="fAppId != null" >
+        f_app_id,
+      </if>
+      <if test="fChannelName != null" >
+        f_channel_name,
+      </if>
+      <if test="fChannelId != null" >
+        f_channel_id,
+      </if>
+      <if test="fCoefficient != null" >
+        f_coefficient,
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time,
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user,
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time,
+      </if>
+      <if test="fUpdateUser != null" >
+        f_update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fAutoId != null" >
+        #{fAutoId,jdbcType=INTEGER},
+      </if>
+      <if test="fAppId != null" >
+        #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fChannelName != null" >
+        #{fChannelName,jdbcType=VARCHAR},
+      </if>
+      <if test="fChannelId != null" >
+        #{fChannelId,jdbcType=VARCHAR},
+      </if>
+      <if test="fCoefficient != null" >
+        #{fCoefficient,jdbcType=DOUBLE},
+      </if>
+      <if test="fCreateTime != null" >
+        #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null" >
+        #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null" >
+        #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null" >
+        #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.Channel" >
+    update t_channel
+    <set >
+      <if test="fAppId != null" >
+        f_app_id = #{fAppId,jdbcType=VARCHAR},
+      </if>
+      <if test="fChannelName != null" >
+        f_channel_name = #{fChannelName,jdbcType=VARCHAR},
+      </if>
+      <if test="fChannelId != null" >
+        f_channel_id = #{fChannelId,jdbcType=VARCHAR},
+      </if>
+      <if test="fCoefficient != null" >
+        f_coefficient = #{fCoefficient,jdbcType=DOUBLE},
+      </if>
+      <if test="fCreateTime != null" >
+        f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fCreateUser != null" >
+        f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="fUpdateTime != null" >
+        f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="fUpdateUser != null" >
+        f_update_user = #{fUpdateUser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoniu.dataplatform.ruleengine.entity.Channel" >
+    update t_channel
+    set f_app_id = #{fAppId,jdbcType=VARCHAR},
+      f_channel_name = #{fChannelName,jdbcType=VARCHAR},
+      f_channel_id = #{fChannelId,jdbcType=VARCHAR},
+      f_coefficient = #{fCoefficient,jdbcType=DOUBLE},
+      f_create_time = #{fCreateTime,jdbcType=TIMESTAMP},
+      f_create_user = #{fCreateUser,jdbcType=VARCHAR},
+      f_update_time = #{fUpdateTime,jdbcType=TIMESTAMP},
+      f_update_user = #{fUpdateUser,jdbcType=VARCHAR}
+    where f_auto_id = #{fAutoId,jdbcType=INTEGER}
+  </update>
+</mapper>

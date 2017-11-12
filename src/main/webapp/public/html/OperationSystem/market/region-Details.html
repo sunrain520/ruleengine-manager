@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>区域销售明细</title>
+	<link rel="stylesheet" href="../../../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/need/laydate.css">
+    <link rel="stylesheet" href="../../../dist/js/laydate/skins/default/laydate.css">
+    <link rel="stylesheet" href="../../../dist/css/content.css">
+    <link rel="stylesheet" href="../../../dist/css/main.css">
+    <link rel="stylesheet" href="../../../dist/css/market.css">
+</head>
+<body>
+	<div class="container-main">
+        <div class="content">
+
+           <!-- 头部 -->
+           <div class="operation-btns">
+                <button class="btn btn-success js-nav-item" data-target="project-management/add.html"><span class="icon icon-add icon-left"></span>区域销售明细</button>
+            </div>
+            <!-- 头部 END -->
+
+            <!-- 搜索 -->
+            <div class="search-box clear">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label">排期编码：</label>
+                        <input class="form-control form-list" placeholder="排期编码" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">排期名称：</label>
+                        <input class="form-control form-list" placeholder="输入关键字" type="text">
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">品类：</label>
+                        <select class="form-control form-list js-blur-panel">
+                            <option value="">选择事业部/子公司</option>
+                        </select>
+                        <select class="form-control form-list js-blur-panel">
+                            <option value="">大流行</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">统计日期：</label>
+                        <input class="form-control form-list laydate-icon" placeholder="YY-MM-DD" type="text" onclick="laydate()">
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">城市和场馆：</label>
+                        <select class="form-control form-list js-blur-panel">
+                            <option value="">深圳</option>
+                        </select>
+                        <select class="form-control form-list js-blur-panel">
+                            <option value="">选择场馆</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">开票日期：</label>
+                        <input class="form-control form-list laydate-icon" placeholder="YY-MM-DD" type="text" onclick="laydate()">
+                        <span class="c-999">至</span>
+                        <input class="form-control form-list laydate-icon" placeholder="YY-MM-DD" type="text" onclick="laydate()">
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">演出日期：</label>
+                        <input class="form-control form-list laydate-icon" placeholder="YY-MM-DD" type="text" onclick="laydate()">
+                        <span class="c-999">至</span>
+                        <input class="form-control form-list laydate-icon" placeholder="YY-MM-DD" type="text" onclick="laydate()">
+                    </div>
+                    <div class="form-group form-lg">
+                        <label class="control-label">排期进展：</label>
+                        <select class="form-control form-list js-blur-panel">
+                            <option value="">在售</option>
+                        </select>
+                    </div>
+                    <div class="fr btn-wrap">
+                        <button class="btn btn-info">搜索</button>
+                        <button class="btn btn-default ceee">清空</button>
+                    </div>
+                </form>
+            </div>
+            <!-- 搜索 -->
+
+            <!-- 表格 -->
+            <div class="table-panel panel-white box table-panel-full row-box">
+                <div class="table-wrap box-content">
+                 <div class="table-top-tips">
+                    <div class="arrow-top"><span class="c-red"></span></div>演出时间<30天，完成率<50%,重点关注
+                    <div class="arrow-top"><span class="c-yellow"></span></div>演出时间<30天，50%≤完成率≤80%,冲刺销售
+                    <div class="arrow-top"><span class="c-green"></span></div>完成率≥100%
+                    <div class="arrow-top"><span class="c-blur"></span></div>未确定项目计划
+                    <button class="btn btn-info">导出</button>
+                </div>
+                    <div class="table-scroll">
+
+                        <div class="table-header-wrap js-table-header-wrap" style="height: 42px; z-index: 2;">
+                            <table class="table table-border table-full table-fix-height table-header js-table-header table-fixed-sm">
+                                <thead>
+                                <tr>
+                                    <th class="js-sort-item w-name" style="position: absolute; z-index: 3; left: 121px; top: 0px;">排期名称</th>
+                                    <th class="w-id" style="position: absolute; z-index: 3; left: 41px; top: 0px;">城市</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">场馆</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">开票时间
+                                        <div class="options-wrap fr">
+                                            <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                            <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                        </div>
+                                    </th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">演出时间
+                                        <div class="options-wrap fr">
+                                            <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                            <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                        </div>
+                                    </th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">总票数</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">总票房</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">销售计划</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">余票数</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">销售数</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">赠票数</th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">销售额</th>
+                                    <th class="js-sort-item" style="width: 200px; min-width: 200px; max-width: 200px;">完成率
+                                       <div class="options-wrap fr">
+                                            <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                            <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                        </div>
+                                    </th>
+                                    <th class="js-sort-item" style="width: 200px; min-width: 200px; max-width: 200px;">上座率
+                                       <div class="options-wrap fr">
+                                            <span class="icon icon-menu-block-up block js-sort-up"></span>
+                                            <span class="icon icon-menu-block-down block js-sort-down"></span>
+                                        </div>
+                                    </th>
+                                    <th style="width: 200px; min-width: 200px; max-width: 200px;">赞助金额</th>
+                                    <th class="js-sort-item" style="width: 200px; min-width: 200px; max-width: 200px;">置换金额</th>
+                                    <th class="js-sort-item" style="width: 200px; min-width: 200px; max-width: 200px;">子公司/事业部</th>
+                                    <th class="js-sort-item" style="width: 200px; min-width: 200px; max-width: 200px;">品类</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table-body-wrap js-table-body-wrap">
+                            <table class="table table-border table-full js-table table-fix-height table-fixed-sm">
+                                <tbody>
+                                <tr>
+                                    <td class="js-sort-item w-name" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                        <div class="arrow-top"><span class="c-red"></span></div>
+                                    </td>
+                                    <td class="w-id" style="position: absolute; z-index: 1; left: 0px; height: 42px;">深圳</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">南山文体中心</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">2016.11.12 12:00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">2016.12.12 12:00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">3006</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">12000</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">9,000.000</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">560</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">5451</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">232</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">464,551.00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">90.00%</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">40.00%</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">231</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">4,505.00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">万有天橙</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">大流行</td>
+                                </tr>
+                                <tr>
+                                    <td class="js-sort-item w-name" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                        <div class="arrow-top"><span class="c-yellow"></span></div>
+                                    </td>
+                                    <td class="w-id" style="position: absolute; z-index: 1; left: 0px; height: 42px;">深圳</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">南山文体中心</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">2016.11.12 12:00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">2016.12.12 12:00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">3006</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">12000</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">9,000.000</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">560</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">5451</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">232</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">464,551.00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">90.00%</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">40.00%</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">231</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">4,505.00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">万有天橙</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">大流行</td>
+                                </tr>
+                                <tr>
+                                    <td class="js-sort-item w-name" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                        <div class="arrow-top"><span class="c-green"></span></div>
+                                    </td>
+                                    <td class="w-id" style="position: absolute; z-index: 1; left: 0px; height: 42px;">深圳</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">南山文体中心</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">2016.11.12 12:00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">2016.12.12 12:00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">3006</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">12000</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">9,000.000</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">560</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">5451</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">232</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">464,551.00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">90.00%</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">40.00%</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">231</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">4,505.00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">万有天橙</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">大流行</td>
+                                </tr>
+                                <tr>
+                                    <td class="js-sort-item w-name" style="position: absolute; z-index: 1; left: 0px; height: 42px;">
+                                        <a href="javascript:;" class="">程璧我和小鸟和铃...</a>
+                                        <div class="arrow-top"><span class="c-blur"></span></div>
+                                    </td>
+                                    <td class="w-id" style="position: absolute; z-index: 1; left: 0px; height: 42px;">深圳</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">南山文体中心</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">2016.11.12 12:00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">2016.12.12 12:00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">3006</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">12000</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">9,000.000</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">560</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">5451</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">232</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">464,551.00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">90.00%</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">40.00%</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">231</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">4,505.00</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">万有天橙</td>
+                                    <td style="width: 200px; min-width: 200px; max-width: 200px;">大流行</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 分页 -->
+                        <div class="pagination-panel js-pagination-panel" style="width: 1604px; position: static; bottom: 0px; left: 0px; height: 74px; z-index: 2; padding-left: 0px; padding-right: 0px;">
+
+                            <!-- 水平滚动条 -->
+                            <div class="table-scroll-horizontal js-table-scroll-horizontal" style="margin-left: 271px;">
+                                <div class="scroll js-scroll" style="width: 2201px;">
+                                </div>
+                            </div>
+                            <!-- 水平滚动条 END -->
+
+                            <div class="pages-wrap">
+                                <div class="options-panel js-options-panel none" style="display: none;">
+                                    <div class="checkbox-item">
+                                        <div class="checkbox-wrap js-select-all">
+                                            <input type="checkbox">
+                                            <label class="checkbox"><span class="glyphicon glyphicon-ok"></span></label>
+                                        </div>
+                                        <span class="text">选择</span>
+                                    </div>
+
+                                    <div class="options-wrap">
+                                        <a class="option-item ">编辑</a> |
+                                        <a class="option-item gray">删除</a>
+                                    </div>
+                                </div>
+                                <div class="total-wrap">
+                                    共<span class="total">114</span>条，
+                                    每页
+                                    <select class="pages-select form-control">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        <option value="500">500</option>
+                                        <option value="1000">1000</option>
+                                    </select>
+                                    <span class="current-page">12</span>/
+                                    <span class="total-pages">15</span>
+                                    <div class="btn-group fr">
+                                        <button type="button" class="btn btn-default disabled">
+                                            <span class="icon icon-fast-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-backward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-step-forward"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default">
+                                            <span class="icon icon-fast-forward"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 分页 END -->
+                    </div>
+
+                </div>
+            </div>
+            <!-- 表格 -->
+
+        </div>
+    </div>
+    <script src="../../../dist/js/jquery.min.js"></script>
+    <script src="../../../dist/js/common-iframe.js"></script>
+    <script src="../../../dist/js/laydate/laydate.js"></script>
+</body>
+</html>
